@@ -2,20 +2,20 @@
 # This file is distributed under the same license as the Thim Elementor Kit plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Thim Elementor Kit 1.2.4\n"
+"Project-Id-Version: Thim Elementor Kit 1.2.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/thim-elementor-kit\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-21T05:02:26+03:00\n"
+"POT-Creation-Date: 2024-10-21T11:41:24+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: thim-elementor-kit\n"
 
 #. Plugin Name of the plugin
-#: inc/class-enqueue-scripts.php:108
+#: inc/class-enqueue-scripts.php:123
 #: inc/elementor/dynamic-tags/class-init.php:53
 msgid "Thim Elementor Kit"
 msgstr ""
@@ -32,18 +32,18 @@ msgstr ""
 msgid "http://thimpress.com"
 msgstr ""
 
-#: inc/class-dashboard.php:41
-#: inc/class-dashboard.php:42
+#: inc/class-dashboard.php:46
+#: inc/class-dashboard.php:47
 #: inc/class-post-type.php:226
 #: inc/class-post-type.php:237
 msgid "Thim Elementor"
 msgstr ""
 
-#: inc/class-enqueue-scripts.php:73
+#: inc/class-enqueue-scripts.php:88
 msgid "&nbsp;minutes"
 msgstr ""
 
-#: inc/class-enqueue-scripts.php:74
+#: inc/class-enqueue-scripts.php:89
 msgid "&nbsp;second"
 msgstr ""
 
@@ -56,8 +56,8 @@ msgstr ""
 
 #: inc/class-post-type.php:96
 #: inc/elementor/class-elementor.php:366
-#: inc/elementor/widgets/archive-course/archive-course-new.php:172
-#: inc/elementor/widgets/archive-course/archive-course.php:145
+#: inc/elementor/widgets/archive-course/archive-course-new.php:194
+#: inc/elementor/widgets/archive-course/archive-course.php:146
 #: inc/elementor/widgets/archive-post/archive-post.php:113
 #: inc/elementor/widgets/global/blog-base.php:148
 #: inc/elementor/widgets/global/course-base.php:27
@@ -67,10 +67,10 @@ msgstr ""
 #: inc/elementor/widgets/loop-item/loop-item-info.php:43
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:70
 #: inc/elementor/widgets/single-course-item/course-item-section.php:98
-#: inc/elementor/widgets/single-course/course-extra.php:48
+#: inc/elementor/widgets/single-course/course-extra.php:61
 #: inc/elementor/widgets/single-course/course-instructor.php:179
 #: inc/elementor/widgets/single-course/course-meta.php:72
-#: inc/elementor/widgets/single-course/course-tabs.php:70
+#: inc/elementor/widgets/single-course/course-tabs.php:73
 #: inc/elementor/widgets/single-post/post-info.php:48
 msgid "Type"
 msgstr ""
@@ -140,8 +140,8 @@ msgstr ""
 msgid "Create template successfully, Redirecting..."
 msgstr ""
 
-#: inc/class-settings.php:40
-#: inc/class-settings.php:41
+#: inc/class-settings.php:49
+#: inc/class-settings.php:50
 #: inc/elementor/widgets/global/list-blog.php:49
 #: inc/elementor/widgets/global/login-form.php:301
 #: inc/elementor/widgets/global/video.php:156
@@ -151,49 +151,49 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: inc/class-settings.php:56
+#: inc/class-settings.php:65
 msgid "Module Settings"
 msgstr ""
 
-#: inc/class-settings.php:181
+#: inc/class-settings.php:190
 msgid "Global Widgets"
 msgstr ""
 
-#: inc/class-settings.php:182
+#: inc/class-settings.php:191
 #: inc/elementor/widgets/archive-course/archive-course-new.php:56
-#: inc/elementor/widgets/archive-course/archive-course.php:32
+#: inc/elementor/widgets/archive-course/archive-course.php:33
 #: inc/modules/archive-course/class-init.php:14
 msgid "Archive Course"
 msgstr ""
 
-#: inc/class-settings.php:183
+#: inc/class-settings.php:192
 #: inc/elementor/widgets/archive-product/archive-product.php:30
 #: inc/modules/archive-product/class-init.php:14
 msgid "Archive Product"
 msgstr ""
 
-#: inc/class-settings.php:184
+#: inc/class-settings.php:193
 #: inc/elementor/widgets/archive-post/archive-post.php:25
 #: inc/modules/archive-post/class-init.php:14
 msgid "Archive Post"
 msgstr ""
 
-#: inc/class-settings.php:185
-#: inc/modules/single-course/class-init.php:14
+#: inc/class-settings.php:194
+#: inc/modules/single-course/class-init.php:15
 msgid "Single Course"
 msgstr ""
 
-#: inc/class-settings.php:186
+#: inc/class-settings.php:195
 #: inc/modules/single-post/class-init.php:14
 msgid "Single Post"
 msgstr ""
 
-#: inc/class-settings.php:187
+#: inc/class-settings.php:196
 #: inc/modules/single-product/class-init.php:14
 msgid "Single Product"
 msgstr ""
 
-#: inc/class-settings.php:249
+#: inc/class-settings.php:258
 msgid "Settings saved."
 msgstr ""
 
@@ -202,8 +202,8 @@ msgid "Preview Settings"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:111
-#: inc/elementor/widgets/archive-course/archive-course-new.php:347
-#: inc/elementor/widgets/archive-course/archive-course.php:320
+#: inc/elementor/widgets/archive-course/archive-course-new.php:369
+#: inc/elementor/widgets/archive-course/archive-course.php:321
 #: inc/elementor/widgets/global/button.php:446
 #: inc/elementor/widgets/global/button.php:511
 #: inc/elementor/widgets/global/contact-form-7.php:122
@@ -223,7 +223,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-progress.php:93
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:488
 #: inc/elementor/widgets/single-course/course-image.php:77
-#: inc/elementor/widgets/single-course/course-tabs.php:1010
+#: inc/elementor/widgets/single-course/course-tabs.php:1013
 #: inc/elementor/widgets/single-post/post-image.php:90
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:425
 #: inc/utilities/group-control-trait.php:461
@@ -308,7 +308,7 @@ msgstr ""
 #: inc/elementor/widgets/global/course-base.php:501
 #: inc/elementor/widgets/global/course-base.php:912
 #: inc/elementor/widgets/global/course-base.php:1379
-#: inc/elementor/widgets/single-course/course-tabs.php:944
+#: inc/elementor/widgets/single-course/course-tabs.php:947
 msgid "Instructor"
 msgstr ""
 
@@ -396,12 +396,12 @@ msgid "Overview"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:289
-#: inc/elementor/widgets/single-course/course-tabs.php:475
+#: inc/elementor/widgets/single-course/course-tabs.php:478
 msgid "Curriculum"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:290
-#: inc/elementor/widgets/single-course/course-tabs.php:652
+#: inc/elementor/widgets/single-course/course-tabs.php:655
 msgid "FAQs"
 msgstr ""
 
@@ -460,7 +460,7 @@ msgstr ""
 
 #: inc/elementor/class-elementor.php:357
 #: inc/elementor/widgets/archive-course/archive-course-new.php:116
-#: inc/elementor/widgets/archive-course/archive-course.php:97
+#: inc/elementor/widgets/archive-course/archive-course.php:98
 #: inc/elementor/widgets/archive-post/archive-post.php:77
 #: inc/elementor/widgets/archive-product/archive-product.php:69
 #: inc/elementor/widgets/global/blog-base.php:419
@@ -487,7 +487,7 @@ msgstr ""
 #: inc/elementor/widgets/global/site-logo.php:118
 #: inc/elementor/widgets/global/social-share.php:545
 #: inc/elementor/widgets/global/social.php:362
-#: inc/elementor/widgets/global/team.php:849
+#: inc/elementor/widgets/global/team.php:871
 #: inc/elementor/widgets/single-course-item/back-to-course.php:182
 #: inc/elementor/widgets/single-course-item/course-close-sidebar.php:105
 #: inc/elementor/widgets/single-course-item/course-item-data.php:183
@@ -688,6 +688,7 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1354
 #: inc/elementor/widgets/global/course-base.php:1365
 #: inc/elementor/widgets/global/minicart.php:172
+#: inc/elementor/widgets/global/progress-tracker.php:96
 #: inc/elementor/widgets/global/video.php:220
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:397
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:128
@@ -745,7 +746,7 @@ msgstr ""
 #: inc/elementor/widgets/global/tab.php:389
 #: inc/elementor/widgets/global/tab.php:583
 #: inc/elementor/widgets/global/team.php:481
-#: inc/elementor/widgets/global/team.php:639
+#: inc/elementor/widgets/global/team.php:661
 #: inc/elementor/widgets/global/testimonial.php:552
 #: inc/elementor/widgets/global/testimonial.php:750
 #: inc/elementor/widgets/global/testimonial.php:1365
@@ -765,12 +766,12 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-image.php:317
 #: inc/elementor/widgets/single-course/course-instructor.php:363
 #: inc/elementor/widgets/single-course/course-instructor.php:602
-#: inc/elementor/widgets/single-course/course-tabs.php:348
-#: inc/elementor/widgets/single-course/course-tabs.php:409
-#: inc/elementor/widgets/single-course/course-tabs.php:505
-#: inc/elementor/widgets/single-course/course-tabs.php:682
-#: inc/elementor/widgets/single-course/course-tabs.php:1028
-#: inc/elementor/widgets/single-course/course-tabs.php:1167
+#: inc/elementor/widgets/single-course/course-tabs.php:351
+#: inc/elementor/widgets/single-course/course-tabs.php:412
+#: inc/elementor/widgets/single-course/course-tabs.php:508
+#: inc/elementor/widgets/single-course/course-tabs.php:685
+#: inc/elementor/widgets/single-course/course-tabs.php:1031
+#: inc/elementor/widgets/single-course/course-tabs.php:1170
 #: inc/elementor/widgets/single-post/author-box.php:239
 #: inc/elementor/widgets/single-post/post-image.php:303
 #: inc/elementor/widgets/single-post/post-info.php:621
@@ -928,6 +929,7 @@ msgstr ""
 
 #: inc/elementor/motion-effects/class-init.php:58
 #: inc/elementor/motion-effects/class-init.php:116
+#: inc/elementor/widgets/global/progress-tracker.php:50
 #: inc/utilities/group-control-trait.php:2006
 msgid "Direction"
 msgstr ""
@@ -953,7 +955,7 @@ msgid "3D Tilt"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:89
-#: inc/elementor/widgets/archive-course/archive-course.php:66
+#: inc/elementor/widgets/archive-course/archive-course.php:67
 #: inc/elementor/widgets/archive-post/archive-post.php:56
 #: inc/elementor/widgets/global/instagram.php:155
 #: inc/elementor/widgets/global/list-course.php:50
@@ -964,12 +966,12 @@ msgid "Options"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:96
-#: inc/elementor/widgets/archive-course/archive-course.php:73
+#: inc/elementor/widgets/archive-course/archive-course.php:74
 msgid "Enable full Ajax"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:106
-#: inc/elementor/widgets/archive-course/archive-course.php:83
+#: inc/elementor/widgets/archive-course/archive-course.php:84
 #: inc/elementor/widgets/archive-post/archive-post.php:63
 #: inc/elementor/widgets/archive-product/archive-product.php:55
 #: inc/elementor/widgets/global/list-blog.php:68
@@ -981,7 +983,7 @@ msgid "Build Loop Item"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:122
-#: inc/elementor/widgets/archive-course/archive-course.php:93
+#: inc/elementor/widgets/archive-course/archive-course.php:94
 #: inc/elementor/widgets/archive-post/archive-post.php:73
 #: inc/elementor/widgets/archive-product/archive-product.php:65
 #: inc/elementor/widgets/global/list-blog.php:78
@@ -994,7 +996,7 @@ msgid "Choose a template"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:137
-#: inc/elementor/widgets/archive-course/archive-course.php:110
+#: inc/elementor/widgets/archive-course/archive-course.php:111
 #: inc/elementor/widgets/archive-post/archive-post.php:88
 #: inc/elementor/widgets/archive-product/archive-product.php:79
 #: inc/elementor/widgets/global/instagram.php:162
@@ -1010,35 +1012,65 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
+#: inc/elementor/widgets/archive-course/archive-course-new.php:160
+msgid "Newly published"
+msgstr ""
+
+#: inc/elementor/widgets/archive-course/archive-course-new.php:161
+msgid "Title a-z"
+msgstr ""
+
+#: inc/elementor/widgets/archive-course/archive-course-new.php:162
+msgid "Title z-a"
+msgstr ""
+
+#: inc/elementor/widgets/archive-course/archive-course-new.php:163
+msgid "Price high to low"
+msgstr ""
+
 #: inc/elementor/widgets/archive-course/archive-course-new.php:164
-#: inc/elementor/widgets/archive-course/archive-course-new.php:215
+msgid "Price low to high"
+msgstr ""
+
+#: inc/elementor/widgets/archive-course/archive-course-new.php:165
+#: inc/elementor/widgets/global/list-blog.php:139
+#: inc/elementor/widgets/single-post/post-related.php:143
+msgid "Popular"
+msgstr ""
+
+#: inc/elementor/widgets/archive-course/archive-course-new.php:171
+msgid "Default Orderby"
+msgstr ""
+
+#: inc/elementor/widgets/archive-course/archive-course-new.php:186
 #: inc/elementor/widgets/archive-course/archive-course-new.php:237
-#: inc/elementor/widgets/archive-course/archive-course.php:137
-#: inc/elementor/widgets/archive-course/archive-course.php:188
-#: inc/elementor/widgets/archive-course/archive-course.php:210
+#: inc/elementor/widgets/archive-course/archive-course-new.php:259
+#: inc/elementor/widgets/archive-course/archive-course.php:138
+#: inc/elementor/widgets/archive-course/archive-course.php:189
+#: inc/elementor/widgets/archive-course/archive-course.php:211
 #: inc/elementor/widgets/archive-post/archive-post.php:126
 #: inc/elementor/widgets/archive-post/archive-post.php:141
 msgid "Top Bar"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:186
-#: inc/elementor/widgets/archive-course/archive-course.php:159
+#: inc/elementor/widgets/archive-course/archive-course-new.php:208
+#: inc/elementor/widgets/archive-course/archive-course.php:160
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:48
 msgid "Placeholder"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:188
-#: inc/elementor/widgets/archive-course/archive-course.php:161
+#: inc/elementor/widgets/archive-course/archive-course-new.php:210
+#: inc/elementor/widgets/archive-course/archive-course.php:162
 msgid "Search..."
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:198
-#: inc/elementor/widgets/archive-course/archive-course.php:171
+#: inc/elementor/widgets/archive-course/archive-course-new.php:220
+#: inc/elementor/widgets/archive-course/archive-course.php:172
 msgid "Search Icon"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:245
-#: inc/elementor/widgets/archive-course/archive-course.php:218
+#: inc/elementor/widgets/archive-course/archive-course-new.php:267
+#: inc/elementor/widgets/archive-course/archive-course.php:219
 #: inc/elementor/widgets/archive-post/archive-post.php:149
 #: inc/elementor/widgets/global/blog-base.php:1140
 #: inc/elementor/widgets/global/blog-base.php:1196
@@ -1067,18 +1099,18 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:673
 #: inc/elementor/widgets/global/product-base.php:1014
 #: inc/elementor/widgets/global/social-share.php:598
-#: inc/elementor/widgets/global/team.php:651
+#: inc/elementor/widgets/global/team.php:673
 #: inc/elementor/widgets/loop-item/loop-product-price.php:70
 #: inc/elementor/widgets/loop-item/loop-product-stock.php:152
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:80
-#: inc/elementor/widgets/single-course/course-extra.php:330
+#: inc/elementor/widgets/single-course/course-extra.php:343
 #: inc/elementor/widgets/single-course/course-image.php:329
 #: inc/elementor/widgets/single-course/course-instructor.php:424
 #: inc/elementor/widgets/single-course/course-instructor.php:469
 #: inc/elementor/widgets/single-course/course-instructor.php:576
 #: inc/elementor/widgets/single-course/course-offer-end.php:206
-#: inc/elementor/widgets/single-course/course-tabs.php:217
-#: inc/elementor/widgets/single-course/course-tabs.php:517
+#: inc/elementor/widgets/single-course/course-tabs.php:220
+#: inc/elementor/widgets/single-course/course-tabs.php:520
 #: inc/elementor/widgets/single-post/post-info.php:447
 #: inc/elementor/widgets/single-post/post-info.php:482
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:254
@@ -1090,8 +1122,8 @@ msgstr ""
 msgid "Spacing"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:256
-#: inc/elementor/widgets/archive-course/archive-course.php:229
+#: inc/elementor/widgets/archive-course/archive-course-new.php:278
+#: inc/elementor/widgets/archive-course/archive-course.php:230
 #: inc/elementor/widgets/archive-post/archive-post.php:160
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:414
 #: inc/elementor/widgets/single-course/course-instructor.php:336
@@ -1103,15 +1135,15 @@ msgstr ""
 msgid "Gap"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:272
-#: inc/elementor/widgets/archive-course/archive-course.php:245
+#: inc/elementor/widgets/archive-course/archive-course-new.php:294
+#: inc/elementor/widgets/archive-course/archive-course.php:246
 msgid "Result Count"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:281
-#: inc/elementor/widgets/archive-course/archive-course-new.php:328
-#: inc/elementor/widgets/archive-course/archive-course.php:254
-#: inc/elementor/widgets/archive-course/archive-course.php:301
+#: inc/elementor/widgets/archive-course/archive-course-new.php:303
+#: inc/elementor/widgets/archive-course/archive-course-new.php:350
+#: inc/elementor/widgets/archive-course/archive-course.php:255
+#: inc/elementor/widgets/archive-course/archive-course.php:302
 #: inc/elementor/widgets/global/archive-description.php:46
 #: inc/elementor/widgets/global/back-to-top.php:72
 #: inc/elementor/widgets/global/blog-base.php:1052
@@ -1130,14 +1162,15 @@ msgstr ""
 #: inc/elementor/widgets/global/nav-menu.php:118
 #: inc/elementor/widgets/global/product-base.php:291
 #: inc/elementor/widgets/global/product-base.php:953
+#: inc/elementor/widgets/global/progress-tracker.php:156
 #: inc/elementor/widgets/global/site-logo.php:88
 #: inc/elementor/widgets/global/social-share.php:135
 #: inc/elementor/widgets/global/social.php:138
 #: inc/elementor/widgets/global/tab.php:92
 #: inc/elementor/widgets/global/tab.php:122
 #: inc/elementor/widgets/global/team.php:426
-#: inc/elementor/widgets/global/team.php:969
-#: inc/elementor/widgets/global/team.php:1140
+#: inc/elementor/widgets/global/team.php:991
+#: inc/elementor/widgets/global/team.php:1162
 #: inc/elementor/widgets/global/testimonial.php:501
 #: inc/elementor/widgets/loop-item/loop-item-excerpt.php:67
 #: inc/elementor/widgets/loop-item/loop-product-countdown.php:128
@@ -1146,14 +1179,14 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:340
 #: inc/elementor/widgets/single-course/course-buttons.php:46
 #: inc/elementor/widgets/single-course/course-description.php:47
-#: inc/elementor/widgets/single-course/course-extra.php:285
+#: inc/elementor/widgets/single-course/course-extra.php:298
 #: inc/elementor/widgets/single-course/course-featured-review.php:209
 #: inc/elementor/widgets/single-course/course-graduation.php:47
 #: inc/elementor/widgets/single-course/course-image.php:52
 #: inc/elementor/widgets/single-course/course-instructor.php:145
 #: inc/elementor/widgets/single-course/course-meta.php:312
 #: inc/elementor/widgets/single-course/course-price.php:47
-#: inc/elementor/widgets/single-course/course-tabs.php:190
+#: inc/elementor/widgets/single-course/course-tabs.php:193
 #: inc/elementor/widgets/single-course/course-title.php:66
 #: inc/elementor/widgets/single-post/author-box.php:154
 #: inc/elementor/widgets/single-post/post-content.php:46
@@ -1174,10 +1207,10 @@ msgstr ""
 msgid "Alignment"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:285
-#: inc/elementor/widgets/archive-course/archive-course-new.php:332
-#: inc/elementor/widgets/archive-course/archive-course.php:258
-#: inc/elementor/widgets/archive-course/archive-course.php:305
+#: inc/elementor/widgets/archive-course/archive-course-new.php:307
+#: inc/elementor/widgets/archive-course/archive-course-new.php:354
+#: inc/elementor/widgets/archive-course/archive-course.php:259
+#: inc/elementor/widgets/archive-course/archive-course.php:306
 #: inc/elementor/widgets/global/archive-description.php:50
 #: inc/elementor/widgets/global/back-to-top.php:77
 #: inc/elementor/widgets/global/blog-base.php:60
@@ -1212,14 +1245,16 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:295
 #: inc/elementor/widgets/global/product-base.php:957
 #: inc/elementor/widgets/global/product-base.php:1238
+#: inc/elementor/widgets/global/progress-tracker.php:56
+#: inc/elementor/widgets/global/progress-tracker.php:160
 #: inc/elementor/widgets/global/search-form.php:205
 #: inc/elementor/widgets/global/site-logo.php:92
 #: inc/elementor/widgets/global/social-share.php:139
 #: inc/elementor/widgets/global/social.php:142
 #: inc/elementor/widgets/global/tab.php:71
 #: inc/elementor/widgets/global/team.php:430
-#: inc/elementor/widgets/global/team.php:973
-#: inc/elementor/widgets/global/team.php:1144
+#: inc/elementor/widgets/global/team.php:995
+#: inc/elementor/widgets/global/team.php:1166
 #: inc/elementor/widgets/global/testimonial.php:93
 #: inc/elementor/widgets/global/testimonial.php:505
 #: inc/elementor/widgets/global/testimonial.php:593
@@ -1237,7 +1272,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-instructor.php:122
 #: inc/elementor/widgets/single-course/course-instructor.php:149
 #: inc/elementor/widgets/single-course/course-price.php:51
-#: inc/elementor/widgets/single-course/course-tabs.php:194
+#: inc/elementor/widgets/single-course/course-tabs.php:197
 #: inc/elementor/widgets/single-course/course-title.php:70
 #: inc/elementor/widgets/single-post/author-box.php:134
 #: inc/elementor/widgets/single-post/author-box.php:158
@@ -1263,10 +1298,10 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:289
-#: inc/elementor/widgets/archive-course/archive-course-new.php:336
-#: inc/elementor/widgets/archive-course/archive-course.php:262
-#: inc/elementor/widgets/archive-course/archive-course.php:309
+#: inc/elementor/widgets/archive-course/archive-course-new.php:311
+#: inc/elementor/widgets/archive-course/archive-course-new.php:358
+#: inc/elementor/widgets/archive-course/archive-course.php:263
+#: inc/elementor/widgets/archive-course/archive-course.php:310
 #: inc/elementor/widgets/global/archive-description.php:58
 #: inc/elementor/widgets/global/back-to-top.php:85
 #: inc/elementor/widgets/global/blog-base.php:64
@@ -1303,14 +1338,16 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:303
 #: inc/elementor/widgets/global/product-base.php:965
 #: inc/elementor/widgets/global/product-base.php:1242
+#: inc/elementor/widgets/global/progress-tracker.php:60
+#: inc/elementor/widgets/global/progress-tracker.php:168
 #: inc/elementor/widgets/global/search-form.php:209
 #: inc/elementor/widgets/global/site-logo.php:100
 #: inc/elementor/widgets/global/social-share.php:147
 #: inc/elementor/widgets/global/social.php:150
 #: inc/elementor/widgets/global/tab.php:75
 #: inc/elementor/widgets/global/team.php:438
-#: inc/elementor/widgets/global/team.php:981
-#: inc/elementor/widgets/global/team.php:1152
+#: inc/elementor/widgets/global/team.php:1003
+#: inc/elementor/widgets/global/team.php:1174
 #: inc/elementor/widgets/global/testimonial.php:513
 #: inc/elementor/widgets/loop-item/loop-item-excerpt.php:79
 #: inc/elementor/widgets/loop-item/loop-product-button.php:198
@@ -1326,7 +1363,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-instructor.php:130
 #: inc/elementor/widgets/single-course/course-instructor.php:157
 #: inc/elementor/widgets/single-course/course-price.php:59
-#: inc/elementor/widgets/single-course/course-tabs.php:202
+#: inc/elementor/widgets/single-course/course-tabs.php:205
 #: inc/elementor/widgets/single-course/course-title.php:78
 #: inc/elementor/widgets/single-post/author-box.php:142
 #: inc/elementor/widgets/single-post/author-box.php:166
@@ -1352,10 +1389,10 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:300
-#: inc/elementor/widgets/archive-course/archive-course-new.php:671
-#: inc/elementor/widgets/archive-course/archive-course.php:273
-#: inc/elementor/widgets/archive-course/archive-course.php:644
+#: inc/elementor/widgets/archive-course/archive-course-new.php:322
+#: inc/elementor/widgets/archive-course/archive-course-new.php:693
+#: inc/elementor/widgets/archive-course/archive-course.php:274
+#: inc/elementor/widgets/archive-course/archive-course.php:645
 #: inc/elementor/widgets/global/back-to-top.php:223
 #: inc/elementor/widgets/global/back-to-top.php:265
 #: inc/elementor/widgets/global/blog-base.php:1111
@@ -1412,6 +1449,8 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:1063
 #: inc/elementor/widgets/global/product-base.php:1094
 #: inc/elementor/widgets/global/product-base.php:1125
+#: inc/elementor/widgets/global/progress-tracker.php:113
+#: inc/elementor/widgets/global/progress-tracker.php:181
 #: inc/elementor/widgets/global/search-form.php:363
 #: inc/elementor/widgets/global/search-form.php:392
 #: inc/elementor/widgets/global/search-form.php:440
@@ -1425,13 +1464,13 @@ msgstr ""
 #: inc/elementor/widgets/global/social-share.php:811
 #: inc/elementor/widgets/global/social.php:213
 #: inc/elementor/widgets/global/social.php:263
-#: inc/elementor/widgets/global/team.php:723
-#: inc/elementor/widgets/global/team.php:742
-#: inc/elementor/widgets/global/team.php:790
-#: inc/elementor/widgets/global/team.php:947
-#: inc/elementor/widgets/global/team.php:1072
-#: inc/elementor/widgets/global/team.php:1181
-#: inc/elementor/widgets/global/team.php:1205
+#: inc/elementor/widgets/global/team.php:745
+#: inc/elementor/widgets/global/team.php:764
+#: inc/elementor/widgets/global/team.php:812
+#: inc/elementor/widgets/global/team.php:969
+#: inc/elementor/widgets/global/team.php:1094
+#: inc/elementor/widgets/global/team.php:1203
+#: inc/elementor/widgets/global/team.php:1227
 #: inc/elementor/widgets/global/testimonial.php:846
 #: inc/elementor/widgets/global/testimonial.php:874
 #: inc/elementor/widgets/global/testimonial.php:962
@@ -1460,9 +1499,9 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-category.php:106
 #: inc/elementor/widgets/single-course/course-category.php:147
 #: inc/elementor/widgets/single-course/course-description.php:72
-#: inc/elementor/widgets/single-course/course-extra.php:220
-#: inc/elementor/widgets/single-course/course-extra.php:306
-#: inc/elementor/widgets/single-course/course-extra.php:368
+#: inc/elementor/widgets/single-course/course-extra.php:233
+#: inc/elementor/widgets/single-course/course-extra.php:319
+#: inc/elementor/widgets/single-course/course-extra.php:381
 #: inc/elementor/widgets/single-course/course-featured-review.php:76
 #: inc/elementor/widgets/single-course/course-graduation.php:76
 #: inc/elementor/widgets/single-course/course-graduation.php:104
@@ -1475,6 +1514,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-offer-end.php:187
 #: inc/elementor/widgets/single-course/course-price.php:72
 #: inc/elementor/widgets/single-course/course-price.php:100
+#: inc/elementor/widgets/single-course/course-price.php:128
 #: inc/elementor/widgets/single-course/course-tags.php:97
 #: inc/elementor/widgets/single-course/course-tags.php:125
 #: inc/elementor/widgets/single-course/course-user-progress.php:93
@@ -1521,8 +1561,8 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:319
-#: inc/elementor/widgets/archive-course/archive-course.php:292
+#: inc/elementor/widgets/archive-course/archive-course-new.php:341
+#: inc/elementor/widgets/archive-course/archive-course.php:293
 #: inc/elementor/widgets/global/search-form.php:135
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:85
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:526
@@ -1530,8 +1570,8 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:364
-#: inc/elementor/widgets/archive-course/archive-course.php:337
+#: inc/elementor/widgets/archive-course/archive-course-new.php:386
+#: inc/elementor/widgets/archive-course/archive-course.php:338
 #: inc/elementor/widgets/global/button.php:468
 #: inc/elementor/widgets/global/button.php:533
 #: inc/elementor/widgets/global/minicart.php:438
@@ -1554,15 +1594,15 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:375
-#: inc/elementor/widgets/archive-course/archive-course.php:348
+#: inc/elementor/widgets/archive-course/archive-course-new.php:397
+#: inc/elementor/widgets/archive-course/archive-course.php:349
 msgid "Input Typography"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:386
-#: inc/elementor/widgets/archive-course/archive-course-new.php:529
-#: inc/elementor/widgets/archive-course/archive-course.php:359
-#: inc/elementor/widgets/archive-course/archive-course.php:502
+#: inc/elementor/widgets/archive-course/archive-course-new.php:408
+#: inc/elementor/widgets/archive-course/archive-course-new.php:551
+#: inc/elementor/widgets/archive-course/archive-course.php:360
+#: inc/elementor/widgets/archive-course/archive-course.php:503
 #: inc/elementor/widgets/global/accordion.php:294
 #: inc/elementor/widgets/global/back-to-top.php:216
 #: inc/elementor/widgets/global/blog-base.php:576
@@ -1602,9 +1642,9 @@ msgstr ""
 #: inc/elementor/widgets/global/social.php:206
 #: inc/elementor/widgets/global/tab.php:399
 #: inc/elementor/widgets/global/team.php:497
-#: inc/elementor/widgets/global/team.php:598
-#: inc/elementor/widgets/global/team.php:716
-#: inc/elementor/widgets/global/team.php:1173
+#: inc/elementor/widgets/global/team.php:620
+#: inc/elementor/widgets/global/team.php:738
+#: inc/elementor/widgets/global/team.php:1195
 #: inc/elementor/widgets/global/testimonial.php:839
 #: inc/elementor/widgets/global/testimonial.php:1293
 #: inc/elementor/widgets/global/testimonial.php:1416
@@ -1619,9 +1659,9 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:195
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:398
 #: inc/elementor/widgets/single-course/course-image.php:210
-#: inc/elementor/widgets/single-course/course-tabs.php:263
-#: inc/elementor/widgets/single-course/course-tabs.php:774
-#: inc/elementor/widgets/single-course/course-tabs.php:1191
+#: inc/elementor/widgets/single-course/course-tabs.php:266
+#: inc/elementor/widgets/single-course/course-tabs.php:777
+#: inc/elementor/widgets/single-course/course-tabs.php:1194
 #: inc/elementor/widgets/single-course/course-title.php:136
 #: inc/elementor/widgets/single-post/post-image.php:222
 #: inc/elementor/widgets/single-post/post-info.php:522
@@ -1641,29 +1681,29 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:393
-#: inc/elementor/widgets/archive-course/archive-course-new.php:438
-#: inc/elementor/widgets/archive-course/archive-course.php:366
-#: inc/elementor/widgets/archive-course/archive-course.php:411
+#: inc/elementor/widgets/archive-course/archive-course-new.php:415
+#: inc/elementor/widgets/archive-course/archive-course-new.php:460
+#: inc/elementor/widgets/archive-course/archive-course.php:367
+#: inc/elementor/widgets/archive-course/archive-course.php:412
 msgid "Input Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:405
-#: inc/elementor/widgets/archive-course/archive-course-new.php:450
-#: inc/elementor/widgets/archive-course/archive-course.php:378
-#: inc/elementor/widgets/archive-course/archive-course.php:423
+#: inc/elementor/widgets/archive-course/archive-course-new.php:427
+#: inc/elementor/widgets/archive-course/archive-course-new.php:472
+#: inc/elementor/widgets/archive-course/archive-course.php:379
+#: inc/elementor/widgets/archive-course/archive-course.php:424
 msgid "Input Background Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:417
-#: inc/elementor/widgets/archive-course/archive-course-new.php:461
-#: inc/elementor/widgets/archive-course/archive-course.php:390
-#: inc/elementor/widgets/archive-course/archive-course.php:434
+#: inc/elementor/widgets/archive-course/archive-course-new.php:439
+#: inc/elementor/widgets/archive-course/archive-course-new.php:483
+#: inc/elementor/widgets/archive-course/archive-course.php:391
+#: inc/elementor/widgets/archive-course/archive-course.php:435
 msgid "Input Border Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:431
-#: inc/elementor/widgets/archive-course/archive-course.php:404
+#: inc/elementor/widgets/archive-course/archive-course-new.php:453
+#: inc/elementor/widgets/archive-course/archive-course.php:405
 #: inc/elementor/widgets/global/contact-form-7.php:258
 #: inc/elementor/widgets/global/login-form.php:605
 #: inc/elementor/widgets/global/search-form.php:386
@@ -1672,44 +1712,44 @@ msgstr ""
 msgid "Focus"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:477
-#: inc/elementor/widgets/archive-course/archive-course.php:450
+#: inc/elementor/widgets/archive-course/archive-course-new.php:499
+#: inc/elementor/widgets/archive-course/archive-course.php:451
 msgid "Input Border Size"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:489
-#: inc/elementor/widgets/archive-course/archive-course.php:462
+#: inc/elementor/widgets/archive-course/archive-course-new.php:511
+#: inc/elementor/widgets/archive-course/archive-course.php:463
 msgid "Input Border Radius"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:500
-#: inc/elementor/widgets/archive-course/archive-course.php:473
+#: inc/elementor/widgets/archive-course/archive-course-new.php:522
+#: inc/elementor/widgets/archive-course/archive-course.php:474
 msgid "Button Spacing"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:512
-#: inc/elementor/widgets/archive-course/archive-course.php:485
+#: inc/elementor/widgets/archive-course/archive-course-new.php:534
+#: inc/elementor/widgets/archive-course/archive-course.php:486
 msgid "Button Size"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:536
-#: inc/elementor/widgets/archive-course/archive-course-new.php:580
-#: inc/elementor/widgets/archive-course/archive-course.php:509
-#: inc/elementor/widgets/archive-course/archive-course.php:553
+#: inc/elementor/widgets/archive-course/archive-course-new.php:558
+#: inc/elementor/widgets/archive-course/archive-course-new.php:602
+#: inc/elementor/widgets/archive-course/archive-course.php:510
+#: inc/elementor/widgets/archive-course/archive-course.php:554
 msgid "Button Background Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:548
-#: inc/elementor/widgets/archive-course/archive-course-new.php:592
-#: inc/elementor/widgets/archive-course/archive-course.php:521
-#: inc/elementor/widgets/archive-course/archive-course.php:565
+#: inc/elementor/widgets/archive-course/archive-course-new.php:570
+#: inc/elementor/widgets/archive-course/archive-course-new.php:614
+#: inc/elementor/widgets/archive-course/archive-course.php:522
+#: inc/elementor/widgets/archive-course/archive-course.php:566
 msgid "Button Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:560
-#: inc/elementor/widgets/archive-course/archive-course-new.php:603
-#: inc/elementor/widgets/archive-course/archive-course.php:533
-#: inc/elementor/widgets/archive-course/archive-course.php:576
+#: inc/elementor/widgets/archive-course/archive-course-new.php:582
+#: inc/elementor/widgets/archive-course/archive-course-new.php:625
+#: inc/elementor/widgets/archive-course/archive-course.php:534
+#: inc/elementor/widgets/archive-course/archive-course.php:577
 #: inc/elementor/widgets/global/accordion.php:336
 #: inc/elementor/widgets/global/accordion.php:390
 #: inc/elementor/widgets/global/blog-base.php:457
@@ -1748,7 +1788,7 @@ msgstr ""
 #: inc/elementor/widgets/global/social-share.php:354
 #: inc/elementor/widgets/global/social-share.php:409
 #: inc/elementor/widgets/global/tab.php:491
-#: inc/elementor/widgets/global/team.php:883
+#: inc/elementor/widgets/global/team.php:905
 #: inc/elementor/widgets/global/video.php:333
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:190
 #: inc/elementor/widgets/single-course-item/course-item-data.php:244
@@ -1758,10 +1798,10 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-data.php:567
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:227
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:269
-#: inc/elementor/widgets/single-course/course-extra.php:187
-#: inc/elementor/widgets/single-course/course-tabs.php:628
-#: inc/elementor/widgets/single-course/course-tabs.php:812
-#: inc/elementor/widgets/single-course/course-tabs.php:863
+#: inc/elementor/widgets/single-course/course-extra.php:200
+#: inc/elementor/widgets/single-course/course-tabs.php:631
+#: inc/elementor/widgets/single-course/course-tabs.php:815
+#: inc/elementor/widgets/single-course/course-tabs.php:866
 #: inc/elementor/widgets/single-post/post-info.php:551
 #: inc/elementor/widgets/single-post/post-info.php:593
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:145
@@ -1781,8 +1821,8 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:573
-#: inc/elementor/widgets/archive-course/archive-course.php:546
+#: inc/elementor/widgets/archive-course/archive-course-new.php:595
+#: inc/elementor/widgets/archive-course/archive-course.php:547
 #: inc/elementor/widgets/global/back-to-top.php:258
 #: inc/elementor/widgets/global/blog-base.php:615
 #: inc/elementor/widgets/global/blog-base.php:1509
@@ -1814,10 +1854,10 @@ msgstr ""
 #: inc/elementor/widgets/global/social-share.php:369
 #: inc/elementor/widgets/global/social-share.php:805
 #: inc/elementor/widgets/global/social.php:256
-#: inc/elementor/widgets/global/team.php:524
-#: inc/elementor/widgets/global/team.php:617
-#: inc/elementor/widgets/global/team.php:735
-#: inc/elementor/widgets/global/team.php:1197
+#: inc/elementor/widgets/global/team.php:535
+#: inc/elementor/widgets/global/team.php:639
+#: inc/elementor/widgets/global/team.php:757
+#: inc/elementor/widgets/global/team.php:1219
 #: inc/elementor/widgets/global/testimonial.php:867
 #: inc/elementor/widgets/global/testimonial.php:1322
 #: inc/elementor/widgets/global/testimonial.php:1437
@@ -1831,7 +1871,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:364
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:432
 #: inc/elementor/widgets/single-course/course-image.php:245
-#: inc/elementor/widgets/single-course/course-tabs.php:1232
+#: inc/elementor/widgets/single-course/course-tabs.php:1235
 #: inc/elementor/widgets/single-post/post-image.php:257
 #: inc/elementor/widgets/single-post/post-info.php:564
 #: inc/elementor/widgets/single-post/post-navigation.php:261
@@ -1846,23 +1886,23 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:618
-#: inc/elementor/widgets/archive-course/archive-course.php:591
+#: inc/elementor/widgets/archive-course/archive-course-new.php:640
+#: inc/elementor/widgets/archive-course/archive-course.php:592
 msgid "Button Border Size"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:630
-#: inc/elementor/widgets/archive-course/archive-course.php:603
+#: inc/elementor/widgets/archive-course/archive-course-new.php:652
+#: inc/elementor/widgets/archive-course/archive-course.php:604
 msgid "Button Border Radius"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:641
-#: inc/elementor/widgets/archive-course/archive-course.php:614
+#: inc/elementor/widgets/archive-course/archive-course-new.php:663
+#: inc/elementor/widgets/archive-course/archive-course.php:615
 msgid "Orderby"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:650
-#: inc/elementor/widgets/archive-course/archive-course.php:623
+#: inc/elementor/widgets/archive-course/archive-course-new.php:672
+#: inc/elementor/widgets/archive-course/archive-course.php:624
 #: inc/elementor/widgets/global/archive-description.php:86
 #: inc/elementor/widgets/global/back-to-top.php:112
 #: inc/elementor/widgets/global/button.php:156
@@ -1882,6 +1922,7 @@ msgstr ""
 #: inc/elementor/widgets/global/nav-menu.php:165
 #: inc/elementor/widgets/global/nav-menu.php:307
 #: inc/elementor/widgets/global/page-title.php:108
+#: inc/elementor/widgets/global/progress-tracker.php:192
 #: inc/elementor/widgets/global/social-share.php:275
 #: inc/elementor/widgets/global/social-share.php:503
 #: inc/elementor/widgets/global/social-share.php:654
@@ -1890,10 +1931,10 @@ msgstr ""
 #: inc/elementor/widgets/global/social.php:466
 #: inc/elementor/widgets/global/video.php:285
 #: inc/elementor/widgets/loop-item/loop-product-stock.php:81
-#: inc/elementor/widgets/single-course/course-tabs.php:361
-#: inc/elementor/widgets/single-course/course-tabs.php:463
-#: inc/elementor/widgets/single-course/course-tabs.php:962
-#: inc/elementor/widgets/single-course/course-tabs.php:1078
+#: inc/elementor/widgets/single-course/course-tabs.php:364
+#: inc/elementor/widgets/single-course/course-tabs.php:466
+#: inc/elementor/widgets/single-course/course-tabs.php:965
+#: inc/elementor/widgets/single-course/course-tabs.php:1081
 #: inc/elementor/widgets/single-product/product-additional-information.php:76
 #: inc/elementor/widgets/single-product/product-additional-information.php:119
 #: inc/elementor/widgets/single-product/product-additional-information.php:167
@@ -1902,8 +1943,8 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:659
-#: inc/elementor/widgets/archive-course/archive-course.php:632
+#: inc/elementor/widgets/archive-course/archive-course-new.php:681
+#: inc/elementor/widgets/archive-course/archive-course.php:633
 #: inc/elementor/widgets/global/accordion.php:298
 #: inc/elementor/widgets/global/accordion.php:352
 #: inc/elementor/widgets/global/accordion.php:422
@@ -1996,14 +2037,14 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:416
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:451
 #: inc/elementor/widgets/single-course/course-instructor.php:512
-#: inc/elementor/widgets/single-course/course-tabs.php:281
-#: inc/elementor/widgets/single-course/course-tabs.php:323
-#: inc/elementor/widgets/single-course/course-tabs.php:451
-#: inc/elementor/widgets/single-course/course-tabs.php:494
-#: inc/elementor/widgets/single-course/course-tabs.php:568
-#: inc/elementor/widgets/single-course/course-tabs.php:778
-#: inc/elementor/widgets/single-course/course-tabs.php:829
-#: inc/elementor/widgets/single-course/course-tabs.php:894
+#: inc/elementor/widgets/single-course/course-tabs.php:284
+#: inc/elementor/widgets/single-course/course-tabs.php:326
+#: inc/elementor/widgets/single-course/course-tabs.php:454
+#: inc/elementor/widgets/single-course/course-tabs.php:497
+#: inc/elementor/widgets/single-course/course-tabs.php:571
+#: inc/elementor/widgets/single-course/course-tabs.php:781
+#: inc/elementor/widgets/single-course/course-tabs.php:832
+#: inc/elementor/widgets/single-course/course-tabs.php:897
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:134
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:176
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:327
@@ -2027,13 +2068,13 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:690
-#: inc/elementor/widgets/archive-course/archive-course.php:663
+#: inc/elementor/widgets/archive-course/archive-course-new.php:712
+#: inc/elementor/widgets/archive-course/archive-course.php:664
 msgid "Orderby Radius"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:701
-#: inc/elementor/widgets/archive-course/archive-course.php:674
+#: inc/elementor/widgets/archive-course/archive-course-new.php:723
+#: inc/elementor/widgets/archive-course/archive-course.php:675
 #: inc/elementor/widgets/global/accordion.php:251
 #: inc/elementor/widgets/global/accordion.php:452
 #: inc/elementor/widgets/global/blog-base.php:553
@@ -2083,9 +2124,9 @@ msgstr ""
 #: inc/elementor/widgets/global/tab.php:366
 #: inc/elementor/widgets/global/tab.php:553
 #: inc/elementor/widgets/global/team.php:455
-#: inc/elementor/widgets/global/team.php:583
-#: inc/elementor/widgets/global/team.php:998
-#: inc/elementor/widgets/global/team.php:1224
+#: inc/elementor/widgets/global/team.php:605
+#: inc/elementor/widgets/global/team.php:1020
+#: inc/elementor/widgets/global/team.php:1246
 #: inc/elementor/widgets/global/testimonial.php:459
 #: inc/elementor/widgets/global/testimonial.php:540
 #: inc/elementor/widgets/global/testimonial.php:762
@@ -2105,18 +2146,18 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-progress.php:277
 #: inc/elementor/widgets/single-course-item/course-item-progress.php:318
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:297
-#: inc/elementor/widgets/single-course/course-extra.php:260
-#: inc/elementor/widgets/single-course/course-extra.php:395
+#: inc/elementor/widgets/single-course/course-extra.php:273
+#: inc/elementor/widgets/single-course/course-extra.php:408
 #: inc/elementor/widgets/single-course/course-instructor.php:559
-#: inc/elementor/widgets/single-course/course-tabs.php:245
-#: inc/elementor/widgets/single-course/course-tabs.php:421
-#: inc/elementor/widgets/single-course/course-tabs.php:556
-#: inc/elementor/widgets/single-course/course-tabs.php:614
-#: inc/elementor/widgets/single-course/course-tabs.php:742
-#: inc/elementor/widgets/single-course/course-tabs.php:918
-#: inc/elementor/widgets/single-course/course-tabs.php:990
-#: inc/elementor/widgets/single-course/course-tabs.php:1039
-#: inc/elementor/widgets/single-course/course-tabs.php:1096
+#: inc/elementor/widgets/single-course/course-tabs.php:248
+#: inc/elementor/widgets/single-course/course-tabs.php:424
+#: inc/elementor/widgets/single-course/course-tabs.php:559
+#: inc/elementor/widgets/single-course/course-tabs.php:617
+#: inc/elementor/widgets/single-course/course-tabs.php:745
+#: inc/elementor/widgets/single-course/course-tabs.php:921
+#: inc/elementor/widgets/single-course/course-tabs.php:993
+#: inc/elementor/widgets/single-course/course-tabs.php:1042
+#: inc/elementor/widgets/single-course/course-tabs.php:1099
 #: inc/elementor/widgets/single-post/post-info.php:609
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:102
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:295
@@ -2127,13 +2168,13 @@ msgstr ""
 msgid "Padding"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:825
-#: inc/elementor/widgets/archive-course/archive-course.php:761
+#: inc/elementor/widgets/archive-course/archive-course-new.php:847
+#: inc/elementor/widgets/archive-course/archive-course.php:762
 msgid "No courses found"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:1076
-#: inc/elementor/widgets/archive-course/archive-course.php:948
+#: inc/elementor/widgets/archive-course/archive-course-new.php:1098
+#: inc/elementor/widgets/archive-course/archive-course.php:949
 #: inc/elementor/widgets/archive-post/archive-post.php:416
 #: inc/elementor/widgets/global/product-base.php:942
 #: inc/utilities/group-control-trait.php:286
@@ -2144,36 +2185,36 @@ msgstr ""
 msgid "Pagination"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:816
+#: inc/elementor/widgets/archive-course/archive-course.php:817
 #: inc/elementor/widgets/archive-post/archive-post.php:306
 msgid "Showing only one result"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:819
+#: inc/elementor/widgets/archive-course/archive-course.php:820
 msgid "Showing last course of %s results"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:823
+#: inc/elementor/widgets/archive-course/archive-course.php:824
 msgid "Showing %1$s of %2$s results"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:837
+#: inc/elementor/widgets/archive-course/archive-course.php:838
 msgid "Default sorting"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:838
+#: inc/elementor/widgets/archive-course/archive-course.php:839
 msgid "Sort by latest"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:839
+#: inc/elementor/widgets/archive-course/archive-course.php:840
 msgid "Sort by title"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:851
+#: inc/elementor/widgets/archive-course/archive-course.php:852
 msgid "Course order"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:923
+#: inc/elementor/widgets/archive-course/archive-course.php:924
 #: inc/elementor/widgets/archive-post/archive-post.php:391
 msgid "Page"
 msgstr ""
@@ -2190,8 +2231,9 @@ msgstr ""
 #: inc/elementor/widgets/global/tab.php:48
 #: inc/elementor/widgets/global/team.php:331
 #: inc/elementor/widgets/global/testimonial.php:433
-#: inc/elementor/widgets/single-course/course-tabs.php:52
-#: inc/elementor/widgets/single-course/course-tabs.php:145
+#: inc/elementor/widgets/single-course/course-extra.php:46
+#: inc/elementor/widgets/single-course/course-tabs.php:55
+#: inc/elementor/widgets/single-course/course-tabs.php:148
 #: inc/elementor/widgets/single-post/post-related.php:195
 #: inc/elementor/widgets/single-product/product-related.php:173
 #: inc/elementor/widgets/single-product/product-tabs.php:47
@@ -2259,7 +2301,8 @@ msgid "Paginate"
 msgstr ""
 
 #: inc/elementor/widgets/global/accordion.php:16
-#: inc/elementor/widgets/single-course/course-tabs.php:56
+#: inc/elementor/widgets/single-course/course-extra.php:49
+#: inc/elementor/widgets/single-course/course-tabs.php:59
 msgid "Accordion"
 msgstr ""
 
@@ -2294,16 +2337,16 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-category.php:39
 #: inc/elementor/widgets/single-course/course-category.php:138
 #: inc/elementor/widgets/single-course/course-extra.php:39
-#: inc/elementor/widgets/single-course/course-extra.php:71
-#: inc/elementor/widgets/single-course/course-extra.php:349
+#: inc/elementor/widgets/single-course/course-extra.php:84
+#: inc/elementor/widgets/single-course/course-extra.php:362
 #: inc/elementor/widgets/single-course/course-featured-review.php:40
 #: inc/elementor/widgets/single-course/course-instructor.php:37
 #: inc/elementor/widgets/single-course/course-meta.php:63
 #: inc/elementor/widgets/single-course/course-offer-end.php:35
 #: inc/elementor/widgets/single-course/course-rating.php:39
-#: inc/elementor/widgets/single-course/course-tabs.php:37
-#: inc/elementor/widgets/single-course/course-tabs.php:373
-#: inc/elementor/widgets/single-course/course-tabs.php:879
+#: inc/elementor/widgets/single-course/course-tabs.php:40
+#: inc/elementor/widgets/single-course/course-tabs.php:376
+#: inc/elementor/widgets/single-course/course-tabs.php:882
 #: inc/elementor/widgets/single-course/course-tags.php:39
 #: inc/elementor/widgets/single-course/course-tags.php:116
 #: inc/elementor/widgets/single-course/course-title.php:39
@@ -2344,13 +2387,13 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:35
 #: inc/elementor/widgets/global/product-base.php:330
 #: inc/elementor/widgets/single-course-item/back-to-course.php:91
-#: inc/elementor/widgets/single-course/course-extra.php:63
-#: inc/elementor/widgets/single-course/course-extra.php:201
+#: inc/elementor/widgets/single-course/course-extra.php:76
+#: inc/elementor/widgets/single-course/course-extra.php:214
 #: inc/elementor/widgets/single-course/course-instructor.php:43
 #: inc/elementor/widgets/single-course/course-instructor.php:265
 #: inc/elementor/widgets/single-course/course-rating.php:46
 #: inc/elementor/widgets/single-course/course-rating.php:148
-#: inc/elementor/widgets/single-course/course-tabs.php:703
+#: inc/elementor/widgets/single-course/course-tabs.php:706
 #: inc/elementor/widgets/single-course/course-title.php:98
 #: inc/elementor/widgets/single-post/post-related.php:145
 #: inc/elementor/widgets/single-post/post-title.php:98
@@ -2402,8 +2445,8 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:95
 #: inc/elementor/widgets/single-course/course-buttons.php:163
 #: inc/elementor/widgets/single-course/course-category.php:73
-#: inc/elementor/widgets/single-course/course-extra.php:99
-#: inc/elementor/widgets/single-course/course-extra.php:274
+#: inc/elementor/widgets/single-course/course-extra.php:112
+#: inc/elementor/widgets/single-course/course-extra.php:287
 #: inc/elementor/widgets/single-course/course-featured-review.php:47
 #: inc/elementor/widgets/single-course/course-featured-review.php:68
 #: inc/elementor/widgets/single-course/course-instructor.php:194
@@ -2411,7 +2454,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-meta.php:367
 #: inc/elementor/widgets/single-course/course-offer-end.php:51
 #: inc/elementor/widgets/single-course/course-offer-end.php:116
-#: inc/elementor/widgets/single-course/course-tabs.php:80
+#: inc/elementor/widgets/single-course/course-tabs.php:83
 #: inc/elementor/widgets/single-post/post-info.php:415
 #: inc/utilities/group-control-trait.php:1226
 #: src/components/MegaMenuModal.js:176
@@ -2419,13 +2462,13 @@ msgid "Icon"
 msgstr ""
 
 #: inc/elementor/widgets/global/accordion.php:111
-#: inc/elementor/widgets/single-course/course-extra.php:126
+#: inc/elementor/widgets/single-course/course-extra.php:139
 msgid "Active Icon"
 msgstr ""
 
 #: inc/elementor/widgets/global/accordion.php:158
 #: inc/elementor/widgets/single-course-item/course-item-progress.php:49
-#: inc/elementor/widgets/single-course/course-extra.php:161
+#: inc/elementor/widgets/single-course/course-extra.php:174
 msgid "Item"
 msgstr ""
 
@@ -2436,8 +2479,8 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-rating.php:127
 #: inc/elementor/widgets/single-course/course-rating.php:230
 #: inc/elementor/widgets/single-course/course-rating.php:279
-#: inc/elementor/widgets/single-course/course-tabs.php:663
-#: inc/elementor/widgets/single-course/course-tabs.php:1115
+#: inc/elementor/widgets/single-course/course-tabs.php:666
+#: inc/elementor/widgets/single-course/course-tabs.php:1118
 msgid "Space"
 msgstr ""
 
@@ -2459,16 +2502,16 @@ msgstr ""
 #: inc/elementor/widgets/global/social.php:288
 #: inc/elementor/widgets/global/tab.php:442
 #: inc/elementor/widgets/global/tab.php:576
-#: inc/elementor/widgets/global/team.php:505
-#: inc/elementor/widgets/global/team.php:532
+#: inc/elementor/widgets/global/team.php:516
+#: inc/elementor/widgets/global/team.php:554
 #: inc/elementor/widgets/global/testimonial.php:1179
 #: inc/elementor/widgets/global/testimonial.php:1217
-#: inc/elementor/widgets/single-course/course-tabs.php:293
-#: inc/elementor/widgets/single-course/course-tabs.php:335
-#: inc/elementor/widgets/single-course/course-tabs.php:385
-#: inc/elementor/widgets/single-course/course-tabs.php:696
-#: inc/elementor/widgets/single-course/course-tabs.php:765
-#: inc/elementor/widgets/single-course/course-tabs.php:1179
+#: inc/elementor/widgets/single-course/course-tabs.php:296
+#: inc/elementor/widgets/single-course/course-tabs.php:338
+#: inc/elementor/widgets/single-course/course-tabs.php:388
+#: inc/elementor/widgets/single-course/course-tabs.php:699
+#: inc/elementor/widgets/single-course/course-tabs.php:768
+#: inc/elementor/widgets/single-course/course-tabs.php:1182
 #: inc/utilities/group-control-trait.php:987
 #: inc/utilities/group-control-trait.php:1036
 msgid "Border"
@@ -2486,8 +2529,8 @@ msgstr ""
 #: inc/elementor/widgets/global/social-share.php:224
 #: inc/elementor/widgets/global/social.php:427
 #: inc/elementor/widgets/global/tab.php:296
-#: inc/elementor/widgets/global/team.php:1084
-#: inc/elementor/widgets/global/team.php:1292
+#: inc/elementor/widgets/global/team.php:1106
+#: inc/elementor/widgets/global/team.php:1314
 #: inc/elementor/widgets/global/testimonial.php:1376
 #: inc/elementor/widgets/loop-item/loop-product-button.php:136
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:431
@@ -2495,8 +2538,8 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-featured-review.php:122
 #: inc/elementor/widgets/single-course/course-meta.php:386
 #: inc/elementor/widgets/single-course/course-offer-end.php:136
-#: inc/elementor/widgets/single-course/course-tabs.php:719
-#: inc/elementor/widgets/single-course/course-tabs.php:1132
+#: inc/elementor/widgets/single-course/course-tabs.php:722
+#: inc/elementor/widgets/single-course/course-tabs.php:1135
 #: inc/elementor/widgets/single-post/post-navigation.php:585
 msgid "Icon Size"
 msgstr ""
@@ -2522,12 +2565,13 @@ msgstr ""
 #: inc/elementor/widgets/global/nav-menu.php:315
 #: inc/elementor/widgets/global/nav-menu.php:470
 #: inc/elementor/widgets/global/nav-menu.php:606
+#: inc/elementor/widgets/global/progress-tracker.php:201
 #: inc/elementor/widgets/global/search-form.php:514
 #: inc/elementor/widgets/global/social.php:409
 #: inc/elementor/widgets/global/tab.php:377
 #: inc/elementor/widgets/global/tab.php:564
 #: inc/elementor/widgets/global/team.php:469
-#: inc/elementor/widgets/global/team.php:1238
+#: inc/elementor/widgets/global/team.php:1260
 #: inc/elementor/widgets/global/testimonial.php:528
 #: inc/elementor/widgets/global/testimonial.php:897
 #: inc/elementor/widgets/global/testimonial.php:981
@@ -2539,10 +2583,10 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-featured-review.php:265
 #: inc/elementor/widgets/single-course/course-instructor.php:295
 #: inc/elementor/widgets/single-course/course-rating.php:178
-#: inc/elementor/widgets/single-course/course-tabs.php:233
-#: inc/elementor/widgets/single-course/course-tabs.php:753
-#: inc/elementor/widgets/single-course/course-tabs.php:929
-#: inc/elementor/widgets/single-course/course-tabs.php:1050
+#: inc/elementor/widgets/single-course/course-tabs.php:236
+#: inc/elementor/widgets/single-course/course-tabs.php:756
+#: inc/elementor/widgets/single-course/course-tabs.php:932
+#: inc/elementor/widgets/single-course/course-tabs.php:1053
 #: inc/utilities/group-control-trait.php:1344
 #: inc/utilities/group-control-trait.php:1708
 msgid "Margin"
@@ -2607,15 +2651,15 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-rating.php:159
 #: inc/elementor/widgets/single-course/course-rating.php:203
 #: inc/elementor/widgets/single-course/course-rating.php:260
-#: inc/elementor/widgets/single-course/course-tabs.php:269
-#: inc/elementor/widgets/single-course/course-tabs.php:311
-#: inc/elementor/widgets/single-course/course-tabs.php:439
-#: inc/elementor/widgets/single-course/course-tabs.php:638
-#: inc/elementor/widgets/single-course/course-tabs.php:790
-#: inc/elementor/widgets/single-course/course-tabs.php:841
-#: inc/elementor/widgets/single-course/course-tabs.php:906
-#: inc/elementor/widgets/single-course/course-tabs.php:970
-#: inc/elementor/widgets/single-course/course-tabs.php:1086
+#: inc/elementor/widgets/single-course/course-tabs.php:272
+#: inc/elementor/widgets/single-course/course-tabs.php:314
+#: inc/elementor/widgets/single-course/course-tabs.php:442
+#: inc/elementor/widgets/single-course/course-tabs.php:641
+#: inc/elementor/widgets/single-course/course-tabs.php:793
+#: inc/elementor/widgets/single-course/course-tabs.php:844
+#: inc/elementor/widgets/single-course/course-tabs.php:909
+#: inc/elementor/widgets/single-course/course-tabs.php:973
+#: inc/elementor/widgets/single-course/course-tabs.php:1089
 #: inc/elementor/widgets/single-course/course-title.php:106
 #: inc/elementor/widgets/single-post/post-content.php:76
 #: inc/elementor/widgets/single-post/post-info.php:499
@@ -2661,10 +2705,10 @@ msgstr ""
 #: inc/elementor/widgets/loop-item/loop-product-button.php:154
 #: inc/elementor/widgets/single-course/course-meta.php:374
 #: inc/elementor/widgets/single-course/course-offer-end.php:124
-#: inc/elementor/widgets/single-course/course-tabs.php:801
-#: inc/elementor/widgets/single-course/course-tabs.php:852
-#: inc/elementor/widgets/single-course/course-tabs.php:1197
-#: inc/elementor/widgets/single-course/course-tabs.php:1238
+#: inc/elementor/widgets/single-course/course-tabs.php:804
+#: inc/elementor/widgets/single-course/course-tabs.php:855
+#: inc/elementor/widgets/single-course/course-tabs.php:1200
+#: inc/elementor/widgets/single-course/course-tabs.php:1241
 msgid "Icon Color"
 msgstr ""
 
@@ -2675,8 +2719,8 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:1118
 #: inc/elementor/widgets/global/tab.php:449
 #: inc/elementor/widgets/global/testimonial.php:1198
-#: inc/elementor/widgets/single-course/course-tabs.php:305
-#: inc/elementor/widgets/single-course/course-tabs.php:825
+#: inc/elementor/widgets/single-course/course-tabs.php:308
+#: inc/elementor/widgets/single-course/course-tabs.php:828
 #: inc/elementor/widgets/single-product/product-tabs.php:305
 #: inc/utilities/group-control-trait.php:567
 msgid "Active"
@@ -2712,14 +2756,15 @@ msgstr ""
 #: inc/elementor/widgets/global/page-title.php:80
 #: inc/elementor/widgets/global/product-base.php:299
 #: inc/elementor/widgets/global/product-base.php:961
+#: inc/elementor/widgets/global/progress-tracker.php:164
 #: inc/elementor/widgets/global/site-logo.php:96
 #: inc/elementor/widgets/global/social-share.php:143
 #: inc/elementor/widgets/global/social.php:146
 #: inc/elementor/widgets/global/tab.php:100
 #: inc/elementor/widgets/global/tab.php:130
 #: inc/elementor/widgets/global/team.php:434
-#: inc/elementor/widgets/global/team.php:977
-#: inc/elementor/widgets/global/team.php:1148
+#: inc/elementor/widgets/global/team.php:999
+#: inc/elementor/widgets/global/team.php:1170
 #: inc/elementor/widgets/global/testimonial.php:509
 #: inc/elementor/widgets/loop-item/loop-item-excerpt.php:75
 #: inc/elementor/widgets/loop-item/loop-product-countdown.php:136
@@ -2733,7 +2778,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-instructor.php:153
 #: inc/elementor/widgets/single-course/course-meta.php:320
 #: inc/elementor/widgets/single-course/course-price.php:55
-#: inc/elementor/widgets/single-course/course-tabs.php:198
+#: inc/elementor/widgets/single-course/course-tabs.php:201
 #: inc/elementor/widgets/single-course/course-title.php:74
 #: inc/elementor/widgets/single-post/author-box.php:162
 #: inc/elementor/widgets/single-post/post-content.php:54
@@ -2814,13 +2859,15 @@ msgstr ""
 #: inc/elementor/widgets/global/social-share.php:671
 #: inc/elementor/widgets/global/social-share.php:792
 #: inc/elementor/widgets/global/social-share.php:822
+#: inc/elementor/widgets/global/team.php:504
+#: inc/elementor/widgets/global/team.php:542
 #: inc/elementor/widgets/global/testimonial.php:480
 #: inc/elementor/widgets/global/testimonial.php:793
 #: inc/elementor/widgets/global/testimonial.php:1206
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:351
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:382
-#: inc/elementor/widgets/single-course/course-extra.php:209
-#: inc/elementor/widgets/single-course/course-extra.php:357
+#: inc/elementor/widgets/single-course/course-extra.php:222
+#: inc/elementor/widgets/single-course/course-extra.php:370
 #: inc/elementor/widgets/single-course/course-featured-review.php:87
 #: inc/elementor/widgets/single-post/reading-time-post.php:180
 #: inc/utilities/group-control-trait.php:1799
@@ -2836,8 +2883,8 @@ msgstr ""
 #: inc/elementor/widgets/global/contact-form-7.php:529
 #: inc/elementor/widgets/global/minicart.php:726
 #: inc/elementor/widgets/global/nav-menu.php:560
-#: inc/elementor/widgets/global/team.php:514
-#: inc/elementor/widgets/global/team.php:541
+#: inc/elementor/widgets/global/team.php:525
+#: inc/elementor/widgets/global/team.php:563
 #: inc/elementor/widgets/global/testimonial.php:1188
 #: inc/elementor/widgets/global/testimonial.php:1226
 #: inc/utilities/group-control-trait.php:554
@@ -2885,8 +2932,8 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:564
 #: inc/elementor/widgets/global/product-base.php:175
 #: inc/elementor/widgets/global/tab.php:66
-#: inc/elementor/widgets/global/team.php:1030
-#: inc/elementor/widgets/global/team.php:1256
+#: inc/elementor/widgets/global/team.php:1052
+#: inc/elementor/widgets/global/team.php:1278
 #: inc/elementor/widgets/global/testimonial.php:123
 #: inc/elementor/widgets/global/testimonial.php:1056
 #: inc/elementor/widgets/global/testimonial.php:1120
@@ -2999,7 +3046,7 @@ msgstr ""
 #: inc/elementor/widgets/global/tab.php:96
 #: inc/elementor/widgets/global/tab.php:126
 #: inc/elementor/widgets/single-course/course-buttons.php:90
-#: inc/elementor/widgets/single-course/course-extra.php:289
+#: inc/elementor/widgets/single-course/course-extra.php:302
 #: inc/elementor/widgets/single-course/course-meta.php:316
 #: inc/elementor/widgets/single-post/post-info.php:392
 msgid "Start"
@@ -3045,8 +3092,8 @@ msgstr ""
 #: inc/elementor/widgets/global/testimonial.php:385
 #: inc/elementor/widgets/global/testimonial.php:418
 #: inc/elementor/widgets/global/testimonial.php:577
-#: inc/elementor/widgets/single-course/course-meta.php:594
-#: inc/elementor/widgets/single-course/course-meta.php:611
+#: inc/elementor/widgets/single-course/course-meta.php:603
+#: inc/elementor/widgets/single-course/course-meta.php:621
 #: inc/utilities/group-control-trait.php:180
 #: inc/utilities/group-control-trait.php:209
 #: inc/utilities/group-control-trait.php:226
@@ -3077,7 +3124,7 @@ msgstr ""
 #: inc/elementor/widgets/global/testimonial.php:386
 #: inc/elementor/widgets/global/testimonial.php:419
 #: inc/elementor/widgets/global/testimonial.php:578
-#: inc/elementor/widgets/single-course/course-meta.php:612
+#: inc/elementor/widgets/single-course/course-meta.php:622
 #: inc/utilities/group-control-trait.php:181
 #: inc/utilities/group-control-trait.php:210
 #: inc/utilities/group-control-trait.php:227
@@ -3136,15 +3183,15 @@ msgstr ""
 #: inc/elementor/widgets/global/site-logo.php:262
 #: inc/elementor/widgets/global/social.php:335
 #: inc/elementor/widgets/global/team.php:60
-#: inc/elementor/widgets/global/team.php:1012
-#: inc/elementor/widgets/global/team.php:1121
+#: inc/elementor/widgets/global/team.php:1034
+#: inc/elementor/widgets/global/team.php:1143
 #: inc/elementor/widgets/global/testimonial.php:59
 #: inc/elementor/widgets/global/testimonial.php:732
 #: inc/elementor/widgets/global/testimonial.php:816
 #: inc/elementor/widgets/global/testimonial.php:943
 #: inc/elementor/widgets/global/testimonial.php:1153
 #: inc/elementor/widgets/single-course/course-image.php:185
-#: inc/elementor/widgets/single-course/course-tabs.php:148
+#: inc/elementor/widgets/single-course/course-tabs.php:151
 #: inc/elementor/widgets/single-post/post-image.php:197
 #: inc/elementor/widgets/single-post/post-info.php:284
 #: inc/elementor/widgets/single-post/post-navigation.php:402
@@ -3159,10 +3206,10 @@ msgstr ""
 #: inc/elementor/widgets/global/course-base.php:274
 #: inc/elementor/widgets/global/heading.php:231
 #: inc/elementor/widgets/loop-item/loop-item-info.php:51
-#: inc/elementor/widgets/single-course/course-extra.php:55
+#: inc/elementor/widgets/single-course/course-extra.php:68
 #: inc/elementor/widgets/single-course/course-instructor.php:504
 #: inc/elementor/widgets/single-course/course-meta.php:54
-#: inc/elementor/widgets/single-course/course-tabs.php:149
+#: inc/elementor/widgets/single-course/course-tabs.php:152
 #: inc/elementor/widgets/single-course/course-user-time.php:100
 #: inc/elementor/widgets/single-post/author-box.php:96
 #: inc/elementor/widgets/single-post/post-info.php:57
@@ -3179,7 +3226,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:416
 #: inc/elementor/widgets/global/course-base.php:324
-#: inc/elementor/widgets/global/team.php:846
+#: inc/elementor/widgets/global/team.php:868
 msgid "Border Top Type"
 msgstr ""
 
@@ -3194,7 +3241,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:225
 #: inc/elementor/widgets/global/minicart.php:1399
 #: inc/elementor/widgets/global/minicart.php:1536
-#: inc/elementor/widgets/global/team.php:850
+#: inc/elementor/widgets/global/team.php:872
 #: inc/elementor/widgets/single-course-item/back-to-course.php:183
 #: inc/elementor/widgets/single-course-item/course-close-sidebar.php:106
 #: inc/elementor/widgets/single-course-item/course-item-data.php:184
@@ -3217,7 +3264,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:226
 #: inc/elementor/widgets/global/minicart.php:1400
 #: inc/elementor/widgets/global/minicart.php:1537
-#: inc/elementor/widgets/global/team.php:851
+#: inc/elementor/widgets/global/team.php:873
 #: inc/elementor/widgets/single-course-item/back-to-course.php:184
 #: inc/elementor/widgets/single-course-item/course-close-sidebar.php:107
 #: inc/elementor/widgets/single-course-item/course-item-data.php:185
@@ -3240,7 +3287,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:227
 #: inc/elementor/widgets/global/minicart.php:1401
 #: inc/elementor/widgets/global/minicart.php:1538
-#: inc/elementor/widgets/global/team.php:852
+#: inc/elementor/widgets/global/team.php:874
 #: inc/elementor/widgets/single-course-item/back-to-course.php:185
 #: inc/elementor/widgets/single-course-item/course-close-sidebar.php:108
 #: inc/elementor/widgets/single-course-item/course-item-data.php:186
@@ -3263,7 +3310,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:228
 #: inc/elementor/widgets/global/minicart.php:1402
 #: inc/elementor/widgets/global/minicart.php:1539
-#: inc/elementor/widgets/global/team.php:853
+#: inc/elementor/widgets/global/team.php:875
 #: inc/elementor/widgets/single-course-item/back-to-course.php:186
 #: inc/elementor/widgets/single-course-item/course-close-sidebar.php:109
 #: inc/elementor/widgets/single-course-item/course-item-data.php:187
@@ -3286,7 +3333,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:229
 #: inc/elementor/widgets/global/minicart.php:1403
 #: inc/elementor/widgets/global/minicart.php:1540
-#: inc/elementor/widgets/global/team.php:854
+#: inc/elementor/widgets/global/team.php:876
 #: inc/elementor/widgets/single-course-item/back-to-course.php:187
 #: inc/elementor/widgets/single-course-item/course-close-sidebar.php:110
 #: inc/elementor/widgets/single-course-item/course-item-data.php:188
@@ -3309,7 +3356,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:241
 #: inc/elementor/widgets/global/minicart.php:1415
 #: inc/elementor/widgets/global/minicart.php:1553
-#: inc/elementor/widgets/global/team.php:866
+#: inc/elementor/widgets/global/team.php:888
 #: inc/elementor/widgets/single-course-item/back-to-course.php:199
 #: inc/elementor/widgets/single-course-item/course-close-sidebar.php:122
 #: inc/elementor/widgets/single-course-item/course-item-data.php:199
@@ -3323,13 +3370,13 @@ msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:471
 #: inc/elementor/widgets/global/course-base.php:380
-#: inc/elementor/widgets/global/team.php:897
+#: inc/elementor/widgets/global/team.php:919
 msgid "Border Color Hover"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:485
 #: inc/elementor/widgets/global/course-base.php:394
-#: inc/elementor/widgets/global/team.php:911
+#: inc/elementor/widgets/global/team.php:933
 msgid "Padding Top"
 msgstr ""
 
@@ -3425,8 +3472,8 @@ msgstr ""
 #: inc/elementor/widgets/global/image-accordion.php:102
 #: inc/elementor/widgets/global/minicart.php:568
 #: inc/elementor/widgets/global/tab.php:79
-#: inc/elementor/widgets/global/team.php:1038
-#: inc/elementor/widgets/global/team.php:1264
+#: inc/elementor/widgets/global/team.php:1060
+#: inc/elementor/widgets/global/team.php:1286
 #: inc/elementor/widgets/global/testimonial.php:1060
 #: inc/elementor/widgets/global/testimonial.php:1124
 #: inc/utilities/group-control-trait.php:312
@@ -3592,7 +3639,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-meta.php:339
 #: inc/elementor/widgets/single-course/course-offer-end.php:42
 #: inc/elementor/widgets/single-course/course-offer-end.php:179
-#: inc/elementor/widgets/single-course/course-tabs.php:90
+#: inc/elementor/widgets/single-course/course-tabs.php:93
 #: inc/elementor/widgets/single-post/author-box.php:264
 #: inc/elementor/widgets/single-post/post-info.php:238
 #: inc/elementor/widgets/single-post/post-info.php:466
@@ -3669,6 +3716,7 @@ msgstr ""
 #: inc/elementor/widgets/global/categories.php:68
 #: inc/elementor/widgets/global/login-form.php:180
 #: inc/elementor/widgets/global/product-base.php:159
+#: inc/elementor/widgets/global/progress-tracker.php:73
 #: inc/elementor/widgets/global/social-share.php:190
 #: inc/elementor/widgets/global/social.php:479
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:48
@@ -3696,6 +3744,7 @@ msgstr ""
 #: inc/elementor/widgets/global/categories.php:69
 #: inc/elementor/widgets/global/login-form.php:179
 #: inc/elementor/widgets/global/product-base.php:158
+#: inc/elementor/widgets/global/progress-tracker.php:74
 #: inc/elementor/widgets/global/social-share.php:191
 #: inc/elementor/widgets/global/social.php:480
 #: inc/elementor/widgets/global/testimonial.php:399
@@ -3748,7 +3797,7 @@ msgstr ""
 #: inc/elementor/widgets/global/icon-box.php:103
 #: inc/elementor/widgets/global/tab.php:104
 #: inc/elementor/widgets/global/tab.php:134
-#: inc/elementor/widgets/single-course/course-extra.php:293
+#: inc/elementor/widgets/single-course/course-extra.php:306
 #: inc/elementor/widgets/single-course/course-meta.php:324
 #: inc/elementor/widgets/single-post/post-info.php:400
 msgid "End"
@@ -4027,7 +4076,7 @@ msgstr ""
 #: inc/elementor/widgets/global/header-info.php:121
 #: inc/elementor/widgets/global/search-form.php:242
 #: inc/elementor/widgets/global/social.php:331
-#: inc/elementor/widgets/global/team.php:1117
+#: inc/elementor/widgets/global/team.php:1139
 #: inc/elementor/widgets/global/testimonial.php:812
 #: inc/elementor/widgets/global/testimonial.php:939
 #: inc/elementor/widgets/loop-item/loop-product-button.php:56
@@ -4040,7 +4089,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:1319
 #: inc/elementor/widgets/global/search-form.php:246
 #: inc/elementor/widgets/global/social.php:339
-#: inc/elementor/widgets/global/team.php:1125
+#: inc/elementor/widgets/global/team.php:1147
 #: inc/elementor/widgets/global/testimonial.php:820
 #: inc/elementor/widgets/global/testimonial.php:947
 #: inc/elementor/widgets/single-course/course-meta.php:274
@@ -4201,7 +4250,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/heading.php:426
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:284
-#: inc/elementor/widgets/single-course/course-extra.php:169
+#: inc/elementor/widgets/single-course/course-extra.php:182
 msgid "Border Width"
 msgstr ""
 
@@ -4226,8 +4275,8 @@ msgid "Vertical Align"
 msgstr ""
 
 #: inc/elementor/widgets/global/icon-box.php:70
-#: inc/elementor/widgets/global/team.php:1034
-#: inc/elementor/widgets/global/team.php:1260
+#: inc/elementor/widgets/global/team.php:1056
+#: inc/elementor/widgets/global/team.php:1282
 #: inc/utilities/group-control-trait.php:828
 msgid "Middle"
 msgstr ""
@@ -4427,8 +4476,8 @@ msgstr ""
 
 #: inc/elementor/widgets/global/image-accordion.php:398
 #: inc/elementor/widgets/global/image-accordion.php:450
-#: inc/elementor/widgets/global/team.php:757
-#: inc/elementor/widgets/global/team.php:801
+#: inc/elementor/widgets/global/team.php:779
+#: inc/elementor/widgets/global/team.php:823
 #: inc/elementor/widgets/global/testimonial.php:775
 msgid "Margin Bottom"
 msgstr ""
@@ -4543,11 +4592,6 @@ msgstr ""
 msgid "Order by"
 msgstr ""
 
-#: inc/elementor/widgets/global/list-blog.php:139
-#: inc/elementor/widgets/single-post/post-related.php:143
-msgid "Popular"
-msgstr ""
-
 #: inc/elementor/widgets/global/list-blog.php:142
 #: inc/elementor/widgets/global/list-course.php:110
 #: inc/elementor/widgets/global/list-product.php:128
@@ -4596,7 +4640,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/list-course.php:62
 #: inc/elementor/widgets/global/tab.php:16
-#: inc/elementor/widgets/single-course/course-tabs.php:55
+#: inc/elementor/widgets/single-course/course-tabs.php:58
 msgid "Tab"
 msgstr ""
 
@@ -4917,7 +4961,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/minicart.php:458
 #: inc/elementor/widgets/global/product-base.php:1234
-#: inc/elementor/widgets/global/team.php:1009
+#: inc/elementor/widgets/global/team.php:1031
 #: inc/elementor/widgets/global/testimonial.php:179
 #: inc/elementor/widgets/global/testimonial.php:1051
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:112
@@ -5289,6 +5333,26 @@ msgstr ""
 msgid "Distance"
 msgstr ""
 
+#: inc/elementor/widgets/global/progress-tracker.php:20
+#: inc/elementor/widgets/global/progress-tracker.php:43
+msgid "Progress Tracker"
+msgstr ""
+
+#: inc/elementor/widgets/global/progress-tracker.php:71
+#: inc/elementor/widgets/global/progress-tracker.php:145
+#: inc/elementor/widgets/loop-item/loop-product-sale.php:54
+msgid "Percentage"
+msgstr ""
+
+#: inc/elementor/widgets/global/progress-tracker.php:88
+msgid "Tracker"
+msgstr ""
+
+#: inc/elementor/widgets/global/progress-tracker.php:124
+#: inc/elementor/widgets/global/progress-tracker.php:134
+msgid "Tracker Background"
+msgstr ""
+
 #: inc/elementor/widgets/global/search-form.php:23
 #: inc/elementor/widgets/global/search-form.php:46
 msgid "Search Form"
@@ -5561,7 +5625,7 @@ msgid "Copy to Clipboard"
 msgstr ""
 
 #: inc/elementor/widgets/global/social.php:17
-#: inc/elementor/widgets/global/team.php:1107
+#: inc/elementor/widgets/global/team.php:1129
 msgid "Social"
 msgstr ""
 
@@ -5691,7 +5755,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/team.php:141
 #: inc/elementor/widgets/global/team.php:144
-#: inc/elementor/widgets/global/team.php:696
+#: inc/elementor/widgets/global/team.php:718
 msgid "Member Name"
 msgstr ""
 
@@ -5702,7 +5766,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/team.php:151
 #: inc/elementor/widgets/global/team.php:154
-#: inc/elementor/widgets/global/team.php:774
+#: inc/elementor/widgets/global/team.php:796
 msgid "Member Position"
 msgstr ""
 
@@ -5711,7 +5775,7 @@ msgid "Designer"
 msgstr ""
 
 #: inc/elementor/widgets/global/team.php:162
-#: inc/elementor/widgets/global/team.php:830
+#: inc/elementor/widgets/global/team.php:852
 msgid "Member Description"
 msgstr ""
 
@@ -5792,40 +5856,40 @@ msgstr ""
 msgid "Position Item of Content"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:557
+#: inc/elementor/widgets/global/team.php:579
 msgid "Thumbnail Image"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:564
+#: inc/elementor/widgets/global/team.php:586
 msgid "Width Thumbnail"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:605
-#: inc/elementor/widgets/global/team.php:624
+#: inc/elementor/widgets/global/team.php:627
+#: inc/elementor/widgets/global/team.php:646
 msgid "Backgound Color"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:928
+#: inc/elementor/widgets/global/team.php:950
 msgid "Description Lenght"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:937
+#: inc/elementor/widgets/global/team.php:959
 msgid "Description More"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:961
+#: inc/elementor/widgets/global/team.php:983
 msgid "Member Rating"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:1024
-#: inc/elementor/widgets/global/team.php:1250
+#: inc/elementor/widgets/global/team.php:1046
+#: inc/elementor/widgets/global/team.php:1272
 #: inc/utilities/group-control-trait.php:302
 #: inc/utilities/group-control-trait.php:818
 msgid "Vertical Position"
 msgstr ""
 
-#: inc/elementor/widgets/global/team.php:1054
-#: inc/elementor/widgets/global/team.php:1277
+#: inc/elementor/widgets/global/team.php:1076
+#: inc/elementor/widgets/global/team.php:1299
 #: inc/utilities/group-control-trait.php:325
 #: inc/utilities/group-control-trait.php:845
 msgid "Vertical align"
@@ -6184,10 +6248,6 @@ msgstr[1] ""
 msgid "Product Sale Flash"
 msgstr ""
 
-#: inc/elementor/widgets/loop-item/loop-product-sale.php:54
-msgid "Percentage"
-msgstr ""
-
 #: inc/elementor/widgets/loop-item/loop-product-sale.php:122
 msgctxt "sale percentage"
 msgid "-%d%%"
@@ -6217,7 +6277,7 @@ msgid "Back To Course"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/back-to-course.php:112
-#: inc/elementor/widgets/single-course/course-tabs.php:980
+#: inc/elementor/widgets/single-course/course-tabs.php:983
 msgid "Text Color Hover"
 msgstr ""
 
@@ -6238,39 +6298,39 @@ msgid "Course Curriculum"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:35
-#: inc/elementor/widgets/single-course/course-tabs.php:486
+#: inc/elementor/widgets/single-course/course-tabs.php:489
 msgid "Section"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:95
-#: inc/elementor/widgets/single-course/course-tabs.php:532
+#: inc/elementor/widgets/single-course/course-tabs.php:535
 msgid "Title Section"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:103
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:169
-#: inc/elementor/widgets/single-course/course-tabs.php:540
-#: inc/elementor/widgets/single-course/course-tabs.php:606
+#: inc/elementor/widgets/single-course/course-tabs.php:543
+#: inc/elementor/widgets/single-course/course-tabs.php:609
 msgid "Title Typography"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:111
-#: inc/elementor/widgets/single-course/course-tabs.php:548
+#: inc/elementor/widgets/single-course/course-tabs.php:551
 msgid "Description Typography"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:141
-#: inc/elementor/widgets/single-course/course-tabs.php:578
+#: inc/elementor/widgets/single-course/course-tabs.php:581
 msgid "Color Title"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:151
-#: inc/elementor/widgets/single-course/course-tabs.php:588
+#: inc/elementor/widgets/single-course/course-tabs.php:591
 msgid "Color Description"
 msgstr ""
 
 #: inc/elementor/widgets/single-course-item/course-curriculum.php:161
-#: inc/elementor/widgets/single-course/course-tabs.php:598
+#: inc/elementor/widgets/single-course/course-tabs.php:601
 msgid "Lesson"
 msgstr ""
 
@@ -6570,38 +6630,43 @@ msgstr ""
 msgid " Course Extra"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:52
-#: inc/elementor/widgets/single-course/course-extra.php:436
+#: inc/elementor/widgets/single-course/course-extra.php:50
+#: inc/elementor/widgets/single-course/course-tabs.php:60
+msgid "Open All"
+msgstr ""
+
+#: inc/elementor/widgets/single-course/course-extra.php:65
+#: inc/elementor/widgets/single-course/course-extra.php:450
 msgid "Requirements"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:53
-#: inc/elementor/widgets/single-course/course-extra.php:437
+#: inc/elementor/widgets/single-course/course-extra.php:66
+#: inc/elementor/widgets/single-course/course-extra.php:451
 msgid "Features"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:54
+#: inc/elementor/widgets/single-course/course-extra.php:67
 msgid "Target audiences"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:73
+#: inc/elementor/widgets/single-course/course-extra.php:86
 msgid "Extra Content"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:84
+#: inc/elementor/widgets/single-course/course-extra.php:97
 msgid "Extra Items"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:232
-#: inc/elementor/widgets/single-course/course-extra.php:318
+#: inc/elementor/widgets/single-course/course-extra.php:245
+#: inc/elementor/widgets/single-course/course-extra.php:331
 msgid "Active Color"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:438
+#: inc/elementor/widgets/single-course/course-extra.php:452
 msgid "Target Audiences"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-extra.php:439
+#: inc/elementor/widgets/single-course/course-extra.php:453
 msgid "Extra Title"
 msgstr ""
 
@@ -6731,36 +6796,36 @@ msgid "Show when duration is null"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-meta.php:105
-#: inc/elementor/widgets/single-course/course-meta.php:524
+#: inc/elementor/widgets/single-course/course-meta.php:529
 msgid "lesson"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-meta.php:117
-#: inc/elementor/widgets/single-course/course-meta.php:528
+#: inc/elementor/widgets/single-course/course-meta.php:535
 msgid "lessons"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-meta.php:129
-#: inc/elementor/widgets/single-course/course-meta.php:545
+#: inc/elementor/widgets/single-course/course-meta.php:554
 msgid "quiz"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-meta.php:141
-#: inc/elementor/widgets/single-course/course-meta.php:549
+#: inc/elementor/widgets/single-course/course-meta.php:558
 msgid "quizzes"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-meta.php:153
-#: inc/elementor/widgets/single-course/course-meta.php:565
+#: inc/elementor/widgets/single-course/course-meta.php:574
 msgid "student"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-meta.php:165
-#: inc/elementor/widgets/single-course/course-meta.php:569
+#: inc/elementor/widgets/single-course/course-meta.php:578
 msgid "students"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-meta.php:594
+#: inc/elementor/widgets/single-course/course-meta.php:603
 msgid "Self"
 msgstr ""
 
@@ -6786,6 +6851,10 @@ msgstr ""
 
 #: inc/elementor/widgets/single-course/course-price.php:91
 msgid "Origin Price"
+msgstr ""
+
+#: inc/elementor/widgets/single-course/course-price.php:119
+msgid "Free Price"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-rating.php:20
@@ -6814,68 +6883,68 @@ msgstr ""
 msgid " Course Related"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:18
+#: inc/elementor/widgets/single-course/course-tabs.php:21
 msgid " Course Tabs"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:43
+#: inc/elementor/widgets/single-course/course-tabs.php:46
 msgid "Tab Scroll"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:57
-msgid "Open All"
-msgstr ""
-
-#: inc/elementor/widgets/single-course/course-tabs.php:101
+#: inc/elementor/widgets/single-course/course-tabs.php:104
 #: inc/elementor/widgets/single-product/product-tabs.php:50
 #: inc/elementor/widgets/single-product/product-tabs.php:132
 msgid "Tabs"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:125
+#: inc/elementor/widgets/single-course/course-tabs.php:128
 msgid "Active tab"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:160
+#: inc/elementor/widgets/single-course/course-tabs.php:163
 msgid "Layout HTML"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:182
+#: inc/elementor/widgets/single-course/course-tabs.php:185
 msgid "Item Tab"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:954
+#: inc/elementor/widgets/single-course/course-tabs.php:957
 msgid "Instructor Name"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1002
+#: inc/elementor/widgets/single-course/course-tabs.php:1005
 msgid "Instructor Avatar"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1070
+#: inc/elementor/widgets/single-course/course-tabs.php:1073
 msgid "Instructor Description"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1107
+#: inc/elementor/widgets/single-course/course-tabs.php:1110
 msgid "Instructor Social"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1155
+#: inc/elementor/widgets/single-course/course-tabs.php:1158
 msgid "Width/Height icon"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1208
-#: inc/elementor/widgets/single-course/course-tabs.php:1249
+#: inc/elementor/widgets/single-course/course-tabs.php:1211
+#: inc/elementor/widgets/single-course/course-tabs.php:1252
 msgid "Background Icon Color"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1218
-#: inc/elementor/widgets/single-course/course-tabs.php:1259
+#: inc/elementor/widgets/single-course/course-tabs.php:1221
+#: inc/elementor/widgets/single-course/course-tabs.php:1262
 msgid "Border Icon Color"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1385
+#: inc/elementor/widgets/single-course/course-tabs.php:1388
 msgid "Course Tabs"
+msgstr ""
+
+#: inc/elementor/widgets/single-course/course-tabs.php:1515
+msgid "Co-Instructor"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-tags.php:20
@@ -7427,7 +7496,7 @@ msgstr ""
 msgid "Go to Settings"
 msgstr ""
 
-#: inc/modules/mega-menu/class-init.php:205
+#: inc/modules/mega-menu/class-init.php:211
 msgid "Thim Menu Settings"
 msgstr ""
 
@@ -7510,20 +7579,24 @@ msgstr ""
 msgid "Please enable <b>Nested Elements</b> in Elementor > Settings > Features: %s"
 msgstr ""
 
-#: inc/modules/single-course/class-init.php:120
+#: inc/modules/single-course/class-init.php:125
 msgid "All courses"
 msgstr ""
 
-#: inc/modules/single-course/class-init.php:125
+#: inc/modules/single-course/class-init.php:130
 msgid "Select course"
 msgstr ""
 
-#: inc/modules/single-course/class-init.php:130
+#: inc/modules/single-course/class-init.php:135
 msgid "Course category"
 msgstr ""
 
-#: inc/modules/single-course/class-init.php:135
+#: inc/modules/single-course/class-init.php:140
 msgid "Course tag"
+msgstr ""
+
+#: inc/modules/single-course/class-init.php:148
+msgid "Course is offline"
 msgstr ""
 
 #: inc/modules/single-post/class-init.php:107

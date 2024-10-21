@@ -3,15 +3,14 @@
  * Plugin Name: Thim Elementor Kit
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.2.4
+ * Version: 1.2.5
  * Author URI: http://thimpress.com
- * Requires at least: 6.3
- * Tested up to: 6.6.1
+ * Requires at least: 6.0
+ * Tested up to: 6.6.2
  * Requires PHP: 7.4
  * Text Domain: thim-elementor-kit
  * Domain Path: /languages/
  * Elementor tested up to: 3.23.4
- * Requires Plugins: elementor
  */
 
 use Elementor\Core\Files\Manager as Files_Manager;
@@ -19,7 +18,7 @@ use Elementor\Plugin;
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'THIM_EKIT_VERSION', '1.2.4' );
+define( 'THIM_EKIT_VERSION', '1.2.5' );
 const THIM_EKIT_PLUGIN_FILE = __FILE__;
 define( 'THIM_EKIT_PLUGIN_PATH', plugin_dir_path( THIM_EKIT_PLUGIN_FILE ) );
 define( 'THIM_EKIT_PLUGIN_URL', plugin_dir_url( THIM_EKIT_PLUGIN_FILE ) );
@@ -83,6 +82,7 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 
 			// Upgrade.
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/upgrade/class-init.php';
+			require_once THIM_EKIT_PLUGIN_PATH . 'inc/external-plugin/class-thim-ekit-wpml.php';
 		}
 
 		/**

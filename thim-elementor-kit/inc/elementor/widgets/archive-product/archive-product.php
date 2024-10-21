@@ -187,7 +187,9 @@ class Thim_Ekit_Widget_Archive_Product extends Thim_Ekit_Products_Base {
 
 		$settings = $this->get_settings_for_display();
 
-		$shortcode        = $this->get_shortcode_object( $settings );
+		$columns = !empty( $settings['columns'] ) ? $settings['columns'] : 4;
+
+		$shortcode        = $this->get_shortcode_object( $settings, $columns );
 		$this->query_args = $shortcode->get_query_args();
 		if ( isset( $_GET['post_type'] ) && $_GET['post_type'] == 'product' ) {
 			// $this->query_args['post_type'] = 'product';
@@ -223,7 +225,7 @@ class Thim_Ekit_Widget_Archive_Product extends Thim_Ekit_Products_Base {
 				// Setup the loop.
 				wc_setup_loop(
 					array(
-						'columns'      => absint( $settings['columns'] ),
+						'columns'      => absint( $columns ),
 						'name'         => 'product',
 						'is_shortcode' => true,
 						'is_search'    => false,
@@ -275,10 +277,10 @@ class Thim_Ekit_Widget_Archive_Product extends Thim_Ekit_Products_Base {
 		<?php
 	}
 
-	protected function get_shortcode_object( $settings ) {
+	protected function get_shortcode_object( $settings, $columns ) {
 		return new \WC_Shortcode_Products(
 			array(
-				'columns'  => absint( $settings['columns'] ),
+				'columns'  => absint( $columns ),
 				'rows'     => absint( $settings['rows'] ),
 				'paginate' => $settings['paginate'] === 'yes',
 				'limit'    => floatval( $settings['limit'] ),

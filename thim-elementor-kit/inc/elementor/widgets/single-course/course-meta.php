@@ -518,15 +518,24 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 	}
 
 	protected function render_lesson( $settings, $course ) {
-		$lessons = $course->get_items( LP_LESSON_CPT );
-		$lessons = count( $lessons );
 
-		$suffix = ! empty( $settings['singular_lesson'] ) ? $settings['singular_lesson'] : esc_html__( 'lesson',
-			'thim-elementor-kit' );
+		if ( $course->is_offline() && version_compare( LEARNPRESS_VERSION, '4.2.7', '>=' ) ) {
+			$lessons = get_post_meta( $course->get_id(), '_lp_offline_lesson_count', true );
+		} else {
+			$lessons = $course->get_items( LP_LESSON_CPT );
+			$lessons = count( $lessons );
+		}
+
+		$suffix = ! empty( $settings['singular_lesson'] ) ? $settings['singular_lesson'] : esc_html__(
+			'lesson',
+			'thim-elementor-kit'
+		);
 
 		if ( $lessons > 1 ) {
-			$suffix = ! empty( $settings['plural_lesson'] ) ? $settings['plural_lesson'] : esc_html__( 'lessons',
-				'thim-elementor-kit' );
+			$suffix = ! empty( $settings['plural_lesson'] ) ? $settings['plural_lesson'] : esc_html__(
+				'lessons',
+				'thim-elementor-kit'
+			);
 		}
 		?>
 		<span class="thim-ekit-single-course__meta__count-lesson">
@@ -598,20 +607,22 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 	}
 
 	protected function render_certificates( $settings, $course ) {
-		$course_id = $course->get_id();
-		$text      = $settings['custom_text'];
-		?>
-		<span class="thim-ekit-single-course__meta__certificates">
+		if(class_exists( '\LP_Addon_Certificates' )){
+			$course_id = $course->get_id();
+			$text      = $settings['custom_text'];
+			?>
+			<span class="thim-ekit-single-course__meta__certificates">
+				<?php
+				Icons_Manager::render_icon( $settings['icon'] ); ?>
+				<?php
+				echo wp_kses_post( $text ); ?>
+				<span
+					class="value"><?php
+					echo ( get_post_meta( $course_id, '_lp_cert', true ) ) ? esc_html__( 'Yes',
+						'thim-elementor-kit' ) : esc_html__( 'No', 'thim-elementor-kit' ); ?></span>
+			</span>
 			<?php
-			Icons_Manager::render_icon( $settings['icon'] ); ?>
-			<?php
-			echo wp_kses_post( $text ); ?>
-			<span
-				class="value"><?php
-				echo ( get_post_meta( $course_id, '_lp_cert', true ) ) ? esc_html__( 'Yes',
-					'thim-elementor-kit' ) : esc_html__( 'No', 'thim-elementor-kit' ); ?></span>
-		</span>
-		<?php
+		}
 	}
 
 	protected function render_language( $settings, $course ) {

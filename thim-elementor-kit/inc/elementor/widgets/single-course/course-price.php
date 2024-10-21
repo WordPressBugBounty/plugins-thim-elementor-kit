@@ -113,6 +113,34 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'free_heading',
+			array(
+				'label'     => esc_html__( 'Free Price', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'free_price_color',
+			array(
+				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-single-course__price__price.free' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'free_price_typography',
+				'selector' => '{{WRAPPER}} .thim-ekit-single-course__price__price.free',
+			)
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -127,12 +155,17 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 		}
 
 		$price = $course->get_price_html();
+		$classs = '';
 
 		if ( ! $price ) {
 			return;
 		}
 
 		$settings = $this->get_settings_for_display();
+
+		if ( $course->is_free() ) {
+			$classs = 'free';
+		}
 		?>
 
 		<div class="thim-ekit-single-course__price">
@@ -143,7 +176,7 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 			<?php
 			endif; ?>
 
-			<span class="thim-ekit-single-course__price__price"><?php
+			<span class="thim-ekit-single-course__price__price <?php echo esc_attr( $classs ); ?>"><?php
 				echo wp_kses_post( $price ); ?></span>
 		</div>
 

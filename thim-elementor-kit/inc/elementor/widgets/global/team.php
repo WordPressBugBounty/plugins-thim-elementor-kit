@@ -498,6 +498,17 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'team_item_bg',
+			array(
+				'label'     => esc_html__( 'Background', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-team__article' => 'background: {{VALUE}}',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			array(
@@ -522,6 +533,17 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 			'team_item_hover_tab',
 			array(
 				'label' => esc_html__( 'Hover', 'thim-elementor-kit' ),
+			)
+		);
+
+		$this->add_control(
+			'team_item_bg_hover',
+			array(
+				'label'     => esc_html__( 'Background', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-team__article:hover' => 'background: {{VALUE}}',
+				),
 			)
 		);
 

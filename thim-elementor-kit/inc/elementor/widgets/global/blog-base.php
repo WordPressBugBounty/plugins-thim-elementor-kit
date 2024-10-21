@@ -1695,12 +1695,13 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 
 	protected function render_meta_data( $settings, $item ) {
 		$meta_data = $item['meta_data'];
+		$meta_data_display = !empty( $item['meta_data_display'] ) ? $item['meta_data_display'] : 'start';
 		?>
 
 		<div
 			class="thim-ekits-post__meta elementor-repeater-item-<?php
 			echo esc_attr( $item['_id'] ); ?><?php
-			echo ' m-psi-' . esc_attr( $item['meta_data_display'] ); ?>">
+			echo ' m-psi-' . esc_attr( $meta_data_display ); ?>">
 			<?php
 			if ( in_array( 'author', $meta_data ) ) {
 				$this->render_author( $item['author_icon_meta_data'] );

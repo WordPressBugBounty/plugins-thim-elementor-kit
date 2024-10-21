@@ -40,6 +40,19 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'layout',
+			[
+				'label'     => esc_html__( 'Layout', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => [
+					'acc'  => esc_html__( 'Accordion', 'thim-elementor-kit' ),
+					'list' => esc_html__( 'Open All', 'thim-elementor-kit' ),
+				],
+				'default'   => 'acc',
+			]
+		);
+
 		$repeater = new Repeater();
 
 		$repeater->add_control(
@@ -209,7 +222,7 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 				'label'     => esc_html__( 'Background', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} summary' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .thim-ekit-single-course__extra__title' => 'background-color: {{VALUE}};',
 				),
 			)
 		);
@@ -220,7 +233,7 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .thim-ekit-single-course__extra__icon, {{WRAPPER}} summary' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .thim-ekit-single-course__extra__icon, {{WRAPPER}} .thim-ekit-single-course__extra__title' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .thim-ekit-single-course__extra__icon svg'                  => 'fill: {{VALUE}};',
 				),
 			)
@@ -242,7 +255,7 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'title_typography',
-				'selector' => '{{WRAPPER}} summary',
+				'selector' => '{{WRAPPER}} .thim-ekit-single-course__extra__title',
 			)
 		);
 
@@ -250,7 +263,7 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 			Group_Control_Text_Shadow::get_type(),
 			array(
 				'name'     => 'title_shadow',
-				'selector' => '{{WRAPPER}} summary',
+				'selector' => '{{WRAPPER}} .thim-ekit-single-course__extra__title',
 			)
 		);
 
@@ -336,7 +349,7 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} summary' => 'column-gap: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .thim-ekit-single-course__extra__title' => 'column-gap: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);
@@ -432,6 +445,7 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 
 	protected function render_course_extra( $tab, $settings, $course ) {
 		$items = $course->get_extra_info( $tab['type'] );
+		$layout = isset( $settings['layout'] ) ? $settings['layout'] : 'acc';
 		$label = array(
 			'requirements'     => esc_html__( 'Requirements', 'thim-elementor-kit' ),
 			'key_features'     => esc_html__( 'Features', 'thim-elementor-kit' ),
@@ -440,50 +454,77 @@ class Thim_Ekit_Widget_Course_Extra extends Widget_Base {
 		);
 
 		$title = ! empty( $tab['tab_title'] ) ? $tab['tab_title'] : $label[ $tab['type'] ];
-		?>
+		if ( !empty( $items ) ){
+			?>
 
-		<div class="thim-ekit-single-course__extra__items">
-			<details class="thim-ekit-single-course__extra__item">
-				<summary>
-					<?php
-					if ( ! empty( $settings['selected_icon']['value'] ) ) : ?>
-						<span class="thim-ekit-single-course__extra__icon thim-ekit-single-course__extra__icon-closed"><?php
-							Icons_Manager::render_icon( $settings['selected_icon'] ); ?></span>
-					<?php
-					endif; ?>
-
-					<?php
-					if ( ! empty( $settings['selected_active_icon']['value'] ) ) : ?>
-						<span class="thim-ekit-single-course__extra__icon thim-ekit-single-course__extra__icon-opened"><?php
-							Icons_Manager::render_icon( $settings['selected_active_icon'] ); ?></span>
-					<?php
-					endif; ?>
-
-					<span class="thim-ekit-single-course__extra__title"><?php
-						echo esc_html( $title ); ?></span>
-				</summary>
-
-				<div class="thim-ekit-single-course__extra__content">
-					<?php
-					if ( $tab['type'] !== 'custom' ) : ?>
-						<ul>
+			<div class="thim-ekit-single-course__extra__items">
+				<?php if ( $layout == 'list') : ?>
+					<div class="thim-ekit-single-course__extra__item">
+						<div class="thim-ekit-single-course__extra__title"><?php
+								echo esc_html( $title ); ?></div>
+						<div class="thim-ekit-single-course__extra__content">
 							<?php
-							foreach ( $items as $item ) : ?>
-								<li><?php
-									echo esc_html( $item ); ?></li>
+							if ( $tab['type'] !== 'custom' ) : ?>
+								<ul>
+									<?php
+									foreach ( $items as $item ) : ?>
+										<li><?php
+											echo esc_html( $item ); ?></li>
+									<?php
+									endforeach; ?>
+								</ul>
 							<?php
-							endforeach; ?>
-						</ul>
-					<?php
-					else : ?>
-						<?php
-						$this->print_text_editor( $tab['tab_content'] ); ?>
-					<?php
-					endif; ?>
-				</div>
-			</details>
-		</div>
+							else : ?>
+								<?php
+								$this->print_text_editor( $tab['tab_content'] ); ?>
+							<?php
+							endif; ?>
+						</div>
+					</div>
+				<?php else : ?>
+					<details class="thim-ekit-single-course__extra__item">
+						<summary>
+							<?php
+							if ( ! empty( $settings['selected_icon']['value'] ) ) : ?>
+								<span class="thim-ekit-single-course__extra__icon thim-ekit-single-course__extra__icon-closed"><?php
+									Icons_Manager::render_icon( $settings['selected_icon'] ); ?></span>
+							<?php
+							endif; ?>
 
-		<?php
+							<?php
+							if ( ! empty( $settings['selected_active_icon']['value'] ) ) : ?>
+								<span class="thim-ekit-single-course__extra__icon thim-ekit-single-course__extra__icon-opened"><?php
+									Icons_Manager::render_icon( $settings['selected_active_icon'] ); ?></span>
+							<?php
+							endif; ?>
+
+							<span class="thim-ekit-single-course__extra__title"><?php
+								echo esc_html( $title ); ?></span>
+						</summary>
+
+						<div class="thim-ekit-single-course__extra__content">
+							<?php
+							if ( $tab['type'] !== 'custom' ) : ?>
+								<ul>
+									<?php
+									foreach ( $items as $item ) : ?>
+										<li><?php
+											echo esc_html( $item ); ?></li>
+									<?php
+									endforeach; ?>
+								</ul>
+							<?php
+							else : ?>
+								<?php
+								$this->print_text_editor( $tab['tab_content'] ); ?>
+							<?php
+							endif; ?>
+						</div>
+					</details>
+				<?php endif ; ?>
+			</div>
+
+			<?php
+		}
 	}
 }

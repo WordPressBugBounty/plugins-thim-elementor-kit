@@ -97,18 +97,24 @@ class Init {
 
 		if ( 'nav-menus' === $screen->base ) {
 			wp_enqueue_media();
-			wp_enqueue_script( 'thim-ekit-megamenu', THIM_EKIT_PLUGIN_URL . 'build/menu.js', array(
-				'lodash',
-				'wp-block-editor',
-				'wp-components',
-				'wp-element',
-				'wp-hooks',
-				'wp-i18n',
-				'wp-media-utils',
-				'wp-polyfill',
-				'wp-primitives',
-				'wp-url'
-			), $version, true );
+			wp_enqueue_script(
+				'thim-ekit-megamenu',
+				THIM_EKIT_PLUGIN_URL . 'build/menu.js',
+				[
+					'lodash',
+					'wp-block-editor',
+					'wp-components',
+					'wp-element',
+					'wp-hooks',
+					'wp-i18n',
+					'wp-media-utils',
+					'wp-polyfill',
+					'wp-primitives',
+					'wp-url',
+				],
+				$version,
+				[ 'strategy' => 'defer' ]
+			);
 			wp_enqueue_style( 'thim-ekit-megamenu', THIM_EKIT_PLUGIN_URL . 'build/menu.css', array( 'wp-components' ),
 				$version );
 			wp_enqueue_style( 'thim-ekit-admin-font-awesome', ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/all.css',

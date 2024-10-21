@@ -2,6 +2,7 @@
 
 namespace Thim_EL_Kit\Modules\SingleCourse;
 
+use LearnPress\Models\CourseModel;
 use Thim_EL_Kit\Modules\Modules;
 use Thim_EL_Kit\SingletonTrait;
 use Thim_EL_Kit\Custom_Post_Type;
@@ -90,6 +91,10 @@ class Init extends Modules {
 				}
 
 				return in_array( (int) $condition['query'], $terms, true );
+			case 'course_is_offline':
+				$course = CourseModel::find( get_the_ID() );
+
+				return $course && $course->is_offline();
 		}
 
 		return false;
@@ -115,7 +120,7 @@ class Init extends Modules {
 	}
 
 	public function get_conditions() {
-		return array(
+		$condition = array(
 			array(
 				'label'    => esc_html__( 'All courses', 'thim-elementor-kit' ),
 				'value'    => 'all',
@@ -137,6 +142,16 @@ class Init extends Modules {
 				'is_query' => true,
 			),
 		);
+
+		if ( version_compare( LEARNPRESS_VERSION, '4.2.7', '>=' ) ) {
+			$condition[] = array(
+				'label'    => esc_html__( 'Course is offline', 'thim-elementor-kit' ),
+				'value'    => 'course_is_offline',
+				'is_query' => false,
+			);
+		}
+
+		return $condition;
 	}
 
 	public function enqueue_learnpress_scripts() {

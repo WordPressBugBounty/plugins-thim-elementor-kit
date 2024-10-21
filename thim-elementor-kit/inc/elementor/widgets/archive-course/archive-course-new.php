@@ -153,6 +153,28 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 				'frontend_available' => true,
 			)
 		);
+		
+		$order_by_options = apply_filters(
+			'thim-elementor-kit/archive-courses/order-by/values',
+			[
+				'post_date'       => esc_html__( 'Newly published', 'thim-elementor-kit' ),
+				'post_title'      => esc_html__( 'Title a-z', 'thim-elementor-kit' ),
+				'post_title_desc' => esc_html__( 'Title z-a', 'thim-elementor-kit' ),
+				'price'           => esc_html__( 'Price high to low', 'thim-elementor-kit' ),
+				'price_low'       => esc_html__( 'Price low to high', 'thim-elementor-kit' ),
+				'popular'         => esc_html__( 'Popular', 'thim-elementor-kit' ),
+			]
+		);
+		$this->add_control(
+			'courses_order_by_default',
+			array(
+				'label'         => esc_html__( 'Default Orderby', 'thim-elementor-kit' ),
+				'type'          => Controls_Manager::SELECT2,
+				'default'       => 'post_date',
+				'options'       => $order_by_options,
+				'prevent_empty' => false,
+			)
+		);
 
 		$this->end_controls_section();
 	}

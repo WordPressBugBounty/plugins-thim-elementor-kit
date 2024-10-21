@@ -55,6 +55,7 @@ class Widgets {
 			'archive-description',
 			'countdown',
 			'svg-draw',
+			'progress-tracker',
 		),
 		'archive-post'       => array( 'archive-post' ),
 		'single-post'        => array(

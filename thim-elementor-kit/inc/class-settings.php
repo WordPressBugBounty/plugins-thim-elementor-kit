@@ -28,10 +28,19 @@ class Settings {
 
 		$file_info = include THIM_EKIT_PLUGIN_PATH . 'build/settings.asset.php';
 
-		wp_enqueue_script( 'thim-ekit-settings', THIM_EKIT_PLUGIN_URL . 'build/settings.js', $file_info['dependencies'],
-			$file_info['version'], true );
-		wp_enqueue_style( 'thim-ekit-settings', THIM_EKIT_PLUGIN_URL . 'build/settings.css', array( 'wp-components' ),
-			$file_info['version'] );
+		wp_enqueue_script(
+			'thim-ekit-settings',
+			THIM_EKIT_PLUGIN_URL . 'build/settings.js',
+			$file_info['dependencies'],
+			$file_info['version'],
+			[ 'strategy' => 'defer' ]
+		);
+		wp_enqueue_style(
+			'thim-ekit-settings',
+			THIM_EKIT_PLUGIN_URL . 'build/settings.css',
+			array( 'wp-components' ),
+			$file_info['version']
+		);
 	}
 
 	public function add_admin_menu() {

@@ -5,6 +5,7 @@ namespace Elementor;
 use Elementor\Plugin;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use LearnPress\Models\Courses;
 use LP_Course;
 use LP_Course_Filter;
 use Thim_EL_Kit\GroupControlTrait;
@@ -729,10 +730,10 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 				$param['taxonomy'] = $cat->taxonomy;
 			}
 
-			if ( method_exists( 'LP_Course', 'handle_params_for_query_courses' ) ) {
-				LP_course::handle_params_for_query_courses( $filter, $param );
+			if ( method_exists( 'Courses', 'handle_params_for_query_courses' ) ) {
+				Courses::handle_params_for_query_courses( $filter, $param );
 			}
-			$courses = LP_Course::get_courses( $filter, $total_rows );
+			$courses = Courses::get_courses( $filter, $total_rows );
 		}
 		?>
 

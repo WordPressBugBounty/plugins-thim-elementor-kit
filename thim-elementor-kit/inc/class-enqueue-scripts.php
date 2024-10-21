@@ -30,8 +30,13 @@ class Enqueue {
 		if ( ( Custom_Post_Type::CPT === $screen->id && ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) ) || ( 'edit.php' == $pagenow && 'edit-' . Custom_Post_Type::CPT == $screen->id ) ) {
 			$file_info = include THIM_EKIT_PLUGIN_PATH . 'build/admin.asset.php';
 
-			wp_enqueue_script( 'thim-ekit-admin', THIM_EKIT_PLUGIN_URL . 'build/admin.js', $file_info['dependencies'],
-				$file_info['version'], true );
+			wp_enqueue_script(
+				'thim-ekit-admin',
+				THIM_EKIT_PLUGIN_URL . 'build/admin.js',
+				$file_info['dependencies'],
+				$file_info['version'],
+				[ 'strategy' => 'defer' ]
+			);
 			wp_enqueue_style( 'thim-ekit-admin', THIM_EKIT_PLUGIN_URL . 'build/admin.css', array( 'wp-components' ),
 				$this->version );
 
@@ -42,8 +47,13 @@ class Enqueue {
 	}
 
 	public function frontend_scripts() {
-		wp_enqueue_script( 'thim-ekit-frontend', THIM_EKIT_PLUGIN_URL . 'build/frontend.js', array(), $this->version,
-			true );
+		wp_enqueue_script(
+			'thim-ekit-frontend',
+			THIM_EKIT_PLUGIN_URL . 'build/frontend.js',
+			[],
+			$this->version,
+			[ 'strategy' => 'defer' ]
+		);
 		wp_enqueue_style( 'thim-ekit-frontend', THIM_EKIT_PLUGIN_URL . 'build/frontend.css', array(), $this->version );
 		wp_enqueue_style( 'font-awesome-5-all', ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/all.css', array(),
 			$this->version );
@@ -61,8 +71,13 @@ class Enqueue {
 	public function enqueue_widgets_scripts() {
 		$info = include THIM_EKIT_PLUGIN_PATH . 'build/widgets.asset.php';
 
-		wp_enqueue_script( 'thim-ekit-widgets', THIM_EKIT_PLUGIN_URL . 'build/widgets.js',
-			array_merge( $info['dependencies'], array( 'elementor-frontend' ) ), $info['version'], true );
+		wp_enqueue_script(
+			'thim-ekit-widgets',
+			THIM_EKIT_PLUGIN_URL . 'build/widgets.js',
+			array_merge( $info['dependencies'], array( 'elementor-frontend' ) ),
+			$info['version'],
+			[ 'strategy' => 'defer' ]
+		);
 		wp_enqueue_style( 'thim-ekit-widgets', THIM_EKIT_PLUGIN_URL . 'build/widgets.css',
 			array( 'elementor-frontend' ), $this->version );
 		wp_localize_script(

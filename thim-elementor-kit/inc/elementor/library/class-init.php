@@ -21,8 +21,13 @@ class Library {
 	public function enqueue_editor_scripts() {
 		$file_info = include THIM_EKIT_PLUGIN_PATH . 'build/library.asset.php';
 
-		wp_enqueue_script( 'thim-elementor-kit-elementor-library', THIM_EKIT_PLUGIN_URL . 'build/library.js',
-			$file_info['dependencies'], $file_info['version'], true );
+		wp_enqueue_script(
+			'thim-elementor-kit-elementor-library',
+			THIM_EKIT_PLUGIN_URL . 'build/library.js',
+			$file_info['dependencies'],
+			$file_info['version'],
+			[ 'strategy' => 'defer' ]
+		);
 		wp_enqueue_style( 'thim-elementor-kit-elementor-library', THIM_EKIT_PLUGIN_URL . 'build/library.css', array(),
 			THIM_EKIT_VERSION );
 

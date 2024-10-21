@@ -3,6 +3,9 @@
 namespace Elementor;
 
 use LearnPress\TemplateHooks\Instructor\SingleInstructorTemplate;
+use LP_Addon_Co_Instructor\CourseCoInstructorTemplate;
+use LearnPress\Models\UserModel;
+use LearnPress\Helpers\Template;
 
 class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 
@@ -477,7 +480,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 				'condition' => [
 					'tab_scroll!' => 'yes'
 				]
-			),
+			)
 		);
 
 		$this->add_control(
@@ -946,7 +949,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 				'condition' => [
 					'tab_scroll!' => 'yes'
 				]
-			),
+			)
 		);
 		$this->add_control(
 			'instructor_name_heading',
@@ -1488,9 +1491,31 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 			$instructor = $course->get_instructor();
 			// Show list instructors
 			$singleInstructorTemplate = SingleInstructorTemplate::instance();
-			echo '<div class="lp-course-author">' . $singleInstructorTemplate->render_data( $instructor,
-					html_entity_decode( $layout_html ) ) . '</div>';
+
+			$section = array(
+				'wrapper'     => '<div class="lp-course-author">',
+				'content'     => $singleInstructorTemplate->render_data( $instructor, html_entity_decode( $layout_html ) ),
+				'wrapper_end' => '</div>',
+			);
+
+			echo Template::combine_components( $section );
+
 			// End show list instructors
+
+			if ( ! class_exists( 'LP_Co_Instructor_Preload' ) ) {
+				return;
+			}
+
+			$courseCoInstructorTemplate = CourseCoInstructorTemplate::instance();
+			$instructors                = $courseCoInstructorTemplate->addon->get_instructors( $course->get_id() );
+
+			if ( ! empty( $instructors ) ) {
+				printf(
+					'<h4 class="lp-co-instructors-title">%s</h4>',
+					esc_html__( 'Co-Instructor', 'thim-elementor-kit' )
+				);
+				echo $courseCoInstructorTemplate->html_list_co_instructor( $instructors, $course );
+			}
 		} catch ( \Throwable $e ) {
 			echo $e->getMessage();
 		}

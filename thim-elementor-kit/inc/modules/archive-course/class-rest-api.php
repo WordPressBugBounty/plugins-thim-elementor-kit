@@ -2,6 +2,7 @@
 
 namespace Thim_EL_Kit\Modules\ArchiveCourse;
 
+use LearnPress\Models\Courses;
 use LP_Course;
 use LP_Course_Filter;
 use Thim_EL_Kit\SingletonTrait;
@@ -50,12 +51,12 @@ class Rest_API {
 			$params_url = $request['params_url'] ?? [];
 			$params_url = array_merge( $params_url, $request->get_params() );
 
-			if ( method_exists( 'LP_Course', 'handle_params_for_query_courses' ) ) {
-				LP_Course::handle_params_for_query_courses( $filter, $params_url );
+			if ( method_exists( 'Courses', 'handle_params_for_query_courses' ) ) {
+				Courses::handle_params_for_query_courses( $filter, $params_url );
 			}
 
 			$total_rows = 0;
-			$courses    = LP_Course::get_courses( $filter, $total_rows );
+			$courses    = Courses::get_courses( $filter, $total_rows );
 
 			$archive = new \Elementor\Thim_Ekit_Widget_Archive_Course();
 

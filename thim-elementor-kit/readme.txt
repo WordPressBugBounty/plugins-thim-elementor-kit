@@ -2,10 +2,10 @@
 Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: page builder, elementor, elementorkit, thimpress.
-Requires at least: 6.3
-Tested up to: 6.6.1
+Requires at least: 6.0
+Tested up to: 6.6.2
 Requires PHP: 7.4
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,12 @@ Especially for **<a href="https://1.envato.market/G5Ook">Eduma</a>** or other LM
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 1.2.5 (2024-10-21) =
+~ Support condition with WPML.
+~ Support build layout Offline course.
+~ Added: load defer for script.
+~ Updated: layout render_course_extra.
 
 = 1.2.4 (2024-08-21) =
 ~ Fixed: translate wpml.

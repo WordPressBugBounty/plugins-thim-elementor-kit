@@ -22,8 +22,13 @@ class Dashboard {
 
 		$file_info = include THIM_EKIT_PLUGIN_PATH . 'build/dashboard.asset.php';
 
-		wp_enqueue_script( 'thim-ekit-dashboard', THIM_EKIT_PLUGIN_URL . 'build/dashboard.js',
-			$file_info['dependencies'], $file_info['version'], true );
+		wp_enqueue_script(
+			'thim-ekit-dashboard',
+			THIM_EKIT_PLUGIN_URL . 'build/dashboard.js',
+			$file_info['dependencies'],
+			$file_info['version'],
+			[ 'strategy' => 'defer' ]
+		);
 		wp_enqueue_style( 'thim-ekit-dashboard', THIM_EKIT_PLUGIN_URL . 'build/dashboard.css', array( 'wp-components' ),
 			$file_info['version'] );
 
