@@ -1489,6 +1489,11 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 				return;
 			}
 			$instructor = $course->get_instructor();
+
+			if ( ! $instructor ) {
+				return;
+			}
+
 			// Show list instructors
 			$singleInstructorTemplate = SingleInstructorTemplate::instance();
 
@@ -1502,7 +1507,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 
 			// End show list instructors
 
-			if ( ! class_exists( 'LP_Co_Instructor_Preload' ) ) {
+			if ( ! class_exists( 'LP_Co_Instructor_Preload' ) || ! class_exists( 'LP_Addon_Co_Instructor\CourseCoInstructorTemplate' ) ) {
 				return;
 			}
 

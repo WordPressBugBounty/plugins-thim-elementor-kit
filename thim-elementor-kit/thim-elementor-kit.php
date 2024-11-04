@@ -3,7 +3,7 @@
  * Plugin Name: Thim Elementor Kit
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.2.5
+ * Version: 1.2.6
  * Author URI: http://thimpress.com
  * Requires at least: 6.0
  * Tested up to: 6.6.2
@@ -18,7 +18,7 @@ use Elementor\Plugin;
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'THIM_EKIT_VERSION', '1.2.5' );
+define( 'THIM_EKIT_VERSION', '1.2.6' );
 const THIM_EKIT_PLUGIN_FILE = __FILE__;
 define( 'THIM_EKIT_PLUGIN_PATH', plugin_dir_path( THIM_EKIT_PLUGIN_FILE ) );
 define( 'THIM_EKIT_PLUGIN_URL', plugin_dir_url( THIM_EKIT_PLUGIN_FILE ) );

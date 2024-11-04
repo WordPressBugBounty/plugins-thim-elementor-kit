@@ -102,9 +102,10 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'all',
 				'options' => array(
-					'all'     => esc_html__( 'All', 'thim-elementor-kit' ),
-					'product' => esc_html__( 'Product', 'thim-elementor-kit' ),
-					'post'    => esc_html__( 'Blog', 'thim-elementor-kit' ),
+					'all'       => esc_html__( 'All', 'thim-elementor-kit' ),
+					'product'   => esc_html__( 'Product', 'thim-elementor-kit' ),
+					'post'      => esc_html__( 'Blog', 'thim-elementor-kit' ),
+					'lp_course' => esc_html__( 'Course', 'thim-elementor-kit' ),
 				),
 			)
 		);
@@ -824,10 +825,17 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 		echo esc_url( home_url( '/' ) ); ?>"
 			  method="get" <?php Utils::print_unescaped_internal_string( $this->get_render_attribute_string( 'search_form' ) ); ?>>
 			<div class="input-group">
-				<input type="text" placeholder="<?php echo esc_attr( $settings['placeholder_text'] ); ?>" name="s"
-					   class="thim-ekits-search"/>
-				<?php if ( $settings['search_type'] != 'all' ) : ?>
-					<input type="hidden" name="post_type" value="<?php echo esc_attr( $settings['search_type'] ); ?>"/>
+			<?php if ( $settings['search_type'] == 'lp_course' ) : ?>
+					<input type="text" name="c_search" placeholder="<?php echo esc_attr( $settings['placeholder_text'] ); ?>"
+							class="thim-ekits-search" autocomplete="off"/>
+					<input type="hidden" value="course" name="ref"/>
+					<input type="hidden" name="post_type" value="lp_course">
+				<?php else : ?>	
+					<input type="text" placeholder="<?php echo esc_attr( $settings['placeholder_text'] ); ?>" name="s"
+						class="thim-ekits-search"/>
+					<?php if ( $settings['search_type'] != 'all' ) : ?>
+						<input type="hidden" name="post_type" value="<?php echo esc_attr( $settings['search_type'] ); ?>"/>
+					<?php endif; ?>
 				<?php endif; ?>
 
 				<button type="submit" class="button-search">

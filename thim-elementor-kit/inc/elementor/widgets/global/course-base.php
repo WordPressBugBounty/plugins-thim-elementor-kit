@@ -2144,7 +2144,12 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 	 * @return void
 	 */
 	protected function render_count_lesson( $settings, $course ) {
-		$lessons = $course->count_items( LP_LESSON_CPT );
+		if ( $course->is_offline() && version_compare( LEARNPRESS_VERSION, '4.2.7', '>=' ) ) {
+			$lessons = get_post_meta( $course->get_id(), '_lp_offline_lesson_count', true );
+		} else {
+			$lessons = $course->count_items( LP_LESSON_CPT );
+		}
+		
 		?>
 		<span
 			class="thim-ekits-course__count-lesson">

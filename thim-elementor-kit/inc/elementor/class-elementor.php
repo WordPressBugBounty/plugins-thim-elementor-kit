@@ -339,144 +339,146 @@ class Elementor {
 	}
 
 	public function register_extral_animation_controls( $element ) {
-		$element->start_controls_section(
-			'animation_section',
-			[
-				'label' => __( 'Thim: Animation', 'thim-elementor-kit' ),
-				'tab'   => Controls_Manager::TAB_ADVANCED
-			]
-		);
-		$element->add_control(
-			'animation_type',
-			[
-				'label'       => __( 'Animation Type', 'thim-elementor-kit' ),
-				'type'        => Controls_Manager::SELECT,
-				'label_block' => true,
-				'default'     => '',
-				'options'     => [
-					''                   => __( 'None', 'thim-elementor-kit' ),
-					'transform-animated' => __( 'Transform Animated', 'thim-elementor-kit' ),
-					'infinite-animation' => __( 'Infinite Animation', 'thim-elementor-kit' ),
+		if ( $element->get_name() !== 'common' ) {
+			$element->start_controls_section(
+				'animation_section',
+				[
+					'label' => __( 'Thim: Animation', 'thim-elementor-kit' ),
+					'tab'   => Controls_Manager::TAB_ADVANCED
 				]
-			]
-		);
-		$element->add_control(
-			'transform_animated_type',
-			[
-				'label'     => __( 'Type', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::SELECT,
-				'default'   => '',
-				'options'   => [
-					''                          => __( 'Select Animation', 'thim-elementor-kit' ),
-					'ekit-animated-transform-1' => __( 'Transform 1', 'thim-elementor-kit' ),
-					'ekit-animated-transform-2' => __( 'Transform 2', 'thim-elementor-kit' ),
-					'ekit-animated-transform-3' => __( 'Transform 3', 'thim-elementor-kit' ),
-					'ekit-animated-transform-4' => __( 'Transform 4', 'thim-elementor-kit' ),
-					'ekit-animated-transform-5' => __( 'Transform 5', 'thim-elementor-kit' ),
-				],
-				'selectors' => [
-					'{{WRAPPER}} > div' => '-webkit-animation: {{VALUE}} 10s infinite; -moz-animation: {{VALUE}} 10s infinite; -ms-animation: {{VALUE}} 10s infinite; -o-animation: {{VALUE}} 10s infinite; animation: {{VALUE}} 10s infinite; overflow: hidden;'
-				],
-				'condition' => [
-					'animation_type' => 'transform-animated'
-				]
-			]
-		);
-
-		$element->add_control(
-			'infinite_animation_type',
-			[
-				'label'     => __( 'Infinite Type', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::SELECT,
-				'options'   => [
-					''                        => __( 'Select Animation', 'thim-elementor-kit' ),
-					'ekit-circle-small'       => __( 'Circle Small', 'thim-elementor-kit' ),
-					'ekit-circle-medium'      => __( 'Circle Medium', 'thim-elementor-kit' ),
-					'ekit-circle-large'       => __( 'Circle Large', 'thim-elementor-kit' ),
-					'ekit-fade-in-out'        => __( 'Fade In Out', 'thim-elementor-kit' ),
-					'ekit-flipX'              => __( 'flipX', 'thim-elementor-kit' ),
-					'ekit-flipY'              => __( 'flipY', 'thim-elementor-kit' ),
-					'ekit-vsm-y-move'         => __( 'Move Y Very Small', 'thim-elementor-kit' ),
-					'ekit-vsm-y-reverse-move' => __( 'Move Y Very Small ( Reverse )', 'thim-elementor-kit' ),
-					'ekit-sm-y-move'          => __( 'Move Y Small', 'thim-elementor-kit' ),
-					'ekit-md-y-move'          => __( 'Move Y Medium', 'thim-elementor-kit' ),
-					'ekit-lg-y-move'          => __( 'Move Y Large', 'thim-elementor-kit' ),
-					'ekit-sm-x-mover'         => __( 'Move X Small', 'thim-elementor-kit' ),
-					'ekit-md-x-move'          => __( 'Move X Medium', 'thim-elementor-kit' ),
-					'ekit-lg-x-move'          => __( 'Move X Large', 'thim-elementor-kit' ),
-					'ekit-sm-xy-move'         => __( 'Move XY Small', 'thim-elementor-kit' ),
-					'ekit-md-xy-move'         => __( 'Move XY Medium', 'thim-elementor-kit' ),
-					'ekit-lg-xy-move'         => __( 'Move XY Large', 'thim-elementor-kit' ),
-					'ekit-sm-yx-move'         => __( 'Move YX Small', 'thim-elementor-kit' ),
-					// 5s alternate infinite linear
-					'ekit-md-yx-move'         => __( 'Move YX Medium', 'thim-elementor-kit' ),
-					'ekit-lg-yx-move'         => __( 'Move YX Large', 'thim-elementor-kit' ),
-					'ekit-rotate-x'           => __( 'Rotate X', 'thim-elementor-kit' ),
-					'ekit-rotate-y'           => __( 'Rotate Y', 'thim-elementor-kit' ),
-					'ekit-swing'              => __( 'Swing', 'thim-elementor-kit' ),
-					'ekit-spinners'           => __( 'Spinners', 'thim-elementor-kit' ),
-					'ekit-zoom-in-out'        => __( 'Zoom In Out', 'thim-elementor-kit' )
-				],
-				'selectors' => [
-					'{{WRAPPER}} > div' => '-webkit-animation: {{VALUE}}; -moz-animation: {{VALUE}}; -ms-animation: {{VALUE}}; -o-animation: {{VALUE}}; animation: {{VALUE}};'
-				],
-				'condition' => [
-					'animation_type' => 'infinite-animation'
-				]
-			]
-		);
-		$element->add_control(
-			'enable_custom_duration',
-			[
-				'label'     => __( 'Custom Animation Duration', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => __( 'Enable', 'thim-elementor-kit' ),
-				'label_off' => __( 'Disable', 'thim-elementor-kit' ),
-				'condition' => [
-					'animation_type' => 'infinite-animation'
-				]
-			]
-		);
-
-		$element->add_responsive_control(
-			'custom_duration',
-			[
-				'label'       => __( 'Set Animation Duration', 'thim-elementor-kit' ),
-				'type'        => Controls_Manager::SLIDER,
-				'range'       => [
-					'px' => [
-						'min'  => 1,
-						'max'  => 35,
-						'step' => 1
+			);
+			$element->add_control(
+				'animation_type',
+				[
+					'label'       => __( 'Animation Type', 'thim-elementor-kit' ),
+					'type'        => Controls_Manager::SELECT,
+					'label_block' => true,
+					'default'     => '',
+					'options'     => [
+						''                   => __( 'None', 'thim-elementor-kit' ),
+						'transform-animated' => __( 'Transform Animated', 'thim-elementor-kit' ),
+						'infinite-animation' => __( 'Infinite Animation', 'thim-elementor-kit' ),
 					]
-				],
-				'description' => __( 'Set custom animation duration in second( unit ).', 'thim-elementor-kit' ),
-				'selectors'   => [
-					'{{WRAPPER}} > div' => '-webkit-animation-duration: {{SIZE}}s; -moz-animation-duration: {{SIZE}}s; -ms-animation-duration: {{SIZE}}s; -o-animation-duration: {{SIZE}}s; animation-duration: {{SIZE}}s;'
-				],
-				'condition'   => [
-					'animation_type'         => 'infinite-animation',
-					'enable_custom_duration' => 'yes',
 				]
-			]
-		);
-		$element->add_responsive_control(
-			'item_opacity',
-			[
-				'label'     => __( 'Opacity', 'edublink-core' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => [
-					'px' => [
-						'max'  => 1,
-						'step' => 0.01
+			);
+			$element->add_control(
+				'transform_animated_type',
+				[
+					'label'     => __( 'Type', 'thim-elementor-kit' ),
+					'type'      => Controls_Manager::SELECT,
+					'default'   => '',
+					'options'   => [
+						''                          => __( 'Select Animation', 'thim-elementor-kit' ),
+						'ekit-animated-transform-1' => __( 'Transform 1', 'thim-elementor-kit' ),
+						'ekit-animated-transform-2' => __( 'Transform 2', 'thim-elementor-kit' ),
+						'ekit-animated-transform-3' => __( 'Transform 3', 'thim-elementor-kit' ),
+						'ekit-animated-transform-4' => __( 'Transform 4', 'thim-elementor-kit' ),
+						'ekit-animated-transform-5' => __( 'Transform 5', 'thim-elementor-kit' ),
+					],
+					'selectors' => [
+						'{{WRAPPER}} > div' => '-webkit-animation: {{VALUE}} 10s infinite; -moz-animation: {{VALUE}} 10s infinite; -ms-animation: {{VALUE}} 10s infinite; -o-animation: {{VALUE}} 10s infinite; animation: {{VALUE}} 10s infinite; overflow: hidden;'
+					],
+					'condition' => [
+						'animation_type' => 'transform-animated'
 					]
-				],
-				'selectors' => [
-					'{{WRAPPER}} > div' => 'opacity: {{SIZE}}'
 				]
-			]
-		);
-		$element->end_controls_section();
+			);
+
+			$element->add_control(
+				'infinite_animation_type',
+				[
+					'label'     => __( 'Infinite Type', 'thim-elementor-kit' ),
+					'type'      => Controls_Manager::SELECT,
+					'options'   => [
+						''                        => __( 'Select Animation', 'thim-elementor-kit' ),
+						'ekit-circle-small'       => __( 'Circle Small', 'thim-elementor-kit' ),
+						'ekit-circle-medium'      => __( 'Circle Medium', 'thim-elementor-kit' ),
+						'ekit-circle-large'       => __( 'Circle Large', 'thim-elementor-kit' ),
+						'ekit-fade-in-out'        => __( 'Fade In Out', 'thim-elementor-kit' ),
+						'ekit-flipX'              => __( 'flipX', 'thim-elementor-kit' ),
+						'ekit-flipY'              => __( 'flipY', 'thim-elementor-kit' ),
+						'ekit-vsm-y-move'         => __( 'Move Y Very Small', 'thim-elementor-kit' ),
+						'ekit-vsm-y-reverse-move' => __( 'Move Y Very Small ( Reverse )', 'thim-elementor-kit' ),
+						'ekit-sm-y-move'          => __( 'Move Y Small', 'thim-elementor-kit' ),
+						'ekit-md-y-move'          => __( 'Move Y Medium', 'thim-elementor-kit' ),
+						'ekit-lg-y-move'          => __( 'Move Y Large', 'thim-elementor-kit' ),
+						'ekit-sm-x-mover'         => __( 'Move X Small', 'thim-elementor-kit' ),
+						'ekit-md-x-move'          => __( 'Move X Medium', 'thim-elementor-kit' ),
+						'ekit-lg-x-move'          => __( 'Move X Large', 'thim-elementor-kit' ),
+						'ekit-sm-xy-move'         => __( 'Move XY Small', 'thim-elementor-kit' ),
+						'ekit-md-xy-move'         => __( 'Move XY Medium', 'thim-elementor-kit' ),
+						'ekit-lg-xy-move'         => __( 'Move XY Large', 'thim-elementor-kit' ),
+						'ekit-sm-yx-move'         => __( 'Move YX Small', 'thim-elementor-kit' ),
+						// 5s alternate infinite linear
+						'ekit-md-yx-move'         => __( 'Move YX Medium', 'thim-elementor-kit' ),
+						'ekit-lg-yx-move'         => __( 'Move YX Large', 'thim-elementor-kit' ),
+						'ekit-rotate-x'           => __( 'Rotate X', 'thim-elementor-kit' ),
+						'ekit-rotate-y'           => __( 'Rotate Y', 'thim-elementor-kit' ),
+						'ekit-swing'              => __( 'Swing', 'thim-elementor-kit' ),
+						'ekit-spinners'           => __( 'Spinners', 'thim-elementor-kit' ),
+						'ekit-zoom-in-out'        => __( 'Zoom In Out', 'thim-elementor-kit' )
+					],
+					'selectors' => [
+						'{{WRAPPER}} > div' => '-webkit-animation: {{VALUE}}; -moz-animation: {{VALUE}}; -ms-animation: {{VALUE}}; -o-animation: {{VALUE}}; animation: {{VALUE}};'
+					],
+					'condition' => [
+						'animation_type' => 'infinite-animation'
+					]
+				]
+			);
+			$element->add_control(
+				'enable_custom_duration',
+				[
+					'label'     => __( 'Custom Animation Duration', 'thim-elementor-kit' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'label_on'  => __( 'Enable', 'thim-elementor-kit' ),
+					'label_off' => __( 'Disable', 'thim-elementor-kit' ),
+					'condition' => [
+						'animation_type' => 'infinite-animation'
+					]
+				]
+			);
+
+			$element->add_responsive_control(
+				'custom_duration',
+				[
+					'label'       => __( 'Set Animation Duration', 'thim-elementor-kit' ),
+					'type'        => Controls_Manager::SLIDER,
+					'range'       => [
+						'px' => [
+							'min'  => 1,
+							'max'  => 35,
+							'step' => 1
+						]
+					],
+					'description' => __( 'Set custom animation duration in second( unit ).', 'thim-elementor-kit' ),
+					'selectors'   => [
+						'{{WRAPPER}} > div' => '-webkit-animation-duration: {{SIZE}}s; -moz-animation-duration: {{SIZE}}s; -ms-animation-duration: {{SIZE}}s; -o-animation-duration: {{SIZE}}s; animation-duration: {{SIZE}}s;'
+					],
+					'condition'   => [
+						'animation_type'         => 'infinite-animation',
+						'enable_custom_duration' => 'yes',
+					]
+				]
+			);
+			$element->add_responsive_control(
+				'item_opacity',
+				[
+					'label'     => __( 'Opacity', 'edublink-core' ),
+					'type'      => Controls_Manager::SLIDER,
+					'range'     => [
+						'px' => [
+							'max'  => 1,
+							'step' => 0.01
+						]
+					],
+					'selectors' => [
+						'{{WRAPPER}} > div' => 'opacity: {{SIZE}}'
+					]
+				]
+			);
+			$element->end_controls_section();
+		}
 	}
 }
 

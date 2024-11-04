@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Thim Elementor Kit plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Thim Elementor Kit 1.2.5\n"
+"Project-Id-Version: Thim Elementor Kit 1.2.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/thim-elementor-kit\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-21T11:41:24+03:00\n"
+"POT-Creation-Date: 2024-11-04T09:39:13+03:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: thim-elementor-kit\n"
@@ -55,7 +55,7 @@ msgid "All Templates"
 msgstr ""
 
 #: inc/class-post-type.php:96
-#: inc/elementor/class-elementor.php:366
+#: inc/elementor/class-elementor.php:367
 #: inc/elementor/widgets/archive-course/archive-course-new.php:194
 #: inc/elementor/widgets/archive-course/archive-course.php:146
 #: inc/elementor/widgets/archive-post/archive-post.php:113
@@ -212,8 +212,8 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:684
 #: inc/elementor/widgets/global/product-base.php:654
 #: inc/elementor/widgets/global/product-base.php:1210
-#: inc/elementor/widgets/global/search-form.php:424
-#: inc/elementor/widgets/global/search-form.php:556
+#: inc/elementor/widgets/global/search-form.php:425
+#: inc/elementor/widgets/global/search-form.php:557
 #: inc/elementor/widgets/global/site-logo.php:155
 #: inc/elementor/widgets/global/social.php:489
 #: inc/elementor/widgets/global/testimonial.php:441
@@ -450,15 +450,15 @@ msgstr ""
 msgid "Slide Down"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:345
+#: inc/elementor/class-elementor.php:346
 msgid "Thim: Animation"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:352
+#: inc/elementor/class-elementor.php:353
 msgid "Animation Type"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:357
+#: inc/elementor/class-elementor.php:358
 #: inc/elementor/widgets/archive-course/archive-course-new.php:116
 #: inc/elementor/widgets/archive-course/archive-course.php:98
 #: inc/elementor/widgets/archive-post/archive-post.php:77
@@ -482,8 +482,8 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:1236
 #: inc/elementor/widgets/global/minicart.php:1398
 #: inc/elementor/widgets/global/minicart.php:1535
-#: inc/elementor/widgets/global/search-form.php:409
-#: inc/elementor/widgets/global/search-form.php:541
+#: inc/elementor/widgets/global/search-form.php:410
+#: inc/elementor/widgets/global/search-form.php:542
 #: inc/elementor/widgets/global/site-logo.php:118
 #: inc/elementor/widgets/global/social-share.php:545
 #: inc/elementor/widgets/global/social.php:362
@@ -506,160 +506,160 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:358
+#: inc/elementor/class-elementor.php:359
 msgid "Transform Animated"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:359
+#: inc/elementor/class-elementor.php:360
 msgid "Infinite Animation"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:370
-#: inc/elementor/class-elementor.php:392
+#: inc/elementor/class-elementor.php:371
+#: inc/elementor/class-elementor.php:393
 msgid "Select Animation"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:371
+#: inc/elementor/class-elementor.php:372
 msgid "Transform 1"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:372
+#: inc/elementor/class-elementor.php:373
 msgid "Transform 2"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:373
+#: inc/elementor/class-elementor.php:374
 msgid "Transform 3"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:374
+#: inc/elementor/class-elementor.php:375
 msgid "Transform 4"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:375
+#: inc/elementor/class-elementor.php:376
 msgid "Transform 5"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:389
+#: inc/elementor/class-elementor.php:390
 msgid "Infinite Type"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:393
+#: inc/elementor/class-elementor.php:394
 msgid "Circle Small"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:394
+#: inc/elementor/class-elementor.php:395
 msgid "Circle Medium"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:395
+#: inc/elementor/class-elementor.php:396
 msgid "Circle Large"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:396
+#: inc/elementor/class-elementor.php:397
 msgid "Fade In Out"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:397
+#: inc/elementor/class-elementor.php:398
 msgid "flipX"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:398
+#: inc/elementor/class-elementor.php:399
 msgid "flipY"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:399
+#: inc/elementor/class-elementor.php:400
 msgid "Move Y Very Small"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:400
+#: inc/elementor/class-elementor.php:401
 msgid "Move Y Very Small ( Reverse )"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:401
+#: inc/elementor/class-elementor.php:402
 msgid "Move Y Small"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:402
+#: inc/elementor/class-elementor.php:403
 msgid "Move Y Medium"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:403
+#: inc/elementor/class-elementor.php:404
 msgid "Move Y Large"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:404
+#: inc/elementor/class-elementor.php:405
 msgid "Move X Small"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:405
+#: inc/elementor/class-elementor.php:406
 msgid "Move X Medium"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:406
+#: inc/elementor/class-elementor.php:407
 msgid "Move X Large"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:407
+#: inc/elementor/class-elementor.php:408
 msgid "Move XY Small"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:408
+#: inc/elementor/class-elementor.php:409
 msgid "Move XY Medium"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:409
+#: inc/elementor/class-elementor.php:410
 msgid "Move XY Large"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:410
+#: inc/elementor/class-elementor.php:411
 msgid "Move YX Small"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:412
+#: inc/elementor/class-elementor.php:413
 msgid "Move YX Medium"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:413
+#: inc/elementor/class-elementor.php:414
 msgid "Move YX Large"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:414
+#: inc/elementor/class-elementor.php:415
 msgid "Rotate X"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:415
+#: inc/elementor/class-elementor.php:416
 msgid "Rotate Y"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:416
+#: inc/elementor/class-elementor.php:417
 msgid "Swing"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:417
+#: inc/elementor/class-elementor.php:418
 msgid "Spinners"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:418
+#: inc/elementor/class-elementor.php:419
 msgid "Zoom In Out"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:431
+#: inc/elementor/class-elementor.php:432
 msgid "Custom Animation Duration"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:433
+#: inc/elementor/class-elementor.php:434
 msgid "Enable"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:434
+#: inc/elementor/class-elementor.php:435
 msgid "Disable"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:444
+#: inc/elementor/class-elementor.php:445
 msgid "Set Animation Duration"
 msgstr ""
 
-#: inc/elementor/class-elementor.php:453
+#: inc/elementor/class-elementor.php:454
 msgid "Set custom animation duration in second( unit )."
 msgstr ""
 
@@ -736,10 +736,10 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:642
 #: inc/elementor/widgets/global/product-base.php:826
 #: inc/elementor/widgets/global/product-base.php:1198
-#: inc/elementor/widgets/global/search-form.php:294
-#: inc/elementor/widgets/global/search-form.php:455
-#: inc/elementor/widgets/global/search-form.php:526
-#: inc/elementor/widgets/global/search-form.php:781
+#: inc/elementor/widgets/global/search-form.php:295
+#: inc/elementor/widgets/global/search-form.php:456
+#: inc/elementor/widgets/global/search-form.php:527
+#: inc/elementor/widgets/global/search-form.php:782
 #: inc/elementor/widgets/global/site-logo.php:368
 #: inc/elementor/widgets/global/social-share.php:699
 #: inc/elementor/widgets/global/social-share.php:754
@@ -1247,7 +1247,7 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:1238
 #: inc/elementor/widgets/global/progress-tracker.php:56
 #: inc/elementor/widgets/global/progress-tracker.php:160
-#: inc/elementor/widgets/global/search-form.php:205
+#: inc/elementor/widgets/global/search-form.php:206
 #: inc/elementor/widgets/global/site-logo.php:92
 #: inc/elementor/widgets/global/social-share.php:139
 #: inc/elementor/widgets/global/social.php:142
@@ -1340,7 +1340,7 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:1242
 #: inc/elementor/widgets/global/progress-tracker.php:60
 #: inc/elementor/widgets/global/progress-tracker.php:168
-#: inc/elementor/widgets/global/search-form.php:209
+#: inc/elementor/widgets/global/search-form.php:210
 #: inc/elementor/widgets/global/site-logo.php:100
 #: inc/elementor/widgets/global/social-share.php:147
 #: inc/elementor/widgets/global/social.php:150
@@ -1451,12 +1451,12 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:1125
 #: inc/elementor/widgets/global/progress-tracker.php:113
 #: inc/elementor/widgets/global/progress-tracker.php:181
-#: inc/elementor/widgets/global/search-form.php:363
-#: inc/elementor/widgets/global/search-form.php:392
-#: inc/elementor/widgets/global/search-form.php:440
-#: inc/elementor/widgets/global/search-form.php:572
-#: inc/elementor/widgets/global/search-form.php:595
-#: inc/elementor/widgets/global/search-form.php:626
+#: inc/elementor/widgets/global/search-form.php:364
+#: inc/elementor/widgets/global/search-form.php:393
+#: inc/elementor/widgets/global/search-form.php:441
+#: inc/elementor/widgets/global/search-form.php:573
+#: inc/elementor/widgets/global/search-form.php:596
+#: inc/elementor/widgets/global/search-form.php:627
 #: inc/elementor/widgets/global/social-share.php:510
 #: inc/elementor/widgets/global/social-share.php:561
 #: inc/elementor/widgets/global/social-share.php:661
@@ -1563,7 +1563,7 @@ msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:341
 #: inc/elementor/widgets/archive-course/archive-course.php:293
-#: inc/elementor/widgets/global/search-form.php:135
+#: inc/elementor/widgets/global/search-form.php:136
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:85
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:526
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:532
@@ -1633,9 +1633,9 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:694
 #: inc/elementor/widgets/global/product-base.php:852
 #: inc/elementor/widgets/global/product-base.php:1056
-#: inc/elementor/widgets/global/search-form.php:357
-#: inc/elementor/widgets/global/search-form.php:589
-#: inc/elementor/widgets/global/search-form.php:696
+#: inc/elementor/widgets/global/search-form.php:358
+#: inc/elementor/widgets/global/search-form.php:590
+#: inc/elementor/widgets/global/search-form.php:697
 #: inc/elementor/widgets/global/site-logo.php:287
 #: inc/elementor/widgets/global/social-share.php:314
 #: inc/elementor/widgets/global/social-share.php:775
@@ -1706,7 +1706,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-course/archive-course.php:405
 #: inc/elementor/widgets/global/contact-form-7.php:258
 #: inc/elementor/widgets/global/login-form.php:605
-#: inc/elementor/widgets/global/search-form.php:386
+#: inc/elementor/widgets/global/search-form.php:387
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:240
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:351
 msgid "Focus"
@@ -1848,8 +1848,8 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:752
 #: inc/elementor/widgets/global/product-base.php:894
 #: inc/elementor/widgets/global/product-base.php:1087
-#: inc/elementor/widgets/global/search-form.php:620
-#: inc/elementor/widgets/global/search-form.php:729
+#: inc/elementor/widgets/global/search-form.php:621
+#: inc/elementor/widgets/global/search-form.php:730
 #: inc/elementor/widgets/global/site-logo.php:322
 #: inc/elementor/widgets/global/social-share.php:369
 #: inc/elementor/widgets/global/social-share.php:805
@@ -2001,10 +2001,10 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:1105
 #: inc/elementor/widgets/global/product-base.php:1136
 #: inc/elementor/widgets/global/product-base.php:1179
-#: inc/elementor/widgets/global/search-form.php:607
-#: inc/elementor/widgets/global/search-form.php:638
-#: inc/elementor/widgets/global/search-form.php:716
-#: inc/elementor/widgets/global/search-form.php:748
+#: inc/elementor/widgets/global/search-form.php:608
+#: inc/elementor/widgets/global/search-form.php:639
+#: inc/elementor/widgets/global/search-form.php:717
+#: inc/elementor/widgets/global/search-form.php:749
 #: inc/elementor/widgets/global/social-share.php:331
 #: inc/elementor/widgets/global/social-share.php:386
 #: inc/elementor/widgets/global/social-share.php:439
@@ -2111,10 +2111,10 @@ msgstr ""
 #: inc/elementor/widgets/global/product-base.php:618
 #: inc/elementor/widgets/global/product-base.php:838
 #: inc/elementor/widgets/global/product-base.php:1034
-#: inc/elementor/widgets/global/search-form.php:265
-#: inc/elementor/widgets/global/search-form.php:344
-#: inc/elementor/widgets/global/search-form.php:502
-#: inc/elementor/widgets/global/search-form.php:762
+#: inc/elementor/widgets/global/search-form.php:266
+#: inc/elementor/widgets/global/search-form.php:345
+#: inc/elementor/widgets/global/search-form.php:503
+#: inc/elementor/widgets/global/search-form.php:763
 #: inc/elementor/widgets/global/social-share.php:282
 #: inc/elementor/widgets/global/social-share.php:450
 #: inc/elementor/widgets/global/social-share.php:521
@@ -2525,7 +2525,7 @@ msgstr ""
 #: inc/elementor/widgets/global/heading.php:275
 #: inc/elementor/widgets/global/login-popup.php:254
 #: inc/elementor/widgets/global/minicart.php:1051
-#: inc/elementor/widgets/global/search-form.php:677
+#: inc/elementor/widgets/global/search-form.php:678
 #: inc/elementor/widgets/global/social-share.php:224
 #: inc/elementor/widgets/global/social.php:427
 #: inc/elementor/widgets/global/tab.php:296
@@ -2566,7 +2566,7 @@ msgstr ""
 #: inc/elementor/widgets/global/nav-menu.php:470
 #: inc/elementor/widgets/global/nav-menu.php:606
 #: inc/elementor/widgets/global/progress-tracker.php:201
-#: inc/elementor/widgets/global/search-form.php:514
+#: inc/elementor/widgets/global/search-form.php:515
 #: inc/elementor/widgets/global/social.php:409
 #: inc/elementor/widgets/global/tab.php:377
 #: inc/elementor/widgets/global/tab.php:564
@@ -2695,8 +2695,8 @@ msgstr ""
 #: inc/elementor/widgets/global/login-popup.php:417
 #: inc/elementor/widgets/global/minicart.php:259
 #: inc/elementor/widgets/global/minicart.php:300
-#: inc/elementor/widgets/global/search-form.php:703
-#: inc/elementor/widgets/global/search-form.php:736
+#: inc/elementor/widgets/global/search-form.php:704
+#: inc/elementor/widgets/global/search-form.php:737
 #: inc/elementor/widgets/global/social-share.php:342
 #: inc/elementor/widgets/global/social-share.php:397
 #: inc/elementor/widgets/global/tab.php:426
@@ -2854,8 +2854,8 @@ msgstr ""
 #: inc/elementor/widgets/global/back-to-top.php:278
 #: inc/elementor/widgets/global/contact-form-7.php:224
 #: inc/elementor/widgets/global/contact-form-7.php:454
-#: inc/elementor/widgets/global/search-form.php:284
-#: inc/elementor/widgets/global/search-form.php:374
+#: inc/elementor/widgets/global/search-form.php:285
+#: inc/elementor/widgets/global/search-form.php:375
 #: inc/elementor/widgets/global/social-share.php:671
 #: inc/elementor/widgets/global/social-share.php:792
 #: inc/elementor/widgets/global/social-share.php:822
@@ -3422,7 +3422,7 @@ msgstr ""
 #: inc/elementor/widgets/global/course-base.php:919
 #: inc/elementor/widgets/global/course-base.php:996
 #: inc/elementor/widgets/global/minicart.php:480
-#: inc/elementor/widgets/global/search-form.php:199
+#: inc/elementor/widgets/global/search-form.php:200
 #: inc/utilities/group-control-trait.php:723
 #: inc/utilities/group-control-trait.php:779
 msgid "Horizontal Orientation"
@@ -3444,7 +3444,7 @@ msgstr ""
 #: inc/elementor/widgets/global/minicart.php:531
 #: inc/elementor/widgets/global/minicart.php:582
 #: inc/elementor/widgets/global/minicart.php:608
-#: inc/elementor/widgets/global/search-form.php:225
+#: inc/elementor/widgets/global/search-form.php:226
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:363
 #: inc/utilities/group-control-trait.php:743
 #: inc/utilities/group-control-trait.php:800
@@ -3614,7 +3614,7 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:17
 #: inc/elementor/widgets/global/button.php:139
 #: inc/elementor/widgets/global/product-base.php:609
-#: inc/elementor/widgets/global/search-form.php:474
+#: inc/elementor/widgets/global/search-form.php:475
 #: inc/elementor/widgets/global/social-share.php:710
 #: inc/elementor/widgets/single-course-item/course-item-data.php:152
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:61
@@ -3939,6 +3939,7 @@ msgid "Show Image"
 msgstr ""
 
 #: inc/elementor/widgets/global/course-base.php:643
+#: inc/elementor/widgets/global/search-form.php:108
 msgid "Course"
 msgstr ""
 
@@ -3968,19 +3969,19 @@ msgstr ""
 msgid "Sale"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:2156
+#: inc/elementor/widgets/global/course-base.php:2161
 msgid "%d lesson"
 msgid_plural "%d lessons"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/elementor/widgets/global/course-base.php:2181
+#: inc/elementor/widgets/global/course-base.php:2186
 msgid "%d quiz"
 msgid_plural "%d quizzes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/elementor/widgets/global/course-base.php:2206
+#: inc/elementor/widgets/global/course-base.php:2211
 msgid "%d student"
 msgid_plural "%d students"
 msgstr[0] ""
@@ -4074,7 +4075,7 @@ msgid "Over 7 million students"
 msgstr ""
 
 #: inc/elementor/widgets/global/header-info.php:121
-#: inc/elementor/widgets/global/search-form.php:242
+#: inc/elementor/widgets/global/search-form.php:243
 #: inc/elementor/widgets/global/social.php:331
 #: inc/elementor/widgets/global/team.php:1139
 #: inc/elementor/widgets/global/testimonial.php:812
@@ -4087,7 +4088,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/header-info.php:129
 #: inc/elementor/widgets/global/minicart.php:1319
-#: inc/elementor/widgets/global/search-form.php:246
+#: inc/elementor/widgets/global/search-form.php:247
 #: inc/elementor/widgets/global/social.php:339
 #: inc/elementor/widgets/global/team.php:1147
 #: inc/elementor/widgets/global/testimonial.php:820
@@ -4203,8 +4204,8 @@ msgstr ""
 #: inc/elementor/widgets/global/heading.php:228
 #: inc/elementor/widgets/global/minicart.php:1122
 #: inc/elementor/widgets/global/minicart.php:1237
-#: inc/elementor/widgets/global/search-form.php:410
-#: inc/elementor/widgets/global/search-form.php:542
+#: inc/elementor/widgets/global/search-form.php:411
+#: inc/elementor/widgets/global/search-form.php:543
 #: inc/elementor/widgets/global/social-share.php:546
 msgid "Solid"
 msgstr ""
@@ -4754,7 +4755,7 @@ msgid "Max Width"
 msgstr ""
 
 #: inc/elementor/widgets/global/login-form.php:456
-#: inc/elementor/widgets/global/search-form.php:192
+#: inc/elementor/widgets/global/search-form.php:193
 msgid "Form"
 msgstr ""
 
@@ -4763,7 +4764,7 @@ msgid "Lable"
 msgstr ""
 
 #: inc/elementor/widgets/global/login-form.php:490
-#: inc/elementor/widgets/global/search-form.php:316
+#: inc/elementor/widgets/global/search-form.php:317
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:174
 msgid "Input"
 msgstr ""
@@ -5045,32 +5046,32 @@ msgstr ""
 
 #: inc/elementor/widgets/global/minicart.php:1123
 #: inc/elementor/widgets/global/minicart.php:1238
-#: inc/elementor/widgets/global/search-form.php:411
-#: inc/elementor/widgets/global/search-form.php:543
+#: inc/elementor/widgets/global/search-form.php:412
+#: inc/elementor/widgets/global/search-form.php:544
 #: inc/elementor/widgets/global/social-share.php:547
 msgid "Double"
 msgstr ""
 
 #: inc/elementor/widgets/global/minicart.php:1124
 #: inc/elementor/widgets/global/minicart.php:1239
-#: inc/elementor/widgets/global/search-form.php:412
-#: inc/elementor/widgets/global/search-form.php:544
+#: inc/elementor/widgets/global/search-form.php:413
+#: inc/elementor/widgets/global/search-form.php:545
 #: inc/elementor/widgets/global/social-share.php:548
 msgid "Dotted"
 msgstr ""
 
 #: inc/elementor/widgets/global/minicart.php:1125
 #: inc/elementor/widgets/global/minicart.php:1240
-#: inc/elementor/widgets/global/search-form.php:413
-#: inc/elementor/widgets/global/search-form.php:545
+#: inc/elementor/widgets/global/search-form.php:414
+#: inc/elementor/widgets/global/search-form.php:546
 #: inc/elementor/widgets/global/social-share.php:549
 msgid "Dashed"
 msgstr ""
 
 #: inc/elementor/widgets/global/minicart.php:1126
 #: inc/elementor/widgets/global/minicart.php:1241
-#: inc/elementor/widgets/global/search-form.php:414
-#: inc/elementor/widgets/global/search-form.php:546
+#: inc/elementor/widgets/global/search-form.php:415
+#: inc/elementor/widgets/global/search-form.php:547
 #: inc/elementor/widgets/global/social-share.php:550
 msgid "Groove"
 msgstr ""
@@ -5359,7 +5360,7 @@ msgid "Search Form"
 msgstr ""
 
 #: inc/elementor/widgets/global/search-form.php:57
-#: inc/elementor/widgets/global/search-form.php:654
+#: inc/elementor/widgets/global/search-form.php:655
 msgid "Modal"
 msgstr ""
 
@@ -5381,49 +5382,49 @@ msgstr ""
 msgid "Search Result"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:114
+#: inc/elementor/widgets/global/search-form.php:115
 msgid "Placeholder Text"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:116
+#: inc/elementor/widgets/global/search-form.php:117
 msgid "Search products..."
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:125
+#: inc/elementor/widgets/global/search-form.php:126
 msgid "Button Search"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:133
+#: inc/elementor/widgets/global/search-form.php:134
 msgid "Button Search Text"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:141
+#: inc/elementor/widgets/global/search-form.php:142
 msgid "Button Search Icon"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:155
+#: inc/elementor/widgets/global/search-form.php:156
 msgid "Font Size Icon"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:172
+#: inc/elementor/widgets/global/search-form.php:173
 msgid "Spacing Icon"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:250
+#: inc/elementor/widgets/global/search-form.php:251
 #: inc/elementor/widgets/single-course/course-meta.php:270
 msgid "Block"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:323
+#: inc/elementor/widgets/global/search-form.php:324
 msgid "Input Width"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:406
-#: inc/elementor/widgets/global/search-form.php:538
+#: inc/elementor/widgets/global/search-form.php:407
+#: inc/elementor/widgets/global/search-form.php:539
 msgid "Border Type"
 msgstr ""
 
-#: inc/elementor/widgets/global/search-form.php:481
+#: inc/elementor/widgets/global/search-form.php:482
 msgid "Button Width"
 msgstr ""
 
@@ -6131,6 +6132,10 @@ msgstr ""
 
 #: inc/elementor/widgets/loop-item/loop-course-buttons.php:34
 msgid "Item Course buttons"
+msgstr ""
+
+#: inc/elementor/widgets/loop-item/loop-course-meta.php:34
+msgid "Item Course meta"
 msgstr ""
 
 #: inc/elementor/widgets/loop-item/loop-course-rating.php:34
@@ -6943,7 +6948,7 @@ msgstr ""
 msgid "Course Tabs"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1515
+#: inc/elementor/widgets/single-course/course-tabs.php:1520
 msgid "Co-Instructor"
 msgstr ""
 
