@@ -218,6 +218,10 @@ class Main_Walker extends \Walker_Nav_Menu {
 			$item_output .= ' <span class="thim-ekits-menu__badge" style="' . esc_attr( $badge_style ) . '">' . esc_html( $options['badgeText'] ) . '</span>';
 		}
 
+		if ( ! empty( $item->description ) ) {
+            $item_output .= '<span class="thim-ekits-menu-item-description">' . esc_html( $item->description ) . '</span>';
+        }
+
 		$item_output .= '</a>' . wp_kses_post( $suffix );
 		$item_output .= $args->after;
 

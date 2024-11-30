@@ -392,20 +392,27 @@ class Thim_Ekit_Widget_Site_Logo extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$logo_type = $settings['logo_image'];
+		$logo_url = '';
 
 		if ( $logo_type === 'site' ) {
 			$logo_id = apply_filters( 'thim-ekits-custom-logo', get_theme_mod( 'custom_logo' ) );
+			// fix logo with theme premium of thimpress;
+			$logo_url = apply_filters( 'thim-ekits-custom-logo-url', '' );
 		} else {
 			$logo_id = $settings['logo_custom_image']['id'];
 		}
 
-		if ( empty( $logo_id ) ) {
+		if ( empty( $logo_id ) && empty( $logo_url ) ) {
 			return;
 		}
 
 		$settings['logo_size'] = array(
 			'id' => absint( $logo_id ),
 		);
+
+		if ( isset( $logo_url ) && $logo_url ) {
+			$settings['logo_size']['url'] = esc_url($logo_url);
+		}
 
 		$logo_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'logo_size' );
 

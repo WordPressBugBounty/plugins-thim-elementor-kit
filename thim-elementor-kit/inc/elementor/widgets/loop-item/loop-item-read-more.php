@@ -25,7 +25,9 @@ class Thim_Ekit_Widget_Loop_Item_Read_More extends Widget_Button {
 	public function get_icon() {
 		return 'eicon-button';
 	}
-
+	protected function is_dynamic_content(): bool{
+		return true; // Change to true or false based on your requirement
+	}
 	public function get_keywords() {
 		return array( 'read more', 'link' );
 	}

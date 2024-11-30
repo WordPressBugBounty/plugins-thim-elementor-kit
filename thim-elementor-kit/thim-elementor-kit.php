@@ -3,10 +3,10 @@
  * Plugin Name: Thim Elementor Kit
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.2.6
+ * Version: 1.2.7
  * Author URI: http://thimpress.com
  * Requires at least: 6.0
- * Tested up to: 6.6.2
+ * Tested up to: 6.7.1
  * Requires PHP: 7.4
  * Text Domain: thim-elementor-kit
  * Domain Path: /languages/
@@ -18,7 +18,7 @@ use Elementor\Plugin;
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'THIM_EKIT_VERSION', '1.2.6' );
+define( 'THIM_EKIT_VERSION', '1.2.7' );
 const THIM_EKIT_PLUGIN_FILE = __FILE__;
 define( 'THIM_EKIT_PLUGIN_PATH', plugin_dir_path( THIM_EKIT_PLUGIN_FILE ) );
 define( 'THIM_EKIT_PLUGIN_URL', plugin_dir_url( THIM_EKIT_PLUGIN_FILE ) );
@@ -76,7 +76,7 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/elementor/class-elementor.php';
 
 			// Modules, must load on hook plugins_loaded to check class exists.
-			add_action( 'plugins_loaded', [ $this, 'included_files_when_plugins_loaded' ] );
+			add_action( 'plugins_loaded', array( $this, 'included_files_when_plugins_loaded' ) );
 			// Include old, when all plugins extend move self to hook plugins_loaded will remove.
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-init.php';
 
@@ -128,25 +128,39 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 					return;
 				}
 
-				$activation_url = wp_nonce_url( 'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s',
-					'activate-plugin_' . $plugin );
+				$activation_url = wp_nonce_url(
+					'plugins.php?action=activate&amp;plugin=' . $plugin . '&amp;plugin_status=all&amp;paged=1&amp;s',
+					'activate-plugin_' . $plugin
+				);
 
-				$message = sprintf( '<p>%s</p>',
-					esc_html__( 'Thim Elementor Kit requires Elementor to be activated.', 'thim-elementor-kit' ) );
-				$message .= sprintf( '<p><a href="%s" class="button-primary">%s</a></p>', $activation_url,
-					esc_html__( 'Activate Elementor Now', 'thim-elementor-kit' ) );
+				$message  = sprintf(
+					'<p>%s</p>',
+					esc_html__( 'Thim Elementor Kit requires Elementor to be activated.', 'thim-elementor-kit' )
+				);
+				$message .= sprintf(
+					'<p><a href="%s" class="button-primary">%s</a></p>',
+					$activation_url,
+					esc_html__( 'Activate Elementor Now', 'thim-elementor-kit' )
+				);
 			} else {
 				if ( ! current_user_can( 'install_plugins' ) ) {
 					return;
 				}
 
-				$install_url = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ),
-					'install-plugin_elementor' );
+				$install_url = wp_nonce_url(
+					self_admin_url( 'update.php?action=install-plugin&plugin=elementor' ),
+					'install-plugin_elementor'
+				);
 
-				$message = sprintf( '<p>%s</p>',
-					esc_html__( 'Thim Elementor Kit requires Elementor to be installed.', 'thim-elementor-kit' ) );
-				$message .= sprintf( '<p><a href="%s" class="button-primary">%s</a></p>', $install_url,
-					esc_html__( 'Install Elementor Now', 'thim-elementor-kit' ) );
+				$message  = sprintf(
+					'<p>%s</p>',
+					esc_html__( 'Thim Elementor Kit requires Elementor to be installed.', 'thim-elementor-kit' )
+				);
+				$message .= sprintf(
+					'<p><a href="%s" class="button-primary">%s</a></p>',
+					$install_url,
+					esc_html__( 'Install Elementor Now', 'thim-elementor-kit' )
+				);
 			}
 
 			printf( '<div class="notice notice-error is-dismissible"><p>%s</p></div>', wp_kses_post( $message ) );
@@ -160,16 +174,29 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 			// Deactive Thim Elementor Kit Pro.
 			deactivate_plugins( 'thim-elementor-kit-pro/thim-elementor-kit-pro.php' );
 
-			$deactivate_url = wp_nonce_url( admin_url( 'plugins.php?action=deactivate&plugin=thim-elementor-kit-pro/thim-elementor-kit-pro.php' ),
-				'deactivate-plugin_thim-elementor-kit-pro/thim-elementor-kit-pro.php' );
+			$deactivate_url = wp_nonce_url(
+				admin_url( 'plugins.php?action=deactivate&plugin=thim-elementor-kit-pro/thim-elementor-kit-pro.php' ),
+				'deactivate-plugin_thim-elementor-kit-pro/thim-elementor-kit-pro.php'
+			);
 			?>
 			<div class="notice notice-error is-dismissible">
-				<p><?php
-					esc_html_e( 'Thim Elementor Kit Pro is merged into Thim Elementor Kit. Please deactivate Thim Elementor Kit Pro to avoid conflicts.',
-						'thim-elementor-kit' ); ?></p>
-				<p><a href="<?php
-					echo esc_url( $deactivate_url ); ?>" class="button-primary"><?php
-						esc_html_e( 'Deactivate Thim Elementor Kit Pro', 'thim-elementor-kit' ); ?></a></p>
+				<p>
+				<?php
+					esc_html_e(
+						'Thim Elementor Kit Pro is merged into Thim Elementor Kit. Please deactivate Thim Elementor Kit Pro to avoid conflicts.',
+						'thim-elementor-kit'
+					);
+				?>
+						</p>
+				<p><a href="
+				<?php
+					echo esc_url( $deactivate_url );
+				?>
+				" class="button-primary">
+				<?php
+						esc_html_e( 'Deactivate Thim Elementor Kit Pro', 'thim-elementor-kit' );
+				?>
+					</a></p>
 			</div>
 			<?php
 		}
@@ -202,13 +229,13 @@ register_activation_hook(
 
 // If Multilsite.
 // if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-// 	add_action(
-// 		'plugins_loaded',
-// 		function() {
-// 			Thim_EL_Kit::instance();
-// 		},
-// 		90
-// 	);
+//  add_action(
+//      'plugins_loaded',
+//      function() {
+//          Thim_EL_Kit::instance();
+//      },
+//      90
+//  );
 // } else {
 Thim_EL_Kit::instance();
 // }

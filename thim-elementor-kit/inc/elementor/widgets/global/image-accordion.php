@@ -328,17 +328,17 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
-			'img_hover_color',
-			[
-				'label'     => esc_html__( 'Hover Overlay Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => 'rgba(0, 0, 0, .5)',
-				'selectors' => [
-					'{{WRAPPER}} .thim-ekits-image-accordion__item:hover::before' => 'background-color: {{VALUE}};',
-				],
-			]
-		);
+		// $this->add_control(
+		// 	'img_hover_color',
+		// 	[
+		// 		'label'     => esc_html__( 'Hover Overlay Color', 'thim-elementor-kit' ),
+		// 		'type'      => Controls_Manager::COLOR,
+		// 		'default'   => 'rgba(0, 0, 0, .5)',
+		// 		'selectors' => [
+		// 			'{{WRAPPER}} .thim-ekits-image-accordion__item:hover::before' => 'background-color: {{VALUE}};',
+		// 		],
+		// 	]
+		// );
 
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),

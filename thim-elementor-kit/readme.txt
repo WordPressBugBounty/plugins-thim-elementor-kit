@@ -3,9 +3,9 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: page builder, elementor, elementorkit, thimpress.
 Requires at least: 6.0
-Tested up to: 6.6.2
+Tested up to: 6.7.1
 Requires PHP: 7.4
-Stable tag: 1.2.6
+Stable tag: 1.2.7
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,14 @@ Especially for **<a href="https://1.envato.market/G5Ook">Eduma</a>** or other LM
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.2.7 (2024-11-30) =
+~ Fixed: Cache of widget Item Info in type loop item
+~ Fixed: stock of product variations not show
+~ Fixed: class repeater blog.
+~ Fixed: not show stock of product variations.
+~ Fixed: color lesson option.
+~ Fixed: img accordion.
+~ Fixed: option pagination archive product.
 
 = 1.2.6 (2024-11-04) =
 ~ Fixed: conflict el pro animation

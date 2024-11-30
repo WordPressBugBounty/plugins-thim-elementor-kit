@@ -2,6 +2,7 @@
 
 namespace Elementor;
 
+use LearnPress\Models\CourseModel;
 use LearnPress\TemplateHooks\Instructor\SingleInstructorTemplate;
 use LP_Addon_Co_Instructor\CourseCoInstructorTemplate;
 use LearnPress\Models\UserModel;
@@ -1488,6 +1489,12 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 			if ( ! $course ) {
 				return;
 			}
+
+			$courseModel = CourseModel::find( get_the_ID(), true );
+			if ( ! $courseModel ) {
+				return;
+			}
+
 			$instructor = $course->get_instructor();
 
 			if ( ! $instructor ) {
@@ -1512,7 +1519,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 			}
 
 			$courseCoInstructorTemplate = CourseCoInstructorTemplate::instance();
-			$instructors                = $courseCoInstructorTemplate->addon->get_instructors( $course->get_id() );
+			$instructors                = $courseCoInstructorTemplate->addon->get_instructors( $courseModel );
 
 			if ( ! empty( $instructors ) ) {
 				printf(

@@ -610,7 +610,17 @@ class Thim_Ekit_Widget_Course_Item_Data extends Widget_Base {
 			<?php
 			if ( $can_view_content_item->flag ) {
 				do_action( 'learn-press/before-content-item-summary/' . $item->get_item_type() );
+
+				if ( $item->get_item_type() == 'lp_assignment' ) {
+					echo '<div class="learn-press-main-content-item-assignment">';
+				}
+				
 				do_action( 'learn-press/content-item-summary/' . $item->get_item_type() );
+
+				if ( $item->get_item_type() == 'lp_assignment' ) {
+					echo '</div>';
+				}
+
 				do_action( 'learn-press/after-content-item-summary/' . $item->get_item_type() );
 			} else {
 				learn_press_get_template(

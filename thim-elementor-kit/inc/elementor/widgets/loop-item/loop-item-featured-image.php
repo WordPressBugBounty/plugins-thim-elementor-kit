@@ -22,7 +22,9 @@ class Thim_Ekit_Widget_Loop_Item_Featured_Image extends Widget_Image {
 	public function get_icon() {
 		return 'eicon-featured-image';
 	}
-
+	protected function is_dynamic_content(): bool{
+		return true; // Change to true or false based on your requirement
+	}
 	public function get_keywords() {
 		return array( 'image', 'featured', 'thumbnail' );
 	}

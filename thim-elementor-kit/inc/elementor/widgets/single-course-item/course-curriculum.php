@@ -200,7 +200,7 @@ class Thim_Ekit_Widget_Course_Curriculum extends Widget_Base {
 				'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .course-curriculum .course-item .section-item-link' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .course-curriculum' => '--thim-curriculum-lesson-text-color: {{VALUE}}',
 				),
 			)
 		);

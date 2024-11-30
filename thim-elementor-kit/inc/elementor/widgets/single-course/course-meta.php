@@ -644,6 +644,9 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 	}
 
 	protected function render_custom( $settings ) {
+		if ( empty( $settings['custom_text'] ) ) {
+			return;
+		}
 		$text = $settings['custom_text'];
 		if ( ! empty( $settings['custom_url']['url'] ) ) {
 			$this->add_link_attributes( 'link-' . sanitize_title( $settings['custom_text'] ), $settings['custom_url'] );

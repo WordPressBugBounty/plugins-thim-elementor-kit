@@ -22,6 +22,10 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 	public function get_icon() {
 		return 'eicon-post-info';
 	}
+	
+	protected function is_dynamic_content(): bool{
+ 		return true; // Change to true or false based on your requirement
+	}
 
 	public function get_inline_css_depends() {
 		return array(
@@ -35,7 +39,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 	public function get_keywords() {
 		return [ 'info', 'date', 'time', 'author', 'taxonomy', 'comments', 'terms', 'avatar' ];
 	}
-
+	 
 	protected function register_controls_repeater( $repeater ) {
 		$repeater->add_control(
 			'type',
@@ -332,7 +336,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings_for_display();
+		$settings = $this->get_settings_for_display(); 
 
 		$this->add_render_attribute( 'icon_list', 'class', 'elementor-icon-list-items' );
 		$this->add_render_attribute( 'list_item', 'class', 'elementor-icon-list-item' );
@@ -348,6 +352,9 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 			$this->print_render_attribute_string( 'icon_list' ); ?>>
 				<?php
 				foreach ( $settings['icon_list'] as $repeater_item ) {
+					if ( $repeater_item['type'] == 'custom' && empty( $repeater_item['text'] )) {
+						continue;
+					}
 					?>
 					<li <?php
 					$this->print_render_attribute_string( 'list_item' ); ?>>

@@ -968,7 +968,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				),
 				'prefix_class' => 'thim-ekit-archive-product--pagination--align--',
 				'selectors'    => array(
-					'{{WRAPPER}} nav.woocommerce-pagination' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}} nav' => 'text-align: {{VALUE}};',
 				),
 			)
 		);
@@ -999,11 +999,11 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 					),
 				),
 				'selectors'      => array(
-					'body:not(.rtl) {{WRAPPER}}.thim-ekit-archive-product--pagination--align--left nav.woocommerce-pagination ul li'  => 'margin-right: {{SIZE}}{{UNIT}};',
-					'body:not(.rtl) {{WRAPPER}}.thim-ekit-archive-product--pagination--align--right nav.woocommerce-pagination ul li' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'body.rtl {{WRAPPER}}.thim-ekit-archive-product--pagination--align--left nav.woocommerce-pagination ul li'        => 'margin-left: {{SIZE}}{{UNIT}};',
-					'body.rtl {{WRAPPER}}.thim-ekit-archive-product--pagination--align--right nav.woocommerce-pagination ul li'       => 'margin-right: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}}.thim-ekit-archive-product--pagination--align--center nav.woocommerce-pagination ul li'               => 'margin-left: calc( {{SIZE}}{{UNIT}} / 2 ); margin-right: calc( {{SIZE}}{{UNIT}} / 2 );',
+					'body:not(.rtl) {{WRAPPER}}.thim-ekit-archive-product--pagination--align--left nav ul li'  => 'margin-right: {{SIZE}}{{UNIT}};',
+					'body:not(.rtl) {{WRAPPER}}.thim-ekit-archive-product--pagination--align--right nav ul li' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'body.rtl {{WRAPPER}}.thim-ekit-archive-product--pagination--align--left nav ul li'        => 'margin-left: {{SIZE}}{{UNIT}};',
+					'body.rtl {{WRAPPER}}.thim-ekit-archive-product--pagination--align--right nav ul li'       => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}.thim-ekit-archive-product--pagination--align--center nav ul li'               => 'margin-left: calc( {{SIZE}}{{UNIT}} / 2 ); margin-right: calc( {{SIZE}}{{UNIT}} / 2 );',
 				),
 			)
 		);
@@ -1014,7 +1014,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Spacing', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::SLIDER,
 				'selectors' => array(
-					'{{WRAPPER}} nav.woocommerce-pagination' => 'margin-top: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} nav' => 'margin-top: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -1024,7 +1024,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 			array(
 				'name'     => 'pagination_border',
 				'exclude'  => array( 'color' ),
-				'selector' => '{{WRAPPER}} nav.woocommerce-pagination ul li a, {{WRAPPER}} nav.woocommerce-pagination ul li span',
+				'selector' => '{{WRAPPER}} nav ul li a, {{WRAPPER}} nav ul li span',
 			)
 		);
 
@@ -1035,7 +1035,19 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em' ),
 				'selectors'  => array(
-					'{{WRAPPER}} nav.woocommerce-pagination ul li a, {{WRAPPER}} nav.woocommerce-pagination ul li span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} nav ul li a, {{WRAPPER}} nav ul li span' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'pagination_radius',
+			array(
+				'label'      => esc_html__( 'Radius', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} nav ul li .page-numbers' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -1044,7 +1056,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'pagination_typography',
-				'selector' => '{{WRAPPER}} nav.woocommerce-pagination',
+				'selector' => '{{WRAPPER}} nav',
 			)
 		);
 
@@ -1063,7 +1075,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav.woocommerce-pagination ul li a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li a' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1074,7 +1086,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav.woocommerce-pagination ul li a' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li a' => 'background-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1094,7 +1106,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav.woocommerce-pagination ul li a:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li a:hover' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1105,7 +1117,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav.woocommerce-pagination ul li a:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li a:hover' => 'background-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1125,7 +1137,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav.woocommerce-pagination ul li span.current' => 'color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li span.current' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1136,7 +1148,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav.woocommerce-pagination ul li span.current' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li span.current' => 'background-color: {{VALUE}}',
 				),
 			)
 		);

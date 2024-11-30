@@ -1699,15 +1699,7 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 		$item_id           = isset( $item['_id'] ) ? $item['_id'] : '';
 		?>
 
-		<div
-			class="thim-ekits-post__meta elementor-repeater-item-
-			<?php
-			echo esc_attr( $item_id );
-			?>
-			<?php
-			echo ' m-psi-' . esc_attr( $meta_data_display );
-			?>
-			">
+		<div class="thim-ekits-post__meta elementor-repeater-item-<?php echo esc_attr( $item_id ) ?><?php echo ' m-psi-' . esc_attr( $meta_data_display ); ?> ">
 			<?php
 			if ( in_array( 'author', $meta_data ) ) {
 				$this->render_author( $item['author_icon_meta_data'] );

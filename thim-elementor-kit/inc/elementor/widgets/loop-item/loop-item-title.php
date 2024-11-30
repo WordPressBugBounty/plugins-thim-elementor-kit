@@ -26,7 +26,9 @@ class Thim_Ekit_Widget_Loop_Item_Title extends Widget_Heading {
 	public function get_keywords() {
 		return array( 'title', 'heading' );
 	}
-
+	protected function is_dynamic_content(): bool {
+		return true; // Change to true or false based on your requirement
+	}
 	protected function register_controls() {
 		parent::register_controls();
 

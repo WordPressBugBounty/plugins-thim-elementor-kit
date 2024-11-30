@@ -549,21 +549,21 @@ class Thim_Ekit_Widget_Product_Add_To_Cart extends Widget_Base {
 		do_action( 'thim-ekit/modules/single-product/before-preview-query' );
 
 		$product = wc_get_product( false );
-
 		if ( ! $product ) {
 			return;
 		}
 
 		$settings = $this->get_settings_for_display();
 
-		add_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
+		// add_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
 		?>
 
 		<div class="thim-ekit-single-product__add-to-cart"><?php
-			woocommerce_template_single_add_to_cart(); ?></div>
+			woocommerce_template_single_add_to_cart();
+			 ?></div>
 
 		<?php
-		remove_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
+		// remove_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
 
 		do_action( 'thim-ekit/modules/single-product/after-preview-query' );
 	}
