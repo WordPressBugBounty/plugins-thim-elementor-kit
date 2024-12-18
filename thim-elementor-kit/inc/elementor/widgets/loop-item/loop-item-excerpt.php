@@ -85,7 +85,7 @@ class Thim_Ekit_Widget_Loop_Item_Excerpt extends Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .elementor-widget-container' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}}' => 'text-align: {{VALUE}};',
 				),
 			)
 		);
@@ -99,7 +99,7 @@ class Thim_Ekit_Widget_Loop_Item_Excerpt extends Widget_Base {
 					'default' => Global_Colors::COLOR_TEXT,
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .elementor-widget-container' => 'color: {{VALUE}};',
+					'{{WRAPPER}}' => 'color: {{VALUE}};',
 				),
 			)
 		);
@@ -111,7 +111,7 @@ class Thim_Ekit_Widget_Loop_Item_Excerpt extends Widget_Base {
 				'global'   => array(
 					'default' => Global_Typography::TYPOGRAPHY_TEXT,
 				),
-				'selector' => '{{WRAPPER}} .elementor-widget-container',
+				'selector' => '{{WRAPPER}}',
 			)
 		);
 
@@ -124,7 +124,7 @@ class Thim_Ekit_Widget_Loop_Item_Excerpt extends Widget_Base {
 				'min'         => 0,
 				'step'        => 1,
 				'selectors'   => array(
-					'{{WRAPPER}} .elementor-widget-container' => 'display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: {{VALUE}};-webkit-box-orient:vertical; overflow: hidden;',
+					'{{WRAPPER}}' => 'display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: {{VALUE}};-webkit-box-orient:vertical; overflow: hidden;',
 				),
 			)
 		);

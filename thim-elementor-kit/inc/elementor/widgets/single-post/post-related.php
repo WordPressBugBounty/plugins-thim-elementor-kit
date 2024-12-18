@@ -25,7 +25,9 @@ class Thim_Ekit_Widget_Post_Related extends Thim_Ekit_Widget_List_Base {
 	public function get_title() {
 		return esc_html__( 'Post Related', 'thim-elementor-kit' );
 	}
-
+	public function get_style_depends(): array {
+		return [ 'e-swiper' ];
+	}
 	public function get_icon() {
 		return 'thim-eicon eicon-post-content';
 	}
@@ -186,6 +188,11 @@ class Thim_Ekit_Widget_Post_Related extends Thim_Ekit_Widget_List_Base {
 				'slider_show_arrow' => 'yes',
 			)
 		);
+		$this->_register_settings_slider_mobile(
+			array(
+				'blog_layout' => 'default',
+			)
+		);
 	}
 
 	protected function _register_style_layout() {
@@ -284,7 +291,9 @@ class Thim_Ekit_Widget_Post_Related extends Thim_Ekit_Widget_List_Base {
 		$class       = 'thim-ekits-post';
 		$class_inner = 'thim-ekits-post__inner';
 		$class_item  = 'thim-ekits-post__article';
-
+		if ( isset( $settings['slider_mobile'] ) && $settings[ 'slider_mobile' ] == 'yes' ){
+			$class_inner       .= ' thim-ekits-mobile-sliders';
+		}
 		if ( $query_vars->have_posts() ) { // It's the global `wp_query` it self. and the loop was started from the theme.
 			if ( isset( $settings['blog_layout'] ) && $settings['blog_layout'] == 'slider' ) {
 				$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';

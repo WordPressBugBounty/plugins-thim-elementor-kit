@@ -280,6 +280,112 @@ trait GroupControlTrait {
 		$this->end_controls_section();
 	}
 
+	public function _register_settings_slider_mobile( $condition = null, $frontend_available = true ) {
+		$section_args = [
+			'label' 	 => esc_html__( 'Settings Slider Mobile', 'thim-elementor-kit' ),
+		];
+
+		if ( is_array( $condition ) ) {
+			$section_args['condition'] = $condition;
+		}
+
+		$this->start_controls_section(
+			'skin_slider_mobile_settings', $section_args
+		);
+
+		$this->add_control(
+			'slider_mobile',
+			array(
+				'label'     => esc_html__( 'Enable slider', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'no',
+			)
+		);
+
+		$this->add_control(
+			'mobile_pagination_spacing',
+			array(
+				'label'       => esc_html__( 'Spacing Top (px)', 'thim-elementor-kit' ),
+				'type'        => Controls_Manager::NUMBER,
+ 				'label_block' => false,
+				'min'         => 0,
+				'max'         => 100,
+				'step'        => 1,
+				'selectors'   => array(
+					'{{WRAPPER}} .thim-ekits-mobile-sliders .mobile-slider-pagination' => 'margin-top:{{VALUE}}px;',
+				),
+				'condition'          => array(
+					'slider_mobile' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'slider_mobile_dot_size',
+			array(
+				'label'      => esc_html__( 'Size (px)', 'thim-elementor-kit' ),
+				'type'        => Controls_Manager::NUMBER,
+				'label_block' => false,
+				'min'         => 0,
+				'max'         => 50,
+				'step'        => 1,
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekits-mobile-sliders .swiper-pagination-bullet' => '--swiper-pagination-bullet-size: {{VALUE}}px;',
+				),
+				'condition'          => array(
+					'slider_mobile' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'slider_mobile_dot_color',
+			array(
+				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekits-mobile-sliders .swiper-pagination-bullet'          => '--swiper-theme-color: {{VALUE}}; --swiper-pagination-bullet-inactive-color:{{VALUE}}',
+				),
+				'condition'          => array(
+					'slider_mobile' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'slider_mobile_autoplay',
+			array(
+				'label'              => esc_html__( 'Autoplay', 'thim-elementor-kit' ),
+				'type'               => Controls_Manager::SWITCHER,
+				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
+				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'return_value'       => 'yes',
+				'default'            => 'no',
+				'frontend_available' => $frontend_available,
+				'condition'          => array(
+					'slider_mobile' => 'yes',
+				),
+ 			)
+		);
+		$this->add_control(
+			'autoplay_speed_mobile',
+			array(
+				'label'              => esc_html__( 'Auto Speed', 'thim-elementor-kit' ),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 1,
+				'max'                => 10000,
+				'step'               => 1,
+				'default'            => 2000,
+				'frontend_available' => $frontend_available,
+				'condition'          => array(
+					'slider_mobile_autoplay' => 'yes',
+					'slider_mobile' => 'yes',
+				),
+ 			)
+		);
+		$this->end_controls_section();
+	}
+
 	public function _register_setting_slider_dot_style( $condition = null ) {
 		// dot style
 		$section_args = [
@@ -1044,6 +1150,8 @@ trait GroupControlTrait {
 
 		$this->end_controls_section();
 	}
+
+
 
 	// Register style Page Navigation
 	public function register_navigation_archive() {

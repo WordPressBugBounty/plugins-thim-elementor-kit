@@ -29,7 +29,9 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 	public function get_icon() {
 		return 'thim-eicon eicon-archive-posts';
 	}
-
+	public function get_style_depends(): array {
+		return [ 'e-swiper' ];
+	}
 	public function get_categories() {
 		return array( \Thim_EL_Kit\Elementor::CATEGORY );
 	}
@@ -185,6 +187,12 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 			array(
 				'course_skin'       => 'slider',
 				'slider_show_arrow' => 'yes',
+			)
+		);
+
+		$this->_register_settings_slider_mobile(
+			array(
+				'course_skin' => 'default',
 			)
 		);
 	}
@@ -438,6 +446,10 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 			$class       = 'thim-ekits-course';
 			$class_inner = 'thim-ekits-course__inner';
 			$class_item  = 'thim-ekits-course__item';
+
+			if ( isset( $settings['slider_mobile'] ) && $settings[ 'slider_mobile' ] == 'yes' ){
+				$class_inner       .= ' thim-ekits-mobile-sliders';
+			}
 
 			if ( $the_query->have_posts() ) {
 				if ( isset( $settings['course_skin'] ) && $settings['course_skin'] == 'slider' ) {

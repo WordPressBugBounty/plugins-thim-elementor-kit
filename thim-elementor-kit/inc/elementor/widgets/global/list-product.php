@@ -43,7 +43,9 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 			'products',
 		];
 	}
-
+	public function get_style_depends(): array {
+		return [ 'e-swiper' ];
+	}
 	public function get_help_url() {
 		return '';
 	}
@@ -70,6 +72,12 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 			array(
 				'style'             => 'slider',
 				'slider_show_arrow' => 'yes',
+			)
+		);
+
+		$this->_register_settings_slider_mobile(
+			array(
+				'style' => 'default',
 			)
 		);
 	}
@@ -267,6 +275,10 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 		$class       = 'thim-ekits-product woocommerce';
 		$class_inner = 'thim-ekits-product__inner';
 		$class_item  = 'thim-ekits-product__item';
+
+		if ( isset( $settings['slider_mobile'] ) && $settings[ 'slider_mobile' ] == 'yes' ){
+			$class_inner       .= ' thim-ekits-mobile-sliders';
+		}
 
 		if ( $the_query->have_posts() ) {
 			if ( isset( $settings['style'] ) && $settings['style'] == 'slider' ) {

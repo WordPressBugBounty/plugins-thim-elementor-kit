@@ -27,7 +27,9 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 	public function get_title() {
 		return esc_html__( 'Product Related', 'thim-elementor-kit' );
 	}
-
+	public function get_style_depends(): array {
+		return [ 'e-swiper' ];
+	}
 	public function get_icon() {
 		return 'thim-eicon eicon-product-related';
 	}
@@ -161,6 +163,12 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 			array(
 				'style'             => 'slider',
 				'slider_show_arrow' => 'yes',
+			)
+		);
+
+		$this->_register_settings_slider_mobile(
+			array(
+				'style' => 'default',
 			)
 		);
 		parent::register_controls();
@@ -355,7 +363,9 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 		$class       = 'thim-ekits-product__related';
 		$class_inner = 'thim-ekits-product__related__inner product-grid';
 		$class_item  = 'thim-ekits-product__related__item';
-
+		if ( isset( $settings['slider_mobile'] ) && $settings[ 'slider_mobile' ] == 'yes' ){
+			$class_inner       .= ' thim-ekits-mobile-sliders';
+		}
 		?>
 		<div class="thim-ekit-single-product__related woocommerce">
 			<?php

@@ -3,14 +3,14 @@
  * Plugin Name: Thim Elementor Kit
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.2.7
+ * Version: 1.2.8
  * Author URI: http://thimpress.com
  * Requires at least: 6.0
  * Tested up to: 6.7.1
  * Requires PHP: 7.4
  * Text Domain: thim-elementor-kit
  * Domain Path: /languages/
- * Elementor tested up to: 3.23.4
+ * Elementor tested up to: 3.26.0
  */
 
 use Elementor\Core\Files\Manager as Files_Manager;
@@ -18,7 +18,6 @@ use Elementor\Plugin;
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'THIM_EKIT_VERSION', '1.2.7' );
 const THIM_EKIT_PLUGIN_FILE = __FILE__;
 define( 'THIM_EKIT_PLUGIN_PATH', plugin_dir_path( THIM_EKIT_PLUGIN_FILE ) );
 define( 'THIM_EKIT_PLUGIN_URL', plugin_dir_url( THIM_EKIT_PLUGIN_FILE ) );
@@ -35,7 +34,12 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 		protected static $instance = null;
 
 		public function __construct() {
-			add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 99 );
+			$default_headers = array(
+				'Version' => 'Version',
+			);
+			$plugin_info     = get_file_data( THIM_EKIT_PLUGIN_FILE, $default_headers, 'plugin' );
+			define( 'THIM_EKIT_VERSION', $plugin_info['Version'] );
+			add_action( 'init', array( $this, 'load_textdomain' ), 99 );
 
 			if ( ! $this->elementor_is_active() ) {
 				add_action( 'admin_notices', array( $this, 'required_plugins_notice' ) );
@@ -75,8 +79,8 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 			// Elementor
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/elementor/class-elementor.php';
 
-			// Modules, must load on hook plugins_loaded to check class exists.
-			add_action( 'plugins_loaded', array( $this, 'included_files_when_plugins_loaded' ) );
+			// Modules, must load on hook init to check class exists.
+			add_action( 'init', array( $this, 'included_files_when_plugins_loaded' ) );
 			// Include old, when all plugins extend move self to hook plugins_loaded will remove.
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-init.php';
 

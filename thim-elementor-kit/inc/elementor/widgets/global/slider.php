@@ -19,7 +19,9 @@ class Thim_Ekit_Widget_Slider extends Widget_Base {
 	public function get_icon() {
 		return 'thim-eicon eicon-slider-3d';
 	}
-
+	public function get_style_depends(): array {
+		return [ 'e-swiper' ];
+	}
 	public function get_categories() {
 		return array( \Thim_EL_Kit\Elementor::CATEGORY );
 	}

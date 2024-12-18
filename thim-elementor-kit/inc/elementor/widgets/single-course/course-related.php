@@ -5,13 +5,14 @@ namespace Elementor;
 use Elementor\Plugin;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use Thim_EL_Kit\GroupControlTrait;
 
 if ( ! class_exists( '\Elementor\Thim_Ekits_Course_Base' ) ) {
 	include THIM_EKIT_PLUGIN_PATH . 'inc/elementor/widgets/global/course-base.php';
 }
 
 class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
-
+	use GroupControlTrait;
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
 	}
@@ -28,6 +29,10 @@ class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
 		return 'thim-eicon eicon-product-related';
 	}
 
+	public function get_style_depends(): array {
+		return [ 'e-swiper' ];
+	}
+	
 	public function get_categories() {
 		return array( \Thim_EL_Kit\Elementor::CATEGORY_SINGLE_COURSE );
 	}
@@ -89,7 +94,7 @@ class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
 			)
 		);
 		$this->end_controls_section();
-
+		$this->_register_settings_slider_mobile();
 		parent::register_controls();
 	}
 
@@ -125,9 +130,13 @@ class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
 		}
 
 		$the_query = new \WP_Query( $query_args );
+		$class_inner = 'thim-ekits-course__inner';
+		if ( isset( $settings['slider_mobile'] ) && $settings[ 'slider_mobile' ] == 'yes' ){
+			$class_inner       .= ' thim-ekits-mobile-sliders';
+		}
 		?>
 		<div class="thim-ekits-course">
-			<div class="thim-ekits-course__inner">
+			<div class="<?php echo esc_attr($class_inner); ?>">
 				<?php
 				if ( $the_query->have_posts() ) :
 					while ( $the_query->have_posts() ) {

@@ -2020,11 +2020,16 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 
 	protected function render_meta_data( $settings, $item, $course ) {
 		$meta_data = $item['meta_data'];
+		if(isset($item['meta_data_display']) && $item['meta_data_display']){
+			$class_meta_display = $item['meta_data_display'] ;
+		}else{
+			$class_meta_display = '';
+		}
 		?>
 		<div
 			class="thim-ekits-course__meta elementor-repeater-item-<?php
 			echo esc_attr( $item['_id'] ); ?><?php
-			echo ' m-psi-' . esc_attr( $item['meta_data_display'] ); ?>">
+			echo ' m-psi-' . esc_attr( $class_meta_display ); ?>">
 			<?php
 			foreach ( $meta_data as $key => $data ) {
 				switch ( $data ) {
@@ -2149,7 +2154,7 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 		} else {
 			$lessons = $course->count_items( LP_LESSON_CPT );
 		}
-		
+
 		?>
 		<span
 			class="thim-ekits-course__count-lesson">

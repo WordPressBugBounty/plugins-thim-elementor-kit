@@ -15,7 +15,9 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 	public function get_name() {
 		return 'thim-ekits-course-meta';
 	}
-
+	protected function is_dynamic_content(): bool{
+		return true; // Change to true or false based on your requirement
+	}
 	public function get_title() {
 		return esc_html__( ' Course Meta', 'thim-elementor-kit' );
 	}

@@ -91,7 +91,7 @@ class WooCommerce {
 	public function render_cart_subtotal() {
 		?>
 		<span class="cart-items-number"><?php
-			echo esc_html( is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : 0 ); ?></span>
+			echo sprintf('%d', WC()->cart->cart_contents_count);  ?></span>
 		<?php
 	}
 }

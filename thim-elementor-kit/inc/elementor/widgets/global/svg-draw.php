@@ -88,7 +88,7 @@ class Thim_Ekit_Widget_SVG_Draw extends Widget_Base {
 				],
 				'default'   => 'center',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-widget-container' => 'text-align: {{VALUE}};',
+					'{{WRAPPER}}' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
