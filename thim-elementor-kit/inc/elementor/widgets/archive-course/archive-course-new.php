@@ -153,7 +153,7 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 				'frontend_available' => true,
 			)
 		);
-		
+
 		$order_by_options = apply_filters(
 			'thim-elementor-kit/archive-courses/order-by/values',
 			[
@@ -736,13 +736,14 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 	 *
 	 * @return void
 	 * @since 1.0.0
-	 * @version 1.0.1
+	 * @version 1.0.2
 	 */
 	public function render() {
 		try {
 			$settings                = $this->get_settings_for_display();
 			$is_load_restapi         = $settings['is_ajax'] ?? 0;
 			$settings['url_current'] = LP_Helper::getUrlCurrent();
+			$settings['id_url']      = 'thim-ekits-archive-course';
 
 			// Merge params filter form url
 			$settings = array_merge(

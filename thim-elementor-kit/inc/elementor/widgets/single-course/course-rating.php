@@ -85,8 +85,9 @@ class Thim_Ekit_Widget_Course_Rating extends Widget_Base {
 				'label'     => esc_html__( 'Star Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .meta-item-review span svg path'    => 'fill: {{VALUE}};',
-					'{{WRAPPER}} .meta-item-review span svg polygon' => 'fill: {{VALUE}};',
+					'{{WRAPPER}}'    => '--thim-rating-star-color: {{VALUE}};',
+					'{{WRAPPER}} .course-rate__summary .fas svg' => 'fill: {{VALUE}};',
+					'{{WRAPPER}} .course-rate__summary .far svg' => 'stroke: {{VALUE}};',
 				),
 			)
 		);
@@ -104,7 +105,7 @@ class Thim_Ekit_Widget_Course_Rating extends Widget_Base {
 					),
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} .meta-item-review span svg' => 'max-width: {{SIZE}}{{UNIT}}; height: auto',
+					'{{WRAPPER}} .course-rate__summary svg' => 'max-width: {{SIZE}}{{UNIT}}; height: auto',
 				),
 			)
 		);
@@ -328,7 +329,7 @@ class Thim_Ekit_Widget_Course_Rating extends Widget_Base {
 						<div class="course-rate__summary-text">
 							<?php
 							printf( _n( '/%d rating', '/%d ratings', $total,
-								'learnpress-course-rating' ), $total ); ?>
+								'learnpress-course-review' ), $total ); ?>
 						</div>
 					<?php
 					} 
@@ -347,7 +348,7 @@ class Thim_Ekit_Widget_Course_Rating extends Widget_Base {
 						<div class="course-rate__summary-text">
 							<?php
 							printf( _n( '(<span>%d</span> rating)', '(<span>%d</span> ratings)', $total,
-								'learnpress-course-rating' ), $total ); ?>
+								'learnpress-course-review' ), $total ); ?>
 						</div>
 					<?php
 					} 

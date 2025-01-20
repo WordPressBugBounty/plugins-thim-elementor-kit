@@ -163,8 +163,13 @@ class Widgets {
 
 			unset( $widgets['global'][ array_search( 'list-course', $widgets['global'] ) ] );
 		}
-		if ( ! class_exists( 'LP_Addon_Course_Review_Preload' ) && ! empty( $widgets['single-course'] ) ) {
-			unset( $widgets['single-course'][ array_search( 'course-rating', $widgets['single-course'] ) ] );
+		if ( ! class_exists( 'LP_Addon_Course_Review_Preload' ) ) {
+			if( ! empty( $widgets['single-course'] )){
+				unset( $widgets['single-course'][array_search( 'course-rating', $widgets['single-course'] )] );
+			}
+			if( ! empty( $widgets['loop-item'] )) {
+				unset( $widgets['loop-item'][array_search( 'loop-course-rating', $widgets['loop-item'] )] );
+			}
 		}
 		if ( ! class_exists( 'WPCF7' ) ) {
 			unset( $widgets['global'][ array_search( 'contact-form-7', $widgets['global'] ) ] );

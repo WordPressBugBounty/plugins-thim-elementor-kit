@@ -423,7 +423,7 @@ class Thim_Ekit_Widget_Course_Item_Data extends Widget_Base {
 					'text_decoration',
 					'line_height',
 					'text_transform',
-					'word_spacing'
+					'word_spacing',
 				),
 			)
 		);
@@ -609,12 +609,14 @@ class Thim_Ekit_Widget_Course_Item_Data extends Widget_Base {
 		<div class="thim-ekit-single-item__data">
 			<?php
 			if ( $can_view_content_item->flag ) {
+				learn_press_show_message();
+
 				do_action( 'learn-press/before-content-item-summary/' . $item->get_item_type() );
 
 				if ( $item->get_item_type() == 'lp_assignment' ) {
 					echo '<div class="learn-press-main-content-item-assignment">';
 				}
-				
+
 				do_action( 'learn-press/content-item-summary/' . $item->get_item_type() );
 
 				if ( $item->get_item_type() == 'lp_assignment' ) {

@@ -310,7 +310,7 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 					'size' => 100,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .ekits-iconbox' => '--width-icon-box: {{SIZE}}{{UNIT}};'
+					'{{WRAPPER}}' => '--width-icon-box: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);
@@ -333,7 +333,7 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 					'size' => 100,
 				],
 				'selectors'  => [
-					'{{WRAPPER}} .ekits-iconbox' => '--height-icon-box: {{SIZE}}{{UNIT}}; '
+ 					'{{WRAPPER}}' => '--height-icon-box: {{SIZE}}{{UNIT}};'
 				],
 			]
 		);

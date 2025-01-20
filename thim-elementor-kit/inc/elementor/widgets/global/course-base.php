@@ -1532,7 +1532,7 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .thim-ekits-course__item .thim-ekits-course__price .inner_price__has_sale span' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .thim-ekits-course__item .thim-ekits-course__price .origin-price' => 'color: {{VALUE}};',
 				),
 			)
 		);

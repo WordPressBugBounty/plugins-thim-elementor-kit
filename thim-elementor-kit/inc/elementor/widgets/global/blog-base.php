@@ -387,6 +387,10 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 				'label_off'    => esc_html__( 'Default', 'thim-elementor-kit' ),
 				'label_on'     => esc_html__( 'Custom', 'thim-elementor-kit' ),
 				'return_value' => 'yes',
+				'condition' => array(
+					'key'              => 'meta_data',
+					'meta_data-toggle' => 'yes',
+				),
 			)
 		);
 

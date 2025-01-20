@@ -1495,8 +1495,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 				return;
 			}
 
-			$instructor = $course->get_instructor();
-
+			$instructor = $courseModel->get_author_model();
 			if ( ! $instructor ) {
 				return;
 			}

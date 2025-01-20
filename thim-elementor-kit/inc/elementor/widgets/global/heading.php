@@ -645,7 +645,7 @@ class Thim_Ekit_Widget_Heading extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000000',
 				'selectors' => [
-					'{{WRAPPER}} .thim-ekits-heading .title > span' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .thim-ekits-heading .title span' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -655,7 +655,7 @@ class Thim_Ekit_Widget_Heading extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'focused_typography',
-				'selector' => '{{WRAPPER}} .thim-ekits-heading .title > span',
+				'selector' => '{{WRAPPER}} .thim-ekits-heading .title span',
 			]
 		);
 		$this->end_controls_section();

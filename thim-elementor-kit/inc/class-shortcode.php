@@ -21,9 +21,18 @@ class Shortcode {
 		);
 
 		$id = ! empty( $atts['id'] ) ? apply_filters( 'thim_ekit/shortcode/id', absint( $atts['id'] ) ) : '';
-
 		if ( empty( $id ) ) {
 			return '';
+		}
+
+		$post    = get_post( $id );
+		$user_id = get_current_user_id();
+		if ( $post->post_status == 'private'
+			&& $user_id != $post->post_author ) {
+			return '';
+		} elseif ( post_password_required( $post )
+			&& $user_id != $post->post_author ) {
+			return get_the_password_form();
 		}
 
 		if ( class_exists( '\Elementor\Core\Files\CSS\Post' ) ) {

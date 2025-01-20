@@ -22,7 +22,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 	public function get_icon() {
 		return 'eicon-post-info';
 	}
-	
+
 	protected function is_dynamic_content(): bool{
  		return true; // Change to true or false based on your requirement
 	}
@@ -39,7 +39,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 	public function get_keywords() {
 		return [ 'info', 'date', 'time', 'author', 'taxonomy', 'comments', 'terms', 'avatar' ];
 	}
-	 
+
 	protected function register_controls_repeater( $repeater ) {
 		$repeater->add_control(
 			'type',
@@ -336,7 +336,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 	}
 
 	protected function render() {
-		$settings = $this->get_settings_for_display(); 
+		$settings = $this->get_settings_for_display();
 
 		$this->add_render_attribute( 'icon_list', 'class', 'elementor-icon-list-items' );
 		$this->add_render_attribute( 'list_item', 'class', 'elementor-icon-list-item' );
@@ -350,22 +350,14 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 			?>
 			<ul <?php
 			$this->print_render_attribute_string( 'icon_list' ); ?>>
-				<?php
-				foreach ( $settings['icon_list'] as $repeater_item ) {
-					if ( $repeater_item['type'] == 'custom' && empty( $repeater_item['text'] )) {
+				<?php foreach ( $settings['icon_list'] as $repeater_item ) {
+					if ( $repeater_item['type'] == 'custom' && empty( $repeater_item['text'] ) ) {
 						continue;
-					}
-					?>
-					<li <?php
-					$this->print_render_attribute_string( 'list_item' ); ?>>
-
-						<?php
-						$this->render_item( $repeater_item ); ?>
-
+					} ?>
+					<li <?php $this->print_render_attribute_string( 'list_item' ); ?>>
+						<?php $this->render_item( $repeater_item ); ?>
 					</li>
-					<?php
-				}
-				?>
+				<?php } ?>
 			</ul>
 			<?php
 		}
@@ -402,14 +394,12 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 			$link_key = 'link_' . $repeater_item['_id'];
 			$this->add_link_attributes( $link_key, $repeater_item['custom_url'] );
 			?>
-			<a <?php
-			$this->print_render_attribute_string( $link_key ); ?> class="elementor-icon-list-text">
-				<?php
-				echo wp_kses_post( $repeater_item['text'] ); ?>
+			<a <?php $this->print_render_attribute_string( $link_key ); ?> class="elementor-icon-list-text">
+				<?php echo wp_kses_post( $repeater_item['text'] ); ?>
 			</a>
 			<?php
 		} else {
-			echo wp_kses_post( '<span class="elementor-icon-list-text">' . $repeater_item['text'] . '</span>' );
+			echo wp_kses_post( '<div class="elementor-icon-list-text">' . $repeater_item['text'] . '</div>' );
 		}
 	}
 
@@ -434,7 +424,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 			if ( 'yes' == $repeater_item['show_link'] ) {
 				$terms_list[] = '<a href="' . esc_url( get_term_link( $term ) ) . '" class="loop-item-term term-' . esc_html( $term->slug ) . '">' . esc_html( $term->name ) . '</a>';
 			} else {
-				$terms_list[] = '<span class="loop-item-term term-' . esc_html( $term->slug ) . '">' . esc_html( $term->name ) . '</span>';
+				$terms_list[] = '<div class="loop-item-term term-' . esc_html( $term->slug ) . '">' . esc_html( $term->name ) . '</div>';
 			}
 		}
 
@@ -444,7 +434,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 			$value = implode( $repeater_item['term_separator'], $terms_list );
 		}
 
-		echo wp_kses_post( '<span class="elementor-icon-list-text">' . $value . '</span>' );
+		echo wp_kses_post( '<div class="elementor-icon-list-text">' . $value . '</div>' );
 	}
 
 	protected function render_comments( $repeater_item ) {
@@ -469,20 +459,20 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 		// check render icon
 		$this->render_icon( $repeater_item );
 
-		echo wp_kses_post( '<span class="elementor-icon-list-text">' . $count . '</span>' );
+		echo wp_kses_post( '<div class="elementor-icon-list-text">' . $count . '</div>' );
 	}
 
 	protected function render_author( $repeater_item ) {
 		$author_name = '';
 		if ( 'yes' === $repeater_item['show_avatar'] ) {
-			$author_name .= '<span class="elementor-icon-list-icon author-avatar"><img src="' . get_avatar_url( get_the_author_meta( 'ID' ),
-					96 ) . '"></span>';
+			$author_name .= '<div class="elementor-icon-list-icon author-avatar"><img src="' . get_avatar_url( get_the_author_meta( 'ID' ),
+					96 ) . '"></div>';
 		}
 
 		$author_name .= get_the_author_meta( 'display_name' );
 
 		if ( $repeater_item['text_before_author'] ) {
-			echo '<span class="text-before">' . wp_kses_post( $repeater_item['text_before_author'] ) . '</span>';
+			echo '<div class="text-before">' . wp_kses_post( $repeater_item['text_before_author'] ) . '</div>';
 		}
 
 		if ( 'yes' === $repeater_item['show_link'] ) {
@@ -492,7 +482,7 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 		// check render icon
 		$this->render_icon( $repeater_item );
 
-		echo wp_kses_post( '<span class="elementor-icon-list-text">' . $author_name . '</span>' );
+		echo wp_kses_post( '<div class="elementor-icon-list-text">' . $author_name . '</div>' );
 	}
 
 	protected function render_date( $repeater_item ) {
@@ -503,8 +493,8 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 		// check render icon
 		$this->render_icon( $repeater_item );
 
-		echo wp_kses_post( '<span class="elementor-icon-list-text">' . apply_filters( 'the_date',
-				get_the_time( $format_date ) ) . '</span>' );
+		echo wp_kses_post( '<div class="elementor-icon-list-text">' . apply_filters( 'the_date',
+				get_the_time( $format_date ) ) . '</div>' );
 	}
 
 	protected function render_icon( $repeater_item ) {
@@ -514,10 +504,10 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 //		}
 
 		if ( ! empty( $repeater_item['selected_icon']['value'] ) ) : ?>
-			<span class="elementor-icon-list-icon">
+			<div class="elementor-icon-list-icon">
 				<?php
 				Icons_Manager::render_icon( $repeater_item['selected_icon'], [ 'aria-hidden' => 'true' ] ); ?>
-			</span>
+			</div>
 		<?php
 		endif;
 	}

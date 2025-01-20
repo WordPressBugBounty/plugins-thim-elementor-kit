@@ -5,7 +5,7 @@ Tags: page builder, elementor, elementorkit, thimpress.
 Requires at least: 6.0
 Tested up to: 6.7.1
 Requires PHP: 7.4
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,11 @@ Especially for **<a href="https://1.envato.market/G5Ook">Eduma</a>** or other LM
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 1.2.9 (2025-01-20) =
+~ Fixed: security.
+~ Fixed: minor bug.
+~ Update course option: prefix and suffix.
 
 = 1.2.8 (2024-12-18) =
 ~ Fixed: Widget slider not load file style with elementor 3.26.0

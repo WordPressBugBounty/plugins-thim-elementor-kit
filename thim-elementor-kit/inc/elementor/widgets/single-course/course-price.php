@@ -5,6 +5,8 @@ namespace Elementor;
 use Elementor\Plugin;
 use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
+use LearnPress\TemplateHooks\Course\SingleCourseTemplate;
+use LearnPress\Models\CourseModel;
 
 class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 
@@ -141,6 +143,34 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'prefix_suffix_heading',
+			array(
+				'label'     => esc_html__( 'Prefix and Suffix Price', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'prefix_suffix_price_color',
+			array(
+				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .course-price-prefix, {{WRAPPER}} .course-price-suffix' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'prefix_suffix_price_typography',
+				'selector' => '{{WRAPPER}} .course-price-prefix, {{WRAPPER}} .course-price-suffix',
+			)
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -166,10 +196,15 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 		if ( $course->is_free() ) {
 			$classs = 'free';
 		}
+
+		$course_model         = CourseModel::find( get_the_ID(), true );
+		$singleCourseTemplate = SingleCourseTemplate::instance();
 		?>
 
 		<div class="thim-ekit-single-course__price">
+			
 			<?php
+			echo $singleCourseTemplate->html_price_prefix( $course_model );
 			if ( $course->has_sale_price() ) : ?>
 				<span class="thim-ekit-single-course__price__origin"> <?php
 					echo wp_kses_post( $course->get_origin_price_html() ); ?></span>
@@ -177,7 +212,9 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 			endif; ?>
 
 			<span class="thim-ekit-single-course__price__price <?php echo esc_attr( $classs ); ?>"><?php
-				echo wp_kses_post( $price ); ?></span>
+				echo wp_kses_post( $price ); 
+			?></span>
+			<?php echo $singleCourseTemplate->html_price_suffix( $course_model ); ?>
 		</div>
 
 		<?php
