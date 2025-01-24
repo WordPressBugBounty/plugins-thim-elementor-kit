@@ -199,7 +199,7 @@ class Thim_Ekit_Widget_Product_Rating extends Widget_Base {
 		?>
 
 		<div class="thim-ekit-single-product__rating<?php
-		echo $class_editor; ?>">
+		echo esc_attr( $class_editor ); ?>">
 			<?php
 			wc_get_template( 'single-product/rating.php' ); ?>
 		</div>

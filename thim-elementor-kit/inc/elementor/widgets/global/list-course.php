@@ -454,7 +454,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 			if ( $the_query->have_posts() ) {
 				if ( isset( $settings['course_skin'] ) && $settings['course_skin'] == 'slider' ) {
 					$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-					$class        .= ' thim-ekits-sliders ' . $swiper_class;
+					$class        .= ' thim-ekits-sliders ' . esc_attr( $swiper_class );
 					$class_inner  = 'swiper-wrapper';
 					$class_item   .= ' swiper-slide';
 
@@ -518,7 +518,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 						$tab_class          = ' class="cat-item active"';
 						$cat_default_active = $term->term_id;
 					}
-					$list_tab .= '<li' . $tab_class . '><a data-cat="' . $term->term_id . '" href="#">' . esc_html( $term->name ) . '</a></li>';
+					$list_tab .= '<li' . esc_attr( $tab_class ) . '><a data-cat="' . esc_attr( $term->term_id ) . '" href="#">' . esc_html( $term->name ) . '</a></li>';
 				}
 			}
 			// show html tab

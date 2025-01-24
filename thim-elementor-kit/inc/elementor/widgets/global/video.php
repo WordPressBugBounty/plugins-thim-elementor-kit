@@ -373,10 +373,17 @@ class Thim_Ekit_Widget_Video extends Widget_Base {
 					<button class="ekits-modal__close ModalClose">&#10005;</button>
 					<?php
 					if ( isset( $settings['video_type'] ) && $settings['video_type'] == 'youtube' ) {
-						echo '<div class="video"><iframe id="thim-video" width="' . $width . '" height="' . $height . '" src="https://www.youtube.com/embed/' . esc_attr( $settings['youtube_id'] ) . '" allowfullscreen style="border: 0;"></iframe></div>';
+						$youtube_id = isset( $settings['youtube_id'] ) ? esc_attr( $settings['youtube_id'] ) : '';
+						if ( ! empty( $youtube_id ) ) {
+							echo '<div class="video"><iframe id="thim-video" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="https://www.youtube.com/embed/' . $youtube_id . '" allowfullscreen style="border: 0;"></iframe></div>';
+						}
 					} else {
-						echo '<div class="video"><iframe id="thim-video" width="' . $width . '" height="' . $height . '" src="https://player.vimeo.com/video/' . esc_attr( $settings['external_video'] ) . '?portrait=0&title=0&byline=0&badge=0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="border: 0px;"></iframe></div>';
+						$external_video = isset( $settings['external_video'] ) ? esc_attr( $settings['external_video'] ) : '';
+						if ( ! empty( $external_video ) ) {
+							echo '<div class="video"><iframe id="thim-video" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="https://player.vimeo.com/video/' . $external_video . '?portrait=0&title=0&byline=0&badge=0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="border: 0px;"></iframe></div>';
+						}
 					}
+					
 					?>
 				</div>
 			</div>

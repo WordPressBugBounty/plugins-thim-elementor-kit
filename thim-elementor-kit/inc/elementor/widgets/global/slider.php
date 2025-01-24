@@ -104,7 +104,7 @@ class Thim_Ekit_Widget_Slider extends Widget_Base {
 
 		$this->render_nav_pagination_slider( $settings );
 		$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-		$class        = 'thim-ekits-sliders ' . $swiper_class;
+		$class        = 'thim-ekits-sliders ' . esc_attr( $swiper_class );
 		?>
 
 		<div class="<?php

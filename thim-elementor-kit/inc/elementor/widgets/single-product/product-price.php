@@ -129,7 +129,7 @@ class Thim_Ekit_Widget_Product_Price extends Widget_Base {
 		echo esc_attr( apply_filters( 'woocommerce_product_price_class',
 			'thim-ekit-single-product__price price' ) ); ?>">
 			<?php
-			echo $product->get_price_html(); ?>
+			echo wp_kses_post( $product->get_price_html() ); ?>
 		</p>
 		<?php
 		do_action( 'thim-ekit/modules/single-product/after-preview-query' );

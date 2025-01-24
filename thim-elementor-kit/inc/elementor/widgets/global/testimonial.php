@@ -1537,7 +1537,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 
 		$class_article = ( $settings['avatar_layout'] == 'avatar_left_client_name' ) ? '-avatar-left_client_name' : '';
 		$swiper_class  = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-		$class_wrapper = ' thim-ekits-sliders ' . $swiper_class;
+		$class_wrapper = ' thim-ekits-sliders ' . esc_attr( $swiper_class );
 		$class_wrapper .= ( $settings['avatar_layout'] == 'avatar_left_content' ) ? ' thim-ekits-testimonial__avatar-left-content' : '';
 		?>
 		<div
@@ -1604,7 +1604,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			return;
 		}
 		$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-		$slider_class = ' thim-ekits-sliders ' . $swiper_class;
+		$slider_class = ' thim-ekits-sliders ' . esc_attr( $swiper_class );
 		?>
 		<div class="thim-ekits-testimonial__inner thim-ekits-thumb-gallery">
 			<div class="thim-ekits-testimonial__avatars<?php

@@ -194,7 +194,7 @@ class Thim_Ekit_Widget_Loop_Product_Countdown extends Thim_Ekit_Widget_Countdown
 			$date_end = get_post_meta( get_the_ID(), '_sale_price_dates_to', true );
 			if ( $date_end ) :
 				if ( ! empty( $settings['heading_text'] ) ) {
-					echo '<div class="thim-ekits-heading-countdown">' . $settings['heading_text'] . '</div>';
+					echo '<div class="thim-ekits-heading-countdown">' . esc_html( $settings['heading_text'] ) . '</div>';
 				}
 				?>
 				<div class="thim-ekits-countdown-wrapper" data-date_end="<?php echo esc_attr($date_end); ?>">

@@ -3,7 +3,7 @@
  * Plugin Name: Thim Elementor Kit
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.2.9
+ * Version: 1.2.9.1
  * Author URI: http://thimpress.com
  * Requires at least: 6.0
  * Tested up to: 6.7.1

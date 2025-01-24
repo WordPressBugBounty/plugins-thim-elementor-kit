@@ -707,7 +707,7 @@ class Thim_Ekit_Widget_Post_Navigation extends Widget_Base {
 
 		<div class="thim-ekit-single-post__navigation">
 			<div class="thim-ekit-single-post__navigation__prev thim-ekit-single-post__navigation__link <?php
-			echo $class_thumbnail; ?>">
+			echo esc_attr( $class_thumbnail ); ?>">
 				<?php
 				previous_post_link( '%link',
 					$prev_arrow . '<span class="thim-ekit-single-post__navigation__link__content">' . wp_kses_post( $prev_label ) . wp_kses_post( $prevthumbnail ) . wp_kses_post( $prev_title ) . '</span>',
@@ -716,7 +716,7 @@ class Thim_Ekit_Widget_Post_Navigation extends Widget_Base {
 			</div>
 
 			<div class="thim-ekit-single-post__navigation__next thim-ekit-single-post__navigation__link <?php
-			echo $class_thumbnail; ?>">
+			echo esc_attr( $class_thumbnail ); ?>">
 				<?php
 				next_post_link( '%link',
 					'<span class="thim-ekit-single-post__navigation__link__content">' . wp_kses_post( $next_label ) . wp_kses_post( $next_title ) . wp_kses_post( $nextthumbnail ) . '</span>' . $next_arrow,

@@ -317,7 +317,7 @@ class Thim_Ekit_Widget_List_Blog extends Thim_Ekit_Widget_List_Base {
 		if ( $query_vars->have_posts() ) { // It's the global `wp_query` it self. and the loop was started from the theme.
 			if ( isset( $settings['blog_layout'] ) && $settings['blog_layout'] == 'slider' ) {
 				$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-				$class        .= ' thim-ekits-sliders ' . $swiper_class;
+				$class        .= ' thim-ekits-sliders ' . esc_attr( $swiper_class );
 				$class_inner  = 'swiper-wrapper';
 				$class_item   .= ' swiper-slide';
 

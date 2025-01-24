@@ -605,8 +605,8 @@ class Thim_Ekit_Widget_Tab extends Widget_Base {
 		$this->add_render_attribute(
 			'thim_tab_wrapper',
 			[
-				'id'    => "thim-tabs-{$this->get_id()}",
-				'class' => [ 'thim-ekit-tablist', 'thim-' . $settings['tab_layout'] ],
+				'id' => 'thim-tabs-' . esc_attr( $this->get_id() ),
+				'class' => [ 'thim-ekit-tablist', 'thim-' . esc_attr( $settings['tab_layout'] ) ],
 			]
 		);
 		if ( $settings['tab_caret_show'] == 'yes' ) {

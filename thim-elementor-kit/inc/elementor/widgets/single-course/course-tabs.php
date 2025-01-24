@@ -7,6 +7,7 @@ use LearnPress\TemplateHooks\Instructor\SingleInstructorTemplate;
 use LP_Addon_Co_Instructor\CourseCoInstructorTemplate;
 use LearnPress\Models\UserModel;
 use LearnPress\Helpers\Template;
+use LearnPress;
 
 class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 
@@ -1413,7 +1414,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 		}
 		?>
 
-		<div class="ekits-content-course-<?php echo esc_attr( $class ); ?>"<?php echo $role; ?>>
+		<div class="ekits-content-course-<?php echo esc_attr( $class ); ?>"<?php echo esc_attr( $role ); ?>>
 			<?php
 			foreach ( $tabs
 
@@ -1485,17 +1486,13 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 
 	public function render_course_instructor( $layout_html ) {
 		try {
-			$course = learn_press_get_course();
-			if ( ! $course ) {
-				return;
-			}
-
 			$courseModel = CourseModel::find( get_the_ID(), true );
 			if ( ! $courseModel ) {
 				return;
 			}
 
-			$instructor = $courseModel->get_author_model();
+			$authorModel = $courseModel->get_author_model();
+			$instructor  = learn_press_get_user( $authorModel->get_id() );
 			if ( ! $instructor ) {
 				return;
 			}
@@ -1519,13 +1516,12 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 
 			$courseCoInstructorTemplate = CourseCoInstructorTemplate::instance();
 			$instructors                = $courseCoInstructorTemplate->addon->get_instructors( $courseModel );
-
 			if ( ! empty( $instructors ) ) {
 				printf(
 					'<h4 class="lp-co-instructors-title">%s</h4>',
 					esc_html__( 'Co-Instructor', 'thim-elementor-kit' )
 				);
-				echo $courseCoInstructorTemplate->html_list_co_instructor( $instructors, $course );
+				echo wp_kses_post( $courseCoInstructorTemplate->html_list_co_instructor( $instructors, $courseModel ) );
 			}
 		} catch ( \Throwable $e ) {
 			echo $e->getMessage();

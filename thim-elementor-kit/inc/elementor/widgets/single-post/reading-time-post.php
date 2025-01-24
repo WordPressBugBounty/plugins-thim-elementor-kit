@@ -198,7 +198,7 @@ class Thim_Ekit_Widget_Reading_Time_Post extends Widget_Base {
 			if ( $settings['reading_layout'] == 'times' ) { ?>
 				<div class="thim-kits-reading-time">
 					<span class="thim-kits-time" data-results="<?php
-					echo $settings['results_text']; ?>"></span>
+					echo isset( $settings['results_text'] ) ? esc_attr( $settings['results_text'] ) : ''; ?>"></span>
 				</div>
 				<?php
 			} else {

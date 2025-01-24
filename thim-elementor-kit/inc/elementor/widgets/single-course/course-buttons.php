@@ -201,7 +201,7 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 					if ( $settings[ $list_button . '_btn_text' ] ) {
 						$text = $settings[ $list_button . '_btn_text' ];
 					}
-					echo $text;
+					echo wp_kses_post( $text );
 				}
 			);
 		}

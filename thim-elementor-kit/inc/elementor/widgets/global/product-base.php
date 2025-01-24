@@ -1298,7 +1298,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 		} else { ?>
 
 			<?php
-			$class_item = $settings['thumbnail_position'] ? ' thumbnail-position-' . $settings['thumbnail_position'] : ''; ?>
+			$class_item = $settings['thumbnail_position'] ? ' thumbnail-position-' .  esc_attr( $settings['thumbnail_position'] ) : ''; ?>
 
 			<div class="inner-item-product<?php echo esc_attr( $class_item ); ?>">
 				<?php
@@ -1393,9 +1393,9 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 		$attributes_html = ( isset( $settings['open_new_tab'] ) && $settings['open_new_tab'] == 'yes' ) ? ' target="_blank" rel="noopener noreferrer"' : '';
 		?>
 		<h2 class="woocommerce-loop-product_title">
-			<a href="<?php echo esc_url( the_permalink() ) ?>"
-			   title="<?php the_title(); ?>"<?php echo $attributes_html; ?>>
-				<?php the_title(); ?>
+			<a href="<?php echo esc_url( get_permalink() ); ?>"
+			title="<?php echo esc_attr( get_the_title() ); ?>" <?php echo esc_html( $attributes_html ); ?>>
+				<?php echo wp_kses_post( get_the_title() ); ?>
 			</a>
 		</h2>
 		<?php

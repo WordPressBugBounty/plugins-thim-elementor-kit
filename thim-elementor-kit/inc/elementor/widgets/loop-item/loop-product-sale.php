@@ -122,7 +122,7 @@ class Thim_Ekit_Widget_Loop_Product_Sale extends Widget_Base {
 				echo '<span class="ekit-onsale">' . sprintf( _x( '-%d%%', 'sale percentage', 'thim-elementor-kit' ),
 						$percentage ) . '</span>';
 			} else {
-				echo '<span class="ekit-onsale">' . $settings['label'] . '</span>';
+				echo '<span class="ekit-onsale">' . esc_html( $settings['label'] ) . '</span>';
 			}
 
 		endif;

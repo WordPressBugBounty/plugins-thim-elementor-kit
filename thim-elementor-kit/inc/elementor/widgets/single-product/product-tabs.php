@@ -517,10 +517,10 @@ class Thim_Ekit_Widget_Product_Tabs extends Widget_Base {
 				return $tabs;
 			}, 98 );
 		}
-		$class_layout_tabs = 'product-tabs-' . $settings['layout'];
+		$class_layout_tabs = 'product-tabs-' . esc_attr( $settings['layout'] );
 		?>
 		<div class="thim-ekit-single-product__tabs <?php
-		echo $class_layout_tabs; ?>">
+		echo esc_attr( $class_layout_tabs ); ?>">
 			<?php
 			wc_get_template( 'single-product/tabs/tabs.php' ); ?>
 		</div>

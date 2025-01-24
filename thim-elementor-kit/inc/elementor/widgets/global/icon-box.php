@@ -704,7 +704,7 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 		}
 		// get number
 		if ( $settings['iconbox_img_icon'] == 'number' ) {
-			$html_icon = $settings['iconbox_number'] ? '<span class="number">' . $settings['iconbox_number'] . '</span>' : '';
+			$html_icon = $settings['iconbox_number'] ? '<span class="number">' . esc_html( $settings['iconbox_number'] ) . '</span>' : '';
 		}
 		if ( $settings['link_opt'] == 'title_icon' && $this->render_link() ) {
 			$html .= $this->render_link();
@@ -761,7 +761,7 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 			$open_link_title  = $this->render_link();
 			$close_link_title = '</a>';
 		}
-		echo '<div class="ekits-iconbox iconbox-' . $settings['pos'] . '">';
+		echo '<div class="ekits-iconbox iconbox-' . esc_attr( $settings['pos'] ) . '">';
 
 		echo $this->render_icon( $settings );
 

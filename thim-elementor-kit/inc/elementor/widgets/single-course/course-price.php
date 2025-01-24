@@ -204,7 +204,13 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 		<div class="thim-ekit-single-course__price">
 			
 			<?php
-			echo $singleCourseTemplate->html_price_prefix( $course_model );
+			if ( is_callable( $singleCourseTemplate, 'html_price_prefix' ) ) {
+				$price_prefix = $singleCourseTemplate->html_price_prefix( $course_model );
+				if ( ! empty( $price_prefix ) ) {
+					echo wp_kses_post( $price_prefix );
+				}
+			}
+
 			if ( $course->has_sale_price() ) : ?>
 				<span class="thim-ekit-single-course__price__origin"> <?php
 					echo wp_kses_post( $course->get_origin_price_html() ); ?></span>
@@ -214,7 +220,14 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 			<span class="thim-ekit-single-course__price__price <?php echo esc_attr( $classs ); ?>"><?php
 				echo wp_kses_post( $price ); 
 			?></span>
-			<?php echo $singleCourseTemplate->html_price_suffix( $course_model ); ?>
+			
+			<?php
+			if ( is_callable( $singleCourseTemplate, 'html_price_suffix' ) ) {
+				$price_suffix = $singleCourseTemplate->html_price_suffix( $course_model );
+				if ( ! empty( $price_suffix ) ) {
+					echo wp_kses_post( $price_suffix );
+				} 
+			} ?>
 		</div>
 
 		<?php

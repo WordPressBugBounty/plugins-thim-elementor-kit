@@ -683,14 +683,12 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 
 		ob_start();
 		Icons_Manager::render_icon( $repeater_item['selected_icon'], [ 'aria-hidden' => 'true' ] );
-		$render_icon = ob_get_contents();
-		ob_end_clean();
-
+		$render_icon = ob_get_clean();
 
 		if ( $show_icon === 'default' ) {
 			$icon = '';
 		} elseif ( $show_icon === 'custom' ) {
-			$icon = $render_icon;
+			$icon = wp_kses_post( $render_icon );
 		}
 
 		$link_target = $link['is_external'] ? ' target="_blank" rel="noopener noreferrer"' : '';
@@ -745,15 +743,14 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 
 		ob_start();
 		Icons_Manager::render_icon( $repeater_item['selected_icon'], [ 'aria-hidden' => 'true' ] );
-		$render_icon = ob_get_contents();
-		ob_end_clean();
+		$render_icon = ob_get_clean();
 
 		$show_icon = $repeater_item['show_icon'];
 
 		if ( $show_icon === 'default' ) {
 			$icon = '<i class="fa fa-tags"></i>';
 		} elseif ( $show_icon === 'custom' ) {
-			$icon = $render_icon;
+			$icon = wp_kses_post( $render_icon );
 		}
 		?>
 
@@ -785,14 +782,13 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 
 		ob_start();
 		Icons_Manager::render_icon( $repeater_item['selected_icon'], [ 'aria-hidden' => 'true' ] );
-		$render_icon = ob_get_contents();
-		ob_end_clean();
+		$render_icon = ob_get_clean();
 
 
 		if ( $show_icon === 'default' ) {
 			$icon = '<i class="fa fa-commenting-o"></i>';
 		} elseif ( $show_icon === 'custom' ) {
-			$icon = $render_icon;
+			$icon = wp_kses_post( $render_icon );
 		}
 		?>
 
@@ -832,13 +828,12 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 
 		ob_start();
 		Icons_Manager::render_icon( $repeater_item['selected_icon'], [ 'aria-hidden' => 'true' ] );
-		$render_icon = ob_get_contents();
-		ob_end_clean();
+		$render_icon = ob_get_clean();
 
 		if ( $show_icon === 'default' ) {
 			$icon = '<i class="fa fa-clock-o"></i>';
 		} elseif ( $show_icon === 'custom' ) {
-			$icon = $render_icon;
+			$icon = wp_kses_post( $render_icon );
 		}
 		?>
 
@@ -877,13 +872,12 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 
 		ob_start();
 		Icons_Manager::render_icon( $repeater_item['selected_icon'], [ 'aria-hidden' => 'true' ] );
-		$render_icon = ob_get_contents();
-		ob_end_clean();
+		$render_icon = ob_get_clean();
 
 		if ( $show_icon === 'default' ) {
 			$icon = '<i class="fa fa-user-circle-o"></i>';
 		} elseif ( $show_icon === 'custom' ) {
-			$icon = $render_icon;
+			$icon = wp_kses_post( $render_icon );
 		}
 
 		$tag_name  = 'span';
@@ -943,13 +937,12 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 
 		ob_start();
 		Icons_Manager::render_icon( $repeater_item['selected_icon'], [ 'aria-hidden' => 'true' ] );
-		$render_icon = ob_get_contents();
-		ob_end_clean();
+		$render_icon = ob_get_clean();
 
 		if ( $show_icon === 'default' ) {
 			$icon = '<i class="fa fa-calendar-o"></i>';
 		} elseif ( $show_icon === 'custom' ) {
-			$icon = $render_icon;
+			$icon = wp_kses_post( $render_icon );
 		}
 		?>
 

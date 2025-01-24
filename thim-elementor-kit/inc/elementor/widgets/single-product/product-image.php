@@ -611,17 +611,27 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 			</div>
 			<?php
 			if ( $settings['thumb_style'] == 'slides' ) {
-				$data_slider = 'data-direction = "' . $settings['slides_options'] . '"';
-				if ( $settings['slides_options'] == 'horizontal' ) {
-					$data_slider .= ' data-marginitem="' . $settings['thumbnail_spacing']['size'] . '"';
-					$data_slider .= ' data-itemshow="' . $settings['columns_options'] . '"';
-					if ( isset( $settings['columns_options_tablet'] ) && $settings['columns_options_tablet'] ) {
-						$data_slider .= ' data-itemshowtablet="' . $settings['columns_options_tablet'] . '"';
-					}
-					if ( isset( $settings['columns_options_mobile'] ) && $settings['columns_options_mobile'] ) {
-						$data_slider .= ' data-itemshowmobile="' . $settings['columns_options_mobile'] . '"';
+				$data_slider = '';
+			
+				if ( ! empty( $settings['slides_options'] ) ) {
+					$data_slider .= ' data-direction="' . esc_attr( $settings['slides_options'] ) . '"';
+			
+					if ( $settings['slides_options'] == 'horizontal' ) {
+						if ( ! empty( $settings['thumbnail_spacing']['size'] ) ) {
+							$data_slider .= ' data-marginitem="' . esc_attr( $settings['thumbnail_spacing']['size'] ) . '"';
+						}
+						if ( ! empty( $settings['columns_options'] ) ) {
+							$data_slider .= ' data-itemshow="' . esc_attr( $settings['columns_options'] ) . '"';
+						}
+						if ( ! empty( $settings['columns_options_tablet'] ) ) {
+							$data_slider .= ' data-itemshowtablet="' . esc_attr( $settings['columns_options_tablet'] ) . '"';
+						}
+						if ( ! empty( $settings['columns_options_mobile'] ) ) {
+							$data_slider .= ' data-itemshowmobile="' . esc_attr( $settings['columns_options_mobile'] ) . '"';
+						}
 					}
 				}
+			
 				echo '<div class="ekits-product-thumbnails__wrapper"' . $data_slider . '></div>';
 			}
 			?>

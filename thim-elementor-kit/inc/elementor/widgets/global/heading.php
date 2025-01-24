@@ -697,8 +697,8 @@ class Thim_Ekit_Widget_Heading extends Widget_Base {
 			}
 			$size_tag = Utils::validate_html_tag($settings['size']);
 			echo sprintf('<%s class="%s">',$size_tag, esc_attr($class_title));
-			echo $open_url . str_replace( array( '{{', '}}' ), array( '<span>', '</span>' ),
-					wp_kses_post( $settings['title'] ) ) . $close_url;
+			echo wp_kses_post( $open_url . str_replace( array( '{{', '}}' ), array( '<span>', '</span>' ),
+					wp_kses_post( $settings['title'] ) ) . $close_url );
 			echo sprintf('</%s>', $size_tag  );
 			//seperator
 			if ( $settings['seperator_position'] == 'after' ) {

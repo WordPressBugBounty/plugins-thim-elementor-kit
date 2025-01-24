@@ -380,7 +380,7 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 				endif;
 				if ( isset( $settings['style'] ) && $settings['style'] == 'slider' ) {
 					$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-					$class        .= ' thim-ekits-sliders ' . $swiper_class;
+					$class        .= ' thim-ekits-sliders ' . esc_attr( $swiper_class );
 					$class_inner  = 'swiper-wrapper';
 					$class_item   .= ' swiper-slide';
 					$this->render_nav_pagination_slider( $settings );

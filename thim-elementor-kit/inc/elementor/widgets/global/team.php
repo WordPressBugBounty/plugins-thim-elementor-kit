@@ -1345,7 +1345,7 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 
 		if ( isset( $settings['team_layout'] ) && $settings['team_layout'] == 'slider' ) {
 			$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-			$class        = 'thim-ekits-sliders ' . $swiper_class;
+			$class        = 'thim-ekits-sliders ' . esc_attr( $swiper_class );
 			$class_inner  = ' swiper-wrapper';
 			$class_item   .= ' swiper-slide';
 			$this->render_nav_pagination_slider( $settings );

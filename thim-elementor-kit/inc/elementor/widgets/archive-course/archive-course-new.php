@@ -1193,7 +1193,7 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 		?>
 
 		<div class="thim-ekits-archive__loadmore-button <?php
-		echo $class; ?>">
+		echo esc_attr( $class ); ?>">
 			<?php
 			if ( 'load_more_on_click' === $pagination_type ) : ?>
 				<a class="thim-ekits-archive__loadmore-btn" href="#">
@@ -1226,7 +1226,7 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 			<?php
 			if ( ! empty( $settings['load_more_spinner']['value'] ) ) : ?>
 				<div class="thim-ekits-archive__loadmore-spinner lp-loading-no-css <?php
-				echo $class_hide; ?>">
+				echo esc_attr( $class_hide ); ?>">
 					<?php
 					Icons_Manager::render_icon( $settings['load_more_spinner'], array( 'aria-hidden' => 'true' ) ); ?>
 				</div>

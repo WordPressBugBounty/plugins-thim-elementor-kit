@@ -440,7 +440,7 @@ class Thim_Ekit_Widget_Course_Item_Progress extends Widget_Base {
 		?>
 		<div class="learn-press-progress circle" style ="--progress: <?php echo esc_attr( $percentage )?>%;">
 			<div class="learn-press-progress__value">
-				<?php echo $percentage ."%"; ?>
+				<?php echo esc_html( $percentage ) ."%"; ?>
 			</div>
 		</div>
 		<?php
