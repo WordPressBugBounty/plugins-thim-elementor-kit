@@ -2,10 +2,8 @@
 Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: page builder, elementor, elementorkit, thimpress.
-Requires at least: 6.0
-Tested up to: 6.7.1
-Requires PHP: 7.4
-Stable tag: 1.2.9.1
+Tested up to: 6.7
+Stable tag: 1.3.0
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,9 +45,12 @@ Especially for **<a href="https://1.envato.market/G5Ook">Eduma</a>** or other LM
 
 == Changelog ==
 
-= 1.2.9.1 (2025-01-24) =
-~ Fixed: security.
-~ Fixed: minor bug.
+= 1.3.0 (2025-03-11) =
+~ Tweak: style for new Curriculum of LearnPress.
+~ Call clear cache Elementor when update plugin.
+~ Fixed: mini cart Elementor Pro.
+~ Fixed: slide single product.
+~ Fixed: active tab course.
 
 = 1.2.9 (2025-01-20) =
 ~ Fixed: security.

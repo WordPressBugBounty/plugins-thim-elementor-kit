@@ -56,6 +56,7 @@ class Widgets {
 			'countdown',
 			'svg-draw',
 			'progress-tracker',
+			'course-curriculum',
 		),
 		'archive-post'       => array( 'archive-post' ),
 		'single-post'        => array(
@@ -67,7 +68,7 @@ class Widgets {
 			'post-navigation',
 			'post-info',
 			'post-related',
-			'reading-time-post'
+			'reading-time-post',
 		),
 		'archive-product'    => array( 'archive-product' ),
 		'single-product'     => array(
@@ -105,7 +106,8 @@ class Widgets {
 			'course-description',
 			'course-offer-end',
 			'course-comment',
-			'course-featured-review'
+			'course-featured-review',
+			//'course-curriculum',
 		),
 		'single-course-item' => array(
 			'course-item-section',
@@ -114,7 +116,7 @@ class Widgets {
 			'course-item-progress',
 			'course-item-search-form',
 			'course-item-data',
-			'course-curriculum',
+			//'course-curriculum',
 			'course-item-nav',
 			'course-close-sidebar',
 			'back-to-course',
@@ -160,15 +162,16 @@ class Widgets {
 			unset( $widgets['archive-course'] );
 			unset( $widgets['single-course'] );
 			unset( $widgets['single-course-item'] );
-
+			unset( $widgets['global'][ array_search( 'course-curriculum', $widgets['global'] ) ] );
 			unset( $widgets['global'][ array_search( 'list-course', $widgets['global'] ) ] );
 		}
+
 		if ( ! class_exists( 'LP_Addon_Course_Review_Preload' ) ) {
-			if( ! empty( $widgets['single-course'] )){
-				unset( $widgets['single-course'][array_search( 'course-rating', $widgets['single-course'] )] );
+			if ( ! empty( $widgets['single-course'] ) ) {
+				unset( $widgets['single-course'][ array_search( 'course-rating', $widgets['single-course'] ) ] );
 			}
-			if( ! empty( $widgets['loop-item'] )) {
-				unset( $widgets['loop-item'][array_search( 'loop-course-rating', $widgets['loop-item'] )] );
+			if ( ! empty( $widgets['loop-item'] ) ) {
+				unset( $widgets['loop-item'][ array_search( 'loop-course-rating', $widgets['loop-item'] ) ] );
 			}
 		}
 		if ( ! class_exists( 'WPCF7' ) ) {
@@ -189,28 +192,34 @@ class Widgets {
 				}
 
 				if ( class_exists( 'Thim_EL_Kit\Modules\ArchiveProduct\Init' ) &&
-				     $key === 'archive-product' && $type !== ArchiveProduct::instance()->tab ) {
+					$key === 'archive-product' && $type !== ArchiveProduct::instance()->tab ) {
 					unset( $widgets['archive-product'] );
 				}
 
 				if ( class_exists( 'Thim_EL_Kit\Modules\SingleProduct\Init' ) &&
-				     $key === 'single-product' && $type !== SingleProduct::instance()->tab ) {
+					$key === 'single-product' && $type !== SingleProduct::instance()->tab ) {
 					unset( $widgets['single-product'] );
 				}
 
 				if ( class_exists( 'Thim_EL_Kit\Modules\ArchiveCourse\Init' ) &&
-				     $key === 'archive-course' && $type !== ArchiveCourse::instance()->tab ) {
+					$key === 'archive-course' && $type !== ArchiveCourse::instance()->tab ) {
 					unset( $widgets['archive-course'] );
 				}
 
 				if ( class_exists( 'Thim_EL_Kit\Modules\SingleCourse\Init' ) &&
-				     $key === 'single-course' && $type !== SingleCourse::instance()->tab ) {
+					$key === 'single-course' && $type !== SingleCourse::instance()->tab ) {
 					unset( $widgets['single-course'] );
 				}
 
 				if ( class_exists( 'Thim_EL_Kit\Modules\SingleCourseItem\Init' ) &&
-				     $key === 'single-course-item' && $type !== SingleCourseItem::instance()->tab ) {
+					$key === 'single-course-item' && $type !== SingleCourseItem::instance()->tab ) {
 					unset( $widgets['single-course-item'] );
+				}
+			}
+
+			if ( class_exists( 'LearnPress' ) ) {
+				if ( $type !== SingleCourseItem::instance()->tab && $type !== SingleCourse::instance()->tab ) {
+					unset( $widgets['global'][ array_search( 'course-curriculum', $widgets['global'] ) ] );
 				}
 			}
 		}
@@ -248,7 +257,7 @@ class Widgets {
 			if ( class_exists( 'LearnPress' ) ) {
 				$lp_version  = LearnPress::instance()->version;
 				$widgets_new = [
-					'archive-course'
+					'archive-course',
 				];
 				if ( version_compare( $lp_version, '4.2.6-beta-0', '>=' ) && in_array( $widget, $widgets_new ) ) {
 					$widget .= '-new';
@@ -259,7 +268,8 @@ class Widgets {
 			$file_function = function ( $file_url ) use ( $base, $widget ) {
 				$file       = apply_filters(
 					'thim_ekit/elementor/widget/file_path',
-					THIM_EKIT_PLUGIN_PATH . 'inc/elementor/widgets/' . $base . '/' . $file_url, $widget
+					THIM_EKIT_PLUGIN_PATH . 'inc/elementor/widgets/' . $base . '/' . $file_url,
+					$widget
 				);
 				$file_theme = locate_template( 'thim-elementor-kit/' . $file_url );
 

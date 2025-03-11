@@ -92,7 +92,7 @@ class Init extends Modules {
 
 				return in_array( (int) $condition['query'], $terms, true );
 			case 'course_is_offline':
-				$course = CourseModel::find( get_the_ID() );
+				$course = CourseModel::find( get_the_ID(), true );
 
 				return $course && $course->is_offline();
 		}

@@ -6,11 +6,18 @@ use Elementor\Group_Control_Image_Size;
 use Elementor\Utils;
 use LearnPress;
 use LearnPress\TemplateHooks\Course\SingleCourseTemplate;
+use LearnPress\TemplateHooks\Course\ListCoursesTemplate;
 use Thim_EL_Kit\Elementor\Controls\Controls_Manager as Thim_Control_Manager;
 use LP_Course;
 
 abstract class Thim_Ekits_Course_Base extends Widget_Base {
 
+	public function get_style_depends() {
+		wp_register_style( 'learnpress', LP_PLUGIN_URL . 'assets/css/learnpress.css', array(), LEARNPRESS_VERSION );
+
+		return array( 'learnpress' );
+	}
+	
 	protected function register_controls() {
 		$this->_register_content();
 		$this->_register_style_layout();
@@ -586,9 +593,6 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 			array(
 				'label'     => esc_html__( 'Layout', 'thim-elementor-kit' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
-				'condition' => array(
-					'course_skin!' => 'slider',
-				),
 			)
 		);
 
@@ -1848,7 +1852,12 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 		post_class( array( $class_item ) ); ?>>
 			<?php
 			if ( ! empty( $settings['build_loop_item'] ) && $settings['build_loop_item'] == 'yes' ) {
-				\Thim_EL_Kit\Utilities\Elementor::instance()->render_loop_item_content( $settings['template_id'] );
+				if ( $settings['template_id'] && $settings['template_id'] != 0 ) {
+					\Thim_EL_Kit\Utilities\Elementor::instance()->render_loop_item_content( $settings['template_id'] );
+				} else {
+					echo ListCoursesTemplate::render_course( $course );
+				}
+				
 			} else { ?>
 
 				<?php

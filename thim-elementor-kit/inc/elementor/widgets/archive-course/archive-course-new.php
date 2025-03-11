@@ -113,7 +113,7 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 		$template_loops = [];
 		if ( is_admin() ) {
 			$template_loops = [
-								  '0' => esc_html__( 'None', 'thim-elementor-kit' )
+								  '0' => esc_html__( 'Default', 'thim-elementor-kit' )
 							  ] + \Thim_EL_Kit\Functions::instance()->get_pages_loop_item( 'lp_course' );
 		}
 		$this->add_control(
@@ -751,8 +751,13 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 				lp_archive_skeleton_get_args()
 			);
 
+			$column = 'grid';
+			if ( $settings['columns'] && $settings['columns'] == 1 ) {
+				$column = 'list';
+			}
+
 			$html_wrapper_widget = [
-				'<div class="thim-ekits-archive-course thim-ekits-course lp-list-courses-default">' => '</div>',
+				'<div class="thim-ekits-archive-course thim-ekits-course lp-list-courses-default learn-press-courses" data-layout="'. esc_attr( $column ) .'">' => '</div>',
 			];
 
 			$callback = [
@@ -841,7 +846,6 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 					global $post;
 					$post = get_post( $course->get_id() );
 				}
-
 				self::render_item_course( $course, $settings, 'thim-ekits-course__item' );
 			}
 		} else {
@@ -870,7 +874,11 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 		post_class( array( $class_item ) ); ?>>
 			<?php
 			if ( $build_loop_item === 'yes' ) {
-				echo self::render_course_loop_item( $course, $settings );
+				if ( $settings['template_id'] && $settings['template_id'] != 0 ) {
+					echo self::render_course_loop_item( $course, $settings );
+				} else {
+					echo ListCoursesTemplate::render_course( $course );
+				}
 			} else {
 				self::instance()->render_thumbnail( $settings, $course );
 				echo '<div class="thim-ekits-course__content">';

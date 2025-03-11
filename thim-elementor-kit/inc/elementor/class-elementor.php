@@ -464,7 +464,7 @@ class Elementor {
 			$element->add_responsive_control(
 				'item_opacity',
 				[
-					'label'     => __( 'Opacity', 'edublink-core' ),
+					'label'     => __( 'Opacity', 'thim-elementor-kit' ),
 					'type'      => Controls_Manager::SLIDER,
 					'range'     => [
 						'px' => [

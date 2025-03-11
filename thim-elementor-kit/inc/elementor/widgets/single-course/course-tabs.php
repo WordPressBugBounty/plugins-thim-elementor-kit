@@ -7,9 +7,11 @@ use LearnPress\TemplateHooks\Instructor\SingleInstructorTemplate;
 use LP_Addon_Co_Instructor\CourseCoInstructorTemplate;
 use LearnPress\Models\UserModel;
 use LearnPress\Helpers\Template;
+use Thim_EL_Kit\GroupControlTrait;
 use LearnPress;
 
 class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
+	use GroupControlTrait;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
@@ -208,7 +210,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'right',
+				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .ekits-course-tabs' => 'text-align: {{VALUE}};',
@@ -485,168 +487,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
-			'curriculum_section_tab',
-			array(
-				'label'     => esc_html__( 'Section', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			)
-		);
-		$this->add_control(
-			'section_bg_color',
-			array(
-				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .course-curriculum .course-item' => 'background-color: transparent;',
-					'{{WRAPPER}} .course-curriculum .section'     => 'background-color: {{VALUE}}; border-bottom: none!important',
-				)
-			)
-		);
-		$this->add_responsive_control(
-			'section_border_radius',
-			array(
-				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .course-curriculum .section'        => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .course-curriculum .section-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;',
-				),
-			)
-		);
-		$this->add_responsive_control(
-			'section_spacing',
-			array(
-				'label'     => esc_html__( 'Spacing', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array(
-					'px' => array(
-						'max' => 120,
-					),
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .course-curriculum .section:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
-				),
-			)
-		);
-		$this->add_control(
-			'curriculum_heading_section',
-			array(
-				'label'     => esc_html__( 'Title Section', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			)
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'label'    => esc_html__( 'Title Typography', 'thim-elementor-kit' ),
-				'name'     => 'title_sc_typo',
-				'selector' => '{{WRAPPER}} #learn-press-course-curriculum .curriculum-sections .section-title',
-			)
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'label'    => esc_html__( 'Description Typography', 'thim-elementor-kit' ),
-				'name'     => 'desc_sc_typo',
-				'selector' => '{{WRAPPER}} #learn-press-course-curriculum  .curriculum-sections .section-desc',
-			)
-		);
-		$this->add_responsive_control(
-			'sc_title_padding',
-			array(
-				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em' ),
-				'selectors'  => array(
-					'{{WRAPPER}} #learn-press-course-curriculum .curriculum-sections .section-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .curriculum-sections .section-header'                                => '--section-title-padding-top: {{TOP}}{{UNIT}};--section-title-padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-			)
-		);
-		$this->add_control(
-			'sc_title_bg_color',
-			array(
-				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} #learn-press-course-curriculum .section-header' => 'background-color: {{VALUE}}',
-				)
-			)
-		);
-		$this->add_control(
-			'sc_title_color',
-			array(
-				'label'     => esc_html__( 'Color Title', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .course-curriculum .section-header' => 'color: {{VALUE}}',
-				)
-			)
-		);
-		$this->add_control(
-			'sc_desc_color',
-			array(
-				'label'     => esc_html__( 'Color Description', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .course-curriculum .section-desc' => 'color: {{VALUE}}',
-				)
-			)
-		);
-		$this->add_control(
-			'curriculum_heading_lesson',
-			array(
-				'label'     => esc_html__( 'Lesson', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			)
-		);
-		$this->add_group_control(
-			Group_Control_Typography::get_type(),
-			array(
-				'label'    => esc_html__( 'Title Typography', 'thim-elementor-kit' ),
-				'name'     => 'lesson_typo',
-				'selector' => '{{WRAPPER}} .course-curriculum .course-item .item-name',
-			)
-		);
-		$this->add_responsive_control(
-			'lesson__padding',
-			array(
-				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em' ),
-				'selectors'  => array(
-					'{{WRAPPER}} .course-curriculum .course-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .course-curriculum'              => '--thim-ekit-padding-lesson: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				),
-			)
-		);
-
-
-		$this->add_control(
-			'lesson_border_color',
-			array(
-				'label'     => esc_html__( 'Border Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .course-curriculum .course-item' => 'border-top: 1px solid {{VALUE}};margin-bottom: 0;',
-				)
-			)
-		);
-		$this->add_control(
-			'lesson_color',
-			array(
-				'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .course-curriculum .course-item .section-item-link' => 'color: {{VALUE}}',
-				)
-			)
-		);
+		$this->_register_setting_curriculum();
 		$this->end_controls_section();
 	}
 
@@ -1414,7 +1255,7 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 		}
 		?>
 
-		<div class="ekits-content-course-<?php echo esc_attr( $class ); ?>"<?php echo esc_attr( $role ); ?>>
+		<div class="ekits-content-course-<?php echo esc_attr( $class ); ?>"<?php echo $role; ?>>
 			<?php
 			foreach ( $tabs
 

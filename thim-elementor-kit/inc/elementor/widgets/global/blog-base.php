@@ -189,12 +189,15 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 				'default'     => array( 'date', 'comments' ),
 				'multiple'    => true,
 				'sortable'    => true,
-				'options'     => array(
-					'author'    => esc_html__( 'Author', 'thim-elementor-kit' ),
-					'date'      => esc_html__( 'Date', 'thim-elementor-kit' ),
-					'comments'  => esc_html__( 'Comments', 'thim-elementor-kit' ),
-					'read_more' => esc_html__( 'Read More', 'thim-elementor-kit' ),
-					'category'  => esc_html__( 'Category', 'thim-elementor-kit' ),
+				'options'     => apply_filters(
+					'thim-kits/blog-meta-data',
+					array(
+						'author'    => esc_html__( 'Author', 'thim-elementor-kit' ),
+						'date'      => esc_html__( 'Date', 'thim-elementor-kit' ),
+						'comments'  => esc_html__( 'Comments', 'thim-elementor-kit' ),
+						'read_more' => esc_html__( 'Read More', 'thim-elementor-kit' ),
+						'category'  => esc_html__( 'Category', 'thim-elementor-kit' ),
+					)
 				),
 				'condition'   => array(
 					'key' => 'meta_data',
@@ -363,6 +366,31 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 				'default'   => '...',
 				'condition' => array(
 					'key' => 'content',
+				),
+			)
+		);
+
+		$repeater->add_control(
+			'show_link_author',
+			array(
+				'label'   => esc_html__( 'Author Link', 'thim-elementor-kit' ),
+				'type'    => Controls_Manager::SWITCHER,
+				'default' => 'no',
+				'condition' => array(
+					'key'       => 'meta_data',
+					'meta_data' => 'author'
+				),
+			)
+		);
+
+		$repeater->add_control(
+			'text_before_author',
+			array(
+				'label'     => esc_html__( 'Before Author', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::TEXT,
+				'condition'   => array(
+					'key' 		=> 'meta_data',
+					'meta_data' => 'author',
 				),
 			)
 		);
@@ -1702,25 +1730,29 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 		$meta_data_display = ! empty( $item['meta_data_display'] ) ? $item['meta_data_display'] : 'start';
 		$item_id           = isset( $item['_id'] ) ? $item['_id'] : '';
 		?>
-
-		<div class="thim-ekits-post__meta elementor-repeater-item-<?php echo esc_attr( $item_id ) ?><?php echo ' m-psi-' . esc_attr( $meta_data_display ); ?> ">
+ 		<div class="thim-ekits-post__meta elementor-repeater-item-<?php echo esc_attr( $item_id ) ?><?php echo ' m-psi-' . esc_attr( $meta_data_display ); ?> ">
 			<?php
-			if ( in_array( 'author', $meta_data ) ) {
-				$this->render_author( $item['author_icon_meta_data'] );
+			foreach ( $meta_data as $key => $data ) {
+				$data = apply_filters( 'thim-kits/render-blog-meta-data', $data );
+				switch ( $data ) {
+					case 'author':
+						$this->render_author( $item, $item['author_icon_meta_data'] );
+						break;
+					case 'date':
+						$this->render_date_by_type( $item['date_icon_meta_data'] );
+						break;
+					case 'comments':
+						$this->render_comments( $item['comments_icon_meta_data'] );
+						break;
+					case 'read_more':
+						$this->render_read_more( $settings, $item['read_more_text'] );
+						break;
+					case 'category':
+						$this->render_categories( $item['category_icon_meta_data'] );
+						break;
+ 				}
 			}
-			if ( in_array( 'date', $meta_data ) ) {
-				$this->render_date_by_type( $item['date_icon_meta_data'] );
-			}
-			if ( in_array( 'comments', $meta_data ) ) {
-				$this->render_comments( $item['comments_icon_meta_data'] );
-			}
-			if ( in_array( 'read_more', $meta_data ) ) {
-				$this->render_read_more( $settings, $item['read_more_text'] );
-			}
-			if ( in_array( 'category', $meta_data ) ) {
-				$this->render_categories( $item['category_icon_meta_data'] );
-			}
-			?>
+ 			?>
 		</div>
 
 		<?php
@@ -1751,13 +1783,24 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 		}
 	}
 
-	protected function render_author( $icon ) {
+	protected function render_author( $item, $icon ) {
+		$author_name = '';
 		?>
 		<span class="thim-ekits-post__author">
 			<?php
 			Icons_Manager::render_icon( $icon, array( 'aria-hidden' => 'true' ) ); ?>
 			<?php
-			the_author(); ?>
+			if ( isset( $item['text_before_author'] ) && !empty( $item['text_before_author'] ) ) {
+				echo esc_html( $item['text_before_author'] );
+			}
+			$author_name .= get_the_author_meta( 'display_name' );
+
+			if ( 'yes' === $item['show_link_author'] ) {
+				$author_name = sprintf( '<a href="%s">%s</a>',
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), $author_name );
+			}
+
+			echo wp_kses_post( $author_name ); ?>
 		</span>
 		<?php
 	}

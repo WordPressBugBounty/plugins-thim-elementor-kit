@@ -2142,4 +2142,247 @@ trait GroupControlTrait {
 		$this->end_controls_section();
 	}
 
+	/*
+	 * Notes selectors:
+	 * #learn-press-course-curriculum for LP version < 4.2.8
+	 * class .lp-course-curriculum for curriculum new v4.2.8
+	*/
+	public function _register_setting_curriculum() {
+		$this->add_control(
+			'curriculum_section_tab',
+			array(
+				'label'     => esc_html__( 'Section', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+		$this->add_control(
+			'section_bg_color',
+			array(
+				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-section' => 'background-color: {{VALUE}}; border-bottom: none!important',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .course-item' => 'background-color: transparent;',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .section'     => 'background-color: {{VALUE}}; border-bottom: none!important',
+				),
+			)
+		);
+		$this->add_responsive_control(
+			'section_border_radius',
+			array(
+				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-section,
+					{{WRAPPER}} .lp-course-curriculum .course-section-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .section'        => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .section-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} 0 0;',
+				),
+			)
+		);
+		$this->add_responsive_control(
+			'section_spacing',
+			array(
+				'label'     => esc_html__( 'Spacing', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'max' => 120,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-section:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .section:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
+				),
+			)
+		);
+		$this->add_control(
+			'curriculum_heading_section',
+			array(
+				'label'     => esc_html__( 'Title Section', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'label'    => esc_html__( 'Title Typography', 'thim-elementor-kit' ),
+				'name'     => 'title_sc_typo',
+				'selector' => '{{WRAPPER}} .lp-course-curriculum .course-section__title, {{WRAPPER}} #learn-press-course-curriculum .curriculum-sections .section-title',
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'label'    => esc_html__( 'Description Typography', 'thim-elementor-kit' ),
+				'name'     => 'desc_sc_typo',
+				'selector' => '{{WRAPPER}} .lp-course-curriculum .course-section__description, {{WRAPPER}} #learn-press-course-curriculum  .curriculum-sections .section-desc',
+			)
+		);
+		$this->add_responsive_control(
+			'sc_heading_padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-section-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #learn-press-course-curriculum .curriculum-sections .section-header' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .curriculum-sections .section-header'                                => '--section-title-padding-top: {{TOP}}{{UNIT}};--section-title-padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+		$this->add_control(
+			'sc_title_bg_color',
+			array(
+				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-section-header' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} #learn-press-course-curriculum .section-header' => 'background-color: {{VALUE}}',
+				),
+			)
+		);
+		$this->add_control(
+			'sc_title_color',
+			array(
+				'label'     => esc_html__( 'Color Title', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-section__title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .section-header' => 'color: {{VALUE}}',
+				),
+			)
+		);
+		$this->add_control(
+			'sc_desc_color',
+			array(
+				'label'     => esc_html__( 'Color Description', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-section__description' => 'color: {{VALUE}}',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .section-desc' => 'color: {{VALUE}}',
+				),
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'section_border',
+				'label'    => esc_html__( 'Border', 'thim-elementor-kit' ),
+				'selector' => '{{WRAPPER}} .course-section',
+			)
+		);
+		$this->add_control(
+			'curriculum_heading_lesson',
+			array(
+				'label'     => esc_html__( 'Lesson', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'label'    => esc_html__( 'Title Typography', 'thim-elementor-kit' ),
+				'name'     => 'lesson_typo',
+				'selector' => '{{WRAPPER}} .lp-course-curriculum .course-item-title, {{WRAPPER}} #learn-press-course-curriculum .course-curriculum .course-item .item-name',
+			)
+		);
+		$this->add_responsive_control(
+			'lesson__padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .lp-course-curriculum'              => '--thim-ekit-padding-lesson: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .course-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} #learn-press-course-curriculum'              => '--thim-ekit-padding-lesson: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'lesson_border_color',
+			array(
+				'label'     => esc_html__( 'Border Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-item' => 'border-top: 1px solid {{VALUE}};margin-bottom: 0;',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .course-item' => 'border-top: 1px solid {{VALUE}};margin-bottom: 0;',
+				),
+			)
+		);
+		$this->add_control(
+			'lesson_color',
+			array(
+				'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-item-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .lp-course-curriculum' => '--thim-curriculum-lesson-text-color: {{VALUE}}',
+					'{{WRAPPER}} #learn-press-course-curriculum .course-curriculum .course-item .section-item-link' => 'color: {{VALUE}}',
+				),
+			)
+		);
+		$this->add_control(
+			'lesson_active_color',
+			array(
+				'label'     => esc_html__( 'Hover and Active Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => 'var(--e-global-color-primary)',
+				'selectors' => array(
+					'{{WRAPPER}} .lp-course-curriculum .course-item:hover .course-item-title' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .lp-course-curriculum .course-item.current .course-item-title' => 'color: {{VALUE}}',
+				),
+			)
+		);
+		$this->add_control(
+			'section_item_meta_color',
+			array(
+				'label'     => esc_html__( 'Color Meta', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .course-item__right .duration, {{WRAPPER}} .course-item__right .question-count' => 'color: {{VALUE}}',
+				),
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'label'    => esc_html__( 'Typo Meta', 'thim-elementor-kit' ),
+				'name'     => 'section_item_meta_typo',
+				'selector' => '{{WRAPPER}} .course-item__right',
+			)
+		);
+		$this->add_responsive_control(
+			'section_item_spacing',
+			array(
+				'label'     => esc_html__( 'Space To Header', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'max' => 120,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .course-section__items' => 'margin-top: {{SIZE}}{{UNIT}}',
+				),
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'section_item_border',
+				'label'    => esc_html__( 'Border', 'thim-elementor-kit' ),
+				'selector' => '{{WRAPPER}} .course-item',
+			)
+		);
+	}
+
 }

@@ -204,7 +204,7 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 		<div class="thim-ekit-single-course__price">
 			
 			<?php
-			if ( is_callable( $singleCourseTemplate, 'html_price_prefix' ) ) {
+			if ( is_callable( [ $singleCourseTemplate, 'html_price_prefix' ] ) ) {
 				$price_prefix = $singleCourseTemplate->html_price_prefix( $course_model );
 				if ( ! empty( $price_prefix ) ) {
 					echo wp_kses_post( $price_prefix );
@@ -222,7 +222,7 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 			?></span>
 			
 			<?php
-			if ( is_callable( $singleCourseTemplate, 'html_price_suffix' ) ) {
+			if ( is_callable( [ $singleCourseTemplate, 'html_price_suffix' ] ) ) {
 				$price_suffix = $singleCourseTemplate->html_price_suffix( $course_model );
 				if ( ! empty( $price_suffix ) ) {
 					echo wp_kses_post( $price_suffix );

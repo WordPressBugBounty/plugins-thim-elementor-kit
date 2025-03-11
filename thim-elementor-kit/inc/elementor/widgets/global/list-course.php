@@ -30,7 +30,9 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 		return 'thim-eicon eicon-archive-posts';
 	}
 	public function get_style_depends(): array {
-		return [ 'e-swiper' ];
+		wp_register_style( 'learnpress', LP_PLUGIN_URL . 'assets/css/learnpress.css', array(), LEARNPRESS_VERSION );
+
+		return [ 'e-swiper', 'learnpress' ];
 	}
 	public function get_categories() {
 		return array( \Thim_EL_Kit\Elementor::CATEGORY );
@@ -82,7 +84,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 				'type'      => Controls_Manager::SELECT2,
 				'default'   => '0',
 				'options'   => array(
-								   '0' => esc_html__( 'None', 'thim-elementor-kit' )
+								   '0' => esc_html__( 'Default', 'thim-elementor-kit' )
 							   ) + \Thim_EL_Kit\Functions::instance()->get_pages_loop_item( 'lp_course' ),
 				//				'frontend_available' => true,
 				'condition' => array(
@@ -443,7 +445,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 			}
 
 			$the_query   = new \WP_Query( $query_args );
-			$class       = 'thim-ekits-course';
+			$class       = 'thim-ekits-course learn-press-courses';
 			$class_inner = 'thim-ekits-course__inner';
 			$class_item  = 'thim-ekits-course__item';
 
@@ -462,7 +464,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 				}
 				?>
 				<div class="<?php
-				echo esc_attr( $class ); ?>">
+				echo esc_attr( $class ); ?>" data-layout="grid">
 					<div class="<?php
 					echo esc_attr( $class_inner ); ?>">
 						<?php
@@ -518,7 +520,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 						$tab_class          = ' class="cat-item active"';
 						$cat_default_active = $term->term_id;
 					}
-					$list_tab .= '<li' . esc_attr( $tab_class ) . '><a data-cat="' . esc_attr( $term->term_id ) . '" href="#">' . esc_html( $term->name ) . '</a></li>';
+					$list_tab .= '<li' . $tab_class . '><a data-cat="' . $term->term_id . '" href="#">' . esc_html( $term->name ) . '</a></li>';
 				}
 			}
 			// show html tab
@@ -527,7 +529,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 			}
 
 			// render content
-			echo '<div class="loop-wrapper thim-ekits-course">';
+			echo '<div class="loop-wrapper thim-ekits-course learn-press-courses" data-layout="grid">';
 
 			$query_args['tax_query'] = array(
 				array(

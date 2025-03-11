@@ -2,6 +2,7 @@
 
 namespace Thim_EL_Kit\Elementor;
 
+use Exception;
 use Thim_EL_Kit\SingletonTrait;
 use Thim_EL_Kit\LoginRegisterTrait;
 use Thim_EL_Kit\Settings;
@@ -17,6 +18,35 @@ class Hooks {
 		add_action( 'wp_head', array( $this, 'add_dark_mode_script' ), 1 );
 		add_action( 'wp_head', array( $this, 'add_dark_mode_styles' ), 1 );
 		$this->init_ajax_hooks();
+		// When edit curriculum in Elementor, expand all sections
+		add_filter(
+			'learn-press/course/html-section-item/class-section-toggle',
+			function ( $class_section_toggle ) {
+				if ( isset( $_GET['action'] ) && $_GET['action'] == 'elementor' ) {
+					$class_section_toggle = '';
+				}
+
+				return $class_section_toggle;
+			}
+		);
+
+		// Clear cache, generate again CSS and data of Elementor.
+		add_action(
+			'upgrader_process_complete',
+			function ( $wp_upgrader ) {
+				try {
+					$skin = $wp_upgrader->skin;
+					if ( $skin instanceof \WP_Ajax_Upgrader_Skin ) {
+						if ( $skin->plugin_info['TextDomain'] == 'thim-elementor-kit' ) {
+							// Clear cache
+							Plugin::$instance->files_manager->clear_cache();
+						}
+					}
+				} catch ( Exception $e ) {
+					// Log error
+				}
+			}
+		);
 	}
 
 	public function hook_login_register_from() {

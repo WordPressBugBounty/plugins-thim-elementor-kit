@@ -691,7 +691,7 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 
 						$gallery.flexslider( {
 							animation: 'slide',
-							animationLoop: false,
+							animationLoop: true,
 							controlNav: false,
 							slideshow: false,
 							prevText: '',
