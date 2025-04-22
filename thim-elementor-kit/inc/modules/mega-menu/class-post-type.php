@@ -10,7 +10,7 @@ class Custom_Post_Type {
 	const CPT = 'thim_ekits_menu';
 
 	public function __construct() {
-		add_action( 'init', array( $this, 'register_post_type' ) );
+		$this->register_post_type();
 	}
 
 	public function register_post_type() {

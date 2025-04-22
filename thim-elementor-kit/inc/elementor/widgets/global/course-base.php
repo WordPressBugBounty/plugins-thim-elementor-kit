@@ -1389,7 +1389,7 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'meta_instructor_typography',
-				'selector' => '{{WRAPPER}} .thim-ekits-course__item .thim-ekits-course__instructor .thim-ekits-course__instructor__content',
+				'selector' => '{{WRAPPER}} .thim-ekits-course__item .thim-ekits-course__instructor .thim-ekits-course__instructor__content, {{WRAPPER}} .thim-ekits-course__instructor .instructor-display-name',
 			)
 		);
 		$this->add_control(

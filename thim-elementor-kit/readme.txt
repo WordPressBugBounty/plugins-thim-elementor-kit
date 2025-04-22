@@ -2,8 +2,8 @@
 Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: page builder, elementor, elementorkit, thimpress.
-Tested up to: 6.7
-Stable tag: 1.3.0
+Tested up to: 6.8
+Stable tag: 1.3.2
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,24 +11,169 @@ Thim Elementor Kit is a plugin which supports users to build theme, layout, page
 
 == Description ==
 
-Thim Elementor Kit is a great choice for people who want to create a beautiful and professional WordPress website with Elementor Page Builder. This plugin gives you everything you need to create your own website, even if you have no web design experience. Thim Elementor Kit is the perfect solution for you, with powerful features that will make you love this plugin instantly.
-
-Especially for **<a href="https://1.envato.market/G5Ook">Eduma</a>** or other LMS WordPress Themes users, Thim Kit has **<a href="https://thimpress.com/">ThimPress</a>** Extension Widgets that allow you to edit and customize courses. Each icon, each title, and many other things will now be made following your own style. We focus on the ease-of-use, which is why Drag & Drop Builder is also compatible with Thim Kit and you can choose what you want from our already-built templates and widgets. For **<a href="https://thimpress.com/learnpress/">LearnPress</a>** - LMS WordPress Plugin users, Thim Kit fits all the purposes of creating and editing courses. Powerful as Elementor but free, Thim Kit is the best choice for your website, especially your LMS website.
-
-**What themes are best for Thim Kit?**
-> **<a href="https://eduma.thimpress.com/">Eduma</a>** - #1 Education WordPress Theme
-> **<a href="https://coaching.thimpress.com/">Coaching</a>** - Perfect solution for Coaching WordPress Theme
-> **<a href="https://coursebuilder.thimpress.com/">Course Builder</a>** - Build & Sell your online courses easily.
-> **<a href="https://edupress.thimpress.com/">EduPress</a>** - Free Education Theme using Thim Kit.
+Thim Elementor Kit is a powerful plugin designed to extend the capabilities of the Elementor page builder, enabling you to construct professional and unique LearnPress websites with ease. With a collection of various advanced widgets and functionalities, Thim Elementor Kit empowers you to create any type of website, from personal blogs to complex online eLearning sites, without any coding knowledge.
 
 == Key Features ==
-1. LearnPress Course Editor.
-2. Header and Footer Editor.
-3. Mega Menu Editor.
-4. Blog and Single Post Editor.
-5. Shop and Single Product Editor.
-6. 40+ Free Widgets.
-7. Good response on any device.
+✅ Seamless Elementor Integration – Works flawlessly with Elementor for a smooth design experience.
+✅ Extensive Widget Library – Access a diverse set of advanced widgets to enhance functionality.
+✅ Pre-Designed Templates & Blocks – Speed up your workflow with beautiful, ready-to-use designs.
+✅ Pixel-Perfect Customization – Easily fine-tune every element to match your vision.
+✅ Interactive & Dynamic Elements – Bring life to your pages with animations and effects.
+✅ Fully Responsive & Mobile-Optimized – Ensure a seamless experience across all devices.
+✅ Performance-Focused – Lightweight and optimized for fast loading speeds.
+
+=== Widgets & Features list ===
+
+**Templates & Library:**
+You can enjoy a rich library of pre-designed templates to start your projects quickly. Also, it’s simple to import and customize templates to align with your own brand and style.
+
+**Dynamic Tags’ Customization Details:**
+Discover how Dynamic Tags can be used to link dynamic content from several sources, resulting in adaptable and modern websites. Of course, it allows you to customize every detail of your website, from titles to images, based on dynamic data.
+
+**The Widget List:**
+***Global widgets***:
+  1. Nav Menu
+  2. Site Logo
+  3. Header Info
+  4. Social
+  5. Social Share
+  6. Mini Cart
+  7. List Blog
+  8. List Course
+  9. List Product
+  10. Team
+  11. Testimonial
+  12. Back To Top
+  13. Contact Form 7
+  14. Breadcrumb
+  15. Search Form
+  16. Categories
+  17. Image Accordion
+  18. Heading
+  19. Button
+  20. Tab
+  21. Accordion
+  22. Slider
+  23. Icon Box
+  24. Login Popup
+  25. Login Form
+  26. Instagram Feed
+  27. Video
+  28. Page Title
+  29. Dark Mode Switch
+  30. Archive Description
+  31. Countdown
+  32. Icon SVG Draw
+  33. Progress Tracker
+
+***Archive Post***:
+  34. Archive post
+
+***Single Post***:
+  35. Post Title
+  36. Post Content
+  37. Post Featured Image
+  38. Author Box
+  39. Post Comment
+  40. Post Navigation
+  41. Post Info
+  42. Post Related
+  43. Reading Time Post
+
+***Archive Product***:
+  44. Archive Product
+
+***Single Product***:
+  45. Product Title
+  46. Product Image
+  47. Product Price
+  48. Product Add to Cart
+  49. Product Rating
+  50. Product Notices
+  51. Product Meta
+  52. Product Short Description
+  53. Product Content
+  54. Product Tabs
+  55. Product Additional Information
+  56. Product Related
+  57. Product Upsells
+
+***Archive Course***:
+  58. Archive Course
+
+***Single Course***:
+  59. Course Title
+  60. Course Instructor
+  61. Course Meta
+  62. Course Categories
+  63. Course Tags
+  64. Course Image
+  65. Course Price
+  66. Course Graduation
+  67. Course User Time
+  68. Course User Progress
+  69. Course Tabs
+  70. Course Extra
+  71. Course Buttons
+  72. Course Related
+  73. Course Rating
+  74. Course Description
+  75. Course Offer End
+  76. Course Comment
+  77. Course Feature Review
+  78. Course Section
+  79. Course Items Progress
+  80. Course Search Form
+  81. Item Data
+  82. Course Curriculum
+  83. Course Item Navigation
+  84. Close Sidebar
+  85. Back To Course
+
+== Benefits of Thim Elementor Kit ==
+
+- Seamless Integration with Elementor – Enjoy smooth and hassle-free compatibility with Elementor for effortless website building.
+- Extensive Widget & Template Library – Access a diverse collection of widgets and templates to enhance your site’s design.
+- High Customization Capabilities – Create unique and professional websites with flexible styling options.
+- Enhanced User Experience – Improve UI with interactive and dynamic functionalities for a more engaging site.
+
+== Best themes using Thim Elementor Kit ==
+
+You can find some of our most popular themes built by Thim Elementor Kit below:
+
+- [Eduma Marketplace Live Demo](https://eduma.thimpress.com/demo-marketplace/)
+- [Coaching Live Demo](https://coaching.thimpress.com/)
+- [Course Builder Live Demo](https://coursebuilder.thimpress.com/)
+- [RealPress Live Demo](https://realpress.thimpress.com/)
+
+== Who Can Use This Plugin ==
+
+Thim Elementor Kit is designed for WordPress users who want effortless customization, flexibility, and professional design without coding. It’s ideal for:
+
+- Creative Professionals – Bloggers, designers, and freelancers looking to build unique and engaging websites.
+- Business Owners & Entrepreneurs – Those who need a polished, high-converting site with ease.
+- Agencies & Developers – Experts who want efficiency, scalability, and deep customization.
+- Educators & Course Creators – Users who need interactive and dynamic layouts for e-learning platforms.
+
+No matter your expertise level, Thim Elementor Kit empowers you to craft stunning, responsive, and high-performance websites with ease! 🚀
+
+Every website can use Thim Elementor Kit as long as you install the free Elementor Website Builder.
+
+== Documentation ==
+
+In case you need any assistance, you can find further help here:
+
+- Documentation: Thim Elementor Kit’s tutorial guidance.
+- Support Forum: Provide support for Thim Elementor Kit’s setup and bug fixing issues.
+
+== Screenshots ==
+1. Create and customize Templates effortlessly – choose layouts, set conditions, and streamline your design process with ease!
+2. Build website in minutes with beautifully designed, ready-to-use page templates. No design skills_ No problem! Drag, drop, and customize to match your brand and vision.
+3. No need to start from scratch—pick from a variety of pre-designed content blocks! Mix and match elements to create website in your own way.
+4. Craft stunning headers and footers with complete flexibility—enhance navigation, integrate mega menus, and optimize engagement with stylish, customizable layouts!
+5. Customize Every Detail! Take full control of your website’s look and feel with no coding customization options.
+6. Light or Dark_ You Decide! Easily switch between light and dark modes to enhance readability and style.
+7. Perfect on Every Screen! Whether on desktop, tablet, or mobile, ensure a seamless browsing experience for every visitor.
 
 == Installation ==
 
@@ -44,6 +189,13 @@ Especially for **<a href="https://1.envato.market/G5Ook">Eduma</a>** or other LM
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.3.2 (2025-04-22) =
+~ Update Hook course buttons LP new.
+~ Update option progress single course.
+~ Update social media for the Team widget.
+~ Fixed: label course meta.
+~ Fixed: template search page condition.
+~ Fixed: error load text domain with WP 6.8.
 
 = 1.3.0 (2025-03-11) =
 ~ Tweak: style for new Curriculum of LearnPress.

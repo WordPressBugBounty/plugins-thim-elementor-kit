@@ -493,7 +493,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 			<?php
 			Icons_Manager::render_icon( $settings['icon'] ); ?>
 			<?php
-			echo wp_kses_post( $text ); ?>
+			echo '<span class="label">' . wp_kses_post( $text ) . '</span>'; ?>
 			<?php
 			echo '<span class="value">' . esc_html( learn_press_get_post_translated_duration( get_the_ID(),
 					$label ) ) . '</span>'; ?>
@@ -512,7 +512,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 			<?php
 			Icons_Manager::render_icon( $settings['icon'] ); ?>
 			<?php
-			echo wp_kses_post( $text ); ?>
+			echo '<span class="label">' . wp_kses_post( $text ) . '</span>'; ?>
 			<?php
 			echo '<span class="value">' . esc_html( $level ) . '</span>'; ?>
 		</span>
@@ -598,7 +598,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 			<?php
 			Icons_Manager::render_icon( $settings['icon'] ); ?>
 			<?php
-			echo wp_kses_post( $text ); ?>
+			echo '<span class="label">' . wp_kses_post( $text ) . '</span>'; ?>
 			<span
 				class="value"><?php
 				echo ( get_post_meta( $course_id, '_lp_course_result',
@@ -617,7 +617,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 				<?php
 				Icons_Manager::render_icon( $settings['icon'] ); ?>
 				<?php
-				echo wp_kses_post( $text ); ?>
+				echo '<span class="label">' . wp_kses_post( $text ) . '</span>'; ?>
 				<span
 					class="value"><?php
 					echo ( get_post_meta( $course_id, '_lp_cert', true ) ) ? esc_html__( 'Yes',
@@ -637,7 +637,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 			<?php
 			Icons_Manager::render_icon( $settings['icon'] ); ?>
 				<?php
-				echo wp_kses_post( $text ); ?>
+				echo '<span class="label">' . wp_kses_post( $text ) . '</span>'; ?>
 			<span class="value"><?php
 				echo wp_kses_post( $language ); ?></span>
 		</span>
@@ -683,7 +683,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 			<?php
 			Icons_Manager::render_icon( $settings['icon'] ); ?>
 			<?php
-			echo wp_kses_post( $text ); ?>
+			echo '<span class="label">' . wp_kses_post( $text ) . '</span>'; ?>
 			<?php
 			echo '<span class="value">' . esc_attr( get_post_modified_time( $settings['date_format'],
 					true ) ) . '</span>'; ?>

@@ -12,7 +12,7 @@ class WooCommerce {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 11 );
 
 		if ( ! empty( $_REQUEST['action'] ) && 'elementor' === sanitize_text_field( $_REQUEST['action'] ) && is_admin() ) {
-			add_action( 'init', array( $this, 'register_wc_hooks' ), 5 );
+			$this->register_wc_hooks();
 		}
 
 		add_filter( 'woocommerce_add_to_cart_fragments', array( $this, 'add_to_cart_fragments' ) );

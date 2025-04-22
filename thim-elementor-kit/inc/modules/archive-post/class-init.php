@@ -19,7 +19,10 @@ class Init extends Modules {
 	}
 
 	public function template_include( $template ) {
-		$this->template_include = ( is_archive() || is_search() || is_author() || is_category() || is_home() || is_tag() ) && 'post' == get_post_type();
+		global $wp_query;
+
+		$this->template_include = ( is_archive() || is_search() || is_author() || is_category() || is_home() || is_tag() )
+			&& ( empty( get_query_var( 'post_type' ) ) || 'post' === get_query_var( 'post_type' ) || $wp_query->post_count > 0 );
 
 		return parent::template_include( $template );
 	}
@@ -38,6 +41,8 @@ class Init extends Modules {
 	}
 
 	public function is( $condition ) {
+		global $wp_query;
+
 		switch ( $condition['type'] ) {
 			case 'all':
 				return ( is_archive() || is_category() || is_tag() || is_author() || is_search() || is_home() ) && 'post' === get_post_type();
@@ -51,13 +56,14 @@ class Init extends Modules {
 
 				return (int) $taxonomy_id === (int) $condition['query'] && ! is_search();
 			case 'post_search':
-				return is_search() && 'post' === get_query_var( 'post_type' );
+				$post_type = get_query_var( 'post_type' );
+
+				return is_search() && ( empty( $post_type ) || 'post' === $post_type || $wp_query->post_count > 0 );
 			case 'post_page':
 				return is_home();
 			case 'post_author':
 				return is_author();
 			case 'select_post_author':
-				// is post author and author id is equal to condition query
 				return is_author() && get_the_author_meta( 'ID' ) === (int) $condition['query'];
 		}
 	}

@@ -25,7 +25,11 @@ class Shortcode {
 			return '';
 		}
 
-		$post    = get_post( $id );
+		$post = get_post( $id );
+		if ( empty( $post ) ) {
+			return '';
+		}
+
 		$user_id = get_current_user_id();
 		if ( $post->post_status == 'private'
 			&& $user_id != $post->post_author ) {

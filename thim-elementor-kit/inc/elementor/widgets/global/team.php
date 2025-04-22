@@ -87,33 +87,6 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
-			'enable_link_member',
-			array(
-				'label'   => esc_html__( 'Enable Link To Member?', 'thim-elementor-kit' ),
-				'type'    => Controls_Manager::SWITCHER,
-				'default' => '',
-			)
-		);
-
-		$this->add_control(
-			'link_member',
-			array(
-				'label'         => esc_html__( 'Member Link', 'thim-elementor-kit' ),
-				'type'          => Controls_Manager::URL,
-				'placeholder'   => esc_html__( 'https://your-link.com', 'thim-elementor-kit' ),
-				'show_external' => false,
-				'default'       => array(
-					'url'         => '',
-					'is_external' => true,
-					'nofollow'    => true,
-				),
-				'condition'     => array(
-					'enable_link_member' => 'yes',
-				),
-			)
-		);
-
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
 			array(
@@ -170,6 +143,21 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 		);
 
 		$repeater->add_control(
+			'link_member',
+			array(
+				'label'         => esc_html__( 'Member Link', 'thim-elementor-kit' ),
+				'type'          => Controls_Manager::URL,
+				'placeholder'   => esc_html__( 'https://your-link.com', 'thim-elementor-kit' ),
+				'show_external' => false,
+				'default'       => array(
+					'url'         => '',
+					'is_external' => true,
+					'nofollow'    => true,
+				),
+			)
+		);
+
+		$repeater->add_control(
 			'icon_data',
 			array(
 				'label'       => esc_html__( 'Icon Data', 'thim-elementor-kit' ),
@@ -182,6 +170,9 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 					'twitter'   => esc_html__( 'Twitter', 'thim-elementor-kit' ),
 					'youtube'   => esc_html__( 'Youtube', 'thim-elementor-kit' ),
 					'linked_in' => esc_html__( 'Linked In', 'thim-elementor-kit' ),
+					'instagram' => esc_html__( 'Instagram', 'thim-elementor-kit' ),
+					'tiktok'    => esc_html__( 'TikTok', 'thim-elementor-kit' ),
+					'pinterest' => esc_html__( 'Pinterest', 'thim-elementor-kit' ),
 				),
 			)
 		);
@@ -254,6 +245,60 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 				),
 				'condition'     => array(
 					'icon_data' => 'linked_in',
+				),
+			)
+		);
+
+		$repeater->add_control(
+			'instagram_link',
+			array(
+				'label'         => esc_html__( 'Instagram Link', 'thim-elementor-kit' ),
+				'type'          => Controls_Manager::URL,
+				'placeholder'   => esc_html__( 'https://your-link.com', 'thim-elementor-kit' ),
+				'show_external' => false,
+				'default'       => array(
+					'url'         => '',
+					'is_external' => true,
+					'nofollow'    => true,
+				),
+				'condition'     => array(
+					'icon_data' => 'instagram',
+				),
+			)
+		);
+
+		$repeater->add_control(
+			'tiktok_link',
+			array(
+				'label'         => esc_html__( 'TikTok Link', 'thim-elementor-kit' ),
+				'type'          => Controls_Manager::URL,
+				'placeholder'   => esc_html__( 'https://your-link.com', 'thim-elementor-kit' ),
+				'show_external' => false,
+				'default'       => array(
+					'url'         => '',
+					'is_external' => true,
+					'nofollow'    => true,
+				),
+				'condition'     => array(
+					'icon_data' => 'tiktok',
+				),
+			)
+		);
+
+		$repeater->add_control(
+			'pinterest_link',
+			array(
+				'label'         => esc_html__( 'Pinterest Link', 'thim-elementor-kit' ),
+				'type'          => Controls_Manager::URL,
+				'placeholder'   => esc_html__( 'https://your-link.com', 'thim-elementor-kit' ),
+				'show_external' => false,
+				'default'       => array(
+					'url'         => '',
+					'is_external' => true,
+					'nofollow'    => true,
+				),
+				'condition'     => array(
+					'icon_data' => 'pinterest',
 				),
 			)
 		);
@@ -1412,9 +1457,9 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 		$thumbnail_html           = Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail_size',
 			'thumbnail_id' );
 		$op_tag                   = $cl_tag = '';
-		if ( $settings['enable_link_member'] == 'yes' ) {
-			$member_link     = $settings['link_member']['url'] ? $settings['link_member']['url'] : '#';
-			$attributes_html = 'on' === $settings['link_member']['is_external'] ? 'target="_blank" rel="noopener noreferrer"' : '';
+		if ( $item['link_member']['url'] != '' ) {
+			$member_link     = $item['link_member']['url'];
+			$attributes_html = 'on' === $item['link_member']['is_external'] ? 'target="_blank" rel="noopener noreferrer"' : '';
 			$op_tag          = '<a class="thim-ekit-team__link" href="' . esc_url( $member_link ) . '" ' . $attributes_html . '>';
 			$cl_tag          = '</a>';
 		}
@@ -1455,9 +1500,9 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 	}
 
 	protected function render_member_name( $settings, $item ) {
-		if ( $settings['enable_link_member'] == 'yes' ) {
-			$member_link     = $settings['link_member']['url'] ? $settings['link_member']['url'] : '#';
-			$attributes_html = 'on' === $settings['link_member']['is_external'] ? 'target="_blank" rel="noopener noreferrer"' : '';
+		if ( $item['link_member']['url'] != '' ) {
+			$member_link     = $item['link_member']['url'];
+			$attributes_html = 'on' === $item['link_member']['is_external'] ? 'target="_blank" rel="noopener noreferrer"' : '';
 			$op_tag          = '<a class="thim-ekit-team__member-name" href="' . esc_url( $member_link ) . '" ' . $attributes_html . '>';
 			$cl_tag          = '</a>';
 		} else {
@@ -1524,6 +1569,9 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 			'twitter'   => 'tk-x-twitter',
 			'youtube'   => 'fab fa-youtube',
 			'linked_in' => 'fab fa-linkedin-in',
+			'instagram'	=> 'fab fa-instagram',
+			'pinterest' => 'fab fa-pinterest',
+			'tiktok'	=> 'fab fa-tiktok',
 		);
 
 		$html = '<div class="thim-ekit-team__list-social">';

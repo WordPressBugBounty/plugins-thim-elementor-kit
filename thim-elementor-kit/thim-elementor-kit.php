@@ -3,7 +3,7 @@
  * Plugin Name: Thim Elementor Kit
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.3.0
+ * Version: 1.3.2
  * Author URI: http://thimpress.com
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -38,8 +38,6 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 		protected static $instance = null;
 
 		public function __construct() {
-			add_action( 'init', array( $this, 'load_textdomain' ), 99 );
-
 			if ( ! $this->elementor_is_active() ) {
 				add_action( 'admin_notices', array( $this, 'required_plugins_notice' ) );
 
@@ -51,6 +49,9 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 			}
 
 			$this->includes();
+
+			// Include files, handle on hook init.
+			add_action( 'init', array( $this, 'included_files_when_plugins_loaded' ) );
 
 			do_action( 'thim_ekit_loaded' );
 		}
@@ -77,11 +78,8 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 
 			// Elementor
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/elementor/class-elementor.php';
-
-			// Modules, must load on hook init to check class exists.
-			add_action( 'init', array( $this, 'included_files_when_plugins_loaded' ) );
-			// Include old, when all plugins extend move self to hook plugins_loaded will remove.
-			require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-init.php';
+			require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-cache.php';
+			require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-modules.php';
 
 			// Upgrade.
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/upgrade/class-init.php';
@@ -95,6 +93,7 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 		 * @since 1.2.0
 		 */
 		public function included_files_when_plugins_loaded() {
+			$this->load_textdomain();
 			require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-init.php';
 		}
 

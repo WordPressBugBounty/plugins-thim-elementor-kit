@@ -16,8 +16,6 @@ class Init {
 			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
 
-		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-modules.php';
-		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/class-cache.php';
 		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/mega-menu/class-init.php';
 		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/header-footer/class-init.php';
 		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/archive-post/class-init.php';
@@ -47,6 +45,12 @@ class Init {
 		}
 
 		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/loop-item/class-init.php';
+
+		/**
+		 * Hook for other plugins to include their modules
+		 * @since 1.3.1
+		 */
+		do_action( 'thim_ekit/modules/handle' );
 	}
 }
 

@@ -13,7 +13,7 @@ class Post_Type {
 	const TAXONOMY = 'thim_ekits_slider';
 
 	public function __construct() {
-		add_action( 'init', array( $this, 'register_post_type' ) );
+		$this->register_post_type();
 		add_action( 'restrict_manage_posts', array( $this, 'filter_slider_by_taxonomy' ) );
 		add_filter( 'parse_query', array( $this, 'convert_id_to_term_in_query' ) );
 	}

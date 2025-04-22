@@ -940,7 +940,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 			array(
 				'name' => 'product_title_typography',
 
-				'selector' => '{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content a',
+				'selector' => '{{WRAPPER}} .widget_shopping_cart_content a',
 			)
 		);
 
@@ -955,7 +955,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content a' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .widget_shopping_cart_content a' => 'color: {{VALUE}};',
 				),
 			)
 		);
@@ -971,7 +971,8 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .widget_shopping_cart_content .product_list_widget a:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .widget_shopping_cart_content .product-name a:hover' => 'color: {{VALUE}};',
 				),
 			)
 		);
@@ -1075,6 +1076,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content a.remove' => 'color: {{VALUE}}',
+					'{{WRAPPER}}' => '--remove-item-button-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1095,6 +1097,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content a.remove:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}}' => '--remove-item-button-hover-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1406,6 +1409,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'default'   => 'none',
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons a:not(.checkout)' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button--view-cart ' => 'border-style: {{VALUE}};',
 				),
 			)
 		);
@@ -1419,6 +1423,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons a:not(.checkout)' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-button--view-cart ' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -1462,6 +1467,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons a:not(.checkout)' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}}' => '--view-cart-button-border-color: {{VALUE}};'
 				),
 				'condition' => array(
 					'view_cart_border_style!' => 'none',
@@ -1485,6 +1491,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons a:not(.checkout):hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}}' => '--view-cart-button-hover-text-color: {{VALUE}};'
 				),
 			)
 		);
@@ -1496,6 +1503,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons a:not(.checkout):hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}' => '--view-cart-button-hover-background-color: {{VALUE}};'
 				),
 			)
 		);
@@ -1507,6 +1515,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons a:not(.checkout):hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button--view-cart' => 'border-color: {{VALUE}};',
 				),
 				'condition' => array(
 					'view_cart_border_style!' => 'none',
@@ -1543,6 +1552,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'default'   => 'none',
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons .checkout' => 'border-style: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button--checkout ' => 'border-style: {{VALUE}};',
 				),
 			)
 		);
@@ -1557,6 +1567,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons .checkout' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-button--checkout ' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -1604,6 +1615,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons .checkout' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button--checkout' => 'border-color: {{VALUE}};',
 				),
 			)
 		);
@@ -1624,6 +1636,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons .checkout:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}}' => '--checkout-button-hover-text-color: {{VALUE}};'
 				),
 			)
 		);
@@ -1635,6 +1648,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons .checkout:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}' => '--checkout-button-hover-background-color: {{VALUE}};'
 				),
 			)
 		);
@@ -1649,6 +1663,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-mini-cart .widget_shopping_cart_content .buttons .checkout:hover' => 'border-color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-button--checkout:hover' => 'border-color: {{VALUE}};',
 				),
 			)
 		);

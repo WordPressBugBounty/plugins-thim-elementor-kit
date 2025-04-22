@@ -240,6 +240,11 @@ class Thim_Ekit_Widget_Archive_Post extends Thim_Ekit_Widget_List_Base {
 		}
 
 		if ( ! $query->found_posts ) {
+			if ( is_search() ) {
+				$message = apply_filters( 'thim_ekit/elementor/archive_post/no_posts_found_message', __( 'Sorry, we couldn\'t find what you are looking for. Please check your spelling or try using different keywords.', 'thim-elementor-kit' ) );
+				
+				echo '<div class="post-not-found"><span>' . $message . '</span></div>';
+			}
 			return;
 		}
 

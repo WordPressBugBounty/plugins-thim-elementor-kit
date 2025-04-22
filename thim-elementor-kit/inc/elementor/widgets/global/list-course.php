@@ -29,11 +29,13 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 	public function get_icon() {
 		return 'thim-eicon eicon-archive-posts';
 	}
+
 	public function get_style_depends(): array {
 		wp_register_style( 'learnpress', LP_PLUGIN_URL . 'assets/css/learnpress.css', array(), LEARNPRESS_VERSION );
 
 		return [ 'e-swiper', 'learnpress' ];
 	}
+
 	public function get_categories() {
 		return array( \Thim_EL_Kit\Elementor::CATEGORY );
 	}
@@ -86,8 +88,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 				'options'   => array(
 								   '0' => esc_html__( 'Default', 'thim-elementor-kit' )
 							   ) + \Thim_EL_Kit\Functions::instance()->get_pages_loop_item( 'lp_course' ),
-				//				'frontend_available' => true,
-				'condition' => array(
+ 				'condition' => array(
 					'build_loop_item' => 'yes',
 				),
 			)
@@ -99,10 +100,21 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 				'label'    => esc_html__( 'Select Category', 'thim-elementor-kit' ),
 				'type'     => Thim_Control_Manager::SELECT2,
 				'multiple' => true,
+				'sortable' => true,
 				'options'  => \Thim_EL_Kit\Elementor::get_cat_taxonomy( 'course_category' ),
 			)
 		);
-
+		$this->add_control(
+			'show_number_course',
+			array(
+				'label'     => esc_html__( 'Show Count Course', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'default'   => 'no',
+				'condition' => array(
+					'course_skin' => 'tab',
+				),
+			)
+		);
 		$this->add_control(
 			'orderby',
 			array(
@@ -168,7 +180,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 
 		parent::register_controls();
 
-		//		$this->_register_style_layout();
+		// $this->_register_style_layout();
 
 		$this->_register_settings_slider(
 			array(
@@ -406,7 +418,33 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 				'selector' => '{{WRAPPER}} .thim-course-tabs .nav-tabs li a',
 			)
 		);
+ 		$this->add_control(
+			'tab_item_number_color',
+			array(
+				'label'     => esc_html__( 'Number Courses Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'separator' => 'before',
+				'selectors' => array(
+					'{{WRAPPER}} .thim-course-tabs .nav-tabs .course-number' => 'color: {{VALUE}};',
+				),
+				'condition' => array(
+					'show_number_course' => 'yes',
+				),
+			)
+		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'tab_number_typography',
+				'label'    => esc_html__( 'Number Typography', 'thim-elementor-kit' ),
+				'selector' => '{{WRAPPER}} .thim-course-tabs .nav-tabs .course-number',
 
+				'condition' => array(
+					'show_number_course' => 'yes',
+				),
+			)
+		);
 		$this->end_controls_section();
 	}
 
@@ -449,16 +487,16 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 			$class_inner = 'thim-ekits-course__inner';
 			$class_item  = 'thim-ekits-course__item';
 
-			if ( isset( $settings['slider_mobile'] ) && $settings[ 'slider_mobile' ] == 'yes' ){
-				$class_inner       .= ' thim-ekits-mobile-sliders';
+			if ( isset( $settings['slider_mobile'] ) && $settings['slider_mobile'] == 'yes' ) {
+				$class_inner .= ' thim-ekits-mobile-sliders';
 			}
 
 			if ( $the_query->have_posts() ) {
 				if ( isset( $settings['course_skin'] ) && $settings['course_skin'] == 'slider' ) {
 					$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-					$class        .= ' thim-ekits-sliders ' . esc_attr( $swiper_class );
+					$class       .= ' thim-ekits-sliders ' . esc_attr( $swiper_class );
 					$class_inner  = 'swiper-wrapper';
-					$class_item   .= ' swiper-slide';
+					$class_item  .= ' swiper-slide';
 
 					$this->render_nav_pagination_slider( $settings );
 				}
@@ -487,8 +525,8 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 
 	public function render_course_tab( $settings, $query_args ) {
 		$params   = array(
-			'page_id'   => esc_attr(get_the_id()),
-			'widget_id' => esc_attr($this->get_id()),
+			'page_id'   => esc_attr( get_the_id() ),
+			'widget_id' => esc_attr( $this->get_id() ),
 		);
 		$list_tab = '';
 		if ( $settings['cat_id'] ) {
@@ -520,7 +558,17 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 						$tab_class          = ' class="cat-item active"';
 						$cat_default_active = $term->term_id;
 					}
-					$list_tab .= '<li' . $tab_class . '><a data-cat="' . $term->term_id . '" href="#">' . esc_html( $term->name ) . '</a></li>';
+					// show_number_course
+					$list_tab .= '<li' . $tab_class . '>';
+					$list_tab .= '<a data-cat="' . $term->term_id . '" href="#">' . esc_html( $term->name );
+					if ( ! empty( $settings['show_number_course'] ) && $settings['show_number_course'] == 'yes' ) {
+						$list_tab .= sprintf(
+							'<span class="course-number">(%d %s)</span>',
+							$term->count,
+							_n( 'Course', 'Courses', $term->count, 'learnpress' )
+						);
+					}
+					$list_tab .= '</a></li>';
 				}
 			}
 			// show html tab
@@ -591,5 +639,4 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 
 		wp_reset_postdata();
 	}
-
 }

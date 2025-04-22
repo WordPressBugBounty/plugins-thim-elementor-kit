@@ -689,10 +689,10 @@ class Thim_Ekit_Widget_Post_Navigation extends Widget_Base {
 							$nextPost->ID ) . '</li>' : '';
 				} else {
 					$prev_meta .= ( ! empty( $prevPost->ID ) && in_array( 'comment',
-							$settings['meta_data'] ) ) ? '<li>' . get_comments_number( $prevPost->ID ) . esc_html( '&nbsp;comments',
+							$settings['meta_data'] ) ) ? '<li>' . get_comments_number( $prevPost->ID ) . esc_html__( '&nbsp;comments',
 							'thim-elementor-kit' ) . '</li>' : '';
 					$next_meta .= ( ! empty( $nextPost->ID ) && in_array( 'comment',
-							$settings['meta_data'] ) ) ? '<li>' . get_comments_number( $nextPost->ID ) . esc_html( '&nbsp;comments',
+							$settings['meta_data'] ) ) ? '<li>' . get_comments_number( $nextPost->ID ) . esc_html__( '&nbsp;comments',
 							'thim-elementor-kit' ) . '</li>' : '';
 				}
 			}

@@ -204,6 +204,113 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 					echo wp_kses_post( $text );
 				}
 			);
+
+			if ( $list_button === 'finish' ) {
+				add_filter(
+					'learn-press/user/course/html-button-' . $list_button,
+					function ( $section ) use ( $list_button ) {
+						$icon_html = '';
+						$settings = $this->get_settings_for_display();
+						if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
+							ob_start();
+							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
+							$icon_html = ob_get_clean();
+						}
+			
+						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
+							$section['btn'] = sprintf(
+								'<button type="submit" class="lp-button btn-finish-course">%s</button>',
+								wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+							);
+						}
+			
+						return $section;
+					}
+				);
+			} elseif ( $list_button === 'continue' ) {
+				add_filter ( 'learn-press/user/course/html-button-continue', 
+					function ( $html, $userCourseModel ) use ( $list_button ) {
+						$icon_html = '';
+						$courseModel = $userCourseModel->get_course_model();
+
+						$itemModelContinue = $userCourseModel->get_item_continue();
+						if ( empty( $itemModelContinue ) ) {
+							$link_continue = $courseModel->get_permalink();
+						} else {
+							$link_continue = $courseModel->get_item_link( $itemModelContinue->ID );
+						}
+
+						$settings = $this->get_settings_for_display();
+						if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
+							ob_start();
+							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
+							$icon_html = ob_get_clean();
+						}
+			
+						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
+							$html = sprintf(
+								'<a href="%s">%s</a>',
+								esc_url( $link_continue ),
+								sprintf(
+									'<button class="lp-button course-btn-continue">%s</button>',
+									wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+								)
+							);
+						}
+			
+						return $html;
+					},
+					10,
+					2
+				);
+			} elseif ( $list_button === 'enroll' ) {
+				add_filter(
+					'learn-press/course/html-button-' . $list_button,
+					function ( $section ) use ( $list_button ) {
+						if ( $list_button == 'enroll' ) {
+							$list_button = 'start_now';
+						}
+						$icon_html = '';
+						$settings = $this->get_settings_for_display();
+						if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
+							ob_start();
+							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
+							$icon_html = ob_get_clean();
+						}
+			
+						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
+							$section['btn'] = sprintf(
+								'<button type="submit" class="lp-button button-enroll-course">%s</button>',
+								wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+							);
+						}
+			
+						return $section;
+					}
+				);
+			} else {
+				add_filter(
+					'learn-press/course/html-button-' . $list_button,
+					function ( $section ) use ( $list_button ) {
+						$icon_html = '';
+						$settings = $this->get_settings_for_display();
+						if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
+							ob_start();
+							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
+							$icon_html = ob_get_clean();
+						}
+			
+						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
+							$section['btn'] = sprintf(
+								'<button type="submit" class="lp-button button-'.$list_button.'-course">%s</button>',
+								wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+							);
+						}
+			
+						return $section;
+					}
+				);
+			}
 		}
 		?>
 

@@ -8,14 +8,14 @@ use Thim_EL_Kit\Elementor\Controls\Controls_Manager as Thim_Controls_Manager;
 class Elementor {
 	use SingletonTrait;
 
-	const CATEGORY = 'thim_ekit';
-	const CATEGORY_RECOMMENDED = 'thim_ekit_recommended';
-	const CATEGORY_ARCHIVE_POST = 'thim_ekit_archive_post';
-	const CATEGORY_SINGLE_POST = 'thim_ekit_single_post';
-	const CATEGORY_ARCHIVE_PRODUCT = 'thim_ekit_archive_product';
-	const CATEGORY_SINGLE_PRODUCT = 'thim_ekit_single_product';
-	const CATEGORY_ARCHIVE_COURSE = 'thim_ekit_archive_course';
-	const CATEGORY_SINGLE_COURSE = 'thim_ekit_single_course';
+	const CATEGORY                    = 'thim_ekit';
+	const CATEGORY_RECOMMENDED        = 'thim_ekit_recommended';
+	const CATEGORY_ARCHIVE_POST       = 'thim_ekit_archive_post';
+	const CATEGORY_SINGLE_POST        = 'thim_ekit_single_post';
+	const CATEGORY_ARCHIVE_PRODUCT    = 'thim_ekit_archive_product';
+	const CATEGORY_SINGLE_PRODUCT     = 'thim_ekit_single_product';
+	const CATEGORY_ARCHIVE_COURSE     = 'thim_ekit_archive_course';
+	const CATEGORY_SINGLE_COURSE      = 'thim_ekit_single_course';
 	const CATEGORY_SINGLE_COURSE_ITEM = 'thim_ekit_single_course_items';
 
 	public function __construct() {
@@ -229,19 +229,17 @@ class Elementor {
 		);
 
 		if ( is_wp_error( $terms ) ) {
+		} elseif ( empty( $terms->terms ) ) {
 		} else {
-			if ( empty( $terms->terms ) ) {
-			} else {
-				foreach ( $terms->terms as $term ) {
-					$prefix = '';
-					if ( $term->parent > 0 ) {
-						$prefix = '--';
-					}
-					if ( $id ) {
-						$cats[$term->term_id] = $prefix . $term->name;
-					} else {
-						$cats[$term->slug] = $prefix . $term->name;
-					}
+			foreach ( $terms->terms as $term ) {
+				$prefix = '';
+				if ( $term->parent > 0 ) {
+					$prefix = '--';
+				}
+				if ( $id ) {
+					$cats[ $term->term_id ] = $prefix . $term->name;
+				} else {
+					$cats[ $term->slug ] = $prefix . $term->name;
 				}
 			}
 		}
@@ -320,6 +318,7 @@ class Elementor {
 	/**
 	 *
 	 * extra animation
+	 *
 	 * @since  1.0.0
 	 * @access public
 	 */
@@ -357,7 +356,7 @@ class Elementor {
 					'options'     => [
 						''                   => __( 'None', 'thim-elementor-kit' ),
 						'transform-animated' => __( 'Transform Animated', 'thim-elementor-kit' ),
-						'infinite-animation' => __( 'Infinite Animation', 'thim-elementor-kit' ),
+						'infinite-animation' => __( 'Animation', 'thim-elementor-kit' ),
 					]
 				]
 			);
@@ -376,7 +375,13 @@ class Elementor {
 						'ekit-animated-transform-5' => __( 'Transform 5', 'thim-elementor-kit' ),
 					],
 					'selectors' => [
-						'{{WRAPPER}} > div' => '-webkit-animation: {{VALUE}} 10s infinite; -moz-animation: {{VALUE}} 10s infinite; -ms-animation: {{VALUE}} 10s infinite; -o-animation: {{VALUE}} 10s infinite; animation: {{VALUE}} 10s infinite; overflow: hidden;'
+						'{{WRAPPER}} > div' =>
+							'-webkit-animation: {{VALUE}} 10s infinite;
+							-moz-animation: {{VALUE}} 10s infinite;
+							-ms-animation: {{VALUE}} 10s infinite;
+							-o-animation: {{VALUE}} 10s infinite;
+							animation: {{VALUE}} 10s infinite;
+							overflow: hidden;'
 					],
 					'condition' => [
 						'animation_type' => 'transform-animated'
@@ -387,7 +392,7 @@ class Elementor {
 			$element->add_control(
 				'infinite_animation_type',
 				[
-					'label'     => __( 'Infinite Type', 'thim-elementor-kit' ),
+					'label'     => __( 'Animation Type', 'thim-elementor-kit' ),
 					'type'      => Controls_Manager::SELECT,
 					'options'   => [
 						''                        => __( 'Select Animation', 'thim-elementor-kit' ),
@@ -402,7 +407,7 @@ class Elementor {
 						'ekit-sm-y-move'          => __( 'Move Y Small', 'thim-elementor-kit' ),
 						'ekit-md-y-move'          => __( 'Move Y Medium', 'thim-elementor-kit' ),
 						'ekit-lg-y-move'          => __( 'Move Y Large', 'thim-elementor-kit' ),
-						'ekit-sm-x-mover'         => __( 'Move X Small', 'thim-elementor-kit' ),
+						'ekit-sm-x-move'         => __( 'Move X Small', 'thim-elementor-kit' ),
 						'ekit-md-x-move'          => __( 'Move X Medium', 'thim-elementor-kit' ),
 						'ekit-lg-x-move'          => __( 'Move X Large', 'thim-elementor-kit' ),
 						'ekit-sm-xy-move'         => __( 'Move XY Small', 'thim-elementor-kit' ),
@@ -416,16 +421,22 @@ class Elementor {
 						'ekit-rotate-y'           => __( 'Rotate Y', 'thim-elementor-kit' ),
 						'ekit-swing'              => __( 'Swing', 'thim-elementor-kit' ),
 						'ekit-spinners'           => __( 'Spinners', 'thim-elementor-kit' ),
-						'ekit-zoom-in-out'        => __( 'Zoom In Out', 'thim-elementor-kit' )
+						'ekit-zoom-in-out'        => __( 'Zoom In Out', 'thim-elementor-kit' ),
 					],
 					'selectors' => [
-						'{{WRAPPER}} > div' => '-webkit-animation: {{VALUE}}; -moz-animation: {{VALUE}}; -ms-animation: {{VALUE}}; -o-animation: {{VALUE}}; animation: {{VALUE}};'
+						'{{WRAPPER}} > div' => '
+							-webkit-animation: {{VALUE}} 2s;
+							 -moz-animation: {{VALUE}} 2s;
+							 -ms-animation: {{VALUE}} 2s;
+							 -o-animation: {{VALUE}} 2s;
+							 animation: {{VALUE}} 2s;'
 					],
 					'condition' => [
 						'animation_type' => 'infinite-animation'
 					]
 				]
 			);
+
 			$element->add_control(
 				'enable_custom_duration',
 				[
@@ -461,6 +472,30 @@ class Elementor {
 					]
 				]
 			);
+
+			$element->add_responsive_control(
+				'custom_count',
+				[
+					'label'       => __( 'Set Animation Count', 'thim-elementor-kit' ),
+					'type'        => Controls_Manager::SLIDER,
+					'range'       => [
+						'px' => [
+							'min'  => 1,
+							'max'  => 35,
+							'step' => 1
+						]
+					],
+					'description' => __( 'Sets the number of times an animation sequence should be played before stopping.', 'thim-elementor-kit' ),
+					'selectors'   => [
+						'{{WRAPPER}} > div' => 'animation-iteration-count: {{SIZE}};',
+ 					],
+					'condition'   => [
+						'animation_type'         => 'infinite-animation',
+						'enable_custom_duration' => 'yes',
+					]
+				]
+			);
+
 			$element->add_responsive_control(
 				'item_opacity',
 				[
