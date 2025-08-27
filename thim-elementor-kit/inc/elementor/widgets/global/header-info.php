@@ -56,7 +56,7 @@ class Thim_Ekit_Widget_Header_Info extends Widget_Base {
 				'label_block' => false,
 				'default'     => array(
 					'value'   => 'far fa-address-book',
-					'library' => 'Font Awesome 5 Free',
+					'library' => 'fa-solid',
 				),
 			)
 		);

@@ -89,7 +89,7 @@ class Init extends Modules {
 
 				return (int) $taxonomy_id === (int) $condition['query'] && ! is_search();
 			case 'course_search':
-				return is_search() && 'lp_course' === get_query_var( 'post_type' );
+				return learn_press_is_search() || ( is_search() && 'lp_course' === get_query_var( 'post_type' ) ) || ( isset( $_GET['c_search'] ) );
 			case 'course_page':
 				return is_post_type_archive( 'lp_course' ) || is_page( learn_press_get_page_id( 'courses' ) );
 		}

@@ -22,7 +22,7 @@ class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( ' Course Related', 'thim-elementor-kit' );
+		return esc_html__( 'Course Related', 'thim-elementor-kit' );
 	}
 
 	public function get_icon() {
@@ -32,7 +32,7 @@ class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
 	public function get_style_depends(): array {
 		return [ 'e-swiper' ];
 	}
-	
+
 	public function get_categories() {
 		return array( \Thim_EL_Kit\Elementor::CATEGORY_SINGLE_COURSE );
 	}
@@ -75,6 +75,19 @@ class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
 		);
 
 		$this->add_control(
+			'related_by',
+			array(
+				'label'   => esc_html__( 'Related By', 'thim-elementor-kit' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 'category',
+				'options' => array(
+					'category' => esc_html__( 'Category', 'thim-elementor-kit' ),
+					'tags'     => esc_html__( 'Tags', 'thim-elementor-kit' ),
+				),
+			)
+		);
+
+		$this->add_control(
 			'number_posts',
 			array(
 				'label'   => esc_html__( 'Number Post', 'thim-elementor-kit' ),
@@ -110,21 +123,36 @@ class Thim_Ekit_Widget_Course_Related extends Thim_Ekits_Course_Base {
 			'ignore_sticky_posts' => true,
 		);
 
-		$tag_ids = array();
+		$tag_ids = $cat_ids = array();
 		$tags    = get_the_terms( $course_id, 'course_tag' );
+		$cats    = get_the_terms( $course_id, 'course_category' );
 
-		if ( $tags ) {
-			foreach ( $tags as $individual_tag ) {
-				$tag_ids[] = $individual_tag->term_id;
+		if ( $settings['related_by'] == 'tags' && $tags ) {
+			if ( $tags ) {
+				foreach ( $tags as $individual_tag ) {
+					$tag_ids[] = $individual_tag->term_id;
+				}
 			}
-		}
 
-		if ( $tag_ids ) {
 			$query_args['tax_query'] = array(
 				array(
 					'taxonomy' => 'course_tag',
 					'field'    => 'term_id',
 					'terms'    => $tag_ids,
+				),
+			);
+		} else {
+			if ( $cats ) {
+				foreach ( $cats as $individual_cat ) {
+					$cat_ids[] = $individual_cat->term_id;
+				}
+			}
+
+			$query_args['tax_query'] = array(
+				array(
+					'taxonomy' => 'course_category',
+					'field'    => 'term_id',
+					'terms'    => $cat_ids,
 				),
 			);
 		}

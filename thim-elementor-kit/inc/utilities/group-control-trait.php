@@ -818,7 +818,7 @@ trait GroupControlTrait {
 				'label_block' => false,
 				'default'     => array(
 					'value'   => 'fas fa-arrow-left',
-					'library' => 'Font Awesome 5 Free',
+					'library' => 'fa-solid',
 				),
 			)
 		);
@@ -874,7 +874,7 @@ trait GroupControlTrait {
 				'label_block' => false,
 				'default'     => array(
 					'value'   => 'fas fa-arrow-right',
-					'library' => 'Font Awesome 5 Free',
+					'library' => 'fa-solid',
 				),
 			)
 		);

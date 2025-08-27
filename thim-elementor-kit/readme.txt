@@ -1,9 +1,9 @@
-=== Thim Elementor Kit ===
+=== Thim Elementor Kit – Pre-built Templates & Widgets for Elementor ===
 Author URI: https://thimpress.com
 Contributors: thimpress
-Tags: page builder, elementor, elementorkit, thimpress.
+Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 6.8
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,12 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.3.3 (2025-08-27) =
+~ Update: option select category or tag for widget Related in single course.
+~ Added: widget Lottie
+~ Tweak: Thim Ekits Icons.
+~ Fixed: Some icon default in widget
+
 = 1.3.2 (2025-04-22) =
 ~ Update Hook course buttons LP new.
 ~ Update option progress single course.

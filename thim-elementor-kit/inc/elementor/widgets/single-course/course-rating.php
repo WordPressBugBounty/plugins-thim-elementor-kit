@@ -329,7 +329,7 @@ class Thim_Ekit_Widget_Course_Rating extends Widget_Base {
 						<div class="course-rate__summary-text">
 							<?php
 							printf( _n( '/%d rating', '/%d ratings', $total,
-								'learnpress-course-review' ), $total ); ?>
+								'thim-elementor-kit' ), $total ); ?>
 						</div>
 					<?php
 					} 
@@ -348,7 +348,7 @@ class Thim_Ekit_Widget_Course_Rating extends Widget_Base {
 						<div class="course-rate__summary-text">
 							<?php
 							printf( _n( '(<span>%d</span> rating)', '(<span>%d</span> ratings)', $total,
-								'learnpress-course-review' ), $total ); ?>
+								'thim-elementor-kit' ), $total ); ?>
 						</div>
 					<?php
 					} 

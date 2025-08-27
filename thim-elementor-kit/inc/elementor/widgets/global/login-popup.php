@@ -92,7 +92,7 @@ class Thim_Ekit_Widget_Login_Popup extends Widget_Base {
 					'label_block' => false,
 					'default'     => [
 						'value'   => 'far fa-user',
-						'library' => 'Font Awesome 5 Free',
+						'library' => 'fa-regular',
 					],
 				]
 			);
@@ -122,7 +122,7 @@ class Thim_Ekit_Widget_Login_Popup extends Widget_Base {
 				'label_block' => false,
 				'default'     => [
 					'value'   => 'far fa-user',
-					'library' => 'Font Awesome 5 Free',
+					'library' => 'fa-regular',
 				],
 			]
 		);
@@ -145,7 +145,7 @@ class Thim_Ekit_Widget_Login_Popup extends Widget_Base {
 				'label_block' => false,
 				'default'     => [
 					'value'   => 'fas fa-share',
-					'library' => 'Font Awesome 5 Free',
+					'library' => 'fa-solid',
 				],
 			]
 		);

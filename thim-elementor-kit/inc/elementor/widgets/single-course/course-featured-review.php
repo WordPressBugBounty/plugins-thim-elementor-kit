@@ -50,7 +50,7 @@ class Thim_Ekit_Widget_Course_Featured_Review extends Widget_Base {
 				'skin'        => 'inline',
                 'default' => array(
 					'value'   => 'fas fa-quote-right',
-					'library' => 'fa-brands',
+					'library' => 'fa-solid',
 				),
 			)
 		);

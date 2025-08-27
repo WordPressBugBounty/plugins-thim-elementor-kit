@@ -488,6 +488,15 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 		$label = ! empty( $settings['lifetime'] ) ? $settings['lifetime'] : esc_html__( 'Lifetime access',
 			'thim-elementor-kit' );
 		$text  = $settings['custom_text'];
+
+		$duration = learn_press_get_post_translated_duration( get_the_ID(), $label );
+
+		// Filter to allow customization of the duration value
+		$duration = apply_filters( 'thim_ekit_course_meta_duration', $duration );
+
+		if ( empty( $duration ) ) {
+			return;
+		}
 		?>
 		<span class="thim-ekit-single-course__meta__duration">
 			<?php
@@ -495,8 +504,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 			<?php
 			echo '<span class="label">' . wp_kses_post( $text ) . '</span>'; ?>
 			<?php
-			echo '<span class="value">' . esc_html( learn_press_get_post_translated_duration( get_the_ID(),
-					$label ) ) . '</span>'; ?>
+			echo '<span class="value">' . esc_html( $duration ) . '</span>'; ?>
 		</span>
 		<?php
 	}
@@ -521,7 +529,7 @@ class Thim_Ekit_Widget_Course_Meta extends Widget_Base {
 
 	protected function render_lesson( $settings, $course ) {
 
-		if ( $course->is_offline() && version_compare( LEARNPRESS_VERSION, '4.2.7', '>=' ) ) {
+		if ( version_compare( LEARNPRESS_VERSION, '4.2.7', '>=' ) && $course->is_offline()) {
 			$lessons = get_post_meta( $course->get_id(), '_lp_offline_lesson_count', true );
 		} else {
 			$lessons = $course->get_items( LP_LESSON_CPT );

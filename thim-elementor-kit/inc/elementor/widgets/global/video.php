@@ -62,8 +62,8 @@ class Thim_Ekit_Widget_Video extends Widget_Base {
 				'skin'        => 'inline',
 				'label_block' => false,
 				'default'     => [
-					'value'   => 'far fa-play',
-					'library' => 'Font Awesome 5 Free',
+					'value'   => 'fas fa-play',
+					'library' => 'fa-solid',
 				],
 			]
 		);
@@ -383,7 +383,7 @@ class Thim_Ekit_Widget_Video extends Widget_Base {
 							echo '<div class="video"><iframe id="thim-video" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="https://player.vimeo.com/video/' . $external_video . '?portrait=0&title=0&byline=0&badge=0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="border: 0px;"></iframe></div>';
 						}
 					}
-					
+
 					?>
 				</div>
 			</div>

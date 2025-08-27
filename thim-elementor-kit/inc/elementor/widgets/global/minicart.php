@@ -13,7 +13,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Mini Cart', 'thim-elementor-kit' ); 
+		return esc_html__( 'Mini Cart', 'thim-elementor-kit' );
 	}
 
 	public function get_icon() {
@@ -90,7 +90,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 				'type'        => Controls_Manager::ICONS,
 				'default'     => array(
 					'value'   => 'fab fa-opencart',
-					'library' => 'Font Awesome 5 Free',
+					'library' => 'fa-brands',
 				),
 
 			)
@@ -1784,7 +1784,7 @@ class Thim_Ekit_Widget_Minicart extends Widget_Base {
 						<div class="thim-ekits-mini-cart__content-header">
 						<?php
 						$title_tag = Utils::validate_html_tag($settings['title_tag']);
-						echo sprintf('<%s class="ekits-mini-cart-header-title">%s</%s>', $title_tag, esc_html($settings['title_cart']), $title_tag);	
+						echo sprintf('<%s class="ekits-mini-cart-header-title">%s</%s>', $title_tag, esc_html($settings['title_cart']), $title_tag);
 					}
 					?>
 					<?php

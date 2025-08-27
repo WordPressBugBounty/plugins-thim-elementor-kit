@@ -286,7 +286,7 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 						}
 			
 						return $section;
-					}
+					}, 5, 3
 				);
 			} else {
 				add_filter(
@@ -308,7 +308,7 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 						}
 			
 						return $section;
-					}
+					}, 5, 3
 				);
 			}
 		}

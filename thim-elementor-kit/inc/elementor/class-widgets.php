@@ -55,6 +55,7 @@ class Widgets {
 			'archive-description',
 			'countdown',
 			'svg-draw',
+			'lottie',
 			'progress-tracker',
 			'course-curriculum',
 		),

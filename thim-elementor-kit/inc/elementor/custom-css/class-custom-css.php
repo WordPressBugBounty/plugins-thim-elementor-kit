@@ -23,6 +23,7 @@ class Custom_CSS {
 		add_action( 'elementor/element/parse_css', array( $this, 'add_post_css' ), 10, 2 );
 		add_action( 'elementor/css-file/post/parse', array( $this, 'add_page_settings_css' ) );
 		add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'enqueue_editor_scripts' ), 100 );
+		
 	}
 
 	public function register_controls( $element, $section_id, $args ) {

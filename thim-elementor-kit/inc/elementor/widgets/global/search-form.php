@@ -144,7 +144,7 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 				'skin'        => 'inline',
 				'label_block' => false,
 				'default'     => array(
-					'library' => 'tk',
+					'library' => 'thim-ekits-fonts',
 					'value'   => 'tk tk-search',
 				),
 			)
@@ -667,7 +667,7 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 				'skin'        => 'inline',
 				'label_block' => false,
 				'default'     => array(
-					'library' => 'tk',
+					'library' => 'thim-ekits-fonts',
 					'value'   => 'tk tk-search',
 				),
 			)
@@ -830,7 +830,7 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 							class="thim-ekits-search" autocomplete="off"/>
 					<input type="hidden" value="course" name="ref"/>
 					<input type="hidden" name="post_type" value="lp_course">
-				<?php else : ?>	
+				<?php else : ?>
 					<input type="text" placeholder="<?php echo esc_attr( $settings['placeholder_text'] ); ?>" name="s"
 						class="thim-ekits-search"/>
 					<?php if ( $settings['search_type'] != 'all' ) : ?>

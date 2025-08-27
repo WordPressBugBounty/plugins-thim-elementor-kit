@@ -21,8 +21,10 @@ class Init extends Modules {
 	public function template_include( $template ) {
 		global $wp_query;
 
-		$this->template_include = ( is_archive() || is_search() || is_author() || is_category() || is_home() || is_tag() )
-			&& ( empty( get_query_var( 'post_type' ) ) || 'post' === get_query_var( 'post_type' ) || $wp_query->post_count > 0 );
+		$is_post_search = is_search() && isset( $_GET['post_type'] ) && $_GET['post_type'] === 'post';
+		$is_other_conditions = ( is_archive() || is_author() || is_category() || is_home() || is_tag() );
+		
+		$this->template_include = $is_post_search || $is_other_conditions;
 
 		return parent::template_include( $template );
 	}
@@ -56,9 +58,8 @@ class Init extends Modules {
 
 				return (int) $taxonomy_id === (int) $condition['query'] && ! is_search();
 			case 'post_search':
-				$post_type = get_query_var( 'post_type' );
 
-				return is_search() && ( empty( $post_type ) || 'post' === $post_type || $wp_query->post_count > 0 );
+				return is_search() && isset( $_GET['post_type'] ) && $_GET['post_type'] === 'post';
 			case 'post_page':
 				return is_home();
 			case 'post_author':

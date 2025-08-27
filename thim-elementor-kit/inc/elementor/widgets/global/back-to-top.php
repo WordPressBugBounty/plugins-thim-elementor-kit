@@ -52,7 +52,7 @@ class Thim_Ekit_Widget_Back_To_Top extends Widget_Base {
 				'type'    => Controls_Manager::ICONS,
 				'default' => array(
 					'value'   => 'fas fa-arrow-up',
-					'library' => 'Font Awesome 5 Free',
+					'library' => 'fa-solid',
 				),
 			)
 		);
@@ -304,7 +304,7 @@ class Thim_Ekit_Widget_Back_To_Top extends Widget_Base {
 		$svg_html = $class = '';
 		if ( $settings['circle_progress'] == 'yes' ) {
 			$class    = ' scroll-circle-progress';
-			$svg_html = '<svg width="100%" height="100%" viewBox="-1 -1 102 102">
+			$svg_html = '<svg class="scroll-circle-progress-svg" width="100%" height="100%" viewBox="-1 -1 102 102">
 				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
 			</svg>';
 		}

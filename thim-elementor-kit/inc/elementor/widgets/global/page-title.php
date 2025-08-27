@@ -166,15 +166,25 @@ class Thim_Ekit_Widget_Page_Title extends Widget_Base {
 		if ( is_404() ) {
 			$heading_title = esc_html__( '404 Page', 'thim-elementor-kit' );
 		} elseif ( is_search() ) {
-			$heading_title = sprintf( esc_html__( 'Search Results for: %s', 'thim-elementor-kit' ),
+			if ( empty( $_GET['s'] ) && $_GET['post_type'] === 'post') {
+				$heading_title = esc_html__( 'Trending', 'thim-elementor-kit' );
+			} elseif ( empty( $_GET['s'] ) && $_GET['post_type'] === 'lp_course' ) {
+				$heading_title = esc_html__( 'Popular courses', 'thim-elementor-kit' );
+			} else {
+				$heading_title = sprintf( esc_html__( 'Search results for: %s', 'thim-elementor-kit' ),
 				get_search_query() );
+			}
 		} elseif ( is_page() || is_single() ) {
 			$heading_title = get_the_title();
 		} elseif ( ! is_front_page() && is_home() ) {
 			$heading_title = esc_html__( 'Blog', 'thim-elementor-kit' );;
 		} elseif ( isset( $_GET['c_search'] ) ) {
-			$heading_title = sprintf( '%s %s', __( 'Search results for: ', 'thim-elementor-kit' ),
+			if ( empty( $_GET['c_search'] ) ) {
+				$heading_title = esc_html__( 'Popular courses', 'thim-elementor-kit' );
+			} else {
+				$heading_title = sprintf( '%s %s', __( 'Search results for: ', 'thim-elementor-kit' ),
 				esc_html( $_GET['c_search'] ) );
+			}
 		} else {
 			$heading_title = get_the_archive_title();
 		}

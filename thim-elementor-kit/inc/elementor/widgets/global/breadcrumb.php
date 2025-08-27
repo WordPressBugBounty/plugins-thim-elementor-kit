@@ -337,6 +337,10 @@ class Thim_Ekit_Widget_Breadcrumb extends Widget_Base {
 		}
 
 		if ( 'lp_course' === get_post_type( $post ) ) {
+			$courses_page_id = learn_press_get_page_id( 'courses' );
+			if ( $courses_page_id ) {
+				$this->prepend_course_page( $courses_page_id );
+			}
 			$terms = wp_get_post_terms(
 				$post->ID,
 				'course_category',

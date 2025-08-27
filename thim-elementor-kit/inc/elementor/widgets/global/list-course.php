@@ -524,8 +524,11 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 	}
 
 	public function render_course_tab( $settings, $query_args ) {
-		$params   = array(
-			'page_id'   => esc_attr( get_the_id() ),
+
+		$post_id = \Elementor\Plugin::$instance->documents->get_current()->get_main_id();
+
+ 		$params   = array(
+			'page_id'   => esc_attr( $post_id ),
 			'widget_id' => esc_attr( $this->get_id() ),
 		);
 		$list_tab = '';

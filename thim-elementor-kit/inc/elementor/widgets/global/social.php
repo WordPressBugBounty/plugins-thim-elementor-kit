@@ -181,7 +181,7 @@ class Thim_Ekit_Widget_Social extends Widget_Base {
 				'fa4compatibility' => 'social_icon_icon',
 				'default'          => array(
 					'value'   => 'fab fa-facebook-f',
-					'library' => 'Font Awesome 5 Brands',
+					'library' => 'fa-brands',
 				),
 			)
 		);

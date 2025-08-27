@@ -46,7 +46,7 @@ class Thim_Ekit_Widget_Back_To_Course extends Widget_Base {
 				'type'        => Controls_Manager::ICONS,
 				'separator'   => 'before',
 				'default'     => array(
-					'value'   => 'fa fa-long-arrow-left',
+					'value'   => 'fas fa-long-arrow-alt-up',
 					'library' => 'fa-solid',
 				),
 				'skin'        => 'inline',

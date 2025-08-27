@@ -25,7 +25,7 @@ abstract class Modules {
 
 		add_action( 'elementor/dynamic_tags/before_render', array( $this, 'before_editor_preview_query' ) );
 		add_action( 'elementor/dynamic_tags/after_render', array( $this, 'after_editor_preview_query' ) );
-
+		add_action( 'elementor/frontend/before_register_scripts', array( $this, 'register_frontend_scripts' ) );
 		add_action(
 			'elementor/widget/before_render_content',
 			function ( $widget_base ) {
@@ -66,8 +66,11 @@ abstract class Modules {
 	}
 
 	public function add_localization_admin( $localize ) {
-		$localize['list_conditions'][ $this->tab ] = apply_filters( 'thim_ekit/modules/list_conditions',
-			$this->get_conditions(), $this->tab );
+		$localize['list_conditions'][ $this->tab ] = apply_filters(
+			'thim_ekit/modules/list_conditions',
+			$this->get_conditions(),
+			$this->tab
+		);
 
 		return $localize;
 	}
@@ -186,7 +189,7 @@ abstract class Modules {
 				continue;
 			}
 
-			if ( ! empty( $conditions ) && is_array($conditions)) {
+			if ( ! empty( $conditions ) && is_array( $conditions ) ) {
 				foreach ( $conditions as $condition ) {
 					$is = function () use ( $condition ) {
 						return apply_filters( 'thim_ekit/modules/is', $this->is( $condition ), $condition, $this->tab );
@@ -280,5 +283,9 @@ abstract class Modules {
 
 	public function after_editor_preview_query() {
 		\Elementor\Plugin::instance()->db->restore_current_query();
+	}
+
+	public function register_frontend_scripts() {
+		wp_register_script( 'thim-ekit-lottie-scripts', THIM_EKIT_PLUGIN_URL . 'src/libraries/js/lottie.min.js', array( 'jquery' ), '5.12.2', true );
 	}
 }

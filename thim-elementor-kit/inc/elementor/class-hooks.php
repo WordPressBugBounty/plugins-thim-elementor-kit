@@ -82,6 +82,9 @@ class Hooks {
 
 		/*** Override message send mail with case auto-login */
 		add_filter( 'password_change_email', array( $this, 'message_when_user_register_auto_login' ), 999999, 1 );
+
+		add_filter( 'thim_ekit/cache/thim_ekits_option_conditions', array( $this, 'polylang_conditions_support' ), 10, 1 );
+
 	}
 
 	public function add_dark_mode_styles() {
@@ -271,6 +274,19 @@ class Hooks {
 		}
 
 		return false;
+	}
+
+	public function polylang_conditions_support( $option_key ) {
+		if ( function_exists( 'pll_current_language' ) && function_exists( 'pll_default_language' ) ) {
+			$default_lang = pll_default_language();
+			$current_lang = pll_current_language();
+
+			if ( $current_lang && $current_lang !== $default_lang ) {
+				$option_key = $option_key . '_' . $current_lang;
+			}
+		}
+		
+		return $option_key;
 	}
 }
 

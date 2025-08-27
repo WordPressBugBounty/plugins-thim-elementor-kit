@@ -17,7 +17,7 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 
 		return array( 'learnpress' );
 	}
-	
+
 	protected function register_controls() {
 		$this->_register_content();
 		$this->_register_style_layout();
@@ -1857,7 +1857,7 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 				} else {
 					echo ListCoursesTemplate::render_course( $course );
 				}
-				
+
 			} else { ?>
 
 				<?php
@@ -2158,7 +2158,7 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 	 * @return void
 	 */
 	protected function render_count_lesson( $settings, $course ) {
-		if ( $course->is_offline() && version_compare( LEARNPRESS_VERSION, '4.2.7', '>=' ) ) {
+		if (version_compare( LEARNPRESS_VERSION, '4.2.7', '>=' ) &&  $course->is_offline() ) {
 			$lessons = get_post_meta( $course->get_id(), '_lp_offline_lesson_count', true );
 		} else {
 			$lessons = $course->count_items( LP_LESSON_CPT );
