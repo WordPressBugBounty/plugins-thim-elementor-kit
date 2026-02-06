@@ -1,15 +1,16 @@
 <?php
 /**
  * Plugin Name: Thim Elementor Kit
+ * Plugin URI: https://thimpress.com/ 
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.3.3
+ * Version: 1.3.7
  * Author URI: https://thimpress.com
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Text Domain: thim-elementor-kit
  * Domain Path: /languages/
- * Elementor tested up to: 3.27.6
+ * Elementor tested up to: 3.34.0
  */
 
 use Elementor\Core\Files\Manager as Files_Manager;
@@ -52,6 +53,26 @@ if ( ! class_exists( 'Thim_EL_Kit' ) ) {
 
 			// Include files, handle on hook init.
 			add_action( 'init', array( $this, 'included_files_when_plugins_loaded' ) );
+
+			// set content is null when save with elementor
+			add_filter(
+				'elementor/editor/after_save',
+				function ( $post_id ) {
+
+					if ( get_post_type( $post_id ) !== 'thim_elementor_kit' ) {
+						return;
+					}
+
+					remove_action( 'elementor/editor/after_save', array( Plugin::$instance->db, 'save_post' ) );
+
+					wp_update_post(
+						array(
+							'ID'           => $post_id,
+							'post_content' => '',
+						)
+					);
+				}
+			);
 
 			do_action( 'thim_ekit_loaded' );
 		}
@@ -229,15 +250,5 @@ register_activation_hook(
 	}
 );
 
-// If Multilsite.
-// if ( function_exists( 'is_multisite' ) && is_multisite() ) {
-//  add_action(
-//      'plugins_loaded',
-//      function() {
-//          Thim_EL_Kit::instance();
-//      },
-//      90
-//  );
-// } else {
 Thim_EL_Kit::instance();
-// }
+

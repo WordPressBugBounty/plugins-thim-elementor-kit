@@ -6,7 +6,7 @@
  	</custom-types>
 	<taxonomies>
 		<taxonomy translate="1">thim_ekits_slider</taxonomy>
-		<taxonomy translate="0">thim_elementor_type</taxonomy>
+		<taxonomy translate="1">thim_elementor_type</taxonomy>
 	</taxonomies>
 	<elementor-widgets>
 		<widget name="thim-ekits-header-info">

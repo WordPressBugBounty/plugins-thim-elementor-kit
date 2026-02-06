@@ -335,6 +335,9 @@ class Rest_API {
 		$post_id    = $request->get_param( 'postID' );
 
 		try {
+			if ( ! current_user_can( 'edit_post', $post_id ) ) {
+				throw new \Exception( 'Permission denied' );
+			}
 			if ( ! $post_id ) {
 				throw new \Exception( 'Invalid data' );
 			}

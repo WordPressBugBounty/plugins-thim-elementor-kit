@@ -17,7 +17,7 @@ abstract class Modules {
 	public function __construct() {
 		add_filter( 'thim_ekit/post_type/register_tabs', array( $this, 'add_admin_tabs' ) );
 		add_filter( 'thim_ekit/admin/enqueue/localize', array( $this, 'add_localization_admin' ) );
-		add_filter( 'thim_ekit/post_type/single_template/override', array( $this, 'override_single_template' ), 10, 2 );
+		add_filter( 'thim_ekit/post_type/single_template/override', array( $this, 'override_single_template' ), 10, 2 ); 
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
 		add_action( 'save_post', array( $this, 'save_meta_boxes' ) );
 		add_filter( 'template_include', array( $this, 'template_include' ), 12 ); // after Elementor and WooCommerce.
@@ -285,7 +285,7 @@ abstract class Modules {
 		\Elementor\Plugin::instance()->db->restore_current_query();
 	}
 
-	public function register_frontend_scripts() {
-		wp_register_script( 'thim-ekit-lottie-scripts', THIM_EKIT_PLUGIN_URL . 'src/libraries/js/lottie.min.js', array( 'jquery' ), '5.12.2', true );
+	public function register_frontend_scripts() { 
+		wp_register_script( 'thim-ekit-lottie-scripts', THIM_EKIT_PLUGIN_URL . 'build/libraries/js/lottie.min.js', array( 'jquery' ), '5.12.2', true );  
 	}
 }

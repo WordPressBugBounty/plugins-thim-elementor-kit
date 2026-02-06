@@ -7,14 +7,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Thim_Ekit_Widget_Lottie extends Widget_Base {
+class Thim_Ekit_Widget_Lottie extends Widget_Base { 
 
 	public function get_name() {
 		return 'thim-ekits-lottie';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Lottie', 'thim-elementor-kit' );
+		return esc_html__( 'Lottie', 'thim-elementor-kit' ); 
 	}
 
 	public function get_icon() {
@@ -55,7 +55,7 @@ class Thim_Ekit_Widget_Lottie extends Widget_Base {
 				'type'        => Controls_Manager::MEDIA,
 				'media_types' => array( 'application/json' ),
 				'default'     => array(
-					'url' => THIM_EKIT_PLUGIN_URL . 'src/libraries/lottie_default.json',
+					'url' => THIM_EKIT_PLUGIN_URL . 'build/libraries/lottie_default.json',
 				),
 			)
 		);

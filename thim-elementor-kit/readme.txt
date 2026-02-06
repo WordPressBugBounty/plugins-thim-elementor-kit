@@ -1,9 +1,9 @@
-=== Thim Elementor Kit – Pre-built Templates & Widgets for Elementor ===
+===  Thim Kit for Elementor - Pre-built Templates & Widgets for Elementor ===
 Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 6.8
-Stable tag: 1.3.3
+Stable tag: 1.3.7
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,22 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.3.7 (2026-01-1023) =
+~ Tweak: Remove Key deffault in Widget Instagram Feed.
+
+= 1.3.6 (2026-01-10) =
+~ Added: Widget list category for archive product
+~ Fixed: Widget Course button in single course with LearnPress version 4.3.2.4
+~ Tweak: Widget Instagram Feed.
+
+= 1.3.5 (2025-12-12) =
+~ Added: style for widget testimonial
+
+= 1.3.4 (2025-11-21) =
+~ Tweak: Widget Feature Image of single product.
+~ Added: Template for page 404
+~ Fixed: some minor bugs in widget
+
 = 1.3.3 (2025-08-27) =
 ~ Update: option select category or tag for widget Related in single course.
 ~ Added: widget Lottie

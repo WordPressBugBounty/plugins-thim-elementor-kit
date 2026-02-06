@@ -71,7 +71,7 @@ class Widgets {
 			'post-related',
 			'reading-time-post',
 		),
-		'archive-product'    => array( 'archive-product' ),
+		'archive-product'    => array( 'archive-product', 'archive-product-category' ),
 		'single-product'     => array(
 			'product-title',
 			'product-image',
@@ -182,8 +182,12 @@ class Widgets {
 		// Only register archive-post, post-title in Elementor Editor only template.
 		if ( $post && \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			$type = get_post_meta( $post->ID, Custom_Post_Type::TYPE, true );
+			$el_template_tyle = get_post_meta( $post->ID, '_elementor_template_type', true );
 
 			foreach ( $widgets as $key => $widget ) {
+				if ( $el_template_tyle == 'page' ) {
+					continue;
+				}
 				if ( $key === 'archive-post' && $type !== ArchivePost::instance()->tab ) {
 					unset( $widgets['archive-post'] );
 				}

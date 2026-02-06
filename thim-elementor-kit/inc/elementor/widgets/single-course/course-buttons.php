@@ -62,7 +62,7 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 				'default'   => '',
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekit-single-course__buttons' => 'text-align: {{VALUE}}',
-					'{{WRAPPER}}  button'                           => 'text-align: {{VALUE}}',
+					'{{WRAPPER}}  button' => 'text-align: {{VALUE}}',
 				),
 			)
 		);
@@ -159,12 +159,12 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 	protected function register_icon_button( string $prefix_name ) {
 		$this->add_control(
 			$prefix_name . '_icons',
-			[
+			array(
 				'label'       => esc_html__( 'Icon', 'thim-elementor-kit' ),
 				'type'        => Controls_Manager::ICONS,
 				'skin'        => 'inline',
 				'label_block' => false,
-			]
+			)
 		);
 		$this->add_control(
 			$prefix_name . '_btn_text',
@@ -195,8 +195,10 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 					}
 					$settings = $this->get_settings_for_display();
 					if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
-						Icons_Manager::render_icon( $settings[ $list_button . '_icons' ],
-							array( 'aria-hidden' => 'true' ) );
+						Icons_Manager::render_icon(
+							$settings[ $list_button . '_icons' ],
+							array( 'aria-hidden' => 'true' )
+						);
 					}
 					if ( $settings[ $list_button . '_btn_text' ] ) {
 						$text = $settings[ $list_button . '_btn_text' ];
@@ -210,27 +212,28 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 					'learn-press/user/course/html-button-' . $list_button,
 					function ( $section ) use ( $list_button ) {
 						$icon_html = '';
-						$settings = $this->get_settings_for_display();
+						$settings  = $this->get_settings_for_display();
 						if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
 							ob_start();
 							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
 							$icon_html = ob_get_clean();
 						}
-			
+
 						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
 							$section['btn'] = sprintf(
 								'<button type="submit" class="lp-button btn-finish-course">%s</button>',
-								wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+								$icon_html . wp_kses_post( $settings[ $list_button . '_btn_text' ] )
 							);
 						}
-			
+
 						return $section;
 					}
 				);
 			} elseif ( $list_button === 'continue' ) {
-				add_filter ( 'learn-press/user/course/html-button-continue', 
+				add_filter(
+					'learn-press/user/course/html-button-continue',
 					function ( $html, $userCourseModel ) use ( $list_button ) {
-						$icon_html = '';
+						$icon_html   = '';
 						$courseModel = $userCourseModel->get_course_model();
 
 						$itemModelContinue = $userCourseModel->get_item_continue();
@@ -246,18 +249,18 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
 							$icon_html = ob_get_clean();
 						}
-			
+
 						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
 							$html = sprintf(
 								'<a href="%s">%s</a>',
 								esc_url( $link_continue ),
 								sprintf(
 									'<button class="lp-button course-btn-continue">%s</button>',
-									wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+									$icon_html . wp_kses_post( $settings[ $list_button . '_btn_text' ] )
 								)
 							);
 						}
-			
+
 						return $html;
 					},
 					10,
@@ -271,44 +274,84 @@ class Thim_Ekit_Widget_Course_Buttons extends Widget_Base {
 							$list_button = 'start_now';
 						}
 						$icon_html = '';
-						$settings = $this->get_settings_for_display();
+						$settings  = $this->get_settings_for_display();
 						if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
 							ob_start();
 							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
 							$icon_html = ob_get_clean();
 						}
-			
+
 						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
 							$section['btn'] = sprintf(
 								'<button type="submit" class="lp-button button-enroll-course">%s</button>',
-								wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+								$icon_html . wp_kses_post( $settings[ $list_button . '_btn_text' ] )
 							);
 						}
-			
+
 						return $section;
-					}, 5, 3
+					},
+					5,
+					3
 				);
+			} elseif ( $list_button === 'external' ) {
+				add_filter(
+					'learn-press/course/html-button-external',
+					function ( $html, $course, $user ) use ( $list_button ) {
+
+						$settings = $this->get_settings_for_display();
+
+						if ( empty( $settings['external_btn_text'] ) ) {
+							return $html;
+						}
+
+						$icon_html = '';
+
+						if ( ! empty( $settings['external_icons']['value'] ) ) {
+							ob_start();
+							Icons_Manager::render_icon(
+								$settings['external_icons'],
+								array( 'aria-hidden' => 'true' )
+							);
+							$icon_html = ob_get_clean();
+						}
+						$html = preg_replace(
+							'/(<a[^>]*>)(.*?)(<\/a>)/is',
+							'$1' . $icon_html . wp_kses_post( $settings['external_btn_text'] ) . '$3',
+							$html
+						);
+
+						return $html;
+					},
+					10,
+					3
+				);
+
 			} else {
 				add_filter(
 					'learn-press/course/html-button-' . $list_button,
 					function ( $section ) use ( $list_button ) {
+						if ( ! is_array( $section ) ) {
+							return $section;
+						}
 						$icon_html = '';
-						$settings = $this->get_settings_for_display();
+						$settings  = $this->get_settings_for_display();
 						if ( ! empty( $settings[ $list_button . '_icons' ]['value'] ) ) {
 							ob_start();
 							Icons_Manager::render_icon( $settings[ $list_button . '_icons' ], array( 'aria-hidden' => 'true' ) );
 							$icon_html = ob_get_clean();
 						}
-			
+
 						if ( ! empty( $settings[ $list_button . '_btn_text' ] ) ) {
 							$section['btn'] = sprintf(
-								'<button type="submit" class="lp-button button-'.$list_button.'-course">%s</button>',
-								wp_kses_post( $icon_html . $settings[ $list_button . '_btn_text' ] )
+								'<button type="submit" class="lp-button button-' . $list_button . '-course">%s</button>',
+								$icon_html . wp_kses_post( $settings[ $list_button . '_btn_text' ] )
 							);
 						}
-			
+
 						return $section;
-					}, 5, 3
+					},
+					5,
+					3
 				);
 			}
 		}

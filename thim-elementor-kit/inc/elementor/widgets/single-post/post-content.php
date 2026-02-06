@@ -96,9 +96,8 @@ class Thim_Ekit_Widget_Post_Content extends Widget_Base {
 		do_action( 'thim-ekit/modules/single-post/before-preview-query' );
 		?>
 
-		<div class="thim-ekit-single-post__content">
-			<p><?php
-				the_content(); ?></p>
+ 		<div class="thim-ekit-single-post__content">
+			<?php the_content(); ?>
 		</div>
 
 		<?php

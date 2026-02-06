@@ -2,11 +2,11 @@
 
 namespace Elementor;
 
-use Elementor\Plugin;
-use Elementor\Group_Control_Image_Size;
-use Elementor\Utils;
 use LearnPress\TemplateHooks\Course\SingleCourseTemplate;
 use LearnPress\Models\CourseModel;
+use LearnPress\Models\UserItems\UserCourseModel;
+use LearnPress\Models\UserModel;
+use Thim_EL_Kit\Elementor;
 
 class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 
@@ -27,7 +27,7 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( \Thim_EL_Kit\Elementor::CATEGORY_SINGLE_COURSE );
+		return array( Elementor::CATEGORY_SINGLE_COURSE );
 	}
 
 	public function get_help_url() {
@@ -176,57 +176,45 @@ class Thim_Ekit_Widget_Course_Price extends Widget_Base {
 
 	public function render() {
 		do_action( 'thim-ekit/modules/single-course/before-preview-query' );
-
 		$course = learn_press_get_course();
-		$user   = learn_press_get_current_user();
 
 		if ( ! $course ) {
 			return;
 		}
-
-		$price = $course->get_price_html();
-		$classs = '';
-
-		if ( ! $price ) {
-			return;
+		$courseModel = CourseModel::find( $course->get_id(), true );
+		$userModel   = UserModel::find( get_current_user_id(), true );
+		if ( $userModel instanceof UserModel ) {
+			$userCourse = UserCourseModel::find( $userModel->get_id(), $courseModel->get_id(), true );
+			if ( $userCourse && ( $userCourse->has_enrolled_or_finished() || $userCourse->has_purchased() ) ) {
+				return;
+			}
 		}
 
-		$settings = $this->get_settings_for_display();
-
-		if ( $course->is_free() ) {
-			$classs = 'free';
-		}
-
-		$course_model         = CourseModel::find( get_the_ID(), true );
 		$singleCourseTemplate = SingleCourseTemplate::instance();
 		?>
 
 		<div class="thim-ekit-single-course__price">
-			
+
 			<?php
 			if ( is_callable( [ $singleCourseTemplate, 'html_price_prefix' ] ) ) {
-				$price_prefix = $singleCourseTemplate->html_price_prefix( $course_model );
+				$price_prefix = $singleCourseTemplate->html_price_prefix( $courseModel );
 				if ( ! empty( $price_prefix ) ) {
 					echo wp_kses_post( $price_prefix );
 				}
 			}
-
-			if ( $course->has_sale_price() ) : ?>
-				<span class="thim-ekit-single-course__price__origin"> <?php
-					echo wp_kses_post( $course->get_origin_price_html() ); ?></span>
-			<?php
-			endif; ?>
-
-			<span class="thim-ekit-single-course__price__price <?php echo esc_attr( $classs ); ?>"><?php
-				echo wp_kses_post( $price ); 
-			?></span>
-			
-			<?php
+			if ( $course->is_free() ) {
+				printf( '<span class="thim-ekit-single-course__price__price free">%s</span>', esc_html__( 'Free', 'learnpress' ) );
+			} else {
+				if ( $course->has_sale_price() ) {
+					printf( '<span class="thim-ekit-single-course__price__origin">%s</span>', $course->get_regular_price_html() );
+				}
+				printf( '<span class="thim-ekit-single-course__price__price">%s</span>', learn_press_format_price( $course->get_price(), true ) );
+			}
 			if ( is_callable( [ $singleCourseTemplate, 'html_price_suffix' ] ) ) {
-				$price_suffix = $singleCourseTemplate->html_price_suffix( $course_model );
+				$price_suffix = $singleCourseTemplate->html_price_suffix( $courseModel );
 				if ( ! empty( $price_suffix ) ) {
 					echo wp_kses_post( $price_suffix );
-				} 
+				}
 			} ?>
 		</div>
 

@@ -541,10 +541,10 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 		$thumbnail_src = wp_get_attachment_image_src( $attachment_id, $thumbnail_size );
 		$full_src      = wp_get_attachment_image_src( $attachment_id, $full_size );
 		$alt_text      = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
-		if (!is_array($full_src) && empty($full_src[0])) {
+		if ( ! is_array( $full_src ) && empty( $full_src[0] ) ) {
 			return;
 		}
-		$image         = wp_get_attachment_image(
+		$image = wp_get_attachment_image(
 			$attachment_id,
 			$image_size,
 			false,
@@ -574,16 +574,24 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$post_thumbnail_id = $product->get_image_id();
-
+		$attachment_ids  = $product->get_gallery_image_ids();
+		$show_gallery    = false;
+		if ( isset( $attachment_ids ) && ! empty( $attachment_ids ) ) {
+			$show_gallery = true;
+		}
 		$wrapper_classes = apply_filters(
 			'woocommerce_single_product_image_gallery_classes',
 			array(
 				'woocommerce-product-gallery',
 				'ekits-product-gallery--' . ( $post_thumbnail_id ? 'with-images' : 'without-images' ),
 				'ekits-product-' . $settings['thumb_style'] . '__' . $settings[ $settings['thumb_style'] . '_options' ],
-				'images',
+				'images'
 			)
 		);
+		if ( ! $show_gallery ) {
+			$wrapper_classes[] = 'no-gallery';
+		}
+
 		?>
 		<div class="<?php
 		echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>">
@@ -605,17 +613,19 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 
 					echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );
 
-					$this->ekits_get_thumbnail_image( $product );
+					if ( $show_gallery ) {
+						$this->ekits_get_thumbnail_image( $attachment_ids );
+					}
 					?>
 				</ul>
 			</div>
 			<?php
-			if ( $settings['thumb_style'] == 'slides' ) {
+			if ( $settings['thumb_style'] == 'slides' && $show_gallery ) {
 				$data_slider = '';
-			
+
 				if ( ! empty( $settings['slides_options'] ) ) {
 					$data_slider .= ' data-direction="' . esc_attr( $settings['slides_options'] ) . '"';
-			
+
 					if ( $settings['slides_options'] == 'horizontal' ) {
 						if ( ! empty( $settings['thumbnail_spacing']['size'] ) ) {
 							$data_slider .= ' data-marginitem="' . esc_attr( $settings['thumbnail_spacing']['size'] ) . '"';
@@ -631,22 +641,22 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 						}
 					}
 				}
-			
+
 				echo '<div class="ekits-product-thumbnails__wrapper"' . $data_slider . '></div>';
 			}
 			?>
 		</div>
 		<?php
-		if ( $settings['thumb_style'] == 'slides' ) {
+
+		if ( $settings['thumb_style'] == 'slides' && $show_gallery ) {
 			// js for flexslider
 			wp_enqueue_script( 'flexslider' );
 			$this->ekits_js_slider();
 		}
 	}
 
-	function ekits_get_thumbnail_image( $product ) {
-		$attachment_ids = $product->get_gallery_image_ids();
-		if ( $attachment_ids && $product->get_image_id() ) {
+	function ekits_get_thumbnail_image( $attachment_ids ) {
+		if ( $attachment_ids ) {
 			foreach ( $attachment_ids as $attachment_id ) {
 				echo apply_filters( 'woocommerce_single_product_image_thumbnail_html',
 					$this->ekits_get_gallery_image_html( $attachment_id ), $attachment_id );
@@ -656,88 +666,88 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 
 	function ekits_js_slider() { ?>
 		<script type="text/javascript">
-			jQuery( document ).ready( function( $ ) {
-				jQuery( '.ekits-product-gallery--with-images' ).each( function() {
-					var $galleryWrapper = jQuery( this );
-					var $gallery = $galleryWrapper.find( '.ekits-product-slides__wrapper' );
-					var $thumbnails = $galleryWrapper.find( '.ekits-product-thumbnails__wrapper' );
+			jQuery(document).ready(function ($) {
+				jQuery('.ekits-product-gallery--with-images').each(function () {
+					var $galleryWrapper = jQuery(this);
+					var $gallery = $galleryWrapper.find('.ekits-product-slides__wrapper');
+					var $thumbnails = $galleryWrapper.find('.ekits-product-thumbnails__wrapper');
 
 					var direction = 'horizontal';
 					if (jQuery().flexslider) {
 						if ($thumbnails.length !== 0) {
-							direction = $thumbnails.data( 'direction' );
+							direction = $thumbnails.data('direction');
 							var marginItem = 0,
 								width_item = $thumbnails.innerWidth();
 							if (direction === 'vertical') {
-								$thumbnails.css( 'height', $gallery.find( 'li' ).height() );
+								$thumbnails.css('height', $gallery.find('li').height());
 							} else {
-								var itemShow = $thumbnails.data( 'itemshow' ),
-									itemshowtablet = $thumbnails.data( 'itemshowtablet' ),
-									itemshowmobile = $thumbnails.data( 'itemshowmobile' );
+								var itemShow = $thumbnails.data('itemshow'),
+									itemshowtablet = $thumbnails.data('itemshowtablet'),
+									itemshowmobile = $thumbnails.data('itemshowmobile');
 
-								if (jQuery( window ).outerWidth() < 1024 && itemshowtablet !== undefined) {
+								if (jQuery(window).outerWidth() < 1024 && itemshowtablet !== undefined) {
 									itemShow = itemshowtablet;
 								}
-								if (jQuery( window ).outerWidth() < 767 && itemshowmobile !== undefined) {
+								if (jQuery(window).outerWidth() < 767 && itemshowmobile !== undefined) {
 									itemShow = itemshowmobile;
 								}
 
-								marginItem = $thumbnails.data( 'marginitem' ),
-									width_item = ( width_item - ( marginItem * ( itemShow - 1 ) ) ) / itemShow;
+								marginItem = $thumbnails.data('marginitem'),
+									width_item = (width_item - (marginItem * (itemShow - 1))) / itemShow;
 							}
 							createThumbnails();
 							ThumbnailsSlider();
 						}
 
-						$gallery.flexslider( {
-							animation: 'slide',
+						$gallery.flexslider({
+							animation    : 'slide',
 							animationLoop: true,
-							controlNav: false,
-							slideshow: false,
-							prevText: '',
-							nextText: '',
-							touch: true,
-							sync: $thumbnails,
-						} );
+							controlNav   : false,
+							slideshow    : false,
+							prevText     : '',
+							nextText     : '',
+							touch        : true,
+							sync         : $thumbnails,
+						});
 					}
 
 					function createThumbnails() {
 						var html = '<ul class="slides">';
-						$gallery.find( '.woocommerce-product-gallery__image' ).each( function() {
-							var $this = jQuery( this );
-							var image = $this.data( 'thumb' ),
-								alt = $this.find( 'a img' ).attr( 'alt' ),
-								title = $this.find( 'a img' ).attr( 'title' );
+						$gallery.find('.woocommerce-product-gallery__image').each(function () {
+							var $this = jQuery(this);
+							var image = $this.data('thumb'),
+								alt = $this.find('a img').attr('alt'),
+								title = $this.find('a img').attr('title');
 
-							if (! title) {
-								title = $this.find( 'a picture' ).attr( 'title' );
+							if (!title) {
+								title = $this.find('a picture').attr('title');
 							}
 
 							html += '<li class="product-image-thumbnail"><img alt="' + alt + '" title="' + title + '" src="' + image + '" /></li>';
-						} );
+						});
 						html += '</ul>';
 						$thumbnails.empty();
-						$thumbnails.append( html );
+						$thumbnails.append(html);
 					}
 
 					function ThumbnailsSlider() {
-						$thumbnails.flexslider( {
-							animation: 'slide',
-							direction: direction,
-							controlNav: false,
+						$thumbnails.flexslider({
+							animation    : 'slide',
+							direction    : direction,
+							controlNav   : false,
 							animationLoop: true,
-							slideshow: false,
-							itemWidth: width_item,
-							itemMargin: marginItem,
-							asNavFor: $gallery,
-							prevText: '',
-							nextText: '',
+							slideshow    : false,
+							itemWidth    : width_item,
+							itemMargin   : marginItem,
+							asNavFor     : $gallery,
+							prevText     : '',
+							nextText     : '',
 							// useCSS       : true,
-						} );
+						});
 					}
-				} );
-			} );
+				});
+			});
 		</script>
-	<?php
+		<?php
 	}
 }

@@ -6,7 +6,7 @@ use Elementor\Group_Control_Image_Size;
 use Thim_EL_Kit\GroupControlTrait;
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit;
 }
 
@@ -18,17 +18,17 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Testimonial', 'thim-elementor-kit' );
+		return esc_html__('Testimonial', 'thim-elementor-kit');
 	}
 
 	public function get_icon() {
 		return 'thim-eicon eicon-testimonial';
 	}
 	public function get_style_depends(): array {
-		return [ 'e-swiper' ];
+		return ['e-swiper'];
 	}
 	public function get_categories() {
-		return array( \Thim_EL_Kit\Elementor::CATEGORY );
+		return array(\Thim_EL_Kit\Elementor::CATEGORY);
 	}
 
 	public function get_keywords() {
@@ -40,26 +40,76 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 	}
 
 	public function get_base() {
-		return basename( __FILE__, '.php' );
+		return basename(__FILE__, '.php');
 	}
 
 	protected function register_controls() {
 		$this->start_controls_section(
 			'section',
 			array(
-				'label' => esc_html__( 'Testimonial', 'thim-elementor-kit' ),
+				'label' => esc_html__('Testimonial', 'thim-elementor-kit'),
 			)
 		);
 
 		$this->add_control(
 			'layout',
 			array(
-				'label'   => esc_html__( 'Choose layout', 'thim-elementor-kit' ),
+				'label'   => esc_html__('Choose layout', 'thim-elementor-kit'),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'default',
 				'options' => array(
-					'default'        => esc_html__( 'Default', 'thim-elementor-kit' ),
-					'thumbs-gallery' => esc_html__( 'Thumbs Gallery', 'thim-elementor-kit' ),
+					'default'        => esc_html__('Default', 'thim-elementor-kit'),
+					'thumbs-gallery' => esc_html__('Thumbs Gallery', 'thim-elementor-kit'),
+					'stack-slider' => esc_html__('Stack Slider', 'thim-elementor-kit'),
+				),
+			)
+		);
+		$this->add_control(
+			'slides_options',
+			array(
+				'label'     => esc_html__('Slider Setting', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'horizontal',
+				'options'   => array(
+					'horizontal' => esc_html__('Horizontal', 'thim-elementor-kit'),
+					'vertical'   => esc_html__('Vertical', 'thim-elementor-kit'),
+				),
+				'condition' => array(
+					'layout' => 'stack-slider'
+				),
+			)
+		);
+
+		$this->add_control(
+			'horizontal_effect',
+			array(
+				'label'     => esc_html__('Horizontal Effect', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'fan',
+				'options'   => array(
+					'fan'   => esc_html__('Fan (Spread)', 'thim-elementor-kit'),
+					'cards' => esc_html__('Cards (Overlap)', 'thim-elementor-kit'),
+				),
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+				),
+			)
+		);
+
+		$this->add_control(
+			'vertical_direction',
+			array(
+				'label'     => esc_html__('Vertical Direction', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'top',
+				'options'   => array(
+					'top'    => esc_html__('From Top (Down)', 'thim-elementor-kit'),
+					'bottom' => esc_html__('From Bottom (Up)', 'thim-elementor-kit'),
+				),
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'vertical',
 				),
 			)
 		);
@@ -67,10 +117,10 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'quote_icon_enable',
 			array(
-				'label'        => esc_html__( 'Enable Quote Icon', 'thim-elementor-kit' ),
+				'label'        => esc_html__('Enable Quote Icon', 'thim-elementor-kit'),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'    => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'     => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'    => esc_html__('No', 'thim-elementor-kit'),
 				'return_value' => 'yes',
 				'default'      => 'no',
 			)
@@ -79,7 +129,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'quote_icon',
 			array(
-				'label'       => esc_html__( 'Quote Icon', 'thim-elementor-kit' ),
+				'label'       => esc_html__('Quote Icon', 'thim-elementor-kit'),
 				'label_block' => false,
 				'type'        => Controls_Manager::ICONS,
 				'skin'        => 'inline',
@@ -92,17 +142,17 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'quote_icon_position_offset_x',
 			array(
-				'label'      => esc_html__( 'Left', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Left', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'range'      => array(
 					'px' => array(
-						'min'  => - 1600,
+						'min'  => -1600,
 						'max'  => 1600,
 						'step' => 1,
 					),
 					'%'  => array(
-						'min' => - 100,
+						'min' => -100,
 						'max' => 100,
 					),
 				),
@@ -122,17 +172,17 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'quote_icon_position_offset_y',
 			array(
-				'label'      => esc_html__( 'Top', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Top', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'range'      => array(
 					'px' => array(
-						'min'  => - 1600,
+						'min'  => -1600,
 						'max'  => 1600,
 						'step' => 1,
 					),
 					'%'  => array(
-						'min' => - 100,
+						'min' => -100,
 						'max' => 100,
 					),
 				),
@@ -152,13 +202,13 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'separetor',
 			array(
-				'label'     => esc_html__( 'Show Separator', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Show Separator', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SWITCHER,
-				'label_on'  => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off' => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'  => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off' => esc_html__('No', 'thim-elementor-kit'),
 				'default'   => 'no',
 				'condition' => array(
-					'layout' => array( 'thumbs-gallery' ),
+					'layout' => array('thumbs-gallery'),
 				),
 			)
 		);
@@ -168,9 +218,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$repeater->add_control(
 			'client_name',
 			array(
-				'label'       => esc_html__( 'Client Name', 'thim-elementor-kit' ),
+				'label'       => esc_html__('Client Name', 'thim-elementor-kit'),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Tony Chester', 'thim-elementor-kit' ),
+				'default'     => esc_html__('Tony Chester', 'thim-elementor-kit'),
 				'label_block' => true,
 			)
 		);
@@ -178,7 +228,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$repeater->add_control(
 			'client_position',
 			array(
-				'label'       => esc_html__( 'Position', 'thim-elementor-kit' ),
+				'label'       => esc_html__('Position', 'thim-elementor-kit'),
 				'type'        => Controls_Manager::TEXT,
 				'label_block' => true,
 				'default'     => 'Front-end Developer',
@@ -188,7 +238,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$repeater->add_control(
 			'client_content',
 			array(
-				'label'       => esc_html__( 'Testimonial Review', 'thim-elementor-kit' ),
+				'label'       => esc_html__('Testimonial Review', 'thim-elementor-kit'),
 				'type'        => Controls_Manager::WYSIWYG,
 				'label_block' => true,
 				'default'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
@@ -198,16 +248,16 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$repeater->add_control(
 			'link',
 			array(
-				'label'       => esc_html__( 'Link', 'thim-elementor-kit' ),
+				'label'       => esc_html__('Link', 'thim-elementor-kit'),
 				'type'        => Controls_Manager::URL,
-				'placeholder' => esc_url( 'https://thimpress.com', 'thim-elementor-kit' ),
+				'placeholder' => esc_url('https://thimpress.com', 'thim-elementor-kit'),
 			)
 		);
 
 		$repeater->add_control(
 			'client_avatar',
 			array(
-				'label'     => esc_html__( 'Client Avatar', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Client Avatar', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::MEDIA,
 				'separator' => 'before',
 			)
@@ -216,12 +266,12 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'data',
 			array(
-				'label'   => esc_html__( 'Testimonial', 'thim-elementor-kit' ),
+				'label'   => esc_html__('Testimonial', 'thim-elementor-kit'),
 				'type'    => Controls_Manager::REPEATER,
 				'default' => array(
-					array( 'client_name' => esc_html__( 'Tony Chester', 'thim-elementor-kit' ) ),
-					array( 'client_name' => esc_html__( 'Jay Adams', 'thim-elementor-kit' ) ),
-					array( 'client_name' => esc_html__( 'Jay Johnson ', 'thim-elementor-kit' ) ),
+					array('client_name' => esc_html__('Tony Chester', 'thim-elementor-kit')),
+					array('client_name' => esc_html__('Jay Adams', 'thim-elementor-kit')),
+					array('client_name' => esc_html__('Jay Johnson ', 'thim-elementor-kit')),
 				),
 
 				'fields'      => $repeater->get_controls(),
@@ -243,6 +293,8 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 
 		$this->register_style_separetor();
 
+		$this->register_style_stack_slider();
+
 		$this->_register_settings_slider();
 
 		$this->_register_setting_slider_dot_style();
@@ -256,36 +308,39 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'skin_slider_settings',
 			array(
-				'label' => esc_html__( 'Settings Slider', 'thim-elementor-kit' ),
+				'label' => esc_html__('Settings Slider', 'thim-elementor-kit'),
 			)
 		);
 		$this->add_responsive_control(
 			'slidesPerView',
 			array(
-				'label'              => esc_html__( 'Item Show', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Item Show', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 20,
 				'step'               => 1,
 				'default'            => 3,
 				'frontend_available' => true,
-				'devices'            => array( 'widescreen', 'desktop', 'tablet', 'mobile' ),
+				'devices'            => array('widescreen', 'desktop', 'tablet', 'mobile'),
 				'selectors'          => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__avatars .thim-ekits-testimonial__avatar' => 'width: calc(100%/{{VALUE}} - {{spaceBetween.VALUE}}px);',
 					'{{WRAPPER}}'                                                                  => '--thim-ekits-slider-show: {{VALUE}}',
+				),
+				'condition'          => array(
+					'layout!' => 'stack-slider',
 				),
 			)
 		);
 		$this->add_responsive_control(
 			'slidesPerGroup',
 			array(
-				'label'              => esc_html__( 'Item Scroll', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Item Scroll', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 20,
 				'step'               => 1,
 				'default'            => 3,
-				'devices'            => array( 'widescreen', 'desktop', 'tablet', 'mobile' ),
+				'devices'            => array('widescreen', 'desktop', 'tablet', 'mobile'),
 				'condition'          => array(
 					'layout' => 'default',
 				),
@@ -295,23 +350,26 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'spaceBetween',
 			array(
-				'label'              => esc_html__( 'Item Space', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Item Space', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::NUMBER,
-				'min'                => - 50,
+				'min'                => -50,
 				'max'                => 100,
 				'step'               => 1,
 				'default'            => 30,
 				'frontend_available' => true,
-				'devices'            => array( 'widescreen', 'desktop', 'tablet', 'mobile' ),
+				'devices'            => array('widescreen', 'desktop', 'tablet', 'mobile'),
 				'selectors'          => array(
 					'{{WRAPPER}}' => '--thim-ekits-slider-space: {{VALUE}}px',
+				),
+				'condition' => array(
+					'layout!' => 'stack-slider',
 				),
 			)
 		);
 		$this->add_control(
 			'slider_speed',
 			array(
-				'label'              => esc_html__( 'Speed', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Speed', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::NUMBER,
 				'min'                => 1,
 				'max'                => 10000,
@@ -324,10 +382,10 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'slider_autoplay',
 			array(
-				'label'              => esc_html__( 'Autoplay', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Autoplay', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'           => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'          => esc_html__('No', 'thim-elementor-kit'),
 				'return_value'       => 'yes',
 				'default'            => 'yes',
 				'frontend_available' => true,
@@ -337,10 +395,10 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'pause_on_interaction',
 			array(
-				'label'              => esc_html__( 'Pause on Interaction', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Pause on Interaction', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'           => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'          => esc_html__('No', 'thim-elementor-kit'),
 				'return_value'       => 'yes',
 				'default'            => 'yes',
 				'frontend_available' => true,
@@ -353,11 +411,11 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'pause_on_hover',
 			array(
-				'label'              => esc_html__( 'Pause on Hover', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Pause on Hover', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::SWITCHER,
 				'default'            => 'yes',
-				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'           => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'          => esc_html__('No', 'thim-elementor-kit'),
 				'return_value'       => 'yes',
 				'frontend_available' => true,
 				'condition'          => array(
@@ -369,45 +427,51 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'centered_slides',
 			array(
-				'label'              => esc_html__( 'Centered Slides', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Centered Slides', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'           => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'          => esc_html__('No', 'thim-elementor-kit'),
 				'return_value'       => 'yes',
 				'default'            => 'no',
 				'frontend_available' => true,
+				'condition' => array(
+					'layout!' => 'stack-slider',
+				),
 			)
 		);
 
 		$this->add_control(
 			'slider_show_arrow',
 			array(
-				'label'              => esc_html__( 'Show Arrow', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Show Arrow', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'           => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'          => esc_html__('No', 'thim-elementor-kit'),
 				'return_value'       => 'yes',
 				'default'            => '',
 				'frontend_available' => true,
+				'condition' => array(
+					'layout!' => 'stack-slider',
+				),
 			)
 		);
 		$this->add_control(
 			'slider_show_pagination',
 			array(
-				'label'              => esc_html__( 'Pagination Options', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Pagination Options', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::SELECT,
 				'default'            => 'none',
 				'options'            => array(
-					'none'     => esc_html__( 'Hide', 'thim-elementor-kit' ),
-					'bullets'  => esc_html__( 'Bullets', 'thim-elementor-kit' ),
-					'number'   => esc_html__( 'Number', 'thim-elementor-kit' ),
+					'none'     => esc_html__('Hide', 'thim-elementor-kit'),
+					'bullets'  => esc_html__('Bullets', 'thim-elementor-kit'),
+					'number'   => esc_html__('Number', 'thim-elementor-kit'),
 					// 'progressbar' => esc_html__( 'Progress', 'thim-elementor-kit' ),
 					// 'scrollbar'   => esc_html__( 'Scrollbar', 'thim-elementor-kit' ),
-					'fraction' => esc_html__( 'Fraction', 'thim-elementor-kit' ),
+					'fraction' => esc_html__('Fraction', 'thim-elementor-kit'),
 				),
 				'frontend_available' => true,
 				'condition'          => array(
-					'layout' => 'default',
+					'layout' => array('stack-slider','default'),
 				),
 			)
 		);
@@ -415,16 +479,305 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'slider_loop',
 			array(
-				'label'              => esc_html__( 'Enable Loop?', 'thim-elementor-kit' ),
+				'label'              => esc_html__('Enable Loop?', 'thim-elementor-kit'),
 				'type'               => Controls_Manager::SWITCHER,
-				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'           => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'          => esc_html__('No', 'thim-elementor-kit'),
 				'return_value'       => 'yes',
 				'default'            => '',
 				'frontend_available' => true,
+				'condition' => array(
+					'layout!' => 'stack-slider',
+				),
 			)
 		);
 
+		$this->add_responsive_control(
+			'stack_slider_slide_width',
+			array(
+				'label'      => esc_html__('Slide Width', 'thim-elementor-kit'),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 1,
+				'max'                => 10000,
+				'step'               => 1,
+				'default'            => 400,
+				'frontend_available' => true,
+				'condition'  => array(
+					'layout' => 'stack-slider',
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide' => 'width: {{SIZE}}px !important;',
+				),
+			)
+		);
+		$this->add_responsive_control(
+			'stack_slider_wrapper_height',
+			array(
+				'label'      => esc_html__('Slide Height', 'thim-elementor-kit'),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 1,
+				'max'                => 10000,
+				'step'               => 1,
+				'default'            => 400,
+				'frontend_available' => true,
+				'condition'  => array(
+					'layout' => 'stack-slider',
+
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]' => 'height: {{SIZE}}px !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"] .swiper-wrapper' => 'height: 100% !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="horizontal"]' => 'height: {{SIZE}}px !important;',
+					// '{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="horizontal"] .swiper-wrapper' => 'height: 100% !important;',
+				)
+			)
+		);
+		$this->add_responsive_control(
+			'stack_slider_vertical_spacing',
+			array(
+				'label'              => esc_html__('Spacing', 'thim-elementor-kit'),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 0,
+				'max'                => 100,
+				'step'               => 1,
+				'default'            => 20,
+				'frontend_available' => true,
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'vertical',
+				),
+				'selectors'          => array(
+					// Top direction (slides come from above)
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="top"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(-1 * {{VALUE}}px)) translateZ(-30px) scale(0.96) rotateX(3deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="top"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(-2 * {{VALUE}}px)) translateZ(-60px) scale(0.92) rotateX(6deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="top"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(-3 * {{VALUE}}px)) translateZ(-90px) scale(0.88) rotateX(9deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="top"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(-4 * {{VALUE}}px)) translateZ(-120px) scale(0.84) rotateX(12deg) !important;',
+					
+					// Bottom direction (slides come from below) - also fallback
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY({{VALUE}}px) translateZ(-30px) scale(0.96) rotateX(-3deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(2 * {{VALUE}}px)) translateZ(-60px) scale(0.92) rotateX(-6deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(3 * {{VALUE}}px)) translateZ(-90px) scale(0.88) rotateX(-9deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(4 * {{VALUE}}px)) translateZ(-120px) scale(0.84) rotateX(-12deg) !important;',
+					
+					// Fallback for when no vertical-direction is specified (defaults to bottom behavior)
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]:not([data-vertical-direction]) .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY({{VALUE}}px) translateZ(-30px) scale(0.96) rotateX(-3deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]:not([data-vertical-direction]) .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(2 * {{VALUE}}px)) translateZ(-60px) scale(0.92) rotateX(-6deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]:not([data-vertical-direction]) .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(3 * {{VALUE}}px)) translateZ(-90px) scale(0.88) rotateX(-9deg) !important;',
+					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]:not([data-vertical-direction]) .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(4 * {{VALUE}}px)) translateZ(-120px) scale(0.84) rotateX(-12deg) !important;',
+				),
+			)
+		);	
+		$this->add_responsive_control(
+			'stack_slider_horizontal_fan_spacing',
+			array(
+				'label'              => esc_html__('Spacing', 'thim-elementor-kit'),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 0,
+				'max'                => 1000,
+				'step'               => 10,
+				'default'            => 50,
+				'frontend_available' => true,
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'fan',
+				),
+				'selectors'          => array(
+					'{{WRAPPER}}' => '--stack-fan-spacing: {{VALUE}}px;',
+				),
+			)
+		);
+		
+		$this->add_responsive_control(
+			'stack_slider_horizontal_fan_items_show',
+			array(
+				'label'              => esc_html__('Number Items Show', 'thim-elementor-kit'),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => 1,
+				'max'                => 10,
+				'step'               => 1,
+				'default'            => 3,
+				'frontend_available' => true,
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'fan',
+				),
+				'selectors'          => array(
+					'{{WRAPPER}}' => '--stack-fan-items-show: {{VALUE}};',
+				),
+			)
+		);	
+		$this->add_responsive_control(
+			'stack_slider_horizontal_fan_pos_y',
+			array(
+				'label'              => esc_html__('Position Y', 'thim-elementor-kit'),
+				'type'               => Controls_Manager::NUMBER,
+				'min'                => -1000,
+				'max'                => 1000,
+				'step'               => 10,
+				'default'            => 0,
+				'frontend_available' => true,
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'fan',
+				),
+				'selectors'          => array(
+					'{{WRAPPER}}' => '--stack-fan-pos-y: {{VALUE}}px;',
+				),
+			)
+		);	
+		// Next Slide Settings
+		$this->add_control(
+			'next_slide_heading',
+			array(
+				'label'     => esc_html__('Next Slide Settings', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+					
+				),
+			)
+		);
+
+		
+		$this->add_responsive_control(
+			'stack_slider_next_position_x',
+			array(
+				'label'      => esc_html__('Position X', 'thim-elementor-kit'),
+				'type'       => Controls_Manager::NUMBER,
+				'min'        => -1000,
+				'max'        => 1000,
+				'step'       => 1,
+				'default'    => 50,
+				'condition'  => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+				),
+				'selectors'  => array(
+					'{{WRAPPER}}' => '--stack-next-pos-x: {{VALUE}}px;',
+				),
+			)
+		);
+		
+		$this->add_responsive_control(
+			'stack_slider_next_position_y',
+			array(
+				'label'     => esc_html__('Position Y', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -1000,
+				'max'       => 1000,
+				'step'      => 1,
+				'default'   => -5,
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+				),
+				'selectors' => array(
+					'{{WRAPPER}}' => '--stack-next-pos-y: {{VALUE}}px;',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'stack_slider_next_rotate_z',
+			array(
+				'label'     => esc_html__('Rotate', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -180,
+				'max'       => 180,
+				'step'      => 1,
+				'default'   => 1.6,
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+				),
+				'selectors' => array(
+					'{{WRAPPER}}' => '--stack-next-rotate-z: {{VALUE}}deg;',
+				),
+			)
+		);
+
+		// Prev Slide Settings
+		$this->add_control(
+			'prev_slide_heading',
+			array(
+				'label'     => esc_html__('Prev Slide Settings', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+				),
+			)
+		);
+	
+		$this->add_responsive_control(
+			'stack_slider_prev_position_x',
+			array(
+				'label'     => esc_html__('Position X', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -1000,
+				'max'       => 1000,
+				'step'      => 1,
+				'default'   => -50,
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+				),
+				'selectors' => array(
+					'{{WRAPPER}}' => '--stack-prev-pos-x: {{VALUE}}px;',
+				),
+			)
+		);
+		$this->add_responsive_control(
+			'stack_slider_prev_position_y',
+			array(
+				'label'     => esc_html__('Position Y', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -1000,
+				'max'       => 1000,
+				'step'      => 1,
+				'default'   => -5,
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+				),
+				'selectors' => array(
+					'{{WRAPPER}}' => '--stack-prev-pos-y: {{VALUE}}px;',
+				),
+			)
+		);
+		$this->add_responsive_control(
+			'stack_slider_prev_rotate_z',
+			array(
+				'label'     => esc_html__('Rotate', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::NUMBER,
+				'min'       => -180,
+				'max'       => 180,
+				'step'      => 1,
+				'default'   => -1.6,
+				'condition' => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+					'horizontal_effect' => 'cards',
+				),
+				'selectors' => array(
+					'{{WRAPPER}}' => '--stack-prev-rotate-z: {{VALUE}}deg;',
+				),
+			)
+		);
+	
 		$this->end_controls_section();
 	}
 
@@ -432,17 +785,20 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'layout_section',
 			array(
-				'label' => esc_html__( 'Layout', 'thim-elementor-kit' ),
+				'label' => esc_html__('Layout', 'thim-elementor-kit'),
 				'tab'   => Controls_Manager::TAB_STYLE,
+				'condition' => array(
+					'layout!' => 'stack-slider',
+				),
 			)
 		);
 
 		$this->add_responsive_control(
 			'layout_width',
 			array(
-				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Width', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'range'      => array(
 					'px' => array(
 						'min' => 0,
@@ -458,9 +814,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'layout_spacing',
 			array(
-				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Padding', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -479,8 +835,8 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'layout_background',
-				'label'    => esc_html__( 'Background', 'thim-elementor-kit' ),
-				'types'    => array( 'classic', 'gradient' ),
+				'label'    => esc_html__('Background', 'thim-elementor-kit'),
+				'types'    => array('classic', 'gradient'),
 				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__inner',
 			)
 		);
@@ -492,7 +848,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'wrapper_content_section',
 			array(
-				'label' => esc_html__( 'Wrapper content', 'thim-elementor-kit' ),
+				'label' => esc_html__('Wrapper content', 'thim-elementor-kit'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -500,19 +856,19 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_content_align',
 			array(
-				'label'     => esc_html__( 'Alignment', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Alignment', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'left'   => array(
-						'title' => esc_html__( 'Left', 'thim-elementor-kit' ),
+						'title' => esc_html__('Left', 'thim-elementor-kit'),
 						'icon'  => 'eicon-text-align-left',
 					),
 					'center' => array(
-						'title' => esc_html__( 'Center', 'thim-elementor-kit' ),
+						'title' => esc_html__('Center', 'thim-elementor-kit'),
 						'icon'  => 'eicon-text-align-center',
 					),
 					'right'  => array(
-						'title' => esc_html__( 'Right', 'thim-elementor-kit' ),
+						'title' => esc_html__('Right', 'thim-elementor-kit'),
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
@@ -527,9 +883,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_content_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Margin', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__article,{{WRAPPER}} .thim-ekits-testimonial__article-avatar-left_client_name .thim-ekits-testimonial__client-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -539,31 +895,38 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_content_spacing',
 			array(
-				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Padding', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__article,{{WRAPPER}} .thim-ekits-testimonial__article-avatar-left_client_name .thim-ekits-testimonial__client-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'wrapper_content_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Border Radius', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__article,{{WRAPPER}} .thim-ekits-testimonial__article-avatar-left_client_name .thim-ekits-testimonial__client-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
-
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'wrapper_content_border',
+				'label'    => esc_html__('Border', 'thim-elementor-kit'),
+				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__article,{{WRAPPER}} .thim-ekits-testimonial__article-avatar-left_client_name .thim-ekits-testimonial__client-content',
+			)
+		);
 		$this->add_control(
 			'wrapper_content_background',
 			array(
-				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Background Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__article, {{WRAPPER}} .thim-ekits-testimonial__article-avatar-left_client_name .thim-ekits-testimonial__client-content' => 'background-color: {{VALUE}}',
@@ -574,10 +937,10 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'angular',
 			array(
-				'label'        => esc_html__( 'Show Angular', 'thim-elementor-kit' ),
+				'label'        => esc_html__('Show Angular', 'thim-elementor-kit'),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'thim-elementor-kit' ),
-				'label_off'    => esc_html__( 'No', 'thim-elementor-kit' ),
+				'label_on'     => esc_html__('Yes', 'thim-elementor-kit'),
+				'label_off'    => esc_html__('No', 'thim-elementor-kit'),
 				'return_value' => 'yes',
 				'default'      => 'no',
 				'condition'    => array(
@@ -592,9 +955,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'angular_position_offset_x',
 			array(
-				'label'      => esc_html__( 'Left', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Left', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'range'      => array(
 					'px' => array(
 						'min'  => 0,
@@ -623,9 +986,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'angular_width',
 			array(
-				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Width', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
+				'size_units' => array('px'),
 				'range'      => array(
 					'px' => array(
 						'min'  => 0,
@@ -651,9 +1014,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'angular_height',
 			array(
-				'label'      => esc_html__( 'Height', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Height', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
+				'size_units' => array('px'),
 				'range'      => array(
 					'px' => array(
 						'min'  => 0,
@@ -679,7 +1042,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'angular_background',
 			array(
-				'label'     => esc_html__( 'Background Angular', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Background Angular', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => array(
 					'layout'  => 'default',
@@ -708,7 +1071,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'client_content_section',
 			array(
-				'label' => esc_html__( 'Client Info', 'thim-elementor-kit' ),
+				'label' => esc_html__('Client Info', 'thim-elementor-kit'),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -716,7 +1079,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_avatar_heading',
 			array(
-				'label' => esc_html__( 'Client Avatar', 'thim-elementor-kit' ),
+				'label' => esc_html__('Client Avatar', 'thim-elementor-kit'),
 				'type'  => Controls_Manager::HEADING,
 			)
 		);
@@ -724,16 +1087,17 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'avatar_layout',
 			array(
-				'label'     => esc_html__( 'Avatar Position', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Avatar Position', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'default',
 				'condition' => array(
-					'layout' => 'default',
+					'layout' => array('default', 'stack-slider'),
 				),
 				'options'   => array(
-					'default'                 => esc_html__( 'Default', 'thim-elementor-kit' ),
-					'avatar_left_content'     => esc_html__( 'Left Content', 'thim-elementor-kit' ),
-					'avatar_left_client_name' => esc_html__( 'Left Client Name ', 'thim-elementor-kit' ),
+					'default'                 => esc_html__('Default', 'thim-elementor-kit'),
+					'avatar_left_content'     => esc_html__('Left Content', 'thim-elementor-kit'),
+					'avatar_left_client_name' => esc_html__('Left Client Name ', 'thim-elementor-kit'),
+					'avatar_right_content'     => esc_html__('Right Content', 'thim-elementor-kit'),
 				),
 			)
 		);
@@ -749,9 +1113,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_avatar_border_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Border Radius', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}}' => '--thim-ekits-testimonial__image-border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -761,9 +1125,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_client_avatar_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Padding', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__image'        => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .thim-ekits-testimonial__image:before' => 'top: {{TOP}}{{UNIT}}; right: {{RIGHT}}{{UNIT}} ; bottom: {{BOTTOM}}{{UNIT}} ; left: {{LEFT}}{{UNIT}};',
@@ -774,11 +1138,11 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_avatar_margin_bottom',
 			array(
-				'label'     => esc_html__( 'Margin Bottom', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Margin Bottom', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
-						'min' => - 200,
+						'min' => -200,
 						'max' => 200,
 					),
 				),
@@ -792,9 +1156,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'client_avatar_item_background',
-				'label'    => esc_html__( 'Background', 'thim-elementor-kit' ),
-				'types'    => array( 'classic', 'gradient' ),
-				'exclude'  => array( 'image' ),
+				'label'    => esc_html__('Background', 'thim-elementor-kit'),
+				'types'    => array('classic', 'gradient'),
+				'exclude'  => array('image'),
 				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__image:before',
 			)
 		);
@@ -802,7 +1166,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_name_heading',
 			array(
-				'label'     => esc_html__( 'Client Name', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Client Name', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -811,15 +1175,15 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_name_display',
 			array(
-				'label'     => esc_html__( 'Display', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Display', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'block'        => array(
-						'title' => esc_html__( 'Default', 'thim-elementor-kit' ),
+						'title' => esc_html__('Default', 'thim-elementor-kit'),
 						'icon'  => 'eicon-editor-list-ul',
 					),
 					'inline-block' => array(
-						'title' => esc_html__( 'Inline', 'thim-elementor-kit' ),
+						'title' => esc_html__('Inline', 'thim-elementor-kit'),
 						'icon'  => 'eicon-ellipsis-h',
 					),
 				),
@@ -838,14 +1202,14 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'client_name_color_tab',
 			array(
-				'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
+				'label' => esc_html__('Normal', 'thim-elementor-kit'),
 			)
 		);
 
 		$this->add_control(
 			'client_name_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__name' => 'color: {{VALUE}};',
@@ -866,14 +1230,14 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'client_name_color_hover_tab',
 			array(
-				'label' => esc_html__( 'Hover', 'thim-elementor-kit' ),
+				'label' => esc_html__('Hover', 'thim-elementor-kit'),
 			)
 		);
 
 		$this->add_control(
 			'client_name_hover_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__name:hover' => 'color: {{VALUE}};',
@@ -896,9 +1260,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_name_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Margin', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__name' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -908,11 +1272,11 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_name_transform',
 			array(
-				'label'     => esc_html__( 'Transform Y', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Transform Y', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
-						'min' => - 100,
+						'min' => -100,
 						'max' => 100,
 					),
 				),
@@ -929,7 +1293,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_position_heading',
 			array(
-				'label'     => esc_html__( 'Client Position', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Client Position', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -938,15 +1302,15 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_position_display',
 			array(
-				'label'     => esc_html__( 'Display', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Display', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'block'        => array(
-						'title' => esc_html__( 'Default', 'thim-elementor-kit' ),
+						'title' => esc_html__('Default', 'thim-elementor-kit'),
 						'icon'  => 'eicon-editor-list-ul',
 					),
 					'inline-block' => array(
-						'title' => esc_html__( 'Inline', 'thim-elementor-kit' ),
+						'title' => esc_html__('Inline', 'thim-elementor-kit'),
 						'icon'  => 'eicon-ellipsis-h',
 					),
 				),
@@ -961,7 +1325,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'position_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__position' => 'color: {{VALUE}};',
@@ -980,9 +1344,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'position_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Margin', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__position' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -992,11 +1356,11 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'position_margin_transform',
 			array(
-				'label'     => esc_html__( 'Transform Y', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Transform Y', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
-						'min' => - 100,
+						'min' => -100,
 						'max' => 100,
 					),
 				),
@@ -1013,7 +1377,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_title_heading',
 			array(
-				'label'     => esc_html__( 'Client Title', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Client Title', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1022,7 +1386,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_content_heading',
 			array(
-				'label'     => esc_html__( 'Client Description', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Client Description', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -1031,7 +1395,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_content_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__client-content' => 'color: {{VALUE}};',
@@ -1050,16 +1414,16 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'client_content_position',
 			array(
-				'label'   => esc_html__( 'Position', 'thim-elementor-kit' ),
+				'label'   => esc_html__('Position', 'thim-elementor-kit'),
 				'type'    => Controls_Manager::CHOOSE,
 				'default' => 'bottom',
 				'options' => array(
 					'top'    => array(
-						'title' => esc_html__( 'Top', 'thim-elementor-kit' ),
+						'title' => esc_html__('Top', 'thim-elementor-kit'),
 						'icon'  => 'eicon-v-align-top',
 					),
 					'bottom' => array(
-						'title' => esc_html__( 'Bottom', 'thim-elementor-kit' ),
+						'title' => esc_html__('Bottom', 'thim-elementor-kit'),
 						'icon'  => 'eicon-v-align-bottom',
 					),
 				),
@@ -1069,9 +1433,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_content_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Margin', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__client-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -1085,7 +1449,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'gallery_section',
 			array(
-				'label'     => esc_html__( 'Gallery Setting', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Gallery Setting', 'thim-elementor-kit'),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'layout' => 'thumbs-gallery',
@@ -1096,9 +1460,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'gallery_width',
 			array(
-				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Width', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'range'      => array(
 					'px' => array(
 						'min' => 0,
@@ -1114,16 +1478,16 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_control(
 			'gallery_position',
 			array(
-				'label'     => esc_html__( 'Gallery Position', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Gallery Position', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::CHOOSE,
 				'default'   => 'column',
 				'options'   => array(
 					'column'         => array(
-						'title' => esc_html__( 'Top', 'thim-elementor-kit' ),
+						'title' => esc_html__('Top', 'thim-elementor-kit'),
 						'icon'  => 'eicon-v-align-top',
 					),
 					'column-reverse' => array(
-						'title' => esc_html__( 'Bottom', 'thim-elementor-kit' ),
+						'title' => esc_html__('Bottom', 'thim-elementor-kit'),
 						'icon'  => 'eicon-v-align-bottom',
 					),
 				),
@@ -1136,9 +1500,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_gallery_spacing',
 			array(
-				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Padding', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array('px', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__avatars' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -1152,14 +1516,14 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'client_gallery_item_style',
 			array(
-				'label' => esc_html__( 'Default', 'thim-elementor-kit' ),
+				'label' => esc_html__('Default', 'thim-elementor-kit'),
 			)
 		);
 
 		$this->add_responsive_control(
 			'client_gallery_item_opacity',
 			array(
-				'label'     => esc_html__( 'Opacity', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Opacity', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -1178,8 +1542,8 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'client_gallery_item_border',
-				'label'    => esc_html__( 'Border', 'thim-elementor-kit' ),
-				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__image',
+				'label'    => esc_html__('Border', 'thim-elementor-kit'),
+				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__image', 
 			)
 		);
 
@@ -1187,7 +1551,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'client_gallery_item_box_shadow',
-				'label'    => esc_html__( 'Box Shadow', 'thim-elementor-kit' ),
+				'label'    => esc_html__('Box Shadow', 'thim-elementor-kit'),
 				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__image',
 			)
 		);
@@ -1197,7 +1561,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'client_gallery_item_active_style',
 			array(
-				'label' => esc_html__( 'Active', 'thim-elementor-kit' ),
+				'label' => esc_html__('Active', 'thim-elementor-kit'),
 			)
 		);
 
@@ -1205,9 +1569,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'client_gallery_item_active_bg',
-				'label'    => esc_html__( 'Background', 'thim-elementor-kit' ),
-				'types'    => array( 'classic', 'gradient' ),
-				'exclude'  => array( 'image' ),
+				'label'    => esc_html__('Background', 'thim-elementor-kit'),
+				'types'    => array('classic', 'gradient'),
+				'exclude'  => array('image'),
 				'selector' => '{{WRAPPER}} .swiper-slide-active .thim-ekits-testimonial__image:before',
 			)
 		);
@@ -1216,7 +1580,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'client_gallery_item_active_border',
-				'label'    => esc_html__( 'Border', 'thim-elementor-kit' ),
+				'label'    => esc_html__('Border', 'thim-elementor-kit'),
 				'selector' => '{{WRAPPER}} .swiper-slide-active .thim-ekits-testimonial__image',
 			)
 		);
@@ -1225,7 +1589,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'client_gallery_item_active_box_shadow',
-				'label'    => esc_html__( 'Box Shadow', 'thim-elementor-kit' ),
+				'label'    => esc_html__('Box Shadow', 'thim-elementor-kit'),
 				'selector' => '{{WRAPPER}} .swiper-slide-active .thim-ekits-testimonial__image',
 			)
 		);
@@ -1233,7 +1597,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_gallery_item_active_opacity',
 			array(
-				'label'     => esc_html__( 'Opacity', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Opacity', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -1251,7 +1615,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'client_gallery_item_scale',
 			array(
-				'label'     => esc_html__( 'Scale', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Scale', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::SLIDER,
 				'range'     => array(
 					'px' => array(
@@ -1277,7 +1641,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_section(
 			'section_icon_style',
 			array(
-				'label'     => esc_html__( 'Quote Icon', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Quote Icon', 'thim-elementor-kit'),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'quote_icon_enable' => 'yes',
@@ -1292,13 +1656,13 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'client_icon_normal_color_tab',
 			array(
-				'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
+				'label' => esc_html__('Normal', 'thim-elementor-kit'),
 			)
 		);
 		$this->add_responsive_control(
 			'section_icon_bg_color',
 			array(
-				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Background Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__quote-icon' => 'background-color: {{VALUE}};',
@@ -1308,7 +1672,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'section_icon_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}}' => '--thim-ekits-quote-color: {{VALUE}};',
@@ -1321,14 +1685,14 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'client_icon_hover_color_tab',
 			array(
-				'label' => esc_html__( 'Hover', 'thim-elementor-kit' ),
+				'label' => esc_html__('Hover', 'thim-elementor-kit'),
 			)
 		);
 
 		$this->add_responsive_control(
 			'section_bg_icon_hover_color',
 			array(
-				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Background Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__article:hover .thim-ekits-testimonial__quote-icon' => 'background-color: {{VALUE}};',
@@ -1338,7 +1702,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'section_icon_hover_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}}' => '--thim-ekits-quote-hover-color: {{VALUE}};',
@@ -1352,9 +1716,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'icon_quoc_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Padding', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array('px', 'em', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__quote-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -1364,9 +1728,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'section_icon_quoc_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Border Radius', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
+				'size_units' => array('px', 'em', '%'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__quote-icon' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -1375,9 +1739,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'section_icon_typography',
 			array(
-				'label'      => esc_html__( 'Icon Size', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Icon Size', 'thim-elementor-kit'), 
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
+				'size_units' => array('px'),
 				'range'      => array(
 					'px' => array(
 						'min'  => 0,
@@ -1395,15 +1759,178 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->end_controls_section();
 	}
 
+	protected function register_style_stack_slider() { 
+		$this->start_controls_section(
+			'stack_slider_style_section',
+			array(
+				'label'     => esc_html__('Stack Slider Style', 'thim-elementor-kit'),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => array(
+					'layout' => 'stack-slider',
+				),
+			),
+		);
+
+		// Active Slide Styles
+		$this->add_control(
+			'stack_active_slide_heading',
+			array(
+				'label'     => esc_html__('Active Slide', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'stack_active_slide_bg_color',
+			array(
+				'label'     => esc_html__('Background Color', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-active.thim-ekits-testimonial__article' => 'background-color: {{VALUE}} !important;',
+				),
+			)
+		);
+
+		$this->add_control(
+			'stack_active_slide_color',
+			array(
+				'label'     => esc_html__('Text Color', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'body  {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-active.thim-ekits-testimonial__article' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-active .thim-ekits-testimonial__name' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-active .thim-ekits-testimonial__position' => 'color: {{VALUE}} !important;',
+					'body  {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-active .thim-ekits-testimonial__client-content' => 'color: {{VALUE}} !important;',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'stack_active_slide_border',
+				'label'    => esc_html__('Border', 'thim-elementor-kit'),
+				'selector' => 'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-active.thim-ekits-testimonial__article',
+			)
+		);
+
+		// Next Slide Styles
+		$this->add_control(
+			'stack_next_slide_heading',
+			array(
+				'label'     => esc_html__('Next Slide', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'stack_next_slide_bg_color',
+			array(
+				'label'     => esc_html__('Background Color', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-next.thim-ekits-testimonial__article' => 'background-color: {{VALUE}} !important;',
+				),
+			)
+		);
+
+		$this->add_control(
+			'stack_next_slide_color',
+			array(
+				'label'     => esc_html__('Text Color', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-next.thim-ekits-testimonial__article' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-next .thim-ekits-testimonial__name' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-next .thim-ekits-testimonial__position' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-next .thim-ekits-testimonial__client-content' => 'color: {{VALUE}} !important;',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'stack_next_slide_border',
+				'label'    => esc_html__('Border', 'thim-elementor-kit'),
+				'selector' => 'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-next.thim-ekits-testimonial__article',
+			)
+		);
+
+		// Prev Slide Styles
+		$this->add_control(
+			'stack_prev_slide_heading',
+			array(
+				'label'     => esc_html__('Prev Slide', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+				),
+			)
+		);
+
+		$this->add_control(
+			'stack_prev_slide_bg_color',
+			array(
+				'label'     => esc_html__('Background Color', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-prev.thim-ekits-testimonial__article' => 'background-color: {{VALUE}} !important;',
+				),
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+				),
+			)
+		);
+
+		$this->add_control(
+			'stack_prev_slide_color',
+			array(
+				'label'     => esc_html__('Text Color', 'thim-elementor-kit'),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-prev.thim-ekits-testimonial__article' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-prev .thim-ekits-testimonial__name' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-prev .thim-ekits-testimonial__position' => 'color: {{VALUE}} !important;',
+					'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-prev .thim-ekits-testimonial__client-content' => 'color: {{VALUE}} !important;',
+				),
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'stack_prev_slide_border',
+				'label'    => esc_html__('Border', 'thim-elementor-kit'),
+				'selector' => 'body {{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider .swiper-slide-prev.thim-ekits-testimonial__article',
+				'condition'          => array(
+					'layout'         => 'stack-slider',
+					'slides_options' => 'horizontal',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+	}
+
 	protected function register_style_separetor() {
 		$this->start_controls_section(
 			'separetor_tab',
 			array(
-				'label'     => esc_html__( 'Separetor', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Separetor', 'thim-elementor-kit'),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'separetor' => 'yes',
-					'layout'    => array( 'thumbs-gallery' ),
+					'layout'    => array('thumbs-gallery'),
 				),
 			)
 		);
@@ -1415,14 +1942,14 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'separetor_normal_color_tab',
 			array(
-				'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
+				'label' => esc_html__('Normal', 'thim-elementor-kit'),
 			)
 		);
 
 		$this->add_control(
 			'separator_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#2ec4b6',
 				'selectors' => array(
@@ -1436,14 +1963,14 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->start_controls_tab(
 			'separetor_hover_color_tab',
 			array(
-				'label' => esc_html__( 'Hover', 'thim-elementor-kit' ),
+				'label' => esc_html__('Hover', 'thim-elementor-kit'),
 			)
 		);
 
 		$this->add_control(
 			'separator_hover_color',
 			array(
-				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'label'     => esc_html__('Color', 'thim-elementor-kit'),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#2ec4b6',
 				'selectors' => array(
@@ -1459,9 +1986,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_width',
 			array(
-				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Width', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
+				'size_units' => array('px'),
 				'range'      => array(
 					'px' => array(
 						'min' => 0,
@@ -1481,9 +2008,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_height',
 			array(
-				'label'      => esc_html__( 'Height', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Height', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
+				'size_units' => array('px'),
 				'range'      => array(
 					'px' => array(
 						'min'  => 0,
@@ -1504,9 +2031,9 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'separator_margin',
 			array(
-				'label'      => esc_html__( 'Margin', 'thim-elementor-kit' ),
+				'label'      => esc_html__('Margin', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px' ),
+				'size_units' => array('px'),
 				'selectors'  => array(
 					'{{WRAPPER}} .thim-ekits-testimonial__separetor:before' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
@@ -1519,107 +2046,66 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 
-		$this->render_nav_pagination_slider( $settings );
+		$this->render_nav_pagination_slider($settings);
 
-		if ( $settings['layout'] == 'thumbs-gallery' ) {
-			$this->render_content_gallery( $settings );
+		if ($settings['layout'] == 'thumbs-gallery') {
+			$this->render_content_gallery($settings);
+		} elseif ($settings['layout'] == 'stack-slider') {
+			$this->render_content_stack_slider($settings);
 		} else {
-			$this->render_content_default( $settings );
+			$this->render_content_default($settings);
 		}
 	}
 
-	public function render_content_default( $settings ) {
+	public function render_content_default($settings) {
 		$testimonials = $settings['data'];
 
-		if ( ! is_array( $testimonials ) && empty( $testimonials ) ) {
+		if (! is_array($testimonials) && empty($testimonials)) {
 			return;
 		}
 
-		$class_article = ( $settings['avatar_layout'] == 'avatar_left_client_name' ) ? '-avatar-left_client_name' : '';
-		$swiper_class  = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-		$class_wrapper = ' thim-ekits-sliders ' . esc_attr( $swiper_class );
-		$class_wrapper .= ( $settings['avatar_layout'] == 'avatar_left_content' ) ? ' thim-ekits-testimonial__avatar-left-content' : '';
-		?>
+		$class_article = ($settings['avatar_layout'] == 'avatar_left_client_name') ? '-avatar-left_client_name' : '';
+		$swiper_class  = \Elementor\Plugin::$instance->experiments->is_feature_active('e_swiper_latest') ? 'swiper' : 'swiper-container';
+		$class_wrapper = ' thim-ekits-sliders ' . esc_attr($swiper_class);
+		$class_wrapper .= ($settings['avatar_layout'] == 'avatar_left_content') ? ' thim-ekits-testimonial__avatar-left-content' : '';
+		$class_wrapper .= ($settings['avatar_layout'] == 'avatar_right_content') ? ' thim-ekits-testimonial__avatar-right-content' : '';
+?>
 		<div
 			class="thim-ekits-testimonial__inner<?php
-			echo esc_attr( $class_wrapper ); ?>">
+												echo esc_attr($class_wrapper); ?>">
 			<div class="thim-ekits-testimonial__content swiper-wrapper">
 				<?php
-				foreach ( $testimonials as $key => $testimonial ) : ?>
-					<div class="thim-ekits-testimonial__article<?php
-					echo esc_attr( $class_article ); ?> swiper-slide">
-						<?php
-						$show_avatar = true;
-						if ( $settings['avatar_layout'] == 'avatar_left_content' ) {
-							$this->render_client_avatar( $settings, $testimonial );
-							$show_avatar = false;
-						}
-						?>
-						<div class="thim-ekits-testimonial__inner_client">
-							<?php
-							if ( $settings['client_content_position'] == 'top' ) {
-								$this->render_client_content( $testimonial );
-							}
-							?>
-
-							<?php
-							if ( $show_avatar ) : ?>
-							<div class="wrapper-client-info">
-								<?php
-								$this->render_client_avatar( $settings, $testimonial ); ?>
-								<?php
-								endif; ?>
-								<div class="thim-ekits-testimonial__client-info">
-									<?php
-									$this->render_client_name( $key, $testimonial ); ?>
-									<?php
-									$this->render_client_position( $testimonial ); ?>
-								</div>
-								<?php
-								if ( $show_avatar ) : ?>
-							</div>
-						<?php
-						endif; ?>
-
-							<?php
-							if ( $settings['client_content_position'] == 'bottom' || $settings['client_content_position'] == '' ) {
-								$this->render_client_content( $testimonial );
-							}
-							?>
-						</div>
-						<?php
-						$this->render_client_quote_icon( $settings ); ?>
-					</div>
-				<?php
+				foreach ($testimonials as $key => $testimonial) :
+					$this->render_testimonial__article($settings, $key, $testimonial, $class_article);
 				endforeach; ?>
 			</div>
 		</div>
 
-		<?php
+	<?php
 	}
 
-	public function render_content_gallery( $settings ) {
+	public function render_content_gallery($settings) {
 		$testimonials = $settings['data'];
-		if ( ! is_array( $testimonials ) && empty( $testimonials ) ) {
+		if (! is_array($testimonials) && empty($testimonials)) {
 			return;
 		}
-		$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active( 'e_swiper_latest' ) ? 'swiper' : 'swiper-container';
-		$slider_class = ' thim-ekits-sliders ' . esc_attr( $swiper_class );
-		?>
+		$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active('e_swiper_latest') ? 'swiper' : 'swiper-container';
+		$slider_class = ' thim-ekits-sliders ' . esc_attr($swiper_class);
+	?>
 		<div class="thim-ekits-testimonial__inner thim-ekits-thumb-gallery">
 			<div class="thim-ekits-testimonial__avatars<?php
-			echo esc_attr( $slider_class ); ?>">
+														echo esc_attr($slider_class); ?>">
 				<div class="thim-ekits-testimonial__avatars-swapper swiper-wrapper">
 					<?php
-					foreach ( $testimonials as $testimonial ) {
-						$this->render_client_avatar( $settings, $testimonial, 'swiper-slide' );
+					foreach ($testimonials as $testimonial) {
+						$this->render_client_avatar($settings, $testimonial, 'swiper-slide');
 					}
 					?>
 				</div>
 			</div>
 
 			<?php
-			if ( $settings['separetor'] == 'yes' ) : ?>
+			if ($settings['separetor'] == 'yes') : ?>
 				<div class="thim-ekits-testimonial__separetor"></div>
 			<?php
 			endif; ?>
@@ -1627,25 +2113,25 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			<div class="thim-ekits-testimonial__content thim-ekits-gallery-thumbs swiper swiper-container">
 				<div class="thim-ekits-testimonial__content-swapper swiper-wrapper">
 					<?php
-					foreach ( $testimonials as $key => $testimonial ) { ?>
+					foreach ($testimonials as $key => $testimonial) { ?>
 						<div class="thim-ekits-testimonial__article swiper-slide">
 							<?php
-							if ( $settings['client_content_position'] == 'top' ) {
-								$this->render_client_content( $testimonial );
+							if ($settings['client_content_position'] == 'top') {
+								$this->render_client_content($testimonial);
 							}
 							?>
 
 							<div class="thim-ekits-testimonial__client-info">
 								<?php
-								$this->render_client_name( $key, $testimonial );
+								$this->render_client_name($key, $testimonial);
 
-								$this->render_client_position( $testimonial );
+								$this->render_client_position($testimonial);
 								?>
 							</div>
 
 							<?php
-							if ( $settings['client_content_position'] == 'bottom' || $settings['client_content_position'] == '' ) {
-								$this->render_client_content( $testimonial );
+							if ($settings['client_content_position'] == 'bottom' || $settings['client_content_position'] == '') {
+								$this->render_client_content($testimonial);
 							}
 							?>
 
@@ -1656,69 +2142,145 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			</div>
 
 			<?php
-			$this->render_client_quote_icon( $settings ); ?>
+			$this->render_client_quote_icon($settings); ?>
 		</div>
 
-		<?php
+	<?php
 	}
 
-	protected function render_client_avatar( $settings, $item, $class = '' ) {
-		if ( ! empty( $item['client_avatar'] ) ) {
-			$settings['client_avatar'] = $item['client_avatar'];
+	public function render_content_stack_slider($settings) {
+		$testimonials = $settings['data'];
+		if (! is_array($testimonials) && empty($testimonials)) {
+			return;
+		}
+		$class_article = ($settings['avatar_layout'] == 'avatar_left_client_name') ? '-avatar-left_client_name' : '';
+		$swiper_class = \Elementor\Plugin::$instance->experiments->is_feature_active('e_swiper_latest') ? 'swiper' : 'swiper-container';
+		$slider_class = ' thim-ekits-sliders thim-ekits-stack-slider ' . esc_attr($swiper_class);
+		$direction = ! empty($settings['slides_options']) ? $settings['slides_options'] : 'horizontal';
+		$horizontal_effect = ! empty($settings['horizontal_effect']) ? $settings['horizontal_effect'] : 'fan';
+		$vertical_direction = ! empty($settings['vertical_direction']) ? $settings['vertical_direction'] : 'top';
+		$slider_class .= ($settings['avatar_layout'] == 'avatar_left_content') ? ' thim-ekits-testimonial__avatar-left-content' : '';
+		$slider_class .= ($settings['avatar_layout'] == 'avatar_right_content') ? ' thim-ekits-testimonial__avatar-right-content' : '';
+	?>
+		<div class="thim-ekits-testimonial__inner<?php echo esc_attr($slider_class); ?>" data-stack-direction="<?php echo esc_attr($direction); ?>" data-horizontal-effect="<?php echo esc_attr($horizontal_effect); ?>" data-vertical-direction="<?php echo esc_attr($vertical_direction); ?>">
+			<div class="thim-ekits-testimonial__content swiper-wrapper">
+				<?php
+				foreach ($testimonials as $key => $testimonial) : 
+					$this->render_testimonial__article($settings, $key, $testimonial, $class_article);
+				endforeach; ?>
+			</div>
+		</div>
+	<?php
+	}
+	protected function render_testimonial__article($settings, $key, $testimonial, $class_article) { ?>
+		<div class="thim-ekits-testimonial__article<?php	echo esc_attr($class_article); ?> swiper-slide">
+			<?php
+			$show_avatar = true;
+			if ($settings['avatar_layout'] == 'avatar_left_content') {
+				$this->render_client_avatar($settings, $testimonial);
+				$show_avatar = false;
+			}
 			?>
-			<div class="thim-ekits-testimonial__avatar <?php
-			echo esc_attr( $class ); ?>">
-				<div class="thim-ekits-testimonial__image">
+			<div class="thim-ekits-testimonial__inner_client">
+				<?php
+				if ($settings['client_content_position'] == 'top') {
+					$this->render_client_content($testimonial);
+				}
+				?>
+
+				<?php
+				if ($show_avatar) : ?>
+					<div class="wrapper-client-info">
 					<?php
-					echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings,
-						'client_avatar_size', 'client_avatar' ) ); ?>
-				</div>
+					if ($settings['avatar_layout'] != 'avatar_right_content') {
+						$this->render_client_avatar($settings, $testimonial);
+					}
+				endif; ?>
+					<div class="thim-ekits-testimonial__client-info">
+						<?php
+						$this->render_client_name($key, $testimonial); ?>
+						<?php
+						$this->render_client_position($testimonial); ?>
+					</div>
+					<?php
+					if ($show_avatar) : ?>
+					</div>
+				<?php
+					endif; ?>
+
+				<?php
+				if ($settings['client_content_position'] == 'bottom' || $settings['client_content_position'] == '') {
+					$this->render_client_content($testimonial);
+				}
+				?>
 			</div>
 			<?php
+			if ($settings['avatar_layout'] == 'avatar_right_content') {
+				$this->render_client_avatar($settings, $testimonial);
+			}
+			$this->render_client_quote_icon($settings); ?>
+		</div>
+	<?php }
+	protected function render_client_avatar($settings, $item, $class = '') {
+		if (! empty($item['client_avatar'])) {
+			$settings['client_avatar'] = $item['client_avatar'];
+		?>
+			<div class="thim-ekits-testimonial__avatar <?php
+														echo esc_attr($class); ?>">
+				<div class="thim-ekits-testimonial__image">
+					<?php
+					echo wp_kses_post(Group_Control_Image_Size::get_attachment_image_html(
+						$settings,
+						'client_avatar_size',
+						'client_avatar'
+					)); ?>
+				</div>
+			</div>
+		<?php
 		}
 	}
 
-	protected function render_client_content( $settings ) {
-		if ( ! empty( $settings['client_content'] ) ) :
-			?>
+	protected function render_client_content($settings) {
+		if (! empty($settings['client_content'])) :
+		?>
 			<div class="thim-ekits-testimonial__client-content">
 				<?php
-				echo wp_kses_post( $settings['client_content'] ); ?>
+				echo wp_kses_post($settings['client_content']); ?>
 			</div>
 		<?php
 		endif; ?>
-		<?php
+	<?php
 	}
 
-	protected function render_client_name( $key, $settings ) {
-		if ( ! empty( $settings['client_name'] ) ) {
-			if ( ! empty( $settings['link']['url'] ) ) {
-				$this->add_link_attributes( 'client_name-url-' . esc_attr( $key ), $settings['link'] );
-				$before_client_name = '<a ' . $this->get_render_attribute_string( 'client_name-url-' . esc_attr( $key ) ) . ' class="thim-ekits-testimonial__name">';
+	protected function render_client_name($key, $settings) {
+		if (! empty($settings['client_name'])) {
+			if (! empty($settings['link']['url'])) {
+				$this->add_link_attributes('client_name-url-' . esc_attr($key), $settings['link']);
+				$before_client_name = '<a ' . $this->get_render_attribute_string('client_name-url-' . esc_attr($key)) . ' class="thim-ekits-testimonial__name">';
 				$after_client_name  = '</a>';
 			} else {
 				$before_client_name = '<p class="thim-ekits-testimonial__name">';
 				$after_client_name  = '</p>';
 			}
-			echo wp_kses_post( $before_client_name ) . esc_html( $settings['client_name'] ) . wp_kses_post( $after_client_name );
+			echo wp_kses_post($before_client_name) . esc_html($settings['client_name']) . wp_kses_post($after_client_name);
 		}
 	}
 
-	protected function render_client_position( $settings ) {
-		if ( ! empty( $settings['client_position'] ) ) {
-			echo '<div class="thim-ekits-testimonial__position" >' . esc_html( $settings['client_position'] ) . '</div>';
+	protected function render_client_position($settings) {
+		if (! empty($settings['client_position'])) {
+			echo '<div class="thim-ekits-testimonial__position" >' . esc_html($settings['client_position']) . '</div>';
 		}
 	}
 
-	protected function render_client_quote_icon( $settings ) {
-		if ( $settings['quote_icon_enable'] != 'yes' ) {
+	protected function render_client_quote_icon($settings) {
+		if ($settings['quote_icon_enable'] != 'yes') {
 			return;
 		}
-		?>
+	?>
 		<div class="thim-ekits-testimonial__quote-icon">
 			<?php
-			\Elementor\Icons_Manager::render_icon( $settings['quote_icon'], array( 'aria-hidden' => 'true' ) ); ?>
+			\Elementor\Icons_Manager::render_icon($settings['quote_icon'], array('aria-hidden' => 'true')); ?>
 		</div>
-		<?php
+<?php
 	}
 }

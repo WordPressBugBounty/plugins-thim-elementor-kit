@@ -372,8 +372,14 @@ class Thim_Ekit_Widget_Author_Box extends Widget_Base {
 
 		$user = get_userdata( $user_id );
 
-		$author['avatar']       = get_avatar_url( $user_id, $avatar_args );
 		$author['display_name'] = $user->display_name;
+		$author['avatar'] = get_avatar(
+			$user_id,
+			300,
+			'',
+			$author['display_name'],
+			array( 'class' => 'author-avatar' )
+		);
 		$author['website']      = $user->user_url;
 		$author['bio']          = $user->description;
 		$author['posts_url']    = get_author_posts_url( $user_id );
@@ -405,11 +411,8 @@ class Thim_Ekit_Widget_Author_Box extends Widget_Base {
 			if ( $show_avatar ) : ?>
 				<div class="thim-ekit-single-post__author-box__avatar">
 					<?php
-					echo '<' . esc_html( $link_tag ) . wp_kses_post( $link_attr ) . '>'; ?>
-					<img src="<?php
-					echo esc_url( $author['avatar'] ); ?>" alt="<?php
-					echo esc_attr( $author['display_name'] ); ?>">
-					<?php
+					echo '<' . esc_html( $link_tag ) . wp_kses_post( $link_attr ) . '>';
+					echo $author['avatar'];
 					echo '</' . esc_html( $link_tag ) . '>'; ?>
 				</div>
 			<?php

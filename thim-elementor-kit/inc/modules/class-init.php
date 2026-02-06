@@ -45,6 +45,7 @@ class Init {
 		}
 
 		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/loop-item/class-init.php';
+		require_once THIM_EKIT_PLUGIN_PATH . 'inc/modules/not-found/class-init.php';
 
 		/**
 		 * Hook for other plugins to include their modules

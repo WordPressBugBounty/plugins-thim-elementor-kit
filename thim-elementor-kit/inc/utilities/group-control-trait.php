@@ -232,7 +232,18 @@ trait GroupControlTrait {
 				),
 			)
 		);
-
+		$this->add_control(
+			'centered_slides',
+			array(
+				'label'              => esc_html__( 'Centered Slides', 'thim-elementor-kit' ),
+				'type'               => Controls_Manager::SWITCHER,
+				'default'            => 'no',
+				'label_on'           => esc_html__( 'Yes', 'thim-elementor-kit' ),
+				'label_off'          => esc_html__( 'No', 'thim-elementor-kit' ),
+				'return_value'       => 'yes',
+				'frontend_available' => $frontend_available,
+			)
+		);
 		$this->add_control(
 			'slider_show_arrow',
 			array(
@@ -253,17 +264,16 @@ trait GroupControlTrait {
 				'type'               => Controls_Manager::SELECT,
 				'default'            => 'none',
 				'options'            => array(
-					'none'        => esc_html__( 'Hide', 'thim-elementor-kit' ),
+					'none'        => esc_html__( 'Hide', 'thim-elementor-kit' ), 
 					'bullets'     => esc_html__( 'Bullets', 'thim-elementor-kit' ),
 					'number'      => esc_html__( 'Number', 'thim-elementor-kit' ),
 					'progressbar' => esc_html__( 'Progress', 'thim-elementor-kit' ),
 					'scrollbar'   => esc_html__( 'Scrollbar', 'thim-elementor-kit' ),
-					'fraction'    => esc_html__( 'Fraction', 'thim-elementor-kit' ),
+					'fraction'    => esc_html__( 'Fraction', 'thim-elementor-kit' ), 
 				),
 				'frontend_available' => $frontend_available,
 			)
 		);
-
 		$this->add_control(
 			'slider_loop',
 			array(

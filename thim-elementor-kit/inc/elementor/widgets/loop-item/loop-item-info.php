@@ -464,20 +464,31 @@ class Thim_Ekit_Widget_Loop_Item_Info extends Widget_Icon_List {
 
 	protected function render_author( $repeater_item ) {
 		$author_name = '';
-		if ( 'yes' === $repeater_item['show_avatar'] ) {
-			$author_name .= '<div class="elementor-icon-list-icon author-avatar"><img src="' . get_avatar_url( get_the_author_meta( 'ID' ),
-					96 ) . '"></div>';
+
+		$author_id = get_post_field( 'post_author', get_the_ID() );
+
+		if ( empty( $author_id ) ) {
+			return;
 		}
 
-		$author_name .= get_the_author_meta( 'display_name' );
+		if ( 'yes' === $repeater_item['show_avatar'] ) {
+			$avatar_url = get_avatar_url( $author_id, array( 'size' => 96 ) );
+			$avatar_alt = esc_attr( get_the_author_meta( 'display_name', $author_id ) );
+			$author_name .= '<div class="elementor-icon-list-icon author-avatar"><img src="' . esc_url( $avatar_url ) . '" alt="' . $avatar_alt . '"></div>';
+		}
 
-		if ( $repeater_item['text_before_author'] ) {
+		$author_name .= esc_html( get_the_author_meta( 'display_name', $author_id ) );
+
+		if ( ! empty( $repeater_item['text_before_author'] ) ) {
 			echo '<div class="text-before">' . wp_kses_post( $repeater_item['text_before_author'] ) . '</div>';
 		}
 
 		if ( 'yes' === $repeater_item['show_link'] ) {
-			$author_name = sprintf( '<a href="%s">%s</a>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), $author_name );
+			$author_name = sprintf(
+				'<a href="%s">%s</a>',
+				esc_url( get_author_posts_url( $author_id ) ),
+				$author_name
+			);
 		}
 		// check render icon
 		$this->render_icon( $repeater_item );
