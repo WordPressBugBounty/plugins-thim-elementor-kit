@@ -126,14 +126,27 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 		);
 
 		$this->add_control(
+			'brand_slug',
+			array(
+				'label'    => esc_html__( 'Select Brands', 'thim-elementor-kit' ),
+				'type'     => Thim_Control_Manager::SELECT2,
+				'multiple' => true,
+				'sortable' => true,
+				'options'  => \Thim_EL_Kit\Elementor::get_cat_taxonomy( 'product_brand', false, false ),
+			)
+		);
+
+		$this->add_control(
 			'order_by',
 			array(
 				'label'   => esc_html__( 'Order by', 'thim-elementor-kit' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
-					'recent' => esc_html__( 'Date', 'thim-elementor-kit' ),
-					'title'  => esc_html__( 'Title', 'thim-elementor-kit' ),
-					'random' => esc_html__( 'Random', 'thim-elementor-kit' ),
+					'recent'       => esc_html__( 'Date', 'thim-elementor-kit' ),
+					'best_selling' => esc_html__( 'Best Selling', 'thim-elementor-kit' ),
+					'top_rated'    => esc_html__( 'Top Rated', 'thim-elementor-kit' ),
+					'title'  	   => esc_html__( 'Title', 'thim-elementor-kit' ),
+					'random'       => esc_html__( 'Random', 'thim-elementor-kit' ),
 				),
 				'default' => 'recent',
 			)
@@ -142,7 +155,7 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 		$this->add_control(
 			'order',
 			array(
-				'label'   => esc_html__( 'Order by', 'thim-elementor-kit' ),
+				'label'   => esc_html__( 'Order', 'thim-elementor-kit' ),
 				'type'    => Controls_Manager::SELECT,
 				'options' => array(
 					'asc'  => esc_html__( 'ASC', 'thim-elementor-kit' ),
@@ -253,13 +266,21 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 
 		switch ( $settings['order_by'] ) {
 			case 'recent':
-				$query_args['order_by'] = 'post_date';
+				$query_args['orderby'] = 'post_date';
 				break;
 			case 'title':
-				$query_args['order_by'] = 'post_title';
+				$query_args['orderby'] = 'post_title';
+				break;
+			case 'best_selling':
+				$query_args['meta_key'] = 'total_sales';
+				$query_args['orderby']  = 'meta_value_num';
+				break;
+			case 'top_rated':
+				$query_args['meta_key'] = '_wc_average_rating';
+				$query_args['orderby']  = 'meta_value_num';
 				break;
 			default: // random
-				$query_args['order_by'] = 'rand';
+				$query_args['orderby'] = 'rand';
 		}
 		if ( $settings['cat_slug'] ) {
 			$query_args['tax_query'] = array(
@@ -267,6 +288,16 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 					'taxonomy' => 'product_cat',
 					'field'    => 'slug',
 					'terms'    => $settings['cat_slug'],
+				),
+			);
+		}
+
+		if ( $settings['brand_slug'] ) {
+			$query_args['tax_query'] = array(
+				array(
+					'taxonomy' => 'product_brand',
+					'field'    => 'slug',
+					'terms'    => $settings['brand_slug'],
 				),
 			);
 		}

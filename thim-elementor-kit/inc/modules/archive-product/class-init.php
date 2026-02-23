@@ -34,6 +34,8 @@ class Init extends Modules {
 				return is_shop();
 			case 'product_categories':
 				return is_tax( 'product_cat' );
+			case 'product_brands':
+				return is_tax( 'product_brand' );
 			case 'product_tags':
 				return is_tax( 'product_tag' );
 			case 'product_search':
@@ -59,6 +61,7 @@ class Init extends Modules {
 				$priority = 20;
 				break;
 			case 'product_categories':
+			case 'product_brands';
 			case 'product_tags':
 				$priority = 30;
 				break;
@@ -88,6 +91,11 @@ class Init extends Modules {
 			array(
 				'label'    => esc_html__( 'Product categories', 'thim-elementor-kit' ),
 				'value'    => 'product_categories',
+				'is_query' => false,
+			),
+			array(
+				'label'    => esc_html__( 'Product brands', 'thim-elementor-kit' ),
+				'value'    => 'product_brands',
 				'is_query' => false,
 			),
 			array(

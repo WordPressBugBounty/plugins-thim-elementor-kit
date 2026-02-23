@@ -48,12 +48,24 @@ class Rest_API {
 			}
 
 			$filter     = new LP_Course_Filter();
-			$params_url = $request['params_url'] ?? [];
+			$params_url = $request['params_url'] ?? array();
 			$params_url = array_merge( $params_url, $request->get_params() );
 
 			if ( method_exists( 'Courses', 'handle_params_for_query_courses' ) ) {
 				Courses::handle_params_for_query_courses( $filter, $params_url );
 			}
+
+			// Security: Only allow listing published courses unless user has permission
+			if ( ! current_user_can( 'edit_lp_courses' ) && ! current_user_can( 'edit_others_lp_courses' ) ) {
+				$filter->post_status = array( 'publish' );
+			}
+			/** An unauthenticated attacker can send a request with params_url[limit]=1000000,
+			 * potentially forcing the server to query and render thousands of course items,
+			 * leading to high CPU/Memory usage and database strain.
+			*/
+			$max_limit     = 50;
+			$limit         = isset( $params_url['limit'] ) ? intval( $params_url['limit'] ) : 10;
+			$filter->limit = ( $limit > $max_limit ) ? $max_limit : $limit;
 
 			$total_rows = 0;
 			$courses    = Courses::get_courses( $filter, $total_rows );

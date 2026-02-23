@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Thim Elementor Kit
- * Plugin URI: https://thimpress.com/ 
+ * Plugin URI: https://thimpress.com/
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.3.7
+ * Version: 1.3.8
  * Author URI: https://thimpress.com
  * Requires at least: 6.0
  * Requires PHP: 7.4

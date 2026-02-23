@@ -2,8 +2,8 @@
 Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
-Tested up to: 6.8
-Stable tag: 1.3.7
+Tested up to: 6.9
+Stable tag: 1.3.8
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,8 +189,12 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
-= 1.3.7 (2026-01-1023) =
-~ Tweak: Remove Key deffault in Widget Instagram Feed.
+
+= 1.3.8 (2026-02-23) =
+~ Fixed: security.
+
+= 1.3.7 (2026-01-23) =
+~ Tweak: Remove Key default in Widget Instagram Feed.
 
 = 1.3.6 (2026-01-10) =
 ~ Added: Widget list category for archive product

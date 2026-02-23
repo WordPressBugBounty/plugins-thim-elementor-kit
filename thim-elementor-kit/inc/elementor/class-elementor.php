@@ -274,8 +274,9 @@ class Elementor {
 		}
 
 		if ( class_exists( 'WooCommerce' ) ) {
-			$options['product_cat'] = esc_html__( 'Product categories', 'thim-elementor-kit' );
-			$options['product_tag'] = esc_html__( 'Product tags', 'thim-elementor-kit' );
+			$options['product_cat']   = esc_html__( 'Product categories', 'thim-elementor-kit' );
+			$options['product_tag']   = esc_html__( 'Product tags', 'thim-elementor-kit' );
+			$options['product_brand'] = esc_html__( 'Product brands', 'thim-elementor-kit' );
 		}
 
 		return apply_filters( 'thim-ekits\dynamic-tags\item-terms', $options );
