@@ -1295,10 +1295,9 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 		<?php
 		if ( ! empty( $settings['build_loop_item'] ) && $settings['build_loop_item'] == 'yes' ) {
 			\Thim_EL_Kit\Utilities\Elementor::instance()->render_loop_item_content( $settings['template_id'] );
-		} else { ?>
-
-			<?php
-			$class_item = $settings['thumbnail_position'] ? ' thumbnail-position-' .  esc_attr( $settings['thumbnail_position'] ) : ''; ?>
+		} else {
+			$class_item = isset( $settings['thumbnail_position'] ) && $settings['thumbnail_position'] ? ' thumbnail-position-' . esc_attr( $settings['thumbnail_position'] ) : '';
+		?>
 
 			<div class="inner-item-product<?php echo esc_attr( $class_item ); ?>">
 				<?php

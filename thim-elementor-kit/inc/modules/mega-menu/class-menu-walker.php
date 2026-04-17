@@ -70,7 +70,7 @@ class Main_Walker extends \Walker_Nav_Menu {
 			$t = "\t";
 			$n = "\n";
 		}
-		$indent = str_repeat( $t, $depth );
+		$indent  = str_repeat( $t, $depth );
 		$output .= "$indent</ul>{$n}";
 	}
 
@@ -81,8 +81,10 @@ class Main_Walker extends \Walker_Nav_Menu {
 
 		$args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
 
-		$class_names = implode( ' ',
-			apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
+		$class_names  = implode(
+			' ',
+			apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth )
+		);
 		$class_names .= ' nav-item';
 
 		$options           = $this->thim_get_options( $item->ID );
@@ -126,18 +128,14 @@ class Main_Walker extends \Walker_Nav_Menu {
 
 		if ( $depth === 0 ) {
 			$atts['class'] = 'thim-ekits-menu__nav-link';
-		}
-
-		// if ( $depth === 0 && in_array( 'menu-item-has-children', $classes ) ) {
-		// 	$atts['class'] .= ' thim-ekits-menu__dropdown-toggle';
-		// }
+		} 
 
 		if ( in_array( 'menu-item-has-children', $classes ) || $is_mega_menu_item ) {
 			$suffix .= '<span class="thim-ekits-menu__icon"></span>';
 		}
 
 		if ( $depth > 0 ) {
-			$manual_class   = array_values( $classes )[0] . ' thim-ekits-menu__nav-link ' . 'thim-ekits-menu__dropdown-item';
+			$manual_class   = array_values( $classes )[0] . ' thim-ekits-menu__nav-link thim-ekits-menu__dropdown-item';
 			$atts ['class'] = $manual_class;
 		}
 
@@ -150,7 +148,7 @@ class Main_Walker extends \Walker_Nav_Menu {
 		$attributes = '';
 		foreach ( $atts as $attr => $value ) {
 			if ( is_scalar( $value ) && '' !== $value && false !== $value ) {
-				$value      = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+				$value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
@@ -159,7 +157,7 @@ class Main_Walker extends \Walker_Nav_Menu {
 
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		$item_output = $args->before;
+		$item_output  = $args->before;
 		$item_output .= '<a' . wp_kses_post( $attributes ) . '>';
 
 		if ( $options['enableIcon'] ) {
@@ -173,8 +171,15 @@ class Main_Walker extends \Walker_Nav_Menu {
 				}
 
 				if ( ! empty( $options['iconSize'] ) ) {
-					$icon_style .= 'font-size: ' . esc_attr( empty( preg_replace( '/[0-9]+/', '',
-							$options['iconSize'] ) ) ? absint( $options['iconSize'] ) . 'px' : $options['iconSize'] ) . ';';
+					$icon_style .= 'font-size: ' . esc_attr(
+						empty(
+							preg_replace(
+								'/[0-9]+/',
+								'',
+								$options['iconSize']
+							)
+						) ? absint( $options['iconSize'] ) . 'px' : $options['iconSize']
+					) . ';';
 				}
 
 				$item_output .= '<i class="' . esc_attr( $options['icon'] ) . '" style="' . esc_attr( $icon_style ) . '"></i>';
@@ -182,13 +187,27 @@ class Main_Walker extends \Walker_Nav_Menu {
 				$icon_style = '';
 
 				if ( ! empty( $options['iconWidth'] ) ) {
-					$icon_style .= 'width:' . esc_attr( empty( preg_replace( '/[0-9]+/', '',
-							$options['iconWidth'] ) ) ? absint( $options['iconWidth'] ) . 'px' : $options['iconWidth'] ) . ';';
+					$icon_style .= 'width:' . esc_attr(
+						empty(
+							preg_replace(
+								'/[0-9]+/',
+								'',
+								$options['iconWidth']
+							)
+						) ? absint( $options['iconWidth'] ) . 'px' : $options['iconWidth']
+					) . ';';
 				}
 
 				if ( ! empty( $options['iconHeight'] ) ) {
-					$icon_style .= 'height:' . esc_attr( empty( preg_replace( '/[0-9]+/', '',
-							$options['iconHeight'] ) ) ? absint( $options['iconHeight'] ) . 'px' : $options['iconHeight'] ) . ';';
+					$icon_style .= 'height:' . esc_attr(
+						empty(
+							preg_replace(
+								'/[0-9]+/',
+								'',
+								$options['iconHeight']
+							)
+						) ? absint( $options['iconHeight'] ) . 'px' : $options['iconHeight']
+					) . ';';
 				}
 
 				$item_output .= '<img src="' . esc_url( $options['iconUpload']['url'] ) . '" alt="" style="' . esc_attr( $icon_style ) . '" />';
@@ -211,16 +230,23 @@ class Main_Walker extends \Walker_Nav_Menu {
 			}
 
 			if ( ! empty( $options['badgeSize'] ) ) {
-				$badge_style .= 'font-size: ' . esc_attr( empty( preg_replace( '/[0-9]+/', '',
-						$options['badgeSize'] ) ) ? absint( $options['badgeSize'] ) . 'px' : $options['badgeSize'] ) . ';';
+				$badge_style .= 'font-size: ' . esc_attr(
+					empty(
+						preg_replace(
+							'/[0-9]+/',
+							'',
+							$options['badgeSize']
+						)
+					) ? absint( $options['badgeSize'] ) . 'px' : $options['badgeSize']
+				) . ';';
 			}
 
 			$item_output .= ' <span class="thim-ekits-menu__badge" style="' . esc_attr( $badge_style ) . '">' . esc_html( $options['badgeText'] ) . '</span>';
 		}
 
 		if ( ! empty( $item->description ) ) {
-            $item_output .= '<span class="thim-ekits-menu-item-description">' . esc_html( $item->description ) . '</span>';
-        }
+			$item_output .= '<span class="thim-ekits-menu-item-description">' . esc_html( $item->description ) . '</span>';
+		}
 
 		$item_output .= '</a>' . wp_kses_post( $suffix );
 		$item_output .= $args->after;
@@ -240,8 +266,7 @@ class Main_Walker extends \Walker_Nav_Menu {
 		if ( $depth === 0 ) {
 			$menu_obj = wp_get_nav_menu_object( $args->menu );
 			$menu_id  = $menu_obj ? $menu_obj->term_id : 0;
-			if ( $this->thim_is_mega_menu_item( absint( $menu_id ),
-					$item->ID ) && class_exists( 'Elementor\Plugin' ) ) {
+			if ( $this->thim_is_mega_menu_item( absint( $menu_id ), $item->ID ) && class_exists( 'Elementor\Plugin' ) ) {
 				$options      = $this->thim_get_options( $item->ID );
 				$mega_menu_id = get_post_meta( $item->ID, Rest_API::META_KEY, true );
 
@@ -269,11 +294,11 @@ class Main_Walker extends \Walker_Nav_Menu {
 				}
 
 				if ( ! empty( $options['menuType'] ) ) {
-					$classes        .= ' thim-ekits-menu__content--' . esc_attr( $options['menuType'] );
+					$classes       .= ' thim-ekits-menu__content--' . esc_attr( $options['menuType'] );
 					$data_container = apply_filters( 'thim_ekit/mega_menu/menu_container/class', '' );
 				}
-
-				if ( $mega_menu_id ) {
+				// Hiden mega menu in Elementor editor of Header, because it will cause issue when edit menu item which has mega menu.
+				if ( $mega_menu_id && ! \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 					$output .= '<ul class="thim-ekits-menu__content ' . esc_attr( $classes ) . '" style="' . esc_attr( $style ) . '"  data-container="' . esc_attr( $data_container ) . '">';
 					$output .= \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $mega_menu_id );
 					$output .= '</ul>';

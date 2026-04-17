@@ -3,7 +3,7 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 6.9
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,10 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.3.9 (2026-07-17) =
+~ Added: Options config layout for widget Thim Slider
+~ Fixed: Template, header, footer with builder V4
+~ Fixed: some minor bugs in widget
 
 = 1.3.8 (2026-02-23) =
 ~ Fixed: security.

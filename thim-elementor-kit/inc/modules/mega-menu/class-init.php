@@ -20,6 +20,9 @@ class Init {
 		add_action( 'admin_head-nav-menus.php', array( $this, 'add_meta_box' ) );
 		add_filter( 'wp_nav_menu_args', array( $this, 'modify_nav_menu_args' ), 99999 );
 
+		// for load atomic Elementor v4 local styles.
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_atomic_assets_megamenu' ), 5 );
+
 		$this->includes();
 	}
 
@@ -60,16 +63,9 @@ class Init {
 
 				if ( absint( $enable ) ) {
 					$args = wp_parse_args(
-						array(
-							// 'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-							// 'container'       => 'div',
-							// 'container_id'    => 'thim-ekits-menu-' . esc_attr( $menu_id ),
-							// 'container_class' => 'thim-ekits-menu__container',
+						array( 
 							'menu'       => $menu_id,
-							'menu_class' => 'thim-ekits-menu__nav',
-							// 'depth'           => 4,
-							// 'echo'            => true,
-							// 'fallback_cb'     => 'wp_page_menu',
+							'menu_class' => 'thim-ekits-menu__nav', 
 							'walker'     => new Main_Walker(),
 						),
 						$args
@@ -115,10 +111,18 @@ class Init {
 				$version,
 				[ 'strategy' => 'defer' ]
 			);
-			wp_enqueue_style( 'thim-ekit-megamenu', THIM_EKIT_PLUGIN_URL . 'build/menu.css', array( 'wp-components' ),
-				$version );
-			wp_enqueue_style( 'thim-ekit-admin-font-awesome', ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/all.css',
-				array(), $version );
+			wp_enqueue_style(
+				'thim-ekit-megamenu',
+				THIM_EKIT_PLUGIN_URL . 'build/menu.css',
+				array( 'wp-components' ),
+				$version
+			);
+			wp_enqueue_style(
+				'thim-ekit-admin-font-awesome',
+				ELEMENTOR_ASSETS_URL . 'lib/font-awesome/css/all.css',
+				array(),
+				$version
+			);
 
 			$this->localize();
 		}
@@ -221,6 +225,32 @@ class Init {
 		?>
 		<div id="thim-ekits-menu__settings"></div>
 		<?php
+	}
+
+	public function get_thim_ekits_menu_ids() {
+		$args = [
+			'post_type'              => Custom_Post_Type::CPT,
+			'posts_per_page'         => -1,
+			'post_status'            => 'publish',
+			'fields'                 => 'ids',
+			'no_found_rows'          => true,
+			'update_post_term_cache' => false,
+			'update_post_meta_cache' => false,
+		];
+
+		$query = new \WP_Query( $args );
+
+		return $query->posts;
+	}
+
+	public function register_atomic_assets_megamenu() {
+		$mega_menu_ids = $this->get_thim_ekits_menu_ids();
+
+		if ( ! empty( $mega_menu_ids ) ) {
+			foreach ( $mega_menu_ids as $id ) {
+				do_action( 'elementor/post/render', $id );
+			}
+		}
 	}
 }
 

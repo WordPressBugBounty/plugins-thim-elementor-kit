@@ -19,6 +19,9 @@ class FrontEnd {
 		add_action( 'thim_ekit/modules/header_footer/template/header', array( $this, 'render_header' ) );
 		add_action( 'thim_ekit/modules/header_footer/template/footer', array( $this, 'render_footer' ) );
 		add_action( 'thim_ekit/modules/header_footer/template/attributes', array( $this, 'render_attributes' ) );
+
+		// for load atomic Elementor v4 local styles.
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_atomic_assets_headerfooter' ), 5 );
 	}
 
 	public function override_header() {
@@ -95,14 +98,24 @@ class FrontEnd {
 
 		if ( ! empty( $header ) && Settings::instance()->get_enable_modules( 'header' ) ) {
 			$this->header = absint( $header );
-			\Thim_EL_Kit\Utilities\Elementor::instance()->render_content_css( $this->header );
+			// \Thim_EL_Kit\Utilities\Elementor::instance()->render_content_css( $this->header );
 			add_action( 'get_header', array( $this, 'override_header' ) );
 		}
 
 		if ( ! empty( $footer ) && Settings::instance()->get_enable_modules( 'footer' ) ) {
 			$this->footer = absint( $footer );
-			\Thim_EL_Kit\Utilities\Elementor::instance()->render_content_css( $this->footer );
+			// \Thim_EL_Kit\Utilities\Elementor::instance()->render_content_css( $this->footer );
 			add_action( 'get_footer', array( $this, 'override_footer' ) );
+		}
+	}
+
+	public function register_atomic_assets_headerfooter() {
+		if ( $this->header ) {
+			do_action( 'elementor/post/render', $this->header );
+		}
+
+		if ( $this->footer ) {
+			do_action( 'elementor/post/render', $this->footer );
 		}
 	}
 }

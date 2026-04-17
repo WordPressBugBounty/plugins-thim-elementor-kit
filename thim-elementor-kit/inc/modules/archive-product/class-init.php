@@ -61,7 +61,7 @@ class Init extends Modules {
 				$priority = 20;
 				break;
 			case 'product_categories':
-			case 'product_brands';
+			case 'product_brands':
 			case 'product_tags':
 				$priority = 30;
 				break;

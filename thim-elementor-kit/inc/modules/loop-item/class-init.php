@@ -16,16 +16,29 @@ class Init extends Modules {
 
 		add_action( 'thim_ekit/rest_api/create_template/before', array( $this, 'before_create_template' ), 10 );
 		add_action( 'thim_ekit/rest_api/create_template/after', array( $this, 'create_template' ), 10, 2 );
-		add_action( 'manage_' . Custom_Post_Type::CPT . '_posts_columns', array( $this, 'remove_columns_conditions' ),
-			10 );
+		add_action(
+			'manage_' . Custom_Post_Type::CPT . '_posts_columns',
+			array( $this, 'remove_columns_conditions' ),
+			10
+		);
 		add_filter( 'elementor/document/wrapper_attributes', array( $this, 'elementor_wrapper_attributes' ), 10, 2 );
-		add_action( 'elementor/documents/register_controls', array( $this, 'elementor_document_register_controls' ),
-			100 );
+		add_action(
+			'elementor/documents/register_controls',
+			array( $this, 'elementor_document_register_controls' ),
+			100
+		);
 		add_action( 'elementor/preview/enqueue_scripts', array( $this, 'enqueue_inline_editor_styles' ) );
 		add_filter( 'body_class', array( $this, 'body_editor_class' ), 10 );
-		add_filter( 'thim_ekit/elementor/documents/preview_item', array( $this, 'document_preview_item_settings' ), 10,
-			2 );
+		add_filter(
+			'thim_ekit/elementor/documents/preview_item',
+			array( $this, 'document_preview_item_settings' ),
+			10,
+			2
+		);
 		add_filter( 'elementor/css-file/dynamic/should_enqueue', array( $this, 'prevent_dynamic_enqueue_css' ), 10, 2 );
+
+		// for load atomic Elementor v4 local styles.
+		add_action( 'wp_enqueue_scripts', array( $this, 'pre_register_atomic_assets' ), 40 );
 	}
 
 	public function add_admin_tabs( $tabs ) {
@@ -282,10 +295,32 @@ class Init extends Modules {
 			$is_active = \Elementor\Plugin::instance()->experiments->is_feature_active( NestedElementsModule::EXPERIMENT_NAME );
 
 			if ( ! $is_active ) {
-				throw new \Exception( sprintf( __( 'Please enable <b>Flexbox Container</b> in Elementor > Settings > Features: %s',
-					'thim-elementor-kit' ),
-					'<a href="' . admin_url( 'admin.php?page=elementor#tab-experiments' ) . '" target="_blank" rel="noopener">' . __( 'Go to Settings',
-						'thim-elementor-kit' ) . '</a>' ) );
+				throw new \Exception(
+					sprintf(
+						__(
+							'Please enable <b>Flexbox Container</b> in Elementor > Settings > Features: %s',
+							'thim-elementor-kit'
+						),
+						'<a href="' . admin_url( 'admin.php?page=elementor#tab-experiments' ) . '" target="_blank" rel="noopener">' . __(
+							'Go to Settings',
+							'thim-elementor-kit'
+						) . '</a>'
+					)
+				);
+			}
+		}
+	}
+
+	public function pre_register_atomic_assets() {
+		if ( ! did_action( 'elementor/loaded' ) ) {
+			return;
+		}
+
+		$loop_items = \Thim_EL_Kit\Functions::instance()->get_pages_loop_item();
+
+		if ( ! empty( $loop_items ) ) {
+			foreach ( $loop_items as $id => $title ) {
+				do_action( 'elementor/post/render', $id );
 			}
 		}
 	}

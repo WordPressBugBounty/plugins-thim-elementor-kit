@@ -27,6 +27,7 @@ class Elementor {
 		add_action( 'elementor/documents/register_controls', array( $this, 'register_documents' ) );
 		add_action( 'elementor/elements/categories_registered', array( $this, 'register_category' ) );
 		add_action( 'elementor/widgets/register', array( $this, 'register_widgets' ), 10, 1 );
+		add_action( 'elementor/ajax/register_actions', array( $this, 'register_editor_ajax_actions' ) );
 		add_filter( 'lp/rest/ajax/allow_callback', [ $this, 'register_callback_ajax' ] );
 		// Additional Animations
 		add_filter( 'elementor/controls/animations/additional_animations', [ $this, 'extra_animations' ], 10 );
@@ -213,6 +214,63 @@ class Elementor {
 		return \Thim_EL_Kit\Elementor\Widgets::instance()->register_widgets( $widgets_manager );
 	}
 
+	public function register_editor_ajax_actions( $ajax_manager ) { 
+		$ajax_manager->register_ajax_action(
+			'thim_ekits_slider_content',
+			array( $this, 'ajax_get_slider_content' )
+		);
+	}
+
+	public function ajax_get_slider_content( $data ) {
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			throw new \Exception( esc_html__( 'Unauthorized', 'thim-elementor-kit' ) );
+		}
+
+		$slider_id = sanitize_text_field( $data['slider_id'] ?? '' );
+
+		if ( empty( $slider_id ) || 'choose' === $slider_id ) {
+			return array( 'html' => '' );
+		}
+
+		$query_args = array(
+			'post_type'           => 'thim_ekits_slide',
+			'posts_per_page'      => -1,
+			'orderby'             => 'menu_order',
+			'order'               => 'ASC',
+			'ignore_sticky_posts' => true,
+			'tax_query'           => array(
+				array(
+					'taxonomy' => 'thim_ekits_slider',
+					'field'    => is_numeric( $slider_id ) ? 'term_id' : 'slug',
+					'terms'    => $slider_id,
+				),
+			),
+		);
+
+		$slides = get_posts( $query_args );
+
+		if ( empty( $slides ) ) {
+			return array( 'html' => '' );
+		}
+
+		$html      = '';
+		$edit_mode = \Elementor\Plugin::$instance->editor->is_edit_mode();
+
+		\Elementor\Plugin::$instance->editor->set_edit_mode( false );
+
+		foreach ( $slides as $slide ) {
+			$content = \Elementor\Plugin::$instance->frontend->get_builder_content( $slide->ID, false );
+
+			if ( ! empty( $content ) ) {
+				$html .= '<div class="swiper-slide">' . $content . '</div>';
+			}
+		}
+
+		\Elementor\Plugin::$instance->editor->set_edit_mode( $edit_mode );
+
+		return array( 'html' => $html );
+	}
+
 	public static function get_cat_taxonomy( $taxomony = 'category', $cats = false, $id = true ) {
 		if ( ! $cats ) {
 			$cats = array();
@@ -305,6 +363,10 @@ class Elementor {
 
 		if ( class_exists( '\LP_Addon_Upsell_Preload' ) ) {
 			$tab_options['package'] = esc_html__( 'Package', 'thim-elementor-kit' );
+		}
+
+		if ( class_exists( '\LP_Addon_Certificates') ) {
+			$tab_options['lp_certificate'] = esc_html__( 'Certificates', 'thim-elementor-kit' );
 		}
 
 		return apply_filters( 'thim_ekits_learnpress_tab_options', $tab_options );

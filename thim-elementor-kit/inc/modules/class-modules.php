@@ -17,11 +17,14 @@ abstract class Modules {
 	public function __construct() {
 		add_filter( 'thim_ekit/post_type/register_tabs', array( $this, 'add_admin_tabs' ) );
 		add_filter( 'thim_ekit/admin/enqueue/localize', array( $this, 'add_localization_admin' ) );
-		add_filter( 'thim_ekit/post_type/single_template/override', array( $this, 'override_single_template' ), 10, 2 ); 
+		add_filter( 'thim_ekit/post_type/single_template/override', array( $this, 'override_single_template' ), 10, 2 );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_box' ) );
 		add_action( 'save_post', array( $this, 'save_meta_boxes' ) );
 		add_filter( 'template_include', array( $this, 'template_include' ), 12 ); // after Elementor and WooCommerce.
 		add_filter( 'body_class', array( $this, 'body_class' ), 10 );
+
+		// for load atomic Elementor v4 local styles.
+		add_action( 'wp_enqueue_scripts', array( $this, 'pre_register_atomic_assets' ), 5 );
 
 		add_action( 'elementor/dynamic_tags/before_render', array( $this, 'before_editor_preview_query' ) );
 		add_action( 'elementor/dynamic_tags/after_render', array( $this, 'after_editor_preview_query' ) );
@@ -194,7 +197,14 @@ abstract class Modules {
 					$is = function () use ( $condition ) {
 						return apply_filters( 'thim_ekit/modules/is', $this->is( $condition ), $condition, $this->tab );
 					};
-					if ( $is() && 'publish' === $post->post_status ) {
+
+					try {
+						$condition_is_matched = $is();
+					} catch ( \Throwable $throwable ) {
+						$condition_is_matched = false;
+					}
+
+					if ( $condition_is_matched && 'publish' === $post->post_status ) {
 						$sorted_data[ $layout_id ][ $condition['comparison'] ][] = $this->priority( $condition['type'] );
 					}
 				}
@@ -285,7 +295,19 @@ abstract class Modules {
 		\Elementor\Plugin::instance()->db->restore_current_query();
 	}
 
-	public function register_frontend_scripts() { 
-		wp_register_script( 'thim-ekit-lottie-scripts', THIM_EKIT_PLUGIN_URL . 'build/libraries/js/lottie.min.js', array( 'jquery' ), '5.12.2', true );  
+	public function register_frontend_scripts() {
+		wp_register_script( 'thim-ekit-lottie-scripts', THIM_EKIT_PLUGIN_URL . 'build/libraries/js/lottie.min.js', array( 'jquery' ), '5.12.2', true );
+	}
+
+	public function pre_register_atomic_assets() {
+		if ( empty( $this->tab ) ) {
+			return;
+		}
+
+		$id = $this->get_layout_id( $this->tab );
+
+		if ( $id ) {
+			do_action( 'elementor/post/render', $id );
+		}
 	}
 }

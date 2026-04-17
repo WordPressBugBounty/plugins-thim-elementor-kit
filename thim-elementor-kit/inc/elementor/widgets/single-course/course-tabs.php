@@ -37,6 +37,11 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 		return '';
 	}
 
+	// fix course review style in editor preview Elementor
+	public function get_style_depends(): array {
+		return ['course-review'];
+	}
+
 	protected function register_controls() {
 		$this->start_controls_section(
 			'section_content',
