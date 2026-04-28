@@ -434,10 +434,8 @@ class Thim_Ekit_Widget_Site_Logo extends Widget_Base {
 		<div class="thim-ekit-site-logo">
 			<?php
 			if ( ! empty( $logo_link ) ) : ?>
-				<a href="<?php
-				echo esc_url( $logo_link ); ?>" rel="home">
-					<?php
-					echo wp_kses_post( $logo_html ); ?>
+				<a href="<?php echo esc_url( $logo_link ); ?>" rel="home" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+					<?php echo wp_kses_post( $logo_html ); ?>
 				</a>
 			<?php
 			else : ?>

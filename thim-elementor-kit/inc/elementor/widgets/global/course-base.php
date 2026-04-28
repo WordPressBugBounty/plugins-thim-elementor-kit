@@ -17,6 +17,9 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 
 		return array( 'learnpress' );
 	}
+	public function get_script_depends() {
+		return array( 'lp-course-wishlist-script' );
+	}
 
 	protected function register_controls() {
 		$this->_register_content();

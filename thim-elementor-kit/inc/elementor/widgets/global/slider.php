@@ -170,7 +170,6 @@ class Thim_Ekit_Widget_Slider extends Widget_Nested_Base {
 				'condition'   => [
 					'effect' => 'carousel',
 				],
-				'default'     => 1,
 				'selectors'   => [
 					'{{WRAPPER}}' => '--thim-ekits-slider-show: {{VALUE}}',
 				],
@@ -224,21 +223,21 @@ class Thim_Ekit_Widget_Slider extends Widget_Nested_Base {
 		$class        = 'thim-ekits-sliders thim-slider-effect-' . sanitize_html_class( $effect ) . ' ' . esc_attr( $swiper_class );
 		?>
 
-<div class="<?php echo esc_attr( $class ); ?>">
-	<div class="swiper-wrapper">
-		<?php
-		foreach ( $slides as $index => $slide ) :
-			if ( 'manual' === $data_source ) {
-				$this->print_child( $index );
-			} else {
-				echo '<div class="swiper-slide">';
-				\Thim_EL_Kit\Utilities\Elementor::instance()->render_loop_item_content( $slide->ID ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo '</div>';
-			}
-		endforeach;
-		?>
-	</div>
-</div>
+		<div class="<?php echo esc_attr( $class ); ?>">
+			<div class="swiper-wrapper">
+				<?php
+				foreach ( $slides as $index => $slide ) :
+					if ( 'manual' === $data_source ) {
+						$this->print_child( $index );
+					} else {
+						echo '<div class="swiper-slide">';
+						\Thim_EL_Kit\Utilities\Elementor::instance()->render_loop_item_content( $slide->ID ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo '</div>';
+					}
+				endforeach;
+				?>
+			</div>
+		</div>
 
 		<?php
 	}
@@ -246,7 +245,7 @@ class Thim_Ekit_Widget_Slider extends Widget_Nested_Base {
 	protected function get_slider_posts( array $settings ): array {
 		$query_args = array(
 			'post_type'           => 'thim_ekits_slide',
-			'posts_per_page'      => -1,
+			'posts_per_page'      => - 1,
 			'orderby'             => 'menu_order',
 			'order'               => 'ASC',
 			'ignore_sticky_posts' => true,
@@ -303,62 +302,62 @@ class Thim_Ekit_Widget_Slider extends Widget_Nested_Base {
 
 	protected function content_template() {
 		?>
-<# const isManualSource='manual'===settings.data_source; #>
-	<# const manualSlides=Array.isArray( settings.manual_slides ) ? settings.manual_slides : []; #>
+		<# const isManualSource='manual'===settings.data_source; #>
+		<# const manualSlides=Array.isArray( settings.manual_slides ) ? settings.manual_slides : []; #>
 		<# const slideTitleFallback='<?php echo esc_js( __( 'Slide', 'thim-elementor-kit' ) ); ?>' ; #>
 
-			<# if ( isManualSource && manualSlides.length ) { #>
-				<div class="thim-slider-editor-tabs" role="tablist"
-					aria-label="<?php esc_attr_e( 'Slider Titles', 'thim-elementor-kit' ); ?>">
-					<# _.each( manualSlides, function( slide, index ) { #>
-						<button type="button" class="thim-slider-editor-tab <# if ( 0 === index ) { #>is-active<# } #>"
-							data-slide-index="{{ index }}" role="tab"
-							aria-selected="{{ 0 === index ? 'true' : 'false' }}">
-							{{{ slide.slide_title || ( slideTitleFallback + ' #' + ( index + 1 ) ) }}}
-						</button>
-						<# } ); #>
+		<# if ( isManualSource && manualSlides.length ) { #>
+		<div class="thim-slider-editor-tabs" role="tablist"
+			aria-label="<?php esc_attr_e( 'Slider Titles', 'thim-elementor-kit' ); ?>">
+			<# _.each( manualSlides, function( slide, index ) { #>
+			<button type="button" class="thim-slider-editor-tab <# if ( 0 === index ) { #>is-active<# } #>"
+					data-slide-index="{{ index }}" role="tab"
+					aria-selected="{{ 0 === index ? 'true' : 'false' }}">
+				{{{ slide.slide_title || ( slideTitleFallback + ' #' + ( index + 1 ) ) }}}
+			</button>
+			<# } ); #>
+		</div>
+		<# } #>
+
+		<# if ( settings.slider_show_pagination && 'none' !==settings.slider_show_pagination ) { #>
+		<div class="thim-slider-pagination thim-{{ settings.slider_show_pagination }}"></div>
+		<# } #>
+
+		<# if ( 'yes'===settings.slider_show_arrow ) { #>
+		<div class="thim-slider-nav thim-slider-nav-prev">
+			<# if ( settings.slider_arrows_left && settings.slider_arrows_left.value ) { #>
+			<# if ( 'svg'===settings.slider_arrows_left.library ) { #>
+			<span class="thim-slider-nav-icon"></span>
+			<# } else { #>
+			<i class="{{ settings.slider_arrows_left.value }}"
+				aria-hidden="true"></i>
+			<# } #>
+			<# } #>
+		</div>
+		<div class="thim-slider-nav thim-slider-nav-next">
+			<# if ( settings.slider_arrows_right && settings.slider_arrows_right.value ) { #>
+			<# if ( 'svg'===settings.slider_arrows_right.library ) { #>
+			<span class="thim-slider-nav-icon"></span>
+			<# } else { #>
+			<i class="{{ settings.slider_arrows_right.value }}"
+				aria-hidden="true"></i>
+			<# } #>
+			<# } #>
+		</div>
+		<# } #>
+
+		<div
+			class="thim-ekits-sliders thim-slider-effect-{{ settings.effect || 'carousel' }} swiper">
+			<div class="swiper-wrapper">
+				<# if ( ! isManualSource && ( ! settings.slider_id
+				|| 'choose'===settings.slider_id ) ) { #>
+				<div style="padding:30px;text-align:center;color:#888;width:100%;">
+					<i class="eicon-info" style="color:#f0ad4e;"></i>
+					<?php esc_html_e( 'Please select a slider from the panel.', 'thim-elementor-kit' ); ?>
 				</div>
 				<# } #>
-
-					<# if ( settings.slider_show_pagination && 'none' !==settings.slider_show_pagination ) { #>
-						<div class="thim-slider-pagination thim-{{ settings.slider_show_pagination }}"></div>
-						<# } #>
-
-							<# if ( 'yes'===settings.slider_show_arrow ) { #>
-								<div class="thim-slider-nav thim-slider-nav-prev">
-									<# if ( settings.slider_arrows_left && settings.slider_arrows_left.value ) { #>
-										<# if ( 'svg'===settings.slider_arrows_left.library ) { #>
-											<span class="thim-slider-nav-icon"></span>
-											<# } else { #>
-												<i class="{{ settings.slider_arrows_left.value }}"
-													aria-hidden="true"></i>
-												<# } #>
-													<# } #>
-								</div>
-								<div class="thim-slider-nav thim-slider-nav-next">
-									<# if ( settings.slider_arrows_right && settings.slider_arrows_right.value ) { #>
-										<# if ( 'svg'===settings.slider_arrows_right.library ) { #>
-											<span class="thim-slider-nav-icon"></span>
-											<# } else { #>
-												<i class="{{ settings.slider_arrows_right.value }}"
-													aria-hidden="true"></i>
-												<# } #>
-													<# } #>
-								</div>
-								<# } #>
-
-									<div
-										class="thim-ekits-sliders thim-slider-effect-{{ settings.effect || 'carousel' }} swiper">
-										<div class="swiper-wrapper">
-											<# if ( ! isManualSource && ( ! settings.slider_id
-												|| 'choose'===settings.slider_id ) ) { #>
-												<div style="padding:30px;text-align:center;color:#888;width:100%;">
-													<i class="eicon-info" style="color:#f0ad4e;"></i>
-													<?php esc_html_e( 'Please select a slider from the panel.', 'thim-elementor-kit' ); ?>
-												</div>
-												<# } #>
-										</div>
-									</div>
-									<?php
+			</div>
+		</div>
+		<?php
 	}
 }

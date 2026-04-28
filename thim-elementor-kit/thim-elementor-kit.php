@@ -4,13 +4,13 @@
  * Plugin URI: https://thimpress.com/
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.3.9
+ * Version: 1.4.0
  * Author URI: https://thimpress.com
- * Requires at least: 6.0
+ * Requires at least: 6.9
  * Requires PHP: 7.4
  * Text Domain: thim-elementor-kit
  * Domain Path: /languages/
- * Elementor tested up to: 3.34.0
+ * Elementor tested up to: 4.0.3
  */
 
 use Elementor\Core\Files\Manager as Files_Manager;

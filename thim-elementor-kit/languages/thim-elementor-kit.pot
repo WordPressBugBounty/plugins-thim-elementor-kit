@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Thim Elementor Kit plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Thim Elementor Kit 1.3.9\n"
+"Project-Id-Version: Thim Elementor Kit 1.4.0\n"
 "Report-Msgid-Bugs-To: dev@thimpress.com\n"
 "Last-Translator: dev@thimpress.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-17T02:17:09+00:00\n"
+"POT-Creation-Date: 2026-04-28T02:16:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: thim-elementor-kit\n"
@@ -64,7 +64,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-course/archive-course.php:146
 #: inc/elementor/widgets/archive-post/archive-post.php:113
 #: inc/elementor/widgets/global/blog-base.php:148
-#: inc/elementor/widgets/global/course-base.php:34
+#: inc/elementor/widgets/global/course-base.php:37
 #: inc/elementor/widgets/global/product-base.php:31
 #: inc/elementor/widgets/global/social-share.php:844
 #: inc/elementor/widgets/global/team.php:387
@@ -298,27 +298,27 @@ msgid "Level"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:312
-#: inc/elementor/widgets/global/course-base.php:202
+#: inc/elementor/widgets/global/course-base.php:205
 #: inc/elementor/widgets/single-course/course-meta.php:42
 msgid "Count Lesson"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:313
-#: inc/elementor/widgets/global/course-base.php:217
+#: inc/elementor/widgets/global/course-base.php:220
 #: inc/elementor/widgets/single-course/course-meta.php:43
 msgid "Count Quiz"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:314
-#: inc/elementor/widgets/global/course-base.php:232
+#: inc/elementor/widgets/global/course-base.php:235
 msgid "Count Student"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:315
 #: inc/elementor/class-elementor.php:348
-#: inc/elementor/widgets/global/course-base.php:508
-#: inc/elementor/widgets/global/course-base.php:916
-#: inc/elementor/widgets/global/course-base.php:1383
+#: inc/elementor/widgets/global/course-base.php:511
+#: inc/elementor/widgets/global/course-base.php:919
+#: inc/elementor/widgets/global/course-base.php:1386
 #: inc/elementor/widgets/single-course/course-tabs.php:795
 msgid "Instructor"
 msgstr ""
@@ -327,9 +327,9 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:94
 #: inc/elementor/widgets/global/blog-base.php:199
 #: inc/elementor/widgets/global/blog-base.php:796
-#: inc/elementor/widgets/global/course-base.php:247
-#: inc/elementor/widgets/global/course-base.php:509
-#: inc/elementor/widgets/global/course-base.php:994
+#: inc/elementor/widgets/global/course-base.php:250
+#: inc/elementor/widgets/global/course-base.php:512
+#: inc/elementor/widgets/global/course-base.php:997
 #: inc/elementor/widgets/single-course/course-category.php:89
 #: inc/elementor/widgets/single-course/course-related.php:84
 #: inc/elementor/widgets/single-post/post-info.php:188
@@ -341,7 +341,7 @@ msgid "Category"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:317
-#: inc/elementor/widgets/global/course-base.php:262
+#: inc/elementor/widgets/global/course-base.php:265
 #: inc/elementor/widgets/single-post/post-info.php:189
 #: inc/elementor/widgets/single-product/product-meta.php:72
 #: inc/elementor/widgets/single-product/product-meta.php:83
@@ -350,10 +350,10 @@ msgid "Tag"
 msgstr ""
 
 #: inc/elementor/class-elementor.php:318
-#: inc/elementor/widgets/global/course-base.php:39
-#: inc/elementor/widgets/global/course-base.php:510
-#: inc/elementor/widgets/global/course-base.php:838
-#: inc/elementor/widgets/global/course-base.php:1455
+#: inc/elementor/widgets/global/course-base.php:42
+#: inc/elementor/widgets/global/course-base.php:513
+#: inc/elementor/widgets/global/course-base.php:841
+#: inc/elementor/widgets/global/course-base.php:1458
 #: inc/elementor/widgets/global/product-base.php:38
 #: inc/elementor/widgets/global/product-base.php:101
 #: inc/elementor/widgets/global/product-base.php:463
@@ -491,8 +491,8 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1453
 #: inc/elementor/widgets/global/contact-form-7.php:141
 #: inc/elementor/widgets/global/contact-form-7.php:383
-#: inc/elementor/widgets/global/course-base.php:334
-#: inc/elementor/widgets/global/course-base.php:1715
+#: inc/elementor/widgets/global/course-base.php:337
+#: inc/elementor/widgets/global/course-base.php:1718
 #: inc/elementor/widgets/global/icon-box.php:161
 #: inc/elementor/widgets/global/icon-box.php:358
 #: inc/elementor/widgets/global/image-accordion.php:189
@@ -729,7 +729,7 @@ msgstr ""
 
 #: inc/elementor/dynamic-tags/tags/item-author.php:49
 #: inc/elementor/widgets/global/blog-base.php:1386
-#: inc/elementor/widgets/global/course-base.php:1369
+#: inc/elementor/widgets/global/course-base.php:1372
 #: inc/elementor/widgets/global/minicart.php:172
 #: inc/elementor/widgets/global/progress-tracker.php:96
 #: inc/elementor/widgets/global/video.php:220
@@ -757,10 +757,10 @@ msgstr ""
 #: inc/elementor/widgets/global/contact-form-7.php:171
 #: inc/elementor/widgets/global/contact-form-7.php:413
 #: inc/elementor/widgets/global/countdown.php:217
-#: inc/elementor/widgets/global/course-base.php:748
-#: inc/elementor/widgets/global/course-base.php:793
-#: inc/elementor/widgets/global/course-base.php:1587
-#: inc/elementor/widgets/global/course-base.php:1838
+#: inc/elementor/widgets/global/course-base.php:751
+#: inc/elementor/widgets/global/course-base.php:796
+#: inc/elementor/widgets/global/course-base.php:1590
+#: inc/elementor/widgets/global/course-base.php:1841
 #: inc/elementor/widgets/global/dark-mode.php:261
 #: inc/elementor/widgets/global/icon-box.php:432
 #: inc/elementor/widgets/global/icon-box.php:492
@@ -899,7 +899,7 @@ msgstr ""
 
 #: inc/elementor/dynamic-tags/tags/item-excerpt.php:42
 #: inc/elementor/widgets/global/blog-base.php:364
-#: inc/elementor/widgets/global/course-base.php:432
+#: inc/elementor/widgets/global/course-base.php:435
 #: inc/elementor/widgets/global/product-base.php:81
 msgid "Excerpt More"
 msgstr ""
@@ -1031,7 +1031,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-course/archive-course-new.php:116
 #: inc/elementor/widgets/global/blog-base.php:415
 #: inc/elementor/widgets/global/categories.php:198
-#: inc/elementor/widgets/global/course-base.php:280
+#: inc/elementor/widgets/global/course-base.php:283
 #: inc/elementor/widgets/global/dark-mode.php:48
 #: inc/elementor/widgets/global/header-info.php:125
 #: inc/elementor/widgets/global/list-blog.php:62
@@ -1161,14 +1161,14 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1372
 #: inc/elementor/widgets/global/blog-base.php:1420
 #: inc/elementor/widgets/global/countdown.php:180
-#: inc/elementor/widgets/global/course-base.php:774
-#: inc/elementor/widgets/global/course-base.php:1175
-#: inc/elementor/widgets/global/course-base.php:1261
-#: inc/elementor/widgets/global/course-base.php:1321
-#: inc/elementor/widgets/global/course-base.php:1355
-#: inc/elementor/widgets/global/course-base.php:1557
-#: inc/elementor/widgets/global/course-base.php:1598
-#: inc/elementor/widgets/global/course-base.php:1682
+#: inc/elementor/widgets/global/course-base.php:777
+#: inc/elementor/widgets/global/course-base.php:1178
+#: inc/elementor/widgets/global/course-base.php:1264
+#: inc/elementor/widgets/global/course-base.php:1324
+#: inc/elementor/widgets/global/course-base.php:1358
+#: inc/elementor/widgets/global/course-base.php:1560
+#: inc/elementor/widgets/global/course-base.php:1601
+#: inc/elementor/widgets/global/course-base.php:1685
 #: inc/elementor/widgets/global/instagram.php:471
 #: inc/elementor/widgets/global/list-course.php:256
 #: inc/elementor/widgets/global/minicart.php:191
@@ -1237,7 +1237,7 @@ msgstr ""
 #: inc/elementor/widgets/global/breadcrumb.php:142
 #: inc/elementor/widgets/global/button.php:66
 #: inc/elementor/widgets/global/countdown.php:124
-#: inc/elementor/widgets/global/course-base.php:1087
+#: inc/elementor/widgets/global/course-base.php:1090
 #: inc/elementor/widgets/global/header-info.php:145
 #: inc/elementor/widgets/global/heading.php:346
 #: inc/elementor/widgets/global/icon-box.php:118
@@ -1310,11 +1310,11 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:372
 #: inc/elementor/widgets/global/contact-form-7.php:357
 #: inc/elementor/widgets/global/countdown.php:128
-#: inc/elementor/widgets/global/course-base.php:850
-#: inc/elementor/widgets/global/course-base.php:929
-#: inc/elementor/widgets/global/course-base.php:1006
-#: inc/elementor/widgets/global/course-base.php:1091
-#: inc/elementor/widgets/global/course-base.php:1411
+#: inc/elementor/widgets/global/course-base.php:853
+#: inc/elementor/widgets/global/course-base.php:932
+#: inc/elementor/widgets/global/course-base.php:1009
+#: inc/elementor/widgets/global/course-base.php:1094
+#: inc/elementor/widgets/global/course-base.php:1414
 #: inc/elementor/widgets/global/header-info.php:149
 #: inc/elementor/widgets/global/heading.php:350
 #: inc/elementor/widgets/global/icon-box.php:122
@@ -1403,12 +1403,12 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:376
 #: inc/elementor/widgets/global/contact-form-7.php:365
 #: inc/elementor/widgets/global/countdown.php:136
-#: inc/elementor/widgets/global/course-base.php:106
-#: inc/elementor/widgets/global/course-base.php:854
-#: inc/elementor/widgets/global/course-base.php:933
-#: inc/elementor/widgets/global/course-base.php:1010
-#: inc/elementor/widgets/global/course-base.php:1099
-#: inc/elementor/widgets/global/course-base.php:1415
+#: inc/elementor/widgets/global/course-base.php:109
+#: inc/elementor/widgets/global/course-base.php:857
+#: inc/elementor/widgets/global/course-base.php:936
+#: inc/elementor/widgets/global/course-base.php:1013
+#: inc/elementor/widgets/global/course-base.php:1102
+#: inc/elementor/widgets/global/course-base.php:1418
 #: inc/elementor/widgets/global/header-info.php:157
 #: inc/elementor/widgets/global/heading.php:358
 #: inc/elementor/widgets/global/icon-box.php:130
@@ -1495,13 +1495,13 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:555
 #: inc/elementor/widgets/global/countdown.php:238
 #: inc/elementor/widgets/global/countdown.php:266
-#: inc/elementor/widgets/global/course-base.php:1145
-#: inc/elementor/widgets/global/course-base.php:1230
-#: inc/elementor/widgets/global/course-base.php:1345
-#: inc/elementor/widgets/global/course-base.php:1482
-#: inc/elementor/widgets/global/course-base.php:1509
-#: inc/elementor/widgets/global/course-base.php:1536
-#: inc/elementor/widgets/global/course-base.php:1756
+#: inc/elementor/widgets/global/course-base.php:1148
+#: inc/elementor/widgets/global/course-base.php:1233
+#: inc/elementor/widgets/global/course-base.php:1348
+#: inc/elementor/widgets/global/course-base.php:1485
+#: inc/elementor/widgets/global/course-base.php:1512
+#: inc/elementor/widgets/global/course-base.php:1539
+#: inc/elementor/widgets/global/course-base.php:1759
 #: inc/elementor/widgets/global/dark-mode.php:173
 #: inc/elementor/widgets/global/dark-mode.php:219
 #: inc/elementor/widgets/global/header-info.php:404
@@ -1705,8 +1705,8 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:440
 #: inc/elementor/widgets/global/contact-form-7.php:193
 #: inc/elementor/widgets/global/contact-form-7.php:435
-#: inc/elementor/widgets/global/course-base.php:669
-#: inc/elementor/widgets/global/course-base.php:1749
+#: inc/elementor/widgets/global/course-base.php:672
+#: inc/elementor/widgets/global/course-base.php:1752
 #: inc/elementor/widgets/global/header-info.php:201
 #: inc/elementor/widgets/global/header-info.php:301
 #: inc/elementor/widgets/global/icon-box.php:390
@@ -1859,11 +1859,11 @@ msgstr ""
 #: inc/elementor/widgets/global/contact-form-7.php:265
 #: inc/elementor/widgets/global/contact-form-7.php:464
 #: inc/elementor/widgets/global/contact-form-7.php:514
-#: inc/elementor/widgets/global/course-base.php:373
-#: inc/elementor/widgets/global/course-base.php:695
-#: inc/elementor/widgets/global/course-base.php:734
-#: inc/elementor/widgets/global/course-base.php:1777
-#: inc/elementor/widgets/global/course-base.php:1821
+#: inc/elementor/widgets/global/course-base.php:376
+#: inc/elementor/widgets/global/course-base.php:698
+#: inc/elementor/widgets/global/course-base.php:737
+#: inc/elementor/widgets/global/course-base.php:1780
+#: inc/elementor/widgets/global/course-base.php:1824
 #: inc/elementor/widgets/global/icon-box.php:642
 #: inc/elementor/widgets/global/icon-box.php:673
 #: inc/elementor/widgets/global/login-form.php:591
@@ -1926,8 +1926,8 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:285
 #: inc/elementor/widgets/global/button.php:504
 #: inc/elementor/widgets/global/contact-form-7.php:488
-#: inc/elementor/widgets/global/course-base.php:708
-#: inc/elementor/widgets/global/course-base.php:1792
+#: inc/elementor/widgets/global/course-base.php:711
+#: inc/elementor/widgets/global/course-base.php:1795
 #: inc/elementor/widgets/global/header-info.php:243
 #: inc/elementor/widgets/global/header-info.php:325
 #: inc/elementor/widgets/global/icon-box.php:451
@@ -2060,14 +2060,14 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:304
 #: inc/elementor/widgets/global/contact-form-7.php:504
 #: inc/elementor/widgets/global/countdown.php:150
-#: inc/elementor/widgets/global/course-base.php:684
-#: inc/elementor/widgets/global/course-base.php:723
-#: inc/elementor/widgets/global/course-base.php:813
-#: inc/elementor/widgets/global/course-base.php:1492
-#: inc/elementor/widgets/global/course-base.php:1519
-#: inc/elementor/widgets/global/course-base.php:1547
-#: inc/elementor/widgets/global/course-base.php:1767
-#: inc/elementor/widgets/global/course-base.php:1810
+#: inc/elementor/widgets/global/course-base.php:687
+#: inc/elementor/widgets/global/course-base.php:726
+#: inc/elementor/widgets/global/course-base.php:816
+#: inc/elementor/widgets/global/course-base.php:1495
+#: inc/elementor/widgets/global/course-base.php:1522
+#: inc/elementor/widgets/global/course-base.php:1550
+#: inc/elementor/widgets/global/course-base.php:1770
+#: inc/elementor/widgets/global/course-base.php:1813
 #: inc/elementor/widgets/global/dark-mode.php:197
 #: inc/elementor/widgets/global/dark-mode.php:243
 #: inc/elementor/widgets/global/header-info.php:219
@@ -2193,9 +2193,9 @@ msgstr ""
 #: inc/elementor/widgets/global/contact-form-7.php:88
 #: inc/elementor/widgets/global/contact-form-7.php:301
 #: inc/elementor/widgets/global/countdown.php:196
-#: inc/elementor/widgets/global/course-base.php:1113
-#: inc/elementor/widgets/global/course-base.php:1575
-#: inc/elementor/widgets/global/course-base.php:1698
+#: inc/elementor/widgets/global/course-base.php:1116
+#: inc/elementor/widgets/global/course-base.php:1578
+#: inc/elementor/widgets/global/course-base.php:1701
 #: inc/elementor/widgets/global/header-info.php:184
 #: inc/elementor/widgets/global/header-info.php:423
 #: inc/elementor/widgets/global/icon-box.php:591
@@ -2326,7 +2326,7 @@ msgstr ""
 
 #: inc/elementor/widgets/archive-post/archive-post.php:180
 #: inc/elementor/widgets/archive-product/archive-product.php:136
-#: inc/elementor/widgets/global/course-base.php:594
+#: inc/elementor/widgets/global/course-base.php:597
 #: inc/elementor/widgets/global/instagram.php:410
 #: inc/elementor/widgets/global/list-blog.php:229
 #: inc/elementor/widgets/global/list-product.php:185
@@ -2348,7 +2348,7 @@ msgstr ""
 
 #: inc/elementor/widgets/archive-post/archive-post.php:188
 #: inc/elementor/widgets/archive-product/archive-product.php:144
-#: inc/elementor/widgets/global/course-base.php:602
+#: inc/elementor/widgets/global/course-base.php:605
 #: inc/elementor/widgets/global/instagram.php:550
 #: inc/elementor/widgets/global/list-blog.php:240
 #: inc/elementor/widgets/global/list-product.php:217
@@ -2361,7 +2361,7 @@ msgstr ""
 
 #: inc/elementor/widgets/archive-post/archive-post.php:208
 #: inc/elementor/widgets/archive-product/archive-product.php:166
-#: inc/elementor/widgets/global/course-base.php:623
+#: inc/elementor/widgets/global/course-base.php:626
 #: inc/elementor/widgets/global/list-blog.php:260
 #: inc/elementor/widgets/global/list-product.php:239
 #: inc/elementor/widgets/global/team.php:449
@@ -2444,9 +2444,9 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:256
 #: inc/elementor/widgets/global/blog-base.php:562
 #: inc/elementor/widgets/global/categories.php:80
-#: inc/elementor/widgets/global/course-base.php:129
-#: inc/elementor/widgets/global/course-base.php:159
-#: inc/elementor/widgets/global/course-base.php:581
+#: inc/elementor/widgets/global/course-base.php:132
+#: inc/elementor/widgets/global/course-base.php:162
+#: inc/elementor/widgets/global/course-base.php:584
 #: inc/elementor/widgets/global/heading.php:216
 #: inc/elementor/widgets/global/icon-box.php:265
 #: inc/elementor/widgets/global/image-accordion.php:142
@@ -2491,9 +2491,9 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:257
 #: inc/elementor/widgets/global/blog-base.php:563
 #: inc/elementor/widgets/global/categories.php:81
-#: inc/elementor/widgets/global/course-base.php:130
-#: inc/elementor/widgets/global/course-base.php:160
-#: inc/elementor/widgets/global/course-base.php:582
+#: inc/elementor/widgets/global/course-base.php:133
+#: inc/elementor/widgets/global/course-base.php:163
+#: inc/elementor/widgets/global/course-base.php:585
 #: inc/elementor/widgets/global/heading.php:217
 #: inc/elementor/widgets/global/icon-box.php:266
 #: inc/elementor/widgets/global/image-accordion.php:143
@@ -2719,7 +2719,7 @@ msgstr ""
 
 #: inc/elementor/widgets/archive-product/archive-product-category.php:429
 #: inc/elementor/widgets/global/blog-base.php:217
-#: inc/elementor/widgets/global/course-base.php:94
+#: inc/elementor/widgets/global/course-base.php:97
 #: inc/elementor/widgets/global/heading.php:88
 #: inc/elementor/widgets/global/heading.php:324
 #: inc/elementor/widgets/global/icon-box.php:95
@@ -2741,8 +2741,8 @@ msgstr ""
 #: inc/elementor/widgets/global/button.php:74
 #: inc/elementor/widgets/global/contact-form-7.php:361
 #: inc/elementor/widgets/global/countdown.php:132
-#: inc/elementor/widgets/global/course-base.php:98
-#: inc/elementor/widgets/global/course-base.php:1095
+#: inc/elementor/widgets/global/course-base.php:101
+#: inc/elementor/widgets/global/course-base.php:1098
 #: inc/elementor/widgets/global/header-info.php:153
 #: inc/elementor/widgets/global/heading.php:328
 #: inc/elementor/widgets/global/heading.php:354
@@ -2843,8 +2843,8 @@ msgstr ""
 #: inc/elementor/widgets/global/contact-form-7.php:213
 #: inc/elementor/widgets/global/contact-form-7.php:442
 #: inc/elementor/widgets/global/contact-form-7.php:494
-#: inc/elementor/widgets/global/course-base.php:1294
-#: inc/elementor/widgets/global/course-base.php:1799
+#: inc/elementor/widgets/global/course-base.php:1297
+#: inc/elementor/widgets/global/course-base.php:1802
 #: inc/elementor/widgets/global/header-info.php:207
 #: inc/elementor/widgets/global/header-info.php:249
 #: inc/elementor/widgets/global/heading.php:404
@@ -2986,9 +2986,9 @@ msgstr ""
 #: inc/elementor/widgets/global/breadcrumb.php:45
 #: inc/elementor/widgets/global/button.php:36
 #: inc/elementor/widgets/global/contact-form-7.php:60
-#: inc/elementor/widgets/global/course-base.php:41
-#: inc/elementor/widgets/global/course-base.php:471
-#: inc/elementor/widgets/global/course-base.php:1077
+#: inc/elementor/widgets/global/course-base.php:44
+#: inc/elementor/widgets/global/course-base.php:474
+#: inc/elementor/widgets/global/course-base.php:1080
 #: inc/elementor/widgets/global/course-curriculum.php:101
 #: inc/elementor/widgets/global/image-accordion.php:175
 #: inc/elementor/widgets/global/image-accordion.php:190
@@ -3043,8 +3043,8 @@ msgstr ""
 #: inc/elementor/widgets/global/accordion.php:50
 #: inc/elementor/widgets/global/accordion.php:210
 #: inc/elementor/widgets/global/blog-base.php:1134
-#: inc/elementor/widgets/global/course-base.php:38
-#: inc/elementor/widgets/global/course-base.php:1136
+#: inc/elementor/widgets/global/course-base.php:41
+#: inc/elementor/widgets/global/course-base.php:1139
 #: inc/elementor/widgets/global/heading.php:36
 #: inc/elementor/widgets/global/heading.php:42
 #: inc/elementor/widgets/global/heading.php:377
@@ -3202,7 +3202,7 @@ msgstr ""
 #: inc/elementor/widgets/global/categories.php:148
 #: inc/elementor/widgets/global/contact-form-7.php:100
 #: inc/elementor/widgets/global/countdown.php:285
-#: inc/elementor/widgets/global/course-base.php:1124
+#: inc/elementor/widgets/global/course-base.php:1127
 #: inc/elementor/widgets/global/course-curriculum.php:57
 #: inc/elementor/widgets/global/header-info.php:172
 #: inc/elementor/widgets/global/heading.php:384
@@ -3253,7 +3253,7 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1558
 #: inc/elementor/widgets/global/button.php:270
 #: inc/elementor/widgets/global/button.php:334
-#: inc/elementor/widgets/global/course-base.php:823
+#: inc/elementor/widgets/global/course-base.php:826
 #: inc/elementor/widgets/global/header-info.php:308
 #: inc/elementor/widgets/global/header-info.php:332
 #: inc/elementor/widgets/global/icon-box.php:396
@@ -3392,7 +3392,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:47
 #: inc/elementor/widgets/global/blog-base.php:702
-#: inc/elementor/widgets/global/course-base.php:763
+#: inc/elementor/widgets/global/course-base.php:766
 #: inc/elementor/widgets/global/icon-box.php:173
 #: inc/elementor/widgets/global/icon-box.php:184
 #: inc/elementor/widgets/global/product-base.php:170
@@ -3409,7 +3409,7 @@ msgid "Image"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:52
-#: inc/elementor/widgets/global/course-base.php:1403
+#: inc/elementor/widgets/global/course-base.php:1406
 msgid "none"
 msgstr ""
 
@@ -3417,10 +3417,10 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:904
 #: inc/elementor/widgets/global/blog-base.php:1046
 #: inc/elementor/widgets/global/button.php:407
-#: inc/elementor/widgets/global/course-base.php:885
-#: inc/elementor/widgets/global/course-base.php:964
-#: inc/elementor/widgets/global/course-base.php:1041
-#: inc/elementor/widgets/global/course-base.php:1407
+#: inc/elementor/widgets/global/course-base.php:888
+#: inc/elementor/widgets/global/course-base.php:967
+#: inc/elementor/widgets/global/course-base.php:1044
+#: inc/elementor/widgets/global/course-base.php:1410
 #: inc/elementor/widgets/global/heading.php:246
 #: inc/elementor/widgets/global/icon-box.php:66
 #: inc/elementor/widgets/global/icon-box.php:245
@@ -3443,7 +3443,7 @@ msgid "Top"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:86
-#: inc/elementor/widgets/global/course-base.php:502
+#: inc/elementor/widgets/global/course-base.php:505
 msgid "Meta Overlay"
 msgstr ""
 
@@ -3464,8 +3464,8 @@ msgid "Date"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:95
-#: inc/elementor/widgets/global/course-base.php:42
-#: inc/elementor/widgets/global/course-base.php:511
+#: inc/elementor/widgets/global/course-base.php:45
+#: inc/elementor/widgets/global/course-base.php:514
 #: inc/elementor/widgets/loop-item/loop-item-read-more.php:41
 #: inc/elementor/widgets/loop-item/loop-item-read-more.php:42
 msgid "Read more"
@@ -3473,8 +3473,8 @@ msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:106
 #: inc/elementor/widgets/global/blog-base.php:401
-#: inc/elementor/widgets/global/course-base.php:444
-#: inc/elementor/widgets/global/course-base.php:522
+#: inc/elementor/widgets/global/course-base.php:447
+#: inc/elementor/widgets/global/course-base.php:525
 #: inc/elementor/widgets/global/icon-box.php:556
 msgid "Read More Text"
 msgstr ""
@@ -3482,9 +3482,9 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:108
 #: inc/elementor/widgets/global/blog-base.php:198
 #: inc/elementor/widgets/global/blog-base.php:1403
-#: inc/elementor/widgets/global/course-base.php:446
-#: inc/elementor/widgets/global/course-base.php:524
-#: inc/elementor/widgets/global/course-base.php:1616
+#: inc/elementor/widgets/global/course-base.php:449
+#: inc/elementor/widgets/global/course-base.php:527
+#: inc/elementor/widgets/global/course-base.php:1619
 #: inc/elementor/widgets/global/icon-box.php:559
 #: inc/elementor/widgets/global/icon-box.php:573
 msgid "Read More"
@@ -3492,8 +3492,8 @@ msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:119
 #: inc/elementor/widgets/global/blog-base.php:338
-#: inc/elementor/widgets/global/course-base.php:456
-#: inc/elementor/widgets/global/course-base.php:535
+#: inc/elementor/widgets/global/course-base.php:459
+#: inc/elementor/widgets/global/course-base.php:538
 msgid "Read More Icon"
 msgstr ""
 
@@ -3502,16 +3502,16 @@ msgid "Icon Hover"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:163
-#: inc/elementor/widgets/global/course-base.php:50
+#: inc/elementor/widgets/global/course-base.php:53
 #: inc/elementor/widgets/global/product-base.php:46
 msgid "Title HTML Tag"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:186
 #: inc/elementor/widgets/global/blog-base.php:1246
-#: inc/elementor/widgets/global/course-base.php:40
-#: inc/elementor/widgets/global/course-base.php:73
-#: inc/elementor/widgets/global/course-base.php:1283
+#: inc/elementor/widgets/global/course-base.php:43
+#: inc/elementor/widgets/global/course-base.php:76
+#: inc/elementor/widgets/global/course-base.php:1286
 #: inc/elementor/widgets/global/product-base.php:36
 #: inc/elementor/widgets/global/product-base.php:92
 #: inc/elementor/widgets/single-post/post-navigation.php:199
@@ -3531,17 +3531,17 @@ msgid "Comments"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:211
-#: inc/elementor/widgets/global/course-base.php:89
+#: inc/elementor/widgets/global/course-base.php:92
 msgid "Display Item"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:225
-#: inc/elementor/widgets/global/course-base.php:102
+#: inc/elementor/widgets/global/course-base.php:105
 msgid "Spaced between items"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:233
-#: inc/elementor/widgets/global/course-base.php:110
+#: inc/elementor/widgets/global/course-base.php:113
 msgid "Left, 1 Item Right"
 msgstr ""
 
@@ -3550,12 +3550,12 @@ msgid "Inline Block"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:254
-#: inc/elementor/widgets/global/course-base.php:127
+#: inc/elementor/widgets/global/course-base.php:130
 msgid "Icon Meta Data"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:268
-#: inc/elementor/widgets/global/course-base.php:141
+#: inc/elementor/widgets/global/course-base.php:144
 msgid "Separator Between"
 msgstr ""
 
@@ -3576,7 +3576,7 @@ msgid "Category Icon"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:352
-#: inc/elementor/widgets/global/course-base.php:420
+#: inc/elementor/widgets/global/course-base.php:423
 #: inc/elementor/widgets/global/product-base.php:69
 msgid "Excerpt Lenght"
 msgstr ""
@@ -3590,12 +3590,12 @@ msgid "Read More »"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:414
-#: inc/elementor/widgets/global/course-base.php:279
+#: inc/elementor/widgets/global/course-base.php:282
 msgid "Options Meta data"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:416
-#: inc/elementor/widgets/global/course-base.php:281
+#: inc/elementor/widgets/global/course-base.php:284
 #: inc/elementor/widgets/global/heading.php:231
 #: inc/elementor/widgets/loop-item/loop-item-info.php:55
 #: inc/elementor/widgets/single-course/course-extra.php:68
@@ -3612,12 +3612,12 @@ msgid "Custom"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:430
-#: inc/elementor/widgets/global/course-base.php:294
+#: inc/elementor/widgets/global/course-base.php:297
 msgid "Item Spacing"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:448
-#: inc/elementor/widgets/global/course-base.php:331
+#: inc/elementor/widgets/global/course-base.php:334
 #: inc/elementor/widgets/global/team.php:915
 msgid "Border Top Type"
 msgstr ""
@@ -3626,8 +3626,8 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1454
 #: inc/elementor/widgets/global/contact-form-7.php:142
 #: inc/elementor/widgets/global/contact-form-7.php:384
-#: inc/elementor/widgets/global/course-base.php:335
-#: inc/elementor/widgets/global/course-base.php:1716
+#: inc/elementor/widgets/global/course-base.php:338
+#: inc/elementor/widgets/global/course-base.php:1719
 #: inc/elementor/widgets/global/icon-box.php:359
 #: inc/elementor/widgets/global/login-popup.php:298
 #: inc/elementor/widgets/global/minicart.php:225
@@ -3649,8 +3649,8 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1455
 #: inc/elementor/widgets/global/contact-form-7.php:143
 #: inc/elementor/widgets/global/contact-form-7.php:385
-#: inc/elementor/widgets/global/course-base.php:336
-#: inc/elementor/widgets/global/course-base.php:1717
+#: inc/elementor/widgets/global/course-base.php:339
+#: inc/elementor/widgets/global/course-base.php:1720
 #: inc/elementor/widgets/global/icon-box.php:360
 #: inc/elementor/widgets/global/login-popup.php:299
 #: inc/elementor/widgets/global/minicart.php:226
@@ -3672,8 +3672,8 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1456
 #: inc/elementor/widgets/global/contact-form-7.php:144
 #: inc/elementor/widgets/global/contact-form-7.php:386
-#: inc/elementor/widgets/global/course-base.php:337
-#: inc/elementor/widgets/global/course-base.php:1718
+#: inc/elementor/widgets/global/course-base.php:340
+#: inc/elementor/widgets/global/course-base.php:1721
 #: inc/elementor/widgets/global/icon-box.php:361
 #: inc/elementor/widgets/global/login-popup.php:300
 #: inc/elementor/widgets/global/minicart.php:227
@@ -3695,8 +3695,8 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1457
 #: inc/elementor/widgets/global/contact-form-7.php:145
 #: inc/elementor/widgets/global/contact-form-7.php:387
-#: inc/elementor/widgets/global/course-base.php:338
-#: inc/elementor/widgets/global/course-base.php:1719
+#: inc/elementor/widgets/global/course-base.php:341
+#: inc/elementor/widgets/global/course-base.php:1722
 #: inc/elementor/widgets/global/icon-box.php:362
 #: inc/elementor/widgets/global/login-popup.php:301
 #: inc/elementor/widgets/global/minicart.php:228
@@ -3718,8 +3718,8 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1458
 #: inc/elementor/widgets/global/contact-form-7.php:146
 #: inc/elementor/widgets/global/contact-form-7.php:388
-#: inc/elementor/widgets/global/course-base.php:339
-#: inc/elementor/widgets/global/course-base.php:1720
+#: inc/elementor/widgets/global/course-base.php:342
+#: inc/elementor/widgets/global/course-base.php:1723
 #: inc/elementor/widgets/global/icon-box.php:363
 #: inc/elementor/widgets/global/login-popup.php:302
 #: inc/elementor/widgets/global/minicart.php:229
@@ -3741,8 +3741,8 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1469
 #: inc/elementor/widgets/global/contact-form-7.php:157
 #: inc/elementor/widgets/global/contact-form-7.php:399
-#: inc/elementor/widgets/global/course-base.php:356
-#: inc/elementor/widgets/global/course-base.php:1731
+#: inc/elementor/widgets/global/course-base.php:359
+#: inc/elementor/widgets/global/course-base.php:1734
 #: inc/elementor/widgets/global/icon-box.php:375
 #: inc/elementor/widgets/global/login-popup.php:314
 #: inc/elementor/widgets/global/minicart.php:241
@@ -3761,25 +3761,25 @@ msgid "Width"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:503
-#: inc/elementor/widgets/global/course-base.php:387
+#: inc/elementor/widgets/global/course-base.php:390
 #: inc/elementor/widgets/global/team.php:966
 msgid "Border Color Hover"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:517
-#: inc/elementor/widgets/global/course-base.php:401
+#: inc/elementor/widgets/global/course-base.php:404
 #: inc/elementor/widgets/global/team.php:980
 msgid "Padding Top"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:536
-#: inc/elementor/widgets/global/course-base.php:551
+#: inc/elementor/widgets/global/course-base.php:554
 #: inc/elementor/widgets/global/product-base.php:113
 msgid "Post Data"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:560
-#: inc/elementor/widgets/global/course-base.php:579
+#: inc/elementor/widgets/global/course-base.php:582
 #: inc/elementor/widgets/global/product-base.php:133
 msgid "Open in new window"
 msgstr ""
@@ -3793,13 +3793,13 @@ msgid "Content Spacing"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:746
-#: inc/elementor/widgets/global/course-base.php:805
+#: inc/elementor/widgets/global/course-base.php:808
 msgid "OverLay"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:847
 #: inc/elementor/widgets/global/blog-base.php:989
-#: inc/elementor/widgets/global/course-base.php:313
+#: inc/elementor/widgets/global/course-base.php:316
 #: inc/elementor/widgets/global/minicart.php:398
 #: inc/elementor/widgets/global/minicart.php:1204
 #: inc/elementor/widgets/loop-item/loop-product-button.php:229
@@ -3810,9 +3810,9 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:862
 #: inc/elementor/widgets/global/blog-base.php:1004
 #: inc/elementor/widgets/global/button.php:366
-#: inc/elementor/widgets/global/course-base.php:844
-#: inc/elementor/widgets/global/course-base.php:923
-#: inc/elementor/widgets/global/course-base.php:1000
+#: inc/elementor/widgets/global/course-base.php:847
+#: inc/elementor/widgets/global/course-base.php:926
+#: inc/elementor/widgets/global/course-base.php:1003
 #: inc/elementor/widgets/global/minicart.php:480
 #: inc/elementor/widgets/global/search-form.php:200
 #: inc/utilities/group-control-trait.php:880
@@ -3826,12 +3826,12 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1061
 #: inc/elementor/widgets/global/button.php:386
 #: inc/elementor/widgets/global/button.php:421
-#: inc/elementor/widgets/global/course-base.php:864
-#: inc/elementor/widgets/global/course-base.php:899
-#: inc/elementor/widgets/global/course-base.php:943
-#: inc/elementor/widgets/global/course-base.php:978
-#: inc/elementor/widgets/global/course-base.php:1020
-#: inc/elementor/widgets/global/course-base.php:1055
+#: inc/elementor/widgets/global/course-base.php:867
+#: inc/elementor/widgets/global/course-base.php:902
+#: inc/elementor/widgets/global/course-base.php:946
+#: inc/elementor/widgets/global/course-base.php:981
+#: inc/elementor/widgets/global/course-base.php:1023
+#: inc/elementor/widgets/global/course-base.php:1058
 #: inc/elementor/widgets/global/minicart.php:504
 #: inc/elementor/widgets/global/minicart.php:531
 #: inc/elementor/widgets/global/minicart.php:582
@@ -3846,9 +3846,9 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:898
 #: inc/elementor/widgets/global/blog-base.php:1040
 #: inc/elementor/widgets/global/button.php:401
-#: inc/elementor/widgets/global/course-base.php:879
-#: inc/elementor/widgets/global/course-base.php:958
-#: inc/elementor/widgets/global/course-base.php:1035
+#: inc/elementor/widgets/global/course-base.php:882
+#: inc/elementor/widgets/global/course-base.php:961
+#: inc/elementor/widgets/global/course-base.php:1038
 #: inc/elementor/widgets/global/minicart.php:558
 msgid "Vertical Orientation"
 msgstr ""
@@ -3856,9 +3856,9 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:908
 #: inc/elementor/widgets/global/blog-base.php:1050
 #: inc/elementor/widgets/global/button.php:411
-#: inc/elementor/widgets/global/course-base.php:889
-#: inc/elementor/widgets/global/course-base.php:968
-#: inc/elementor/widgets/global/course-base.php:1045
+#: inc/elementor/widgets/global/course-base.php:892
+#: inc/elementor/widgets/global/course-base.php:971
+#: inc/elementor/widgets/global/course-base.php:1048
 #: inc/elementor/widgets/global/heading.php:249
 #: inc/elementor/widgets/global/icon-box.php:74
 #: inc/elementor/widgets/global/image-accordion.php:102
@@ -3875,7 +3875,7 @@ msgid "Bottom"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:1153
-#: inc/elementor/widgets/global/course-base.php:1156
+#: inc/elementor/widgets/global/course-base.php:1159
 #: inc/elementor/widgets/global/course-curriculum.php:86
 #: inc/elementor/widgets/global/dark-mode.php:185
 #: inc/elementor/widgets/global/dark-mode.php:231
@@ -3885,14 +3885,14 @@ msgid "Color Hover"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:1188
-#: inc/elementor/widgets/global/course-base.php:1221
+#: inc/elementor/widgets/global/course-base.php:1224
 #: inc/elementor/widgets/global/product-base.php:419
 msgid "Excerpt"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:1215
-#: inc/elementor/widgets/global/course-base.php:1191
-#: inc/elementor/widgets/global/course-base.php:1248
+#: inc/elementor/widgets/global/course-base.php:1194
+#: inc/elementor/widgets/global/course-base.php:1251
 #: inc/elementor/widgets/loop-item/loop-item-excerpt.php:121
 #: inc/elementor/widgets/loop-item/loop-item-title.php:66
 msgid "Max Line"
@@ -3905,7 +3905,7 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1282
 #: inc/elementor/widgets/global/breadcrumb.php:78
 #: inc/elementor/widgets/global/categories.php:114
-#: inc/elementor/widgets/global/course-base.php:1304
+#: inc/elementor/widgets/global/course-base.php:1307
 #: inc/elementor/widgets/single-post/post-info.php:529
 #: inc/elementor/widgets/single-post/post-info.php:571
 #: inc/elementor/widgets/single-product/product-rating.php:102
@@ -3917,14 +3917,14 @@ msgid "Extra"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:1352
-#: inc/elementor/widgets/global/course-base.php:1337
+#: inc/elementor/widgets/global/course-base.php:1340
 msgid "Separator, Icon"
 msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:1450
 #: inc/elementor/widgets/global/contact-form-7.php:138
 #: inc/elementor/widgets/global/contact-form-7.php:380
-#: inc/elementor/widgets/global/course-base.php:1712
+#: inc/elementor/widgets/global/course-base.php:1715
 #: inc/elementor/widgets/global/icon-box.php:355
 #: inc/elementor/widgets/global/login-popup.php:294
 #: inc/elementor/widgets/global/minicart.php:221
@@ -4248,67 +4248,67 @@ msgstr ""
 msgid "Digits"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:157
+#: inc/elementor/widgets/global/course-base.php:160
 msgid "Hide Label"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:172
+#: inc/elementor/widgets/global/course-base.php:175
 msgid "Duration Icon"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:187
+#: inc/elementor/widgets/global/course-base.php:190
 msgid "Level Icon"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:481
+#: inc/elementor/widgets/global/course-base.php:484
 #: inc/elementor/widgets/global/product-base.php:147
 msgid "Show Image"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:647
+#: inc/elementor/widgets/global/course-base.php:650
 #: inc/elementor/widgets/global/search-form.php:108
 msgid "Course"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:1205
+#: inc/elementor/widgets/global/course-base.php:1208
 msgid "Min Height (px)"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:1398
+#: inc/elementor/widgets/global/course-base.php:1401
 msgid "Avatar Instructor"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:1426
+#: inc/elementor/widgets/global/course-base.php:1429
 #: inc/elementor/widgets/loop-item/loop-item-info.php:105
 #: inc/elementor/widgets/single-post/post-info.php:113
 msgid "Avatar Size"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:1475
+#: inc/elementor/widgets/global/course-base.php:1478
 msgid "Regular"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:1503
+#: inc/elementor/widgets/global/course-base.php:1506
 msgid "Free"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:1530
+#: inc/elementor/widgets/global/course-base.php:1533
 msgid "Sale"
 msgstr ""
 
-#: inc/elementor/widgets/global/course-base.php:2175
+#: inc/elementor/widgets/global/course-base.php:2178
 msgid "%d lesson"
 msgid_plural "%d lessons"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/elementor/widgets/global/course-base.php:2200
+#: inc/elementor/widgets/global/course-base.php:2203
 msgid "%d quiz"
 msgid_plural "%d quizzes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/elementor/widgets/global/course-base.php:2225
+#: inc/elementor/widgets/global/course-base.php:2228
 msgid "%d student"
 msgid_plural "%d students"
 msgstr[0] ""
@@ -5733,6 +5733,15 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+#: inc/elementor/widgets/global/nav-menu.php:665
+#: inc/elementor/widgets/global/nav-menu.php:673
+msgid "Close menu"
+msgstr ""
+
+#: inc/elementor/widgets/global/nav-menu.php:680
+msgid "Open menu"
+msgstr ""
+
 #: inc/elementor/widgets/global/nav-menu.php:698
 msgid "You need create item for menu"
 msgstr ""
@@ -6059,15 +6068,15 @@ msgstr ""
 msgid "Fade and Creative effects support one slide at a time. Item Show and Item Scroll are only used for Carousel."
 msgstr ""
 
-#: inc/elementor/widgets/global/slider.php:308
+#: inc/elementor/widgets/global/slider.php:307
 msgid "Slide"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider.php:312
+#: inc/elementor/widgets/global/slider.php:311
 msgid "Slider Titles"
 msgstr ""
 
-#: inc/elementor/widgets/global/slider.php:357
+#: inc/elementor/widgets/global/slider.php:356
 msgid "Please select a slider from the panel."
 msgstr ""
 

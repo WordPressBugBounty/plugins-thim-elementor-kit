@@ -452,8 +452,8 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 					),
 				),
 				'selectors' => array(
-					'body:not(.rtl) {{WRAPPER}} .thim-ekit-single-post__info i, body:not(.rtl) {{WRAPPER}} .thim-ekit-single-post__info svg' => 'margin-right: {{SIZE}}{{UNIT}}',
-					'body.rtl {{WRAPPER}} .thim-ekit-single-post__info i, body.rtl {{WRAPPER}} .thim-ekit-single-post__info svg'             => 'margin-left: {{SIZE}}{{UNIT}}',
+					'body:not(.rtl) {{WRAPPER}} .thim-ekit-single-post__info i, body:not(.rtl) {{WRAPPER}} .thim-ekit-single-post__info svg' => 'margin-left: {{SIZE}}{{UNIT}}',
+					'body.rtl {{WRAPPER}} .thim-ekit-single-post__info i, body.rtl {{WRAPPER}} .thim-ekit-single-post__info svg'             => 'margin-right: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);

@@ -662,7 +662,7 @@ class Thim_Ekit_Widget_Nav_Menu extends Widget_Base {
 		if ( isset($settings['effect_submenu']) && $settings['effect_submenu'] == 'yes'  ) {
 			$btn_mobile_close   = '<div class="thim-ekits-menu__icon-wrapper">
 								<div class="thim-ekits-menu__icon-menu-back"><span>'. esc_html__('Back','thim-elementor-kit') .'</span></div>
-								<button class="thim-ekits-menu__mobile__close">
+								<button class="thim-ekits-menu__mobile__close" aria-label="'. esc_attr__('Close menu', 'thim-elementor-kit') .'">
 									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
 									</svg>
@@ -670,14 +670,14 @@ class Thim_Ekit_Widget_Nav_Menu extends Widget_Base {
 								</div>';
 			$classes = 'effect-submenu';
 		}else {
-			$btn_mobile_close = '<button class="thim-ekits-menu__mobile__close">
+			$btn_mobile_close = '<button class="thim-ekits-menu__mobile__close" aria-label="'. esc_attr__('Close menu', 'thim-elementor-kit') .'">
 									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
 									</svg>
 								</button>';
 		}
 
-		$html_hamburger   = '<button class="thim-ekits-menu__mobile">
+		$html_hamburger   = '<button class="thim-ekits-menu__mobile" aria-label="'. esc_attr__('Open menu', 'thim-elementor-kit') .'">
 								<span class="thim-ekits-menu__mobile__icon thim-ekits-menu__mobile__icon--open">
 									<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
 										 stroke="currentColor">
