@@ -151,7 +151,13 @@ class Rest_API {
 				if ( ! empty( $api_body['content'] ) ) {
 					$import = new Import();
 
-					$import_data = $import->import( $post_id, $api_body['content'] );
+					$data_import = [
+						'content'          => $api_body['content'] ?? [],
+						'global_classes'   => $api_body['global_classes'] ?? [],
+						'global_variables' => $api_body['global_variables'] ?? [],
+					];
+
+					$import_data = $import->import( $post_id, $data_import );
 				}
 			} else {
 				throw new \Exception( $fetch->get_error_message() );

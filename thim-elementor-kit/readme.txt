@@ -3,7 +3,7 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 6.9
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,9 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.4.1 (2026-05-14) =
+~ Fixed: Import template kit with V4
+
 = 1.4.0 (2026-02-28) =
 ~ Fixed: default in options Item Show of widget Thim Slider.
 

@@ -1362,12 +1362,15 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 
 			$courseCoInstructorTemplate = CourseCoInstructorTemplate::instance();
 			$instructors                = $courseCoInstructorTemplate->addon->get_instructors( $courseModel );
-			if ( ! empty( $instructors ) ) {
+
+			$html = $courseCoInstructorTemplate->html_list_co_instructor( $instructors, $courseModel );
+			
+			if ( ! empty( $instructors ) && strpos( $html, '<li' ) !== false ) {
 				printf(
 					'<h4 class="lp-co-instructors-title">%s</h4>',
 					esc_html__( 'Co-Instructor', 'thim-elementor-kit' )
 				);
-				echo wp_kses_post( $courseCoInstructorTemplate->html_list_co_instructor( $instructors, $courseModel ) );
+				echo wp_kses_post( $html );
 			}
 		} catch ( \Throwable $e ) {
 			echo $e->getMessage();

@@ -683,7 +683,7 @@ class Thim_Ekit_Widget_Post_Navigation extends Widget_Base {
 				if ( $item == 'date' ) {
 					$prev_meta .= ( ! empty( $prevPost->ID ) && in_array( 'date',
 							$settings['meta_data'] ) ) ? '<li>' . get_the_date( get_option( 'date_format' ),
-							$prevPost->ID ) . '</li>' : '';;
+							$prevPost->ID ) . '</li>' : '';
 					$next_meta .= ( ! empty( $nextPost->ID ) && in_array( 'date',
 							$settings['meta_data'] ) ) ? '<li>' . get_the_date( get_option( 'date_format' ),
 							$nextPost->ID ) . '</li>' : '';

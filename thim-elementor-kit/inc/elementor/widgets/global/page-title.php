@@ -177,7 +177,13 @@ class Thim_Ekit_Widget_Page_Title extends Widget_Base {
 		} elseif ( is_page() || is_single() ) {
 			$heading_title = get_the_title();
 		} elseif ( ! is_front_page() && is_home() ) {
-			$heading_title = esc_html__( 'Blog', 'thim-elementor-kit' );;
+			$blog_page_id = get_option( 'page_for_posts' );
+
+			if ( $blog_page_id ) {
+				$heading_title = get_the_title( $blog_page_id );
+			} else {
+				$heading_title = esc_html__( 'Blog', 'thim-elementor-kit' );
+			}
 		} elseif ( isset( $_GET['c_search'] ) ) {
 			if ( empty( $_GET['c_search'] ) ) {
 				$heading_title = esc_html__( 'Popular courses', 'thim-elementor-kit' );

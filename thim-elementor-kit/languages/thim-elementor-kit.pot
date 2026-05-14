@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Thim Elementor Kit plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Thim Elementor Kit 1.4.0\n"
+"Project-Id-Version: Thim Elementor Kit 1.4.1\n"
 "Report-Msgid-Bugs-To: dev@thimpress.com\n"
 "Last-Translator: dev@thimpress.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-28T02:16:48+00:00\n"
+"POT-Creation-Date: 2026-05-14T03:10:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: thim-elementor-kit\n"
@@ -1030,7 +1030,7 @@ msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:116
 #: inc/elementor/widgets/global/blog-base.php:415
-#: inc/elementor/widgets/global/categories.php:198
+#: inc/elementor/widgets/global/categories.php:199
 #: inc/elementor/widgets/global/course-base.php:283
 #: inc/elementor/widgets/global/dark-mode.php:48
 #: inc/elementor/widgets/global/header-info.php:125
@@ -2189,7 +2189,7 @@ msgstr ""
 #: inc/elementor/widgets/global/blog-base.php:1325
 #: inc/elementor/widgets/global/blog-base.php:1438
 #: inc/elementor/widgets/global/button.php:191
-#: inc/elementor/widgets/global/categories.php:136
+#: inc/elementor/widgets/global/categories.php:137
 #: inc/elementor/widgets/global/contact-form-7.php:88
 #: inc/elementor/widgets/global/contact-form-7.php:301
 #: inc/elementor/widgets/global/countdown.php:196
@@ -2443,7 +2443,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-product/archive-product-category.php:359
 #: inc/elementor/widgets/global/blog-base.php:256
 #: inc/elementor/widgets/global/blog-base.php:562
-#: inc/elementor/widgets/global/categories.php:80
+#: inc/elementor/widgets/global/categories.php:81
 #: inc/elementor/widgets/global/course-base.php:132
 #: inc/elementor/widgets/global/course-base.php:162
 #: inc/elementor/widgets/global/course-base.php:584
@@ -2490,7 +2490,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-product/archive-product-category.php:360
 #: inc/elementor/widgets/global/blog-base.php:257
 #: inc/elementor/widgets/global/blog-base.php:563
-#: inc/elementor/widgets/global/categories.php:81
+#: inc/elementor/widgets/global/categories.php:82
 #: inc/elementor/widgets/global/course-base.php:133
 #: inc/elementor/widgets/global/course-base.php:163
 #: inc/elementor/widgets/global/course-base.php:585
@@ -2537,7 +2537,7 @@ msgstr ""
 
 #: inc/elementor/widgets/archive-product/archive-product-category.php:156
 #: inc/elementor/widgets/archive-product/archive-product-category.php:168
-#: inc/elementor/widgets/global/categories.php:68
+#: inc/elementor/widgets/global/categories.php:69
 #: inc/elementor/widgets/global/login-form.php:180
 #: inc/elementor/widgets/global/product-base.php:159
 #: inc/elementor/widgets/global/progress-tracker.php:73
@@ -2568,7 +2568,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-product/archive-product-category.php:157
 #: inc/elementor/widgets/archive-product/archive-product-category.php:169
 #: inc/elementor/widgets/archive-product/archive-product-category.php:374
-#: inc/elementor/widgets/global/categories.php:69
+#: inc/elementor/widgets/global/categories.php:70
 #: inc/elementor/widgets/global/instagram.php:389
 #: inc/elementor/widgets/global/login-form.php:179
 #: inc/elementor/widgets/global/product-base.php:158
@@ -2806,7 +2806,7 @@ msgid "Center"
 msgstr ""
 
 #: inc/elementor/widgets/archive-product/archive-product-category.php:437
-#: inc/elementor/widgets/global/categories.php:202
+#: inc/elementor/widgets/global/categories.php:203
 #: inc/elementor/widgets/global/heading.php:89
 #: inc/elementor/widgets/global/heading.php:332
 #: inc/elementor/widgets/global/icon-box.php:103
@@ -3199,7 +3199,7 @@ msgstr ""
 #: inc/elementor/widgets/global/accordion.php:262
 #: inc/elementor/widgets/global/accordion.php:463
 #: inc/elementor/widgets/global/blog-base.php:1122
-#: inc/elementor/widgets/global/categories.php:148
+#: inc/elementor/widgets/global/categories.php:149
 #: inc/elementor/widgets/global/contact-form-7.php:100
 #: inc/elementor/widgets/global/countdown.php:285
 #: inc/elementor/widgets/global/course-base.php:1127
@@ -3904,7 +3904,7 @@ msgstr ""
 
 #: inc/elementor/widgets/global/blog-base.php:1282
 #: inc/elementor/widgets/global/breadcrumb.php:78
-#: inc/elementor/widgets/global/categories.php:114
+#: inc/elementor/widgets/global/categories.php:115
 #: inc/elementor/widgets/global/course-base.php:1307
 #: inc/elementor/widgets/single-post/post-info.php:529
 #: inc/elementor/widgets/single-post/post-info.php:571
@@ -3950,7 +3950,7 @@ msgid "Delimiter"
 msgstr ""
 
 #: inc/elementor/widgets/global/breadcrumb.php:89
-#: inc/elementor/widgets/global/categories.php:125
+#: inc/elementor/widgets/global/categories.php:126
 msgid "Link Color Hover"
 msgstr ""
 
@@ -3972,7 +3972,7 @@ msgid "Home"
 msgstr ""
 
 #: inc/elementor/widgets/global/breadcrumb.php:196
-#: inc/elementor/widgets/global/page-title.php:185
+#: inc/elementor/widgets/global/page-title.php:191
 msgid "Search results for: "
 msgstr ""
 
@@ -4106,28 +4106,36 @@ msgstr ""
 msgid "Product Categories"
 msgstr ""
 
-#: inc/elementor/widgets/global/categories.php:66
+#: inc/elementor/widgets/global/categories.php:59
+msgid "Course Categories"
+msgstr ""
+
+#: inc/elementor/widgets/global/categories.php:67
 msgid "Show Category Counts"
 msgstr ""
 
-#: inc/elementor/widgets/global/categories.php:78
+#: inc/elementor/widgets/global/categories.php:79
 msgid "Hide Empty Category"
 msgstr ""
 
-#: inc/elementor/widgets/global/categories.php:98
+#: inc/elementor/widgets/global/categories.php:99
 msgid "Style General"
 msgstr ""
 
-#: inc/elementor/widgets/global/categories.php:164
+#: inc/elementor/widgets/global/categories.php:165
 msgid "Category Counts"
 msgstr ""
 
-#: inc/elementor/widgets/global/categories.php:181
+#: inc/elementor/widgets/global/categories.php:182
 msgid "Color Counts"
 msgstr ""
 
-#: inc/elementor/widgets/global/categories.php:192
+#: inc/elementor/widgets/global/categories.php:193
 msgid "Display count"
+msgstr ""
+
+#: inc/elementor/widgets/global/categories.php:291
+msgid "No categories found."
 msgstr ""
 
 #: inc/elementor/widgets/global/contact-form-7.php:17
@@ -5782,7 +5790,7 @@ msgid "Trending"
 msgstr ""
 
 #: inc/elementor/widgets/global/page-title.php:172
-#: inc/elementor/widgets/global/page-title.php:183
+#: inc/elementor/widgets/global/page-title.php:189
 msgid "Popular courses"
 msgstr ""
 
@@ -5790,7 +5798,7 @@ msgstr ""
 msgid "Search results for: %s"
 msgstr ""
 
-#: inc/elementor/widgets/global/page-title.php:180
+#: inc/elementor/widgets/global/page-title.php:185
 #: inc/elementor/widgets/global/search-form.php:107
 msgid "Blog"
 msgstr ""
@@ -7576,7 +7584,7 @@ msgstr ""
 msgid "Course Tabs"
 msgstr ""
 
-#: inc/elementor/widgets/single-course/course-tabs.php:1368
+#: inc/elementor/widgets/single-course/course-tabs.php:1371
 msgid "Co-Instructor"
 msgstr ""
 

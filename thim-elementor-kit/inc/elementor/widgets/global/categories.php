@@ -56,6 +56,7 @@ class Thim_Ekit_Widget_Categories extends Widget_Base {
 				'options' => array(
 					'post_cate'   => esc_html__( 'Blog Categories', 'thim-elementor-kit' ),
 					'product_cat' => esc_html__( 'Product Categories', 'thim-elementor-kit' ),
+					'course_category' => esc_html__( 'Course Categories', 'thim-elementor-kit' ),
 				),
 			)
 		);
@@ -235,40 +236,62 @@ class Thim_Ekit_Widget_Categories extends Widget_Base {
 			);
 
 			$categories = get_terms( 'product_cat', $cat_args );
+		} elseif ( $settings['layout'] == 'course_category' ) {
+
+			$orderby  = 'name';
+			$order    = 'asc';
+
+			$cat_args = array(
+				'taxonomy'   => 'course_category',
+				'orderby'    => $orderby,
+				'order'      => $order,
+				'hide_empty' => $hide_empty,
+				'parent'     => 0,
+			);
+
+			$categories = get_terms( $cat_args );
 		}
 
 		?>
 
 		<div class="thim-categories-wrapper">
-			<ul class="thim-categories-nav">
-				<?php
-				foreach ( $categories as $category ) { ?>
-					<li class="thim-categories-items">
-						<?php
-						if ( $settings['layout'] == 'post_cate' ) { ?>
-							<a href="<?php
-							echo esc_url( get_term_link( $category->slug, 'category' ) ); ?>"> <?php
-								echo esc_attr( $category->name ); ?> </a>
-							<?php
-						} elseif ( $settings['layout'] == 'product_cat' ) {
-							?>
-							<a href="<?php
-							echo esc_url( get_term_link( $category ) ); ?>"> <?php
-								echo esc_attr( $category->name ); ?> </a>
-						<?php
-						} ?>
+			<?php if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) : ?>
 
-						<?php
-						if ( $settings['show_counts'] == 'yes' ) { ?>
-							<span class="count"><?php
-								echo esc_attr( $category->count ); ?></span>
-						<?php
-						} ?>
+				<ul class="thim-categories-nav">
+					<?php foreach ( $categories as $category ) : ?>
+						<li class="thim-categories-items">
 
-					</li>
-				<?php
-				} ?>
-			</ul>
+							<?php if ( $settings['layout'] == 'post_cate' ) : ?>
+
+								<a href="<?php echo esc_url( get_term_link( $category->slug, 'category' ) ); ?>">
+									<?php echo esc_html( $category->name ); ?>
+								</a>
+
+							<?php elseif ( $settings['layout'] == 'product_cat' || $settings['layout'] == 'course_category' ) : ?>
+
+								<a href="<?php echo esc_url( get_term_link( $category ) ); ?>">
+									<?php echo esc_html( $category->name ); ?>
+								</a>
+
+							<?php endif; ?>
+
+							<?php if ( $settings['show_counts'] == 'yes' ) : ?>
+								<span class="count">
+									<?php echo esc_html( $category->count ); ?>
+								</span>
+							<?php endif; ?>
+
+						</li>
+					<?php endforeach; ?>
+				</ul>
+
+			<?php else : ?>
+
+				<p class="thim-categories-empty">
+					<?php esc_html_e( 'No categories found.', 'thim-elementor-kit' ); ?>
+				</p>
+
+			<?php endif; ?>
 		</div>
 
 		<?php
