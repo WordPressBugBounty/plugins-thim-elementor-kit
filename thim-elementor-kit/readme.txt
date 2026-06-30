@@ -3,7 +3,7 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 6.9
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,9 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.4.4 (2026-06-30) =
+~ Fixed: Sample template selection doesn't work when creating a template. 
+
 = 1.4.3 (2026-06-24) =
 ~ Fixed: `ekit--fx-word-reveal` animated word reveal text effect for text RTL. 
 
