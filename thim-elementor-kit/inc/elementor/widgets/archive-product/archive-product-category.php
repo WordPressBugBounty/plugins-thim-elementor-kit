@@ -691,8 +691,9 @@ class Thim_Ekit_Widget_Archive_Product_Category extends Widget_Base {
 		// Build query args for categories
 		$cat_args = array(
 			'taxonomy'   => 'product_cat',
-			'orderby'    => 'name',
+			'orderby'    => 'meta_value_num',
 			'order'      => 'asc',
+			'meta_key'   => 'order', // WooCommerce custom term order
 			'hide_empty' => $settings['hide_empty'] === 'yes',
 			'parent'     => $settings['only_parent'] === 'yes' ? 0 : '',
 		);

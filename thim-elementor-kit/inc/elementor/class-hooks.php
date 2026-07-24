@@ -209,13 +209,21 @@ class Hooks {
 	}
 
 	public function ajax_load_content_course() {
-		ob_start();
 		if ( ! class_exists( 'LearnPress' ) ) {
-			return;
+			wp_send_json_error( esc_html__( 'LearnPress is not active.', 'thim-elementor-kit' ) );
 		}
-		$params = htmlspecialchars_decode( $_POST['params'] );
+
+		if ( ! isset( $_POST['params'], $_POST['category'] ) ) {
+			wp_send_json_error( esc_html__( 'Invalid params', 'thim-elementor-kit' ) );
+		}
+
+		$params = htmlspecialchars_decode( wp_unslash( $_POST['params'] ) );
 		$params = json_decode( str_replace( '\\', '', $params ), true );
-		$cat_id = $_POST['category'];
+		$cat_id = absint( $_POST['category'] );
+
+		if ( ! is_array( $params ) || ! isset( $params['page_id'], $params['widget_id'] ) ) {
+			wp_send_json_error( esc_html__( 'Invalid params', 'thim-elementor-kit' ) );
+		}
 
 		if ( ! class_exists( 'Elementor\Thim_Ekit_Widget_List_Course' ) ) {
 			include THIM_EKIT_PLUGIN_PATH . 'inc/elementor/widgets/global/list-course.php';
@@ -223,14 +231,12 @@ class Hooks {
 		$list_course = new \Elementor\Thim_Ekit_Widget_List_Course();
 		$settings    = $this->get_widget_settings( intval( $params['page_id'] ),
 			sanitize_text_field( $params['widget_id'] ) );
-		$list_course->render_data_content_tab( $settings, $cat_id );
-		$html = ob_get_contents();
 
-		ob_end_clean();
+		ob_start();
+		$list_course->render_data_content_tab( $settings, $cat_id );
+		$html = ob_get_clean();
 
 		wp_send_json_success( $html );
-
-		wp_die();
 	}
 
 	public static function get_widget_settings( $page_id, $widget_id ) {

@@ -133,8 +133,7 @@ class Thim_Ekit_Widget_Course_Item_Search_Form extends Widget_Base {
 				],
 				'selectors'  => [
 					'{{WRAPPER}} .search-course' => 'min-height: {{SIZE}}{{UNIT}} !important; height: {{SIZE}}{{UNIT}} !important',
-					'{{WRAPPER}} [type=submit]'  => 'min-width: {{SIZE}}{{UNIT}}',
-					'{{WRAPPER}} [type=submit]'  => 'padding-left: calc({{SIZE}}{{UNIT}} / 3); padding-right: calc({{SIZE}}{{UNIT}} / 3)',
+					'{{WRAPPER}} [type=submit]'  => 'min-width: {{SIZE}}{{UNIT}}; padding-left: calc({{SIZE}}{{UNIT}} / 3); padding-right: calc({{SIZE}}{{UNIT}} / 3)',
 				],
 				'separator'  => 'before',
 			]

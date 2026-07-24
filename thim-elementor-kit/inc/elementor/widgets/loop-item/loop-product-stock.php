@@ -90,16 +90,16 @@ class Thim_Ekit_Widget_Loop_Product_Stock extends Widget_Base {
 		$this->start_controls_section(
 			'section_image',
 			[
-				'label' => esc_html__( 'Progress', 'storepify' ),
+				'label' => esc_html__( 'Progress', 'thim-elementor-kit' ),
 			]
 		);
 		$this->add_control(
 			'show_progress',
 			[
-				'label'        => esc_html__( 'Show Progress', 'storepify' ),
+				'label'        => esc_html__( 'Show Progress', 'thim-elementor-kit' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'On', 'storepify' ),
-				'label_off'    => esc_html__( 'Off', 'storepify' ),
+				'label_on'     => esc_html__( 'On', 'thim-elementor-kit' ),
+				'label_off'    => esc_html__( 'Off', 'thim-elementor-kit' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 			]

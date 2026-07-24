@@ -77,7 +77,7 @@ class Thim_Ekit_Widget_Back_To_Course extends Widget_Base {
 		$this->add_control(
 			'hide_title',
 			[
-				'label'   => esc_html__( 'Hide Title?', 'eduma' ),
+				'label'   => esc_html__( 'Hide Title?', 'thim-elementor-kit' ),
 				'type'    => Controls_Manager::SWITCHER,
 				'default' => ''
 			]

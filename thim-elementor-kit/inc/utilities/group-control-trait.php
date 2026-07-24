@@ -485,7 +485,7 @@ trait GroupControlTrait {
 				'max'         => 500,
 				'step'        => 1,
 				'selectors'   => array(
-					'{{WRAPPER}} .thim-slider-pagination' => '-webkit-transform: translateY({{VALUE}}px); -ms-transform: translateY({{SIZE}}px); transform: translateY({{SIZE}}px);',
+					'{{WRAPPER}} .thim-slider-pagination' => '-webkit-transform: translateY({{VALUE}}px); transform: translateY({{SIZE}}px);',
 				),
 			)
 		);
@@ -1006,7 +1006,7 @@ trait GroupControlTrait {
 				'max'         => 500,
 				'step'        => 1,
 				'selectors'   => array(
-					'{{WRAPPER}} .thim-slider-nav' => '-webkit-transform: translateY({{VALUE}}px); -ms-transform: translateY({{SIZE}}px); transform: translateY({{SIZE}}px);',
+					'{{WRAPPER}} .thim-slider-nav' => '-webkit-transform: translateY({{VALUE}}px); transform: translateY({{SIZE}}px);',
 				),
 			)
 		);

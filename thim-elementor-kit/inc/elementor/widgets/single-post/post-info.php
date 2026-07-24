@@ -377,7 +377,7 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 					),
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} .thim-ekit-single-post__info' => 'column-gap: {{SIZE}}{{UNIT}}; -moz-column-gap: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .thim-ekit-single-post__info' => 'column-gap: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);
@@ -508,7 +508,7 @@ class Thim_Ekit_Widget_Post_Info extends Widget_Base {
 			Group_Control_Border::get_type(),
 			[
 				'name'     => 'text_style_border',
-				'label'    => esc_html__( 'Border', 'realpress' ),
+				'label'    => esc_html__( 'Border', 'thim-elementor-kit' ),
 				'selector' => '{{WRAPPER}} .thim-ekit-single-post__info__content a',
 				'exclude'  => [ 'color' ],
 			]

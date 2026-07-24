@@ -98,7 +98,7 @@ class Thim_Ekit_Widget_Product_Notices extends Widget_Base {
 			<div class="woocommerce-notices-wrapper">
 				<div class="woocommerce-info woocommerce-message">
 					<?php
-					echo esc_html__( 'This is an example of a WooCommerce notice', 'thim-elemntor-kit' ); ?>
+					echo esc_html__( 'This is an example of a WooCommerce notice', 'thim-elementor-kit' ); ?>
 				</div>
 			</div>
 			<?php

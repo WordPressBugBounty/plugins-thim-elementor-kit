@@ -85,6 +85,11 @@ class Thim_Ekit_Widget_Page_Title extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					]
 				],
+				'selectors_dictionary' => [
+					'left'   => 'start',
+					'right'  => 'end',
+					'center' => 'center',
+				],
 				'selectors' => [
 					'{{WRAPPER}} .thim-ekit-page-title' => 'text-align: {{VALUE}};'
 				],

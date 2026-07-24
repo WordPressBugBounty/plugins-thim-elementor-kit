@@ -105,7 +105,19 @@ class Init extends Modules {
 				if ( $condition['query'] === 'post' ) {
 					return is_archive() || is_search() || is_author() || is_category() || is_home() || is_tag() || is_tax();
 				} elseif ( $condition['query'] === 'product' ) {
-					return class_exists( '\WooCommerce' ) && ( is_shop() || is_product_taxonomy() || ( is_search() && 'product' === get_query_var( 'post_type' ) ) );
+					if ( ! class_exists( '\WooCommerce' ) ) {
+						return false;
+					}
+					if ( is_tax() ) {
+						$current_tax = get_queried_object();
+
+						// exclude taxonomy product attribute (pa_*) : tour attr
+						if ( isset( $current_tax->taxonomy ) && strpos( $current_tax->taxonomy, 'pa_' ) === 0 ) {
+							return false;
+						}
+						return is_product_taxonomy();
+					}
+					return is_shop() || ( is_search() && 'product' === get_query_var( 'post_type' ) );
 				} elseif ( $condition['query'] === 'realpress-property' ) {
 					return class_exists( '\RealPress\RealPress' ) && ( is_post_type_archive( 'realpress-property' ) || is_tax( get_object_taxonomies( REALPRESS_PROPERTY_CPT ) ) || is_page( \RealPress\Helpers\Settings::get_page_id( 'agent_list_page' ) ) );
 				} else {

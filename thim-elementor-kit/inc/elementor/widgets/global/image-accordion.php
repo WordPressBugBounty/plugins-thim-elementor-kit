@@ -213,13 +213,13 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$repeater->add_control(
 			'label_link',
 			[
-				'label'       => esc_html__( 'Button Label', 'elementskit-lite' ),
+				'label'       => esc_html__( 'Button Label', 'thim-elementor-kit' ),
 				'type'        => Controls_Manager::TEXT,
 				'dynamic'     => [
 					'active' => true,
 				],
 				'label_block' => true,
-				'default'     => esc_html__( 'Read More', 'elementskit-lite' ),
+				'default'     => esc_html__( 'Read More', 'thim-elementor-kit' ),
 				'condition'   => [
 					'show_link' => 'read_more',
 				],
@@ -467,7 +467,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->start_controls_section(
 			'read_more_style',
 			[
-				'label' => esc_html__( 'Read More', 'eduma' ),
+				'label' => esc_html__( 'Read More', 'thim-elementor-kit' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -475,7 +475,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'more_padding',
 			[
-				'label'      => esc_html__( 'Padding', 'eduma' ),
+				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
@@ -488,7 +488,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			[
 				'name'     => 'more_typography',
-				'label'    => esc_html__( 'Typography', 'eduma' ),
+				'label'    => esc_html__( 'Typography', 'thim-elementor-kit' ),
 				'selector' => '{{WRAPPER}} .thim-ekits-image-accordion__item .button-read-more',
 			]
 		);
@@ -496,15 +496,15 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'btn_border_style',
 			[
-				'label'     => esc_html_x( 'Border Type', 'Border Control', 'eduma' ),
+				'label'     => esc_html_x( 'Border Type', 'Border Control', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::SELECT,
 				'options'   => [
-					'none'   => esc_html__( 'None', 'eduma' ),
-					'solid'  => esc_html_x( 'Solid', 'Border Control', 'eduma' ),
-					'double' => esc_html_x( 'Double', 'Border Control', 'eduma' ),
-					'dotted' => esc_html_x( 'Dotted', 'Border Control', 'eduma' ),
-					'dashed' => esc_html_x( 'Dashed', 'Border Control', 'eduma' ),
-					'groove' => esc_html_x( 'Groove', 'Border Control', 'eduma' ),
+					'none'   => esc_html__( 'None', 'thim-elementor-kit' ),
+					'solid'  => esc_html_x( 'Solid', 'Border Control', 'thim-elementor-kit' ),
+					'double' => esc_html_x( 'Double', 'Border Control', 'thim-elementor-kit' ),
+					'dotted' => esc_html_x( 'Dotted', 'Border Control', 'thim-elementor-kit' ),
+					'dashed' => esc_html_x( 'Dashed', 'Border Control', 'thim-elementor-kit' ),
+					'groove' => esc_html_x( 'Groove', 'Border Control', 'thim-elementor-kit' ),
 				],
 				'default'   => 'none',
 				'selectors' => [
@@ -516,7 +516,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'border_dimensions',
 			[
-				'label'     => esc_html_x( 'Width', 'Border Control', 'eduma' ),
+				'label'     => esc_html_x( 'Width', 'Border Control', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::DIMENSIONS,
 				'condition' => [
 					'btn_border_style!' => 'none',
@@ -531,13 +531,13 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_btn_normal',
 			[
-				'label' => esc_html__( 'Normal', 'eduma' ),
+				'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
 			]
 		);
 		$this->add_control(
 			'btn_text_color',
 			[
-				'label'     => __( 'Text Color', 'eduma' ),
+				'label'     => __( 'Text Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .thim-ekits-image-accordion__item .button-read-more' => 'color: {{VALUE}};',
@@ -548,7 +548,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'btn_border_color',
 			[
-				'label'     => __( 'Border Color', 'eduma' ),
+				'label'     => __( 'Border Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'btn_border_style!' => 'none',
@@ -562,7 +562,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'btn_bg_color',
 			[
-				'label'     => __( 'Background Color', 'eduma' ),
+				'label'     => __( 'Background Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .thim-ekits-image-accordion__item .button-read-more' => 'background-color: {{VALUE}};',
@@ -573,7 +573,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_responsive_control(
 			'border_radius',
 			[
-				'label'      => esc_html__( 'Border Radius', 'eduma' ),
+				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'default'    => [
@@ -592,13 +592,13 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_btn_hover',
 			[
-				'label' => esc_html__( 'Hover', 'eduma' ),
+				'label' => esc_html__( 'Hover', 'thim-elementor-kit' ),
 			]
 		);
 		$this->add_control(
 			'btn_text_color_hover',
 			[
-				'label'     => __( 'Text Color', 'eduma' ),
+				'label'     => __( 'Text Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .thim-ekits-image-accordion__item .button-read-more:hover' => 'color: {{VALUE}};',
@@ -608,7 +608,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'btn_border_color_hover',
 			[
-				'label'     => __( 'Border Color', 'eduma' ),
+				'label'     => __( 'Border Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'condition' => [
 					'btn_border_style!' => 'none'
@@ -621,7 +621,7 @@ class Thim_Ekit_Widget_Image_Accordion extends Widget_Base {
 		$this->add_control(
 			'btn_bg_color_hover',
 			[
-				'label'     => __( 'Background Color', 'eduma' ),
+				'label'     => __( 'Background Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .thim-ekits-image-accordion__item .button-read-more:hover' => 'background-color: {{VALUE}};',

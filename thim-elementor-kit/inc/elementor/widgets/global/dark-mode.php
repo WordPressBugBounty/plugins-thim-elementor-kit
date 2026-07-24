@@ -164,7 +164,7 @@ class Thim_Ekit_Widget_Dark_Mode extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_icon_light',
 			[
-				'label' => esc_html__( 'Light', 'tpebl' ),
+				'label' => esc_html__( 'Light', 'thim-elementor-kit' ),
 			]
 		);
 		$this->add_control(
@@ -210,7 +210,7 @@ class Thim_Ekit_Widget_Dark_Mode extends Widget_Base {
 		$this->start_controls_tab(
 			'tab_icon_dark',
 			[
-				'label' => esc_html__( 'Dark', 'tpebl' ),
+				'label' => esc_html__( 'Dark', 'thim-elementor-kit' ),
 			]
 		);
 		$this->add_control(

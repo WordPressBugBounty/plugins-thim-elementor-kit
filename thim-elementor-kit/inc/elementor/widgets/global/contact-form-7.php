@@ -199,10 +199,7 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 				'label'     => esc_html__( 'Placeholder Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input::-webkit-input-placeholder,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea::-webkit-input-placeholder' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input::-moz-placeholder,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea::-moz-placeholder'                   => 'color: {{VALUE}};',
-					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input:-ms-input-placeholder,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea:-ms-input-placeholder'           => 'color: {{VALUE}};',
-					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input:-moz-placeholder,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea:-moz-placeholder'                     => 'color: {{VALUE}};',
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input::placeholder,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea::placeholder' => 'color: {{VALUE}};',
 				),
 			)
 		);

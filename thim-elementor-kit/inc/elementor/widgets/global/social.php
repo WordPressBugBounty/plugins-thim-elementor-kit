@@ -163,7 +163,6 @@ class Thim_Ekit_Widget_Social extends Widget_Base {
 
 		$this->end_controls_section();
 
-
 		$this->register_style_controls();
 	}
 
@@ -592,7 +591,7 @@ class Thim_Ekit_Widget_Social extends Widget_Base {
 		);
 	}
 
-	function thim_ekit_social_value_default() {
+	public function thim_ekit_social_value_default() {
 		return array(
 			array(
 				'social_icon_icons'            => array(

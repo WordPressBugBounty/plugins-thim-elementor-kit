@@ -1127,7 +1127,7 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 				'max'         => 500,
 				'step'        => 1,
 				'selectors'   => array(
-					'{{WRAPPER}} .thim-ekit-team__member-rating' => '-webkit-transform: translateY({{VALUE}}px); -ms-transform: translateY({{SIZE}}px); transform: translateY({{SIZE}}px);',
+					'{{WRAPPER}} .thim-ekit-team__member-rating' => '-webkit-transform: translateY({{VALUE}}px); transform: translateY({{SIZE}}px);',
 				),
 				'condition'   => array(
 					'rating_position' => 'absolute',
@@ -1350,7 +1350,7 @@ class Thim_Ekit_Widget_Team extends Widget_Base {
 				'max'         => 500,
 				'step'        => 1,
 				'selectors'   => array(
-					'{{WRAPPER}} .thim-ekit-team__list-social' => '-webkit-transform: translateY({{VALUE}}px); -ms-transform: translateY({{SIZE}}px); transform: translateY({{SIZE}}px);',
+					'{{WRAPPER}} .thim-ekit-team__list-social' => '-webkit-transform: translateY({{VALUE}}px); transform: translateY({{SIZE}}px);',
 				),
 			)
 		);

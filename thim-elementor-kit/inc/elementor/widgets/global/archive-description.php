@@ -92,7 +92,23 @@ class Thim_Ekit_Widget_Archive_Description extends Widget_Base {
 	}
 
 	public function render() {
-		echo '<div class="thim-ekit-archive-description">' . get_the_archive_description() . '</div>';
+		$description = get_the_archive_description();
+
+		if ( empty( $description ) ) {
+			$queried_id = get_queried_object_id();
+
+			if ( $queried_id ) {
+				$post = get_post( $queried_id );
+
+				if ( $post && ! empty( $post->post_excerpt ) ) {
+					$description = $post->post_excerpt;
+				}
+			}
+		}
+
+		if ( ! empty( $description ) ) {
+			echo '<div class="thim-ekit-archive-description">' . wp_kses_post( $description ) . '</div>';
+		}
 	}
 
 	protected function content_template() {

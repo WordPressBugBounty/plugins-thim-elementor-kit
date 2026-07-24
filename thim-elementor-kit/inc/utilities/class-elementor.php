@@ -35,9 +35,6 @@ class Elementor {
 	}
 
 	/**
-	 * Undocumented function
-	 *
-	 * @param [type] $post_id post id
 	 * @param [type] $template_id loop item template id
 	 *
 	 * @return void

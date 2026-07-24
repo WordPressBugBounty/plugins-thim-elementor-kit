@@ -186,22 +186,22 @@ class Init extends Modules {
 	public function get_conditions() {
 		return array(
 			array(
-				'label'    => esc_html__( 'All products', 'thim-elementor-kit-pro' ),
+				'label'    => esc_html__( 'All products', 'thim-elementor-kit' ),
 				'value'    => 'all',
 				'is_query' => false,
 			),
 			array(
-				'label'    => esc_html__( 'Select product', 'thim-elementor-kit-pro' ),
+				'label'    => esc_html__( 'Select product', 'thim-elementor-kit' ),
 				'value'    => 'product_id',
 				'is_query' => true,
 			),
 			array(
-				'label'    => esc_html__( 'Product category', 'thim-elementor-kit-pro' ),
+				'label'    => esc_html__( 'Product category', 'thim-elementor-kit' ),
 				'value'    => 'product_category',
 				'is_query' => true,
 			),
 			array(
-				'label'    => esc_html__( 'Product tag', 'thim-elementor-kit-pro' ),
+				'label'    => esc_html__( 'Product tag', 'thim-elementor-kit' ),
 				'value'    => 'product_tag',
 				'is_query' => true,
 			),

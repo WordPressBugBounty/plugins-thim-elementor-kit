@@ -1374,14 +1374,14 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			)
 		);
 
-		$this->add_control(
-			'client_title_heading',
-			array(
-				'label'     => esc_html__('Client Title', 'thim-elementor-kit'),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			)
-		);
+		// $this->add_control(
+		// 	'client_title_heading',
+		// 	array(
+		// 		'label'     => esc_html__('Client Title', 'thim-elementor-kit'),
+		// 		'type'      => Controls_Manager::HEADING,
+		// 		'separator' => 'before',
+		// 	)
+		// );
 
 		$this->add_control(
 			'client_content_heading',

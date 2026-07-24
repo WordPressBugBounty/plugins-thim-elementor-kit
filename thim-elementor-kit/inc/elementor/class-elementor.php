@@ -441,9 +441,6 @@ class Elementor {
 					'selectors' => [
 						'{{WRAPPER}} > div' =>
 							'-webkit-animation: {{VALUE}} 10s infinite;
-							-moz-animation: {{VALUE}} 10s infinite;
-							-ms-animation: {{VALUE}} 10s infinite;
-							-o-animation: {{VALUE}} 10s infinite;
 							animation: {{VALUE}} 10s infinite;
 							overflow: hidden;'
 					],
@@ -490,9 +487,6 @@ class Elementor {
 					'selectors' => [
 						'{{WRAPPER}} > div' => '
 							-webkit-animation: {{VALUE}} 2s;
-							 -moz-animation: {{VALUE}} 2s;
-							 -ms-animation: {{VALUE}} 2s;
-							 -o-animation: {{VALUE}} 2s;
 							 animation: {{VALUE}} 2s;'
 					],
 					'condition' => [
@@ -528,7 +522,7 @@ class Elementor {
 					],
 					'description' => __( 'Set custom animation duration in second( unit ).', 'thim-elementor-kit' ),
 					'selectors'   => [
-						'{{WRAPPER}} > div' => '-webkit-animation-duration: {{SIZE}}s; -moz-animation-duration: {{SIZE}}s; -ms-animation-duration: {{SIZE}}s; -o-animation-duration: {{SIZE}}s; animation-duration: {{SIZE}}s;'
+						'{{WRAPPER}} > div' => '-webkit-animation-duration: {{SIZE}}s; animation-duration: {{SIZE}}s;'
 					],
 					'condition'   => [
 						'animation_type'         => 'infinite-animation',

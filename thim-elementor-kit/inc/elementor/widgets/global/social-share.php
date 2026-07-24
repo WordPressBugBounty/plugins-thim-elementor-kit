@@ -29,7 +29,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 		return [
 			'thim',
 			'social',
-			'social-share'
+			'social-share',
 		];
 	}
 
@@ -311,7 +311,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 		$this->start_controls_tab(
 			'toggle_label_tabs_normal_colors',
 			array(
-				'label' => esc_html__( 'Normal', 'thim-elementor-kit' )
+				'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
 			)
 		);
 		$this->add_control(
@@ -321,7 +321,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .share-toggle-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .share-toggle-icon' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -332,7 +332,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .share-toggle-icon' => 'background: {{VALUE}};'
+					'{{WRAPPER}} .share-toggle-icon' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -343,7 +343,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#3b5998',
 				'selectors' => array(
-					'{{WRAPPER}} .share-toggle-icon i'        => 'color: {{VALUE}};',
+					'{{WRAPPER}} .share-toggle-icon i' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .share-toggle-icon svg path' => 'stroke: {{VALUE}}; fill: {{VALUE}};',
 				),
 			)
@@ -366,7 +366,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 		$this->start_controls_tab(
 			'toggle_label_tabs_hover_colors',
 			array(
-				'label' => esc_html__( 'Hover', 'thim-elementor-kit' )
+				'label' => esc_html__( 'Hover', 'thim-elementor-kit' ),
 			)
 		);
 		$this->add_control(
@@ -376,7 +376,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .share-toggle-icon:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .share-toggle-icon:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -387,7 +387,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .share-toggle-icon:hover' => 'background: {{VALUE}};'
+					'{{WRAPPER}} .share-toggle-icon:hover' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -440,7 +440,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .content-widget-social-share' => 'background: {{VALUE}};'
+					'{{WRAPPER}} .content-widget-social-share' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -511,7 +511,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .title-share' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .title-share' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -620,7 +620,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array(
 					'social_icon_style' => 'toggle',
-					'show_url_copy'     => 'yes'
+					'show_url_copy'     => 'yes',
 				),
 			)
 		);
@@ -737,7 +737,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
 					'body:not(.rtl) {{WRAPPER}} .btn-clipboard' => 'margin-left: {{SIZE}}{{UNIT}} !important;',
-					'body.rtl {{WRAPPER}} .btn-clipboard'       => 'margin-right: {{SIZE}}{{UNIT}} !important;',
+					'body.rtl {{WRAPPER}} .btn-clipboard' => 'margin-right: {{SIZE}}{{UNIT}} !important;',
 				),
 			)
 		);
@@ -772,7 +772,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 		$this->start_controls_tab(
 			'toggle_copy_url_button_tabs_normal_colors',
 			array(
-				'label' => esc_html__( 'Normal', 'thim-elementor-kit' )
+				'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
 			)
 		);
 		$this->add_control(
@@ -782,7 +782,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .btn-clipboard' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .btn-clipboard' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -793,7 +793,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .btn-clipboard' => 'background: {{VALUE}};'
+					'{{WRAPPER}} .btn-clipboard' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -802,7 +802,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 		$this->start_controls_tab(
 			'toggle_copy_url_button_tabs_hover_colors',
 			array(
-				'label' => esc_html__( 'Hover', 'thim-elementor-kit' )
+				'label' => esc_html__( 'Hover', 'thim-elementor-kit' ),
 			)
 		);
 		$this->add_control(
@@ -812,7 +812,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .btn-clipboard:hover' => 'color: {{VALUE}};'
+					'{{WRAPPER}} .btn-clipboard:hover' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -823,7 +823,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => [
-					'{{WRAPPER}} .btn-clipboard:hover' => 'background: {{VALUE}};'
+					'{{WRAPPER}} .btn-clipboard:hover' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -849,13 +849,18 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 					'twitter'   => esc_html__( 'Twitter', 'thim-elementor-kit' ),
 					'linkedin'  => esc_html__( 'Linkedin', 'thim-elementor-kit' ),
 					'pinterest' => esc_html__( 'Pinterest', 'thim-elementor-kit' ),
-//					'instagram' => esc_html__( 'Instagram', 'thim-elementor-kit' ),
+					'reddit'    => esc_html__( 'Reddit', 'thim-elementor-kit' ),
+					'telegram'  => esc_html__( 'Telegram', 'thim-elementor-kit' ),
+					'whatsapp'  => esc_html__( 'WhatsApp', 'thim-elementor-kit' ),
+					'tumblr'    => esc_html__( 'Tumblr', 'thim-elementor-kit' ),
+					'email'     => esc_html__( 'Email', 'thim-elementor-kit' ),
+					'line'      => esc_html__( 'Line', 'thim-elementor-kit' ),
 				),
 			)
 		);
 	}
 
-	function thim_ekit_social_value_default() {
+	public function thim_ekit_social_value_default() {
 		return array(
 			array(
 				'social_icon_icons'            => array(
@@ -868,7 +873,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 			),
 			array(
 				'social_icon_icons'            => array(
-					'value'   => 'fab fa-twitter',
+					'value'   => 'fab fab-x-twitter',
 					'library' => 'Font Awesome 5 Brands',
 				),
 				'social_icon_label'            => 'Twitter',
@@ -890,8 +895,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 	protected function render() {
 		$settings = $this->get_settings();
 		?>
-		<div class="social-swapper social-share-<?php
-		echo esc_attr( $settings['social_icon_style'] ); ?>">
+		<div class="social-swapper social-share-<?php echo esc_attr( $settings['social_icon_style'] );?>">
 			<?php
 			if ( $settings['social_icon_style'] == 'toggle' ) {
 				echo '<div class="share-toggle-icon">';
@@ -905,8 +909,7 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 				$this->render_raw();
 				if ( $settings['show_url_copy'] == 'yes' ) {
 					echo '<div class="clipboard-post"><input class="clipboard-value" type="text" value="' . get_permalink() . '">';
-					echo '<button class="btn-clipboard" data-copied="' . esc_html__( 'Copied!',
-							'thim-elementor-kit' ) . '">' . esc_html__( 'Copy', 'thim-elementor-kit' ) . '
+					echo '<button class="btn-clipboard" data-copied="' . esc_html__( 'Copied!', 'thim-elementor-kit' ) . '">' . esc_html__( 'Copy', 'thim-elementor-kit' ) . '
 							<span class="tooltip">' . esc_html__( 'Copy to Clipboard', 'thim-elementor-kit' ) . '</span>
 						</button>';
 					echo '</div>';
@@ -925,28 +928,104 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 		?>
 		<ul class="thim-social-media">
 			<?php
-			foreach ( $settings['social_icon_add_icons'] as $key => $icon ) : ?>
-				<?php
+			foreach ( $settings['social_icon_add_icons'] as $key => $icon ) :
+
 				if ( $icon['social_icon_icons'] != '' ) :
 
 					switch ( $icon['social_key'] ) {
 						case 'facebook':
-							$link_share = 'https://www.facebook.com/sharer.php?u=' . urlencode( get_permalink() );
+							$link_share = 'https://www.facebook.com/sharer.php?' . http_build_query(
+								array(
+									'u' => get_permalink(),
+								)
+							);
 							break;
-						case'twitter':
-							$link_share = 'https://twitter.com/share?url=' . urlencode( get_permalink() ) . '&amp;text=' . rawurlencode( esc_attr( get_the_title() ) );
+						case 'twitter':
+							$link_share = 'https://twitter.com/share?' . http_build_query(
+								array(
+									'url'  => get_permalink(),
+									'text' => get_the_title(),
+								)
+							);
 							break;
-						case'pinterest':
-							$link_share = 'http://pinterest.com/pin/create/button/?url=' . urlencode( get_permalink() ) . '&amp;description=' . rawurlencode( esc_attr( get_the_excerpt() ) ) . '&amp;media=' . urlencode( wp_get_attachment_url( get_post_thumbnail_id() ) ) . ' onclick="window.open(this.href); return false;"';
+						case 'pinterest':
+							$link_share = 'http://pinterest.com/pin/create/button/?' . http_build_query(
+								array(
+									'url'         => get_permalink(),
+									'description' => get_the_excerpt(),
+									'media'       => wp_get_attachment_url( get_post_thumbnail_id() ),
+								)
+							);
 							break;
-						case'linkedin':
-							$link_share = 'https://www.linkedin.com/shareArticle?mini=true&url=' . urlencode( get_permalink() ) . '&title=' . rawurlencode( esc_attr( get_the_title() ) ) . '&summary=&source=' . rawurlencode( esc_attr( get_the_excerpt() ) );
+						case 'linkedin':
+							$link_share = 'https://www.linkedin.com/shareArticle?' . http_build_query(
+								array(
+									'mini'    => 'true',
+									'url'     => get_permalink(),
+									'title'   => get_the_title(),
+									'summary' => get_the_excerpt(),
+									'source'  => get_the_excerpt(),
+								)
+							);
+							break;
+						case 'reddit':
+							$link_share = 'https://www.reddit.com/submit?' . http_build_query(
+								array(
+									'url'   => get_permalink(),
+									'title' => get_the_title(),
+								)
+							);
+							break;
+
+						case 'telegram':
+							$link_share = 'https://t.me/share/url?' . http_build_query(
+								array(
+									'url'  => get_permalink(),
+									'text' => get_the_title(),
+								)
+							);
+							break;
+
+						case 'whatsapp':
+							$link_share = 'https://wa.me/?' . http_build_query(
+								array(
+									'text' => get_the_title() . ' ' . get_permalink(),
+								)
+							);
+							break;
+
+						case 'tumblr':
+							$link_share = 'https://www.tumblr.com/widgets/share/tool?' . http_build_query(
+								array(
+									'canonicalUrl' => get_permalink(),
+									'title'        => get_the_title(),
+									'caption'      => get_the_excerpt(),
+								)
+							);
+
+							break;
+
+						case 'email':
+							$link_share = 'mailto:?' . http_build_query(
+								array(
+									'subject' => get_the_title(),
+									'body'    => get_permalink(),
+								)
+							);
+							break;
+
+						case 'line':
+							$link_share = 'https://social-plugins.line.me/lineit/share?' . http_build_query(
+								array(
+									'url' => get_permalink(),
+								)
+							);
 							break;
 					}
 					?>
 					<li class="elementor-repeater-item-<?php echo esc_attr( $icon['_id'] ); ?>">
-						<a target="_blank" href="<?php echo esc_url( $link_share ); ?>"
-						   title="<?php echo esc_html( $icon['social_icon_label'] ); ?>">
+						<a target="_blank" rel="nofollow"  href="<?php echo esc_url( $link_share ); ?>"
+							title="<?php echo esc_html( $icon['social_icon_label'] ); ?>">
 							<?php if ( $settings['social_icon_style'] != 'text' && $settings['social_icon_style_icon_position'] == 'before' ) : ?>
 
 								<?php Icons_Manager::render_icon( $icon['social_icon_icons'], array( 'aria-hidden' => 'true' ) ); ?>

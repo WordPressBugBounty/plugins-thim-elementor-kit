@@ -45,6 +45,16 @@ class Thim_Ekit_Widget_Accordion extends Widget_Base {
 
 		$repeater = new Repeater();
 		$repeater->add_control(
+			'acc_icon',
+			[
+				'label'       => esc_html__( 'Icon Title', 'thim-elementor-kit' ),
+				'type'        => Controls_Manager::ICONS,
+				'label_block' => false,
+				'skin'        => 'inline',
+			]
+		);
+
+		$repeater->add_control(
 			'acc_title',
 			[
 				'label'   => esc_html__( 'Title', 'thim-elementor-kit' ),
@@ -180,6 +190,18 @@ class Thim_Ekit_Widget_Accordion extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
+			'item_padding',
+			[
+				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', '%' ],
+				'selectors'  => [
+					'{{WRAPPER}} .accordion-section' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
 			'item_border_radius',
 			[
 				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
@@ -252,7 +274,7 @@ class Thim_Ekit_Widget_Accordion extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .accordion-section .accordion-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .accordion-section .accordion-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
 				],
 			]
 		);
@@ -400,6 +422,60 @@ class Thim_Ekit_Widget_Accordion extends Widget_Base {
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
+
+		$this->add_control(
+			'title_icon_heading',
+			[
+				'label'     => esc_html__( 'Title Icon', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+		$this->add_responsive_control(
+			'title_icon_size',
+			[
+				'label'      => esc_html__( 'Size', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', 'em' ],
+				'range'      => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 200,
+						'step' => 1,
+					],
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .accordion-section .accordion-title .accordion-title-text i'   => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .accordion-section .accordion-title .accordion-title-text svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'title_icon_color',
+			[
+				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .accordion-section .accordion-title .accordion-title-text i'   => 'color: {{VALUE}};',
+					'{{WRAPPER}} .accordion-section .accordion-title .accordion-title-text svg' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'title_icon_color_active',
+			[
+				'label'     => esc_html__( 'Active Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .accordion-section .accordion-title:hover .accordion-title-text i,{{WRAPPER}} .accordion-section .accordion-title[aria-selected=true] .accordion-title-text i'     => 'color: {{VALUE}};',
+					'{{WRAPPER}} .accordion-section .accordion-title:hover .accordion-title-text svg,{{WRAPPER}} .accordion-section .accordion-title[aria-selected=true] .accordion-title-text svg' => 'fill: {{VALUE}};',
+				],
+			]
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -528,8 +604,13 @@ class Thim_Ekit_Widget_Accordion extends Widget_Base {
 					<div class="accordion-section">
 						<div <?php
 						$this->print_render_attribute_string( $acc_title_setting_key ); ?>>
+							<span class="accordion-title-text">
+								<?php if ( ! empty( $tab['acc_icon']['value'] ) ) {
+									Icons_Manager::render_icon( $tab['acc_icon'], [ 'aria-hidden' => 'true' ] );
+								} ?>
+								<?php echo wp_kses_post( $tab['acc_title'] ); ?>
+							</span>
 							<?php
-							echo wp_kses_post( $tab['acc_title'] );
 
 							if ( ! empty( $settings['icon'] ) || ! empty( $settings['icon_active'] ) ) {
 								?>
