@@ -1110,6 +1110,73 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			)
 		);
 
+		$this->add_responsive_control(
+			'client_avatar_width',
+			array(
+				'label'      => esc_html__('Width', 'thim-elementor-kit'),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array('px', '%', 'em', 'rem'),
+				'range'      => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 500,
+					),
+					'%' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+					'em' => array(
+						'min' => 0,
+						'max' => 20,
+					),
+					'rem' => array(
+						'min' => 0,
+						'max' => 20,
+					),
+				),
+				'default'    => array(
+					'unit' => 'px',
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekits-testimonial__image' => 'width: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'client_avatar_height',
+			array(
+				'label'      => esc_html__('Height', 'thim-elementor-kit'),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array('px', '%', 'em', 'rem'),
+				'range'      => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 500,
+					),
+					'%' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+					'em' => array(
+						'min' => 0,
+						'max' => 20,
+					),
+					'rem' => array(
+						'min' => 0,
+						'max' => 20,
+					),
+				),
+				'default'    => array(
+					'unit' => 'px',
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekits-testimonial__image' => 'height: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .thim-ekits-testimonial__image img' => 'width: 100%; height: 100%; object-fit: cover;',
+				),
+			)
+		);
+
 		$this->add_control(
 			'client_avatar_border_radius',
 			array(

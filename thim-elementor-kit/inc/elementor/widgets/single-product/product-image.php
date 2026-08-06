@@ -627,12 +627,16 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 					$data_slider .= ' data-direction="' . esc_attr( $settings['slides_options'] ) . '"';
 
 					if ( $settings['slides_options'] == 'horizontal' ) {
-						if ( ! empty( $settings['thumbnail_spacing']['size'] ) ) {
-							$data_slider .= ' data-marginitem="' . esc_attr( $settings['thumbnail_spacing']['size'] ) . '"';
-						}
-						if ( ! empty( $settings['columns_options'] ) ) {
-							$data_slider .= ' data-itemshow="' . esc_attr( $settings['columns_options'] ) . '"';
-						}
+						// data-marginitem and data-itemshow must always be emitted
+						$margin_item = ( isset( $settings['thumbnail_spacing']['size'] ) && '' !== $settings['thumbnail_spacing']['size'] )
+							? $settings['thumbnail_spacing']['size']
+							: 0;
+						$data_slider .= ' data-marginitem="' . esc_attr( $margin_item ) . '"';
+
+						// the columns_options control default.
+						$item_show    = ! empty( $settings['columns_options'] ) ? $settings['columns_options'] : 3;
+						$data_slider .= ' data-itemshow="' . esc_attr( $item_show ) . '"';
+
 						if ( ! empty( $settings['columns_options_tablet'] ) ) {
 							$data_slider .= ' data-itemshowtablet="' . esc_attr( $settings['columns_options_tablet'] ) . '"';
 						}
@@ -685,15 +689,22 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 									itemshowtablet = $thumbnails.data('itemshowtablet'),
 									itemshowmobile = $thumbnails.data('itemshowmobile');
 
-								if (jQuery(window).outerWidth() < 1024 && itemshowtablet !== undefined) {
+								if (jQuery(window).outerWidth() < 1024 && !isNaN(itemshowtablet)) {
 									itemShow = itemshowtablet;
 								}
-								if (jQuery(window).outerWidth() < 767 && itemshowmobile !== undefined) {
+								if (jQuery(window).outerWidth() < 767 && !isNaN(itemshowmobile)) {
 									itemShow = itemshowmobile;
 								}
+								if (isNaN(itemShow) || itemShow < 1) {
+									itemShow = 3;
+								}
 
-								marginItem = $thumbnails.data('marginitem'),
-									width_item = (width_item - (marginItem * (itemShow - 1))) / itemShow;
+								marginItem = parseFloat($thumbnails.data('marginitem'));
+								if (isNaN(marginItem) || marginItem < 0) {
+									marginItem = 0;
+								}
+
+								width_item = (width_item - (marginItem * (itemShow - 1))) / itemShow;
 							}
 							createThumbnails();
 							ThumbnailsSlider();
@@ -742,7 +753,6 @@ class Thim_Ekit_Widget_Product_Image extends Widget_Base {
 							asNavFor     : $gallery,
 							prevText     : '',
 							nextText     : '',
-							// useCSS       : true,
 						});
 					}
 				});

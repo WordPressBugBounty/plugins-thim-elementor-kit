@@ -380,7 +380,7 @@ class Thim_Ekit_Widget_List_Product extends Thim_Ekit_Products_Base {
 			</div>
 			<?php
 		} else {
-			echo '<div class="message-info">' . __( 'No data were found matching your selection, you need to create Post or select Category of Widget.',
+			echo '<div class="message-info">' . __( 'No data were found matching your selection, you need to create Product or select Category of Widget.',
 					'thim-elementor-kit' ) . '</div>';
 		}
 

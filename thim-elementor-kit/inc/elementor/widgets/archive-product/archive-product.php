@@ -99,6 +99,7 @@ class Thim_Ekit_Widget_Archive_Product extends Thim_Ekit_Products_Base {
 				'label'     => esc_html__( 'Limit', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::NUMBER,
 				'default'   => '-1',
+				'min'       => -1,
 				'condition' => array(
 					'rows' => '',
 				),
@@ -197,13 +198,22 @@ class Thim_Ekit_Widget_Archive_Product extends Thim_Ekit_Products_Base {
 				$this->query_args['s'] = $_GET['s'];
 			}
 		}
-		if ( null !== get_queried_object_id() && ! empty( get_queried_object_id() ) && get_post_type() == 'product') {
-			$this->query_args['tax_query'] = array(
-				array(
-					'taxonomy' => 'product_visibility',
-					'field'    => "term_taxonomy_id",
-					'terms'    => get_queried_object_id(),
-				),
+
+		// Note: since WooCommerce 11.0.0 the shop archive reports the Shop *page* as the queried object
+		// so the queried object has to be checked for being a term before it is used here.
+		$queried_object = get_queried_object();
+
+		if ( $queried_object instanceof \WP_Term
+			&& in_array( $queried_object->taxonomy, get_object_taxonomies( 'product' ), true ) ) {
+			if ( ! isset( $this->query_args['tax_query'] ) || ! is_array( $this->query_args['tax_query'] ) ) {
+				$this->query_args['tax_query'] = array();
+			}
+
+			$this->query_args['tax_query'][] = array(
+				'taxonomy'         => $queried_object->taxonomy,
+				'field'            => 'term_id',
+				'terms'            => $queried_object->term_id,
+				'include_children' => true,
 			);
 		}
 		$query = new \WP_Query( apply_filters( 'thim_kits/archive_product/query_args', $this->query_args ) );

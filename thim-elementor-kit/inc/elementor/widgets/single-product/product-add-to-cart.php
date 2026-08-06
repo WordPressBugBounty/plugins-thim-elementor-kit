@@ -68,6 +68,28 @@ class Thim_Ekit_Widget_Product_Add_To_Cart extends Widget_Base {
 			)
 		);
 
+		$this->add_responsive_control(
+			'button_width',
+			array(
+				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 500,
+					),
+					'%'  => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .cart button' => 'width: {{SIZE}}{{UNIT}}',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			array(
@@ -221,8 +243,30 @@ class Thim_Ekit_Widget_Product_Add_To_Cart extends Widget_Base {
 		$this->start_controls_section(
 			'section_quantity_style',
 			array(
-				'label' => esc_html__( 'Quantity', 'thim-elementor-kit' ),
+				'label' => esc_html__( 'Input Quantity', 'thim-elementor-kit' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_responsive_control(
+			'quantity_width',
+			array(
+				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 500,
+					),
+					'%'  => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .quantity .qty' => 'width: {{SIZE}}{{UNIT}}',
+				),
 			)
 		);
 
@@ -243,7 +287,7 @@ class Thim_Ekit_Widget_Product_Add_To_Cart extends Widget_Base {
 					),
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} .quantity input' => 'max-width: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .quantity .qty' => 'max-width: {{SIZE}}{{UNIT}}',
 				),
 			)
 		);
@@ -266,6 +310,31 @@ class Thim_Ekit_Widget_Product_Add_To_Cart extends Widget_Base {
 			array(
 				'name'     => 'quantity_typography',
 				'selector' => '{{WRAPPER}} .quantity .qty',
+			)
+		);
+
+		$this->add_responsive_control(
+			'quantity_text_align',
+			array(
+				'label'     => esc_html__( 'Text Align', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => array(
+					'left'   => array(
+						'title' => esc_html__( 'Left', 'thim-elementor-kit' ),
+						'icon'  => 'eicon-text-align-left',
+					),
+					'center' => array(
+						'title' => esc_html__( 'Center', 'thim-elementor-kit' ),
+						'icon'  => 'eicon-text-align-center',
+					),
+					'right'  => array(
+						'title' => esc_html__( 'Right', 'thim-elementor-kit' ),
+						'icon'  => 'eicon-text-align-right',
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .quantity .qty' => 'text-align: {{VALUE}};',
+				),
 			)
 		);
 
@@ -301,113 +370,155 @@ class Thim_Ekit_Widget_Product_Add_To_Cart extends Widget_Base {
 			)
 		);
 
-		$this->start_controls_tabs( 'quantity_style_tabs' );
+			$this->start_controls_tabs( 'quantity_style_tabs' );
 
-		$this->start_controls_tab(
-			'quantity_style_normal',
+				$this->start_controls_tab(
+					'quantity_style_normal',
+					array(
+						'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
+					)
+				);
+
+				$this->add_control(
+					'quantity_text_color',
+					array(
+						'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
+						'type'      => Controls_Manager::COLOR,
+						'selectors' => array(
+							'{{WRAPPER}} .quantity .qty' => 'color: {{VALUE}}',
+						),
+					)
+				);
+
+				$this->add_control(
+					'quantity_bg_color',
+					array(
+						'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+						'type'      => Controls_Manager::COLOR,
+						'selectors' => array(
+							'{{WRAPPER}} .quantity .qty' => 'background-color: {{VALUE}}',
+						),
+					)
+				);
+
+				$this->add_control(
+					'quantity_border_color',
+					array(
+						'label'     => esc_html__( 'Border Color', 'thim-elementor-kit' ),
+						'type'      => Controls_Manager::COLOR,
+						'selectors' => array(
+							'{{WRAPPER}} .quantity .qty' => 'border-color: {{VALUE}}',
+						),
+					)
+				);
+
+				$this->end_controls_tab();
+
+				$this->start_controls_tab(
+					'quantity_style_focus',
+					array(
+						'label' => esc_html__( 'Focus', 'thim-elementor-kit' ),
+					)
+				);
+
+				$this->add_control(
+					'quantity_text_color_focus',
+					array(
+						'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
+						'type'      => Controls_Manager::COLOR,
+						'selectors' => array(
+							'{{WRAPPER}} .quantity .qty:focus' => 'color: {{VALUE}}',
+						),
+					)
+				);
+
+				$this->add_control(
+					'quantity_bg_color_focus',
+					array(
+						'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+						'type'      => Controls_Manager::COLOR,
+						'selectors' => array(
+							'{{WRAPPER}} .quantity .qty:focus' => 'background-color: {{VALUE}}',
+						),
+					)
+				);
+
+				$this->add_control(
+					'quantity_border_color_focus',
+					array(
+						'label'     => esc_html__( 'Border Color', 'thim-elementor-kit' ),
+						'type'      => Controls_Manager::COLOR,
+						'selectors' => array(
+							'{{WRAPPER}} .quantity .qty:focus' => 'border-color: {{VALUE}}',
+						),
+					)
+				);
+
+				$this->add_control(
+					'quantity_transition',
+					array(
+						'label'     => esc_html__( 'Transition Duration', 'thim-elementor-kit' ),
+						'type'      => Controls_Manager::SLIDER,
+						'default'   => array(
+							'size' => 0.2,
+						),
+						'range'     => array(
+							'px' => array(
+								'max'  => 2,
+								'step' => 0.1,
+							),
+						),
+						'selectors' => array(
+							'{{WRAPPER}} .quantity .qty' => 'transition: all {{SIZE}}s',
+						),
+					)
+				);
+
+				$this->end_controls_tab();
+
+			$this->end_controls_tabs();
+
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'section_quantity_wrapper_style',
 			array(
-				'label' => esc_html__( 'Normal', 'thim-elementor-kit' ),
+				'label' => esc_html__( 'Wrapper Quantity', 'thim-elementor-kit' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
+			array(
+				'name'     => 'quantity_wrapper_border',
+				'selector' => '{{WRAPPER}} .quantity-add-value',
 			)
 		);
 
 		$this->add_control(
-			'quantity_text_color',
+			'quantity_wrapper_border_radius',
 			array(
-				'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
+				'label'     => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
 				'selectors' => array(
-					'{{WRAPPER}} .quantity .qty' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .quantity-add-value' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
 
 		$this->add_control(
-			'quantity_bg_color',
+			'quantity_wrapper_padding',
 			array(
-				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .quantity .qty' => 'background-color: {{VALUE}}',
+				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .quantity-add-value' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
-
-		$this->add_control(
-			'quantity_border_color',
-			array(
-				'label'     => esc_html__( 'Border Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .quantity .qty' => 'border-color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->end_controls_tab();
-
-		$this->start_controls_tab(
-			'quantity_style_focus',
-			array(
-				'label' => esc_html__( 'Focus', 'thim-elementor-kit' ),
-			)
-		);
-
-		$this->add_control(
-			'quantity_text_color_focus',
-			array(
-				'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .quantity .qty:focus' => 'color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->add_control(
-			'quantity_bg_color_focus',
-			array(
-				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .quantity .qty:focus' => 'background-color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->add_control(
-			'quantity_border_color_focus',
-			array(
-				'label'     => esc_html__( 'Border Color', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => array(
-					'{{WRAPPER}} .quantity .qty:focus' => 'border-color: {{VALUE}}',
-				),
-			)
-		);
-
-		$this->add_control(
-			'quantity_transition',
-			array(
-				'label'     => esc_html__( 'Transition Duration', 'thim-elementor-kit' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
-					'size' => 0.2,
-				),
-				'range'     => array(
-					'px' => array(
-						'max'  => 2,
-						'step' => 0.1,
-					),
-				),
-				'selectors' => array(
-					'{{WRAPPER}} .quantity .qty' => 'transition: all {{SIZE}}s',
-				),
-			)
-		);
-
-		$this->end_controls_tab();
-
-		$this->end_controls_tabs();
 
 		$this->end_controls_section();
 

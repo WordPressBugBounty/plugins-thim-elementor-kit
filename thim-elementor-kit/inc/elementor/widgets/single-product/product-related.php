@@ -49,6 +49,7 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 				'label' => esc_html__( 'Setting', 'thim-elementor-kit' ),
 			)
 		);
+
 		$this->add_control(
 			'style',
 			array(
@@ -252,6 +253,19 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 		);
 
 		$this->add_control(
+			'heading_text',
+			array(
+				'label'       => esc_html__( 'Text', 'thim-elementor-kit' ),
+				'type'        => Controls_Manager::TEXT,
+				'label_block' => true,
+				'placeholder' => esc_html__( 'Related products', 'thim-elementor-kit' ),
+				'condition'   => array(
+					'show_heading!' => '',
+				),
+			)
+		);
+
+		$this->add_control(
 			'heading_color',
 			array(
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
@@ -370,7 +384,7 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 		<div class="thim-ekit-single-product__related woocommerce">
 			<?php
 			if ( $args['related_products'] ) {
-				$heading = apply_filters( 'woocommerce_product_related_products_heading',
+				$heading = ! empty( $settings['heading_text'] ) ? $settings['heading_text'] : apply_filters( 'woocommerce_product_related_products_heading',
 					__( 'Related products', 'woocommerce' ) );
 				if ( $heading ) :
 					?>
@@ -386,20 +400,14 @@ class Thim_Ekit_Widget_Product_Related extends Thim_Ekit_Products_Base {
 					$this->render_nav_pagination_slider( $settings );
 				}
 				?>
-				<div class="<?php
-				echo esc_attr( $class ); ?>">
-					<div class="<?php
-					echo esc_attr( $class_inner ); ?>">
-						<?php
-						foreach ( $args['related_products'] as $related_product ) :
+				<div class="<?php echo esc_attr( $class ); ?>">
+					<div class="<?php echo esc_attr( $class_inner ); ?>">
+						<?php foreach ( $args['related_products'] as $related_product ) :
 
 							$post_object = get_post( $related_product->get_id() );
-
 							setup_postdata( $GLOBALS['post'] = &$post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
-
-							?>
-							<div <?php
-							wc_product_class( $class_item ); ?>>
+						?>
+							<div <?php wc_product_class( $class_item ); ?>>
 								<?php
 								if ( ! empty( $settings['template_id'] ) ) {
 									\Thim_EL_Kit\Utilities\Elementor::instance()->render_loop_item_content( $settings['template_id'] );

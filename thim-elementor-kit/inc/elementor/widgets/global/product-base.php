@@ -1029,6 +1029,54 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 		);
 
 		$this->add_responsive_control(
+			'pagination_width',
+			array(
+				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em', '%' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 200,
+					),
+					'em' => array(
+						'min' => 0,
+						'max' => 10,
+					),
+					'%'  => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} nav ul li .page-numbers' => 'width: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'pagination_height',
+			array(
+				'label'      => esc_html__( 'Height', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 200,
+					),
+					'em' => array(
+						'min' => 0,
+						'max' => 10,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} nav ul li .page-numbers' => 'height: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
 			'pagination_padding',
 			array(
 				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),

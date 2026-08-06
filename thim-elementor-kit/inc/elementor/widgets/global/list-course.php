@@ -515,7 +515,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 				</div>
 				<?php
 			} else {
-				echo '<div class="message-info">' . __( 'No data were found matching your selection, you need to create Post or select Category of Widget.',
+				echo '<div class="message-info">' . __( 'No data were found matching your selection, you need to create Course or select Category of Widget.',
 						'thim-elementor-kit' ) . '</div>';
 			}
 
@@ -636,7 +636,7 @@ class Thim_Ekit_Widget_List_Course extends Thim_Ekits_Course_Base {
 			</div>
 			<?php
 		} else {
-			echo '<div class="message-info">' . esc_html__( 'No data were found matching your selection, you need to create Post or select Category of Widget.',
+			echo '<div class="message-info">' . esc_html__( 'No data were found matching your selection, you need to create Course or select Category of Widget.',
 					'thim-elementor-kit' ) . '</div>';
 		}
 
