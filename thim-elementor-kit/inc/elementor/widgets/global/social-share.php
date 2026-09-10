@@ -148,7 +148,6 @@ class Thim_Ekit_Widget_Social_Share extends Thim_Ekit_Widget_Social {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-social-media' => 'text-align: {{VALUE}};',

@@ -131,7 +131,6 @@ class Thim_Ekit_Widget_Nav_Menu extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-menu__container .thim-ekits-menu__nav li::marker' => 'font-size: 0;',

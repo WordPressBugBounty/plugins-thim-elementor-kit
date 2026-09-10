@@ -79,7 +79,6 @@ class Thim_Ekit_Widget_Button extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'Left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-button' => 'text-align: {{VALUE}};',

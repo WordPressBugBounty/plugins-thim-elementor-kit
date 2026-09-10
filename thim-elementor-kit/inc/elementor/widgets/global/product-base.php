@@ -304,7 +304,6 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-product .wrapper-content-item'              => 'text-align: {{VALUE}};',
@@ -976,7 +975,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 		$this->add_responsive_control(
 			'pagination_gap',
 			array(
-				'label'          => esc_html__( 'Columns Gap', 'thim-elementor-kit' ),
+				'label'          => esc_html__( 'Gap', 'thim-elementor-kit' ),
 				'type'           => Controls_Manager::SLIDER,
 				'default'        => array(
 					'unit' => 'px',
@@ -1123,7 +1122,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav ul li a' => 'color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li .page-numbers' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1134,7 +1133,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav ul li a' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li .page-numbers' => 'background-color: {{VALUE}}',
 				),
 			)
 		);
@@ -1154,7 +1153,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav ul li a:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li .page-numbers:hover' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1165,7 +1164,7 @@ abstract class Thim_Ekit_Products_Base extends Widget_Base {
 				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} nav ul li a:hover' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} nav ul li .page-numbers:hover' => 'background-color: {{VALUE}}',
 				),
 			)
 		);

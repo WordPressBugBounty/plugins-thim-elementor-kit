@@ -131,7 +131,6 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .content-inner' => 'text-align: {{VALUE}};',

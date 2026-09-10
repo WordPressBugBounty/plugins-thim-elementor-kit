@@ -1097,7 +1097,6 @@ abstract class Thim_Ekit_Widget_List_Base extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-post__content' => 'text-align: {{VALUE}};',

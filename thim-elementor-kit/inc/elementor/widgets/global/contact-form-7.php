@@ -363,7 +363,6 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-submit' => 'margin-left: auto; margin-right:auto; display: block;margin-{{VALUE}}: 0;',

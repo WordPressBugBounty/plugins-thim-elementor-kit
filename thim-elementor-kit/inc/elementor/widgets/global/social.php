@@ -151,7 +151,6 @@ class Thim_Ekit_Widget_Social extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-social-media' => 'text-align: {{VALUE}};',

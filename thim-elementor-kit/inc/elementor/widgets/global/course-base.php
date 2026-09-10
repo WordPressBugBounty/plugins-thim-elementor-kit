@@ -1103,7 +1103,6 @@ abstract class Thim_Ekits_Course_Base extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .thim-ekits-course__item .thim-ekits-course__content' => 'text-align: {{VALUE}};',

@@ -215,7 +215,6 @@ class Thim_Ekit_Widget_Course_Tabs extends Widget_Base {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'default'   => 'left',
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .ekits-course-tabs' => 'text-align: {{VALUE}};',

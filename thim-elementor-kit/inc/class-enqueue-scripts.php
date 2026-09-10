@@ -19,6 +19,7 @@ class Enqueue {
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'frontend_scripts' ), 100 );
 		add_filter( 'elementor/icons_manager/additional_tabs', array( $this, 'register_icon_thim_ekits_elementor' ) );
+ 		add_action( 'elementor/preview/enqueue_styles', array( $this, 'editor_styles' ) );
 		add_action( 'elementor/editor/before_enqueue_scripts', array( $this, 'elementor_editor_scripts' ), 1000 );
 		add_action( 'elementor/frontend/after_enqueue_scripts', array( $this, 'enqueue_widgets_scripts' ), 1000 );
 	}
@@ -56,6 +57,15 @@ class Enqueue {
 		wp_enqueue_style( 'thim-ekit-widgets', THIM_EKIT_PLUGIN_URL . 'build/widgets.css', array( 'elementor-frontend' ), $this->version );
 
 		do_action( 'thim_ekit/frontend/enqueue' );
+	}
+
+	public function editor_styles() {
+		wp_enqueue_style(
+			'thim-ekits-fonts-icon',
+			THIM_EKIT_PLUGIN_URL . 'build/libraries/thim-ekits/css/thim-ekits-icons.min.css',
+			array(),
+			$this->version
+		);
 	}
 
 	public function elementor_editor_scripts() {
@@ -138,6 +148,8 @@ class Enqueue {
 
 		return $additional_tabs;
 	}
+
 }
 
 Enqueue::instance();
+

@@ -241,6 +241,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 				'label'       => esc_html__('Testimonial Review', 'thim-elementor-kit'),
 				'type'        => Controls_Manager::WYSIWYG,
 				'label_block' => true,
+				'description' => esc_html__('Use {rating 0} to {rating 5} in your review to display a star rating.', 'thim-elementor-kit'),
 				'default'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
 			)
 		);
@@ -552,13 +553,13 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="top"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(-2 * {{VALUE}}px)) translateZ(-60px) scale(0.92) rotateX(6deg) !important;',
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="top"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(-3 * {{VALUE}}px)) translateZ(-90px) scale(0.88) rotateX(9deg) !important;',
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="top"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(-4 * {{VALUE}}px)) translateZ(-120px) scale(0.84) rotateX(12deg) !important;',
-					
+
 					// Bottom direction (slides come from below) - also fallback
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY({{VALUE}}px) translateZ(-30px) scale(0.96) rotateX(-3deg) !important;',
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(2 * {{VALUE}}px)) translateZ(-60px) scale(0.92) rotateX(-6deg) !important;',
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(3 * {{VALUE}}px)) translateZ(-90px) scale(0.88) rotateX(-9deg) !important;',
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"][data-vertical-direction="bottom"] .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(4 * {{VALUE}}px)) translateZ(-120px) scale(0.84) rotateX(-12deg) !important;',
-					
+
 					// Fallback for when no vertical-direction is specified (defaults to bottom behavior)
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]:not([data-vertical-direction]) .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY({{VALUE}}px) translateZ(-30px) scale(0.96) rotateX(-3deg) !important;',
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]:not([data-vertical-direction]) .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(2 * {{VALUE}}px)) translateZ(-60px) scale(0.92) rotateX(-6deg) !important;',
@@ -566,7 +567,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 					'{{WRAPPER}} .thim-ekits-testimonial__inner.thim-ekits-stack-slider[data-stack-direction="vertical"]:not([data-vertical-direction]) .swiper-slide-active + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate) + .swiper-slide:not(.swiper-slide-duplicate)' => 'transform: translateX(-50%) translateY(calc(4 * {{VALUE}}px)) translateZ(-120px) scale(0.84) rotateX(-12deg) !important;',
 				),
 			)
-		);	
+		);
 		$this->add_responsive_control(
 			'stack_slider_horizontal_fan_spacing',
 			array(
@@ -587,7 +588,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 				),
 			)
 		);
-		
+
 		$this->add_responsive_control(
 			'stack_slider_horizontal_fan_items_show',
 			array(
@@ -607,7 +608,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 					'{{WRAPPER}}' => '--stack-fan-items-show: {{VALUE}};',
 				),
 			)
-		);	
+		);
 		$this->add_responsive_control(
 			'stack_slider_horizontal_fan_pos_y',
 			array(
@@ -627,7 +628,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 					'{{WRAPPER}}' => '--stack-fan-pos-y: {{VALUE}}px;',
 				),
 			)
-		);	
+		);
 		// Next Slide Settings
 		$this->add_control(
 			'next_slide_heading',
@@ -639,12 +640,12 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 					'layout'         => 'stack-slider',
 					'slides_options' => 'horizontal',
 					'horizontal_effect' => 'cards',
-					
+
 				),
 			)
 		);
 
-		
+
 		$this->add_responsive_control(
 			'stack_slider_next_position_x',
 			array(
@@ -664,7 +665,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 				),
 			)
 		);
-		
+
 		$this->add_responsive_control(
 			'stack_slider_next_position_y',
 			array(
@@ -719,7 +720,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 				),
 			)
 		);
-	
+
 		$this->add_responsive_control(
 			'stack_slider_prev_position_x',
 			array(
@@ -777,7 +778,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 				),
 			)
 		);
-	
+
 		$this->end_controls_section();
 	}
 
@@ -1610,7 +1611,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 			array(
 				'name'     => 'client_gallery_item_border',
 				'label'    => esc_html__('Border', 'thim-elementor-kit'),
-				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__image', 
+				'selector' => '{{WRAPPER}} .thim-ekits-testimonial__image',
 			)
 		);
 
@@ -1806,7 +1807,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->add_responsive_control(
 			'section_icon_typography',
 			array(
-				'label'      => esc_html__('Icon Size', 'thim-elementor-kit'), 
+				'label'      => esc_html__('Icon Size', 'thim-elementor-kit'),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array('px'),
 				'range'      => array(
@@ -1826,7 +1827,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		$this->end_controls_section();
 	}
 
-	protected function register_style_stack_slider() { 
+	protected function register_style_stack_slider() {
 		$this->start_controls_section(
 			'stack_slider_style_section',
 			array(
@@ -2232,7 +2233,7 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 		<div class="thim-ekits-testimonial__inner<?php echo esc_attr($slider_class); ?>" data-stack-direction="<?php echo esc_attr($direction); ?>" data-horizontal-effect="<?php echo esc_attr($horizontal_effect); ?>" data-vertical-direction="<?php echo esc_attr($vertical_direction); ?>">
 			<div class="thim-ekits-testimonial__content swiper-wrapper">
 				<?php
-				foreach ($testimonials as $key => $testimonial) : 
+				foreach ($testimonials as $key => $testimonial) :
 					$this->render_testimonial__article($settings, $key, $testimonial, $class_article);
 				endforeach; ?>
 			</div>
@@ -2309,10 +2310,26 @@ class Thim_Ekit_Widget_Testimonial extends Widget_Base {
 
 	protected function render_client_content($settings) {
 		if (! empty($settings['client_content'])) :
+			$content = preg_replace_callback(
+				'/\{rating\s+([0-5])\}/i',
+				static function ($matches) {
+					$rating = (int) $matches[1];
+					$stars  = '';
+
+					for ($index = 1; $index <= 5; $index++) {
+						$star_name = $index <= $rating ? 'star' : 'star-o';
+						$stars .= '<i class="tk tk-' . esc_attr($star_name) . '" aria-hidden="true"></i>';
+					}
+
+					return '<span class="thim-ekits-testimonial__rating" role="img" aria-label="' . esc_attr($rating . '/5') . '">' . $stars . '</span>';
+				},
+				$settings['client_content']
+			);
 		?>
 			<div class="thim-ekits-testimonial__client-content">
 				<?php
-				echo wp_kses_post($settings['client_content']); ?>
+				echo wp_kses_post($content);
+				?>
 			</div>
 		<?php
 		endif; ?>
