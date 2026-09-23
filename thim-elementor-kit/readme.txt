@@ -3,7 +3,7 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 7.0.2
-Stable tag: 1.4.7
+Stable tag: 1.4.8
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,24 +189,27 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.4.8 (2026-09-23) =
+~ Fixed: some minor bugs.
+
 = 1.4.7 (2026-09-10) =
-~ Added: Rating in description of widget testimonial. 
-~ Fixed: some minor bugs. 
+~ Added: Rating in description of widget testimonial.
+~ Fixed: some minor bugs.
 
 = 1.4.6 (2026-08-06) =
-~ Fixed: Template of shop not show with WooCommerce 11.0.0. 
-~ Fixed: some minor bugs. 
+~ Fixed: Template of shop not show with WooCommerce 11.0.0.
+~ Fixed: some minor bugs.
 
 = 1.4.5 (2026-07-24) =
 ~ Added: nofollow for extend url of social share
-~ Fixed: Conđition of Header and Footer. 
-~ Fixed: some minor bugs in widget. 
+~ Fixed: Conđition of Header and Footer.
+~ Fixed: some minor bugs in widget.
 
 = 1.4.4 (2026-06-30) =
-~ Fixed: Sample template selection doesn't work when creating a template. 
+~ Fixed: Sample template selection doesn't work when creating a template.
 
 = 1.4.3 (2026-06-24) =
-~ Fixed: `ekit--fx-word-reveal` animated word reveal text effect for text RTL. 
+~ Fixed: `ekit--fx-word-reveal` animated word reveal text effect for text RTL.
 
 = 1.4.2 (2026-06-17) =
 ~ Added: `ekit--cursor-particles` interactive cursor particle effect.

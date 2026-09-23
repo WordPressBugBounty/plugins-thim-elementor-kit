@@ -46,9 +46,21 @@ class Rest_API {
 			$theme = wp_get_theme( $theme->parent()->template );
 		}
 
-		$response = wp_remote_get( 'https://updates.thimpress.com/wp-json/thim_em/v1/thim-kit/get-library?theme=' . $theme->get( 'TextDomain' ) );
+		$text_domain = $theme->get( 'TextDomain' );
+		$cache_key   = 'thim_ekit_remote_templates_' . $text_domain;
+		$cached      = get_transient( $cache_key );
+
+		if ( false !== $cached && ! empty( $cached ) ) {
+			return $cached;
+		}
+
+		$response = wp_remote_get( 'https://updates.thimpress.com/wp-json/thim_em/v1/thim-kit/get-library?theme=' . $text_domain );
 
 		$raw = ! is_wp_error( $response ) ? json_decode( wp_remote_retrieve_body( $response ), true ) : array();
+
+		if ( ! empty( $raw ) ) {
+			set_transient( $cache_key, $raw, 12 * HOUR_IN_SECONDS );
+		}
 
 		return $raw;
 	}
