@@ -2,6 +2,7 @@
 
 namespace Elementor;
 
+use Thim_EL_Kit\Elementor;
 use Thim_EL_Kit\LoginRegisterTrait;
 
 // Exit if accessed directly
@@ -9,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Thim_Ekit_Widget_Login_Form extends Widget_Base { 
+class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 	use  LoginRegisterTrait;
 
 	public function __construct( $data = array(), $args = null ) {
@@ -29,7 +30,7 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return array( \Thim_EL_Kit\Elementor::CATEGORY );
+		return array( Elementor::CATEGORY );
 	}
 
 	public function get_base() {
@@ -88,8 +89,10 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 				'options'     => false,
 				'separator'   => false,
 				'placeholder' => __( 'https://your-link.com', 'thim-elementor-kit' ),
-				'description' => __( 'Note: Because of security reasons, you can ONLY use your current domain here.',
-					'thim-elementor-kit' ),
+				'description' => __(
+					'Note: Because of security reasons, you can ONLY use your current domain here.',
+					'thim-elementor-kit'
+				),
 				'dynamic'     => [
 					'active' => true,
 				],
@@ -117,8 +120,10 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 				'options'     => false,
 				'separator'   => false,
 				'placeholder' => __( 'https://your-link.com', 'thim-elementor-kit' ),
-				'description' => __( 'Note: Because of security reasons, you can ONLY use your current domain here.',
-					'thim-elementor-kit' ),
+				'description' => __(
+					'Note: Because of security reasons, you can ONLY use your current domain here.',
+					'thim-elementor-kit'
+				),
 				'dynamic'     => [
 					'active' => true,
 				],
@@ -239,8 +244,10 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 				'type'        => Controls_Manager::TEXT,
 				'label'       => __( 'Redirect After Register', 'thim-elementor-kit' ),
 				'placeholder' => __( 'https://your-link.com', 'thim-elementor-kit' ),
-				'description' => __( 'Note: Because of security reasons, you can ONLY use your current domain here.',
-					'thim-elementor-kit' ),
+				'description' => __(
+					'Note: Because of security reasons, you can ONLY use your current domain here.',
+					'thim-elementor-kit'
+				),
 				'condition'   => [
 					'auto_login' => '',
 				],
@@ -842,10 +849,14 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 		if ( 'yes' === $settings['redirect_after_logout'] && ! empty( $settings['redirect_logout_url']['url'] ) ) {
 			$logout_redirect = $settings['redirect_logout_url']['url'];
 		}
-		if ( is_user_logged_in() && ! \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+		if ( is_user_logged_in() && ! Plugin::$instance->editor->is_edit_mode() ) {
 			$current_user = wp_get_current_user();
-			echo '<div class="thim-logged-in-message message-success">' . sprintf( __( 'You are Logged in as %1$s (<a href="%2$s">Logout</a>)',
-					'thim-elementor-kit' ), $current_user->display_name, wp_logout_url( $logout_redirect ) ) . '</div>';
+			echo '<div class="thim-logged-in-message message-success">' . sprintf(
+					__(
+						'You are Logged in as %1$s (<a href="%2$s">Logout</a>)',
+						'thim-elementor-kit'
+					), $current_user->display_name, wp_logout_url( $logout_redirect )
+				) . '</div>';
 
 			return;
 		}
@@ -857,19 +868,29 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 			$this->render_form_resetpass();
 			if ( isset( $_GET['result'] ) ) {
 				if ( $_GET['result'] == 'registered' ) :
-					echo '<p class="message message-success">' . esc_html__( 'Registration is successful. Confirmation will be e-mailed to you.',
-							'thim-elementor-kit' ) . '</p>';
+					echo '<p class="message message-success">' . esc_html__(
+							'Registration is successful. Confirmation will be e-mailed to you.',
+							'thim-elementor-kit'
+						) . '</p>';
 				endif;
 				/*** Send mail reset success ***/
 				if ( $_GET['result'] == 'reset' ) :
-					echo '<p class="message message-success">' . esc_html__( 'Check your email to get a link to create a new password.',
-							'thim-elementor-kit' ) . '</p>';
+					echo '<p class="message message-success">' . esc_html__(
+							'Check your email to get a link to create a new password.',
+							'thim-elementor-kit'
+						) . '</p>';
 				endif;
 				/*** Reset pass success ***/
 				if ( $_GET['result'] == 'changed' ) :
-					echo '<p class="message message-success">' . sprintf( wp_kses( __( 'Password changed. You can <a href="%s">login</a> now.',
-							'thim-elementor-kit' ), array( 'a' => array( 'href' => array() ) ) ),
-							$this->thim_get_login_page_url() ) . '</p>';
+					echo '<p class="message message-success">' . sprintf(
+							wp_kses(
+								__(
+									'Password changed. You can <a href="%s">login</a> now.',
+									'thim-elementor-kit'
+								), array( 'a' => array( 'href' => array() ) )
+							),
+							$this->thim_get_login_page_url()
+						) . '</p>';
 				endif;
 
 				return;
@@ -889,75 +910,84 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 			$redirect_url = $settings['redirect_url']['url'];
 		}
 
-		$user_label = $settings['user_placeholder'] ? $settings['user_placeholder'] : esc_html__( 'Username or email',
-			'thim-elementor-kit' );
-		$pass_label = $settings['password_placeholder'] ? $settings['password_placeholder'] : esc_html__( 'Password',
-			'thim-elementor-kit' );
+		$user_label = $settings['user_placeholder'] ? $settings['user_placeholder'] : esc_html__(
+			'Username or email',
+			'thim-elementor-kit'
+		);
+		$pass_label = $settings['password_placeholder'] ? $settings['password_placeholder'] : esc_html__(
+			'Password',
+			'thim-elementor-kit'
+		);
 		$btn_label  = $settings['text_login'] ? $settings['text_login'] : esc_html__( 'Login', 'thim-elementor-kit' );
-
-
-		if ( isset( $_GET['result'] ) && $_GET['result'] == 'failed' ) {
-			if ( ! empty( $thim_login_msg ) ) {
-				echo sprintf( '<p class="message message-error">%s</p>',
-					esc_html( html_entity_decode( wp_unslash( $thim_login_msg ) ) ) );
-			}
-		}
 		?>
+
 		<div class="thim-form-login">
-		<?php
-		if ( $settings['title_from'] ) {
-			$title_tag = Utils::validate_html_tag($settings['tag']);
-			echo sprintf('<%s class="title">%s</%s>', $title_tag, esc_html__($settings['title_from'], 'thim-elementor-kit'), $title_tag);	
-		} ?>
-		<form name="loginform" action="<?php
-		echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>" method="post" novalidate>
-			<p class="login-username">
-				<input type="text" name="log" placeholder="<?php
-				echo esc_attr( $user_label ); ?>" class="input required" size="20"/>
-			</p>
-			<p class="login-password">
-				<input type="password" name="pwd" placeholder="<?php
-				echo esc_attr( $pass_label ); ?>" class="input required" value="" size="20"/>
-			</p>
 			<?php
-			/**
-			 * Fires following the 'Password' field in the login form.
-			 *
-			 * @since 2.1.0
-			 */
-			do_action( 'login_form' );
-			?>
-			<p class="forgetmenot login-remember">
-				<label for="rememberMe">
-					<input name="rememberme" type="checkbox" id="rememberMe" value="forever"/> <?php
-					esc_html_e( 'Remember Me', 'thim-elementor-kit' ); ?>
-				</label>
+			if ( isset( $_GET['result'] ) && $_GET['result'] == 'failed' ) {
+				if ( ! empty( $thim_login_msg ) ) {
+					echo sprintf( '<p class="message message-error">%s</p>', wp_kses_post( html_entity_decode( wp_unslash( $thim_login_msg ) ) ) );
+				}
+			}
+			if ( $settings['title_from'] ) {
+				$title_tag = Utils::validate_html_tag( $settings['tag'] );
+				echo sprintf( '<%s class="title">%s</%s>', $title_tag, esc_html__( $settings['title_from'], 'thim-elementor-kit' ), $title_tag );
+			} ?>
+			<form name="loginform" action="<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>"
+				  method="post" novalidate>
+				<p class="login-username">
+					<input type="text" name="log" placeholder="<?php echo esc_attr( $user_label ); ?>"
+						   class="input required" size="20"/>
+				</p>
+				<p class="login-password">
+					<input type="password" name="pwd" placeholder="<?php echo esc_attr( $pass_label ); ?>"
+						   class="input required" value="" size="20"/>
+				</p>
 				<?php
-				echo '<a class="lost-pass-link" href="' . $this->thim_get_lost_password_url() . '" title="' . esc_attr__( 'Forgot Password?',
-						'thim-elementor-kit' ) . '">' . esc_html__( 'Forgot Password?',
-						'thim-elementor-kit' ) . '</a>'; ?>
+				/**
+				 * Fires following the 'Password' field in the login form.
+				 *
+				 * @since 2.1.0
+				 */
+				do_action( 'login_form' );
+				?>
+				<p class="forgetmenot login-remember">
+					<label for="rememberMe">
+						<input name="rememberme" type="checkbox" id="rememberMe"
+							   value="forever"/><?php esc_html_e( 'Remember Me', 'thim-elementor-kit' ); ?>
+					</label>
+					<?php
+					echo '<a class="lost-pass-link" href="' . $this->thim_get_lost_password_url() . '" title="' . esc_attr__(
+							'Forgot Password?',
+							'thim-elementor-kit'
+						) . '">' . esc_html__(
+							'Forgot Password?',
+							'thim-elementor-kit'
+						) . '</a>'; ?>
 
-			</p>
+				</p>
 
-			<p class="login-submit">
-				<input type="submit" name="wp-submit" class="button button-primary" value="<?php
-				echo esc_attr( $btn_label ); ?>"/>
-				<input type="hidden" name="redirect_to" value="<?php
-				echo esc_url( $redirect_url ); ?>"/>
-				<input type="hidden" name="thim_login_user">
-			</p>
+				<p class="login-submit">
+					<input type="submit" name="wp-submit" class="button button-primary"
+						   value="<?php echo esc_attr( $btn_label ); ?>"/>
+					<input type="hidden" name="redirect_to" value="<?php echo esc_url( $redirect_url ); ?>"/>
+					<input type="hidden" name="thim_login_user">
+				</p>
 
-		</form>
-		<?php
-		$registration_enabled = get_option( 'users_can_register' );
-		if ( $registration_enabled && $settings['show_register'] === 'yes' ) :
-			echo '<div class="form-login-bottom">' . esc_html__( 'Not a member yet? ',
-					'thim-elementor-kit' ) . ' <a href="' . esc_attr( $this->thim_get_register_url() ) . '">' . esc_html__( 'Register now',
-					'thim-elementor-kit' ) . '</a></div>';
-		endif;
-		?>
+			</form>
+			<?php
+			$registration_enabled = get_option( 'users_can_register' );
+			if ( $registration_enabled && $settings['show_register'] === 'yes' ) :
+				echo '<div class="form-login-bottom">' . esc_html__(
+						'Not a member yet? ',
+						'thim-elementor-kit'
+					) . ' <a href="' . esc_attr( $this->thim_get_register_url() ) . '">' . esc_html__(
+						'Register now',
+						'thim-elementor-kit'
+					) . '</a></div>';
+			endif;
+			?>
 		</div>
-	<?php
+		<?php
 	}
 
 	protected function render_form_register() {
@@ -976,90 +1006,102 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 
 		if ( ! empty( $_GET['action'] ) && $_GET['action'] == 'register' ) :
 			if ( get_option( 'users_can_register' ) ) : ?>
-				<?php
-				$thim_register_msg = wp_kses_post( $_GET['thim_register_msg'] ?? '' );
-				if ( ! empty( $_GET['thim_register_msg'] ) ) {
-					echo sprintf( '<p class="message message-error">%s</p>',
-						esc_html( html_entity_decode( wp_unslash( $thim_register_msg ) ) ) );
-				}
-
-				$user_label  = $settings['rg_user_placeholder'] ? $settings['rg_user_placeholder'] : esc_html__( 'Username',
-					'thim-elementor-kit' );
-				$email_label = $settings['rg_email_placeholder'] ? $settings['rg_email_placeholder'] : esc_html__( 'Email',
-					'thim-elementor-kit' );
-				$btn_label   = $settings['text_register'] ? $settings['text_register'] : esc_html__( 'Sign up',
-					'thim-elementor-kit' );
-				?>
 				<div class="thim-form-login">
-				<?php
-				if ( $settings['title_from_rg'] ) {
-					$tag_rg = Utils::validate_html_tag($settings['tag_rg']);
-					echo sprintf('<%s class="title">%s</%s>', $tag_rg, esc_html__($settings['title_from_rg'], 'thim-elementor-kit'), $tag_rg);	
-				} ?>
-				<form name="registerform" class="thim-register-form<?php
-				echo esc_attr( $class ); ?>" action="<?php
-				echo esc_url( site_url( 'wp-login.php?action=register', 'login_post' ) ); ?>" method="post"
-					  novalidate="novalidate">
-					<p>
-						<input placeholder="<?php
-						echo esc_attr( $user_label ); ?>" type="text" name="user_login" class="input required"/>
-					</p>
-
-					<p>
-						<input placeholder="<?php
-						echo esc_attr( $email_label ); ?>" type="email" name="user_email" class="input required"/>
-					</p>
-
 					<?php
-					if ( $settings['auto_login'] ) { ?>
-						<p>
-							<input placeholder="<?php
-							esc_attr_e( 'Password', 'thim-elementor-kit' ); ?>" type="password" name="password"
-								   class="input required"/>
-						</p>
-						<p>
-							<input placeholder="<?php
-							esc_attr_e( 'Repeat Password', 'thim-elementor-kit' ); ?>" type="password"
-								   name="repeat_password" class="input required"/>
-						</p>
-					<?php
+					$thim_register_msg = wp_kses_post( $_GET['thim_register_msg'] ?? '' );
+					if ( ! empty( $_GET['thim_register_msg'] ) ) {
+						echo sprintf(
+							'<p class="message message-error">%s</p>',
+							wp_kses_post( html_entity_decode( wp_unslash( $thim_register_msg ) ) )
+						);
+					}
+
+					$user_label  = $settings['rg_user_placeholder'] ? $settings['rg_user_placeholder'] : esc_html__(
+						'Username',
+						'thim-elementor-kit'
+					);
+					$email_label = $settings['rg_email_placeholder'] ? $settings['rg_email_placeholder'] : esc_html__(
+						'Email',
+						'thim-elementor-kit'
+					);
+					$btn_label   = $settings['text_register'] ? $settings['text_register'] : esc_html__(
+						'Sign up',
+						'thim-elementor-kit'
+					);
+					if ( $settings['title_from_rg'] ) {
+						$tag_rg = Utils::validate_html_tag( $settings['tag_rg'] );
+						echo sprintf( '<%s class="title">%s</%s>', $tag_rg, esc_html__( $settings['title_from_rg'], 'thim-elementor-kit' ), $tag_rg );
 					} ?>
+					<form name="registerform" class="thim-register-form<?php
+					echo esc_attr( $class ); ?>"
+						  action="<?php echo esc_url( add_query_arg( 'action', 'register', wp_login_url() ) ); ?>"
+						  method="post"
+						  novalidate="novalidate">
+						<p>
+							<input placeholder="<?php
+							echo esc_attr( $user_label ); ?>" type="text" name="user_login" class="input required"/>
+						</p>
 
-					<?php
+						<p>
+							<input placeholder="<?php
+							echo esc_attr( $email_label ); ?>" type="email" name="user_email" class="input required"/>
+						</p>
 
-					do_action( 'register_form' );
-					?>
-
-					<p>
-						<input type="hidden" name="redirect_to" value="<?php
-						echo esc_url( $redirect_url ); ?>"/>
-						<input type="hidden" name="modify_user_notification" value="1">
-						<input type="hidden" name="thim_register_user">
 						<?php
-						if ( $settings['auto_login'] ) {
-							echo '<input type="hidden" name="register_auto_login" value="1">';
+						if ( $settings['auto_login'] ) { ?>
+							<p>
+								<input placeholder="<?php
+								esc_attr_e( 'Password', 'thim-elementor-kit' ); ?>" type="password" name="password"
+									   class="input required"/>
+							</p>
+							<p>
+								<input placeholder="<?php
+								esc_attr_e( 'Repeat Password', 'thim-elementor-kit' ); ?>" type="password"
+									   name="repeat_password" class="input required"/>
+							</p>
+							<?php
 						} ?>
-					</p>
+
+						<?php
+						do_action( 'register_form' );
+						?>
+
+						<p>
+							<input type="hidden" name="redirect_to" value="<?php
+							echo esc_url( $redirect_url ); ?>"/>
+							<input type="hidden" name="modify_user_notification" value="1">
+							<input type="hidden" name="thim_register_user">
+							<?php
+							if ( $settings['auto_login'] ) {
+								echo '<input type="hidden" name="register_auto_login" value="1">';
+							} ?>
+						</p>
+
+						<?php
+						do_action( 'signup_hidden_fields', 'create-another-site' ); ?>
+						<p class="login-submit">
+							<input type="submit" name="wp-submit" class="button button-primary" value="<?php
+							echo esc_attr( $btn_label ); ?>"/>
+						</p>
+					</form>
 
 					<?php
-					do_action( 'signup_hidden_fields', 'create-another-site' ); ?>
-					<p class="login-submit">
-						<input type="submit" name="wp-submit" class="button button-primary" value="<?php
-						echo esc_attr( $btn_label ); ?>"/>
-					</p>
-				</form>
-
-				<?php
-				echo '<div class="form-login-bottom">' . esc_html__( 'Are you a member? ',
-						'thim-elementor-kit' ) . ' <a href="' . $this->thim_get_login_page_url() . '">' . esc_html__( 'Login now',
-						'thim-elementor-kit' ) . '</a></div>'; ?>
+					echo '<div class="form-login-bottom">' . esc_html__(
+							'Are you a member? ',
+							'thim-elementor-kit'
+						) . ' <a href="' . $this->thim_get_login_page_url() . '">' . esc_html__(
+							'Login now',
+							'thim-elementor-kit'
+						) . '</a></div>'; ?>
 				</div>
 
 			<?php
 			else : ?>
 				<?php
-				echo '<p class="message message-error">' . esc_html__( 'Your site does not allow users registration.',
-						'thim-elementor-kit' ) . '</p>'; ?>
+				echo '<p class="message message-error">' . esc_html__(
+						'Your site does not allow users registration.',
+						'thim-elementor-kit'
+					) . '</p>'; ?>
 
 			<?php
 			endif;
@@ -1071,86 +1113,98 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 		/*** Lost password request ***/
 		if ( isset( $_GET['action'] ) && $_GET['action'] == 'lostpassword' ) :
 			$thim_lostpass_msg = wp_kses_post( $_GET['thim_lostpass_msg'] ?? '' );
-			if ( ! empty( $thim_lostpass_msg ) ) {
-				echo sprintf( '<p class="message message-error">%s</p>',
-					esc_html( html_entity_decode( wp_unslash( $thim_lostpass_msg ) ) ) );
-			}
 			?>
 
 			<div class="thim-form-login">
-				<h2 class="title"><?php
-					esc_html_e( 'Get Your Password', 'thim-elementor-kit' ); ?></h2>
-				<form name="lostpasswordform" id="lostpasswordform" action="<?php
-				echo esc_url( network_site_url( 'wp-login.php?action=lostpassword', 'login_post' ) ); ?>" method="post">
-					<p class="description"><?php
-						esc_html_e( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.',
-							'thim-elementor-kit' ); ?></p>
+				<?php
+				if ( ! empty( $thim_lostpass_msg ) ) {
+					echo sprintf(
+						'<p class="message message-error">%s</p>',
+						wp_kses_post( html_entity_decode( wp_unslash( $thim_lostpass_msg ) ) )
+					);
+				}
+				?>
+				<h2 class="title">
+					<?php esc_html_e( 'Get Your Password', 'thim-elementor-kit' ); ?>
+				</h2>
+				<form name="lostpasswordform" id="lostpasswordform"
+					  action="<?php echo esc_url( add_query_arg( 'action', 'lostpassword', wp_login_url() ) ); ?>"
+					  method="post">
+
+					<p class="description">
+						<?php esc_html_e( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'thim-elementor-kit' ); ?>
+					</p>
 
 					<p>
-						<input placeholder="<?php
-						esc_attr_e( 'Username or email', 'thim-elementor-kit' ); ?>" type="text" name="user_login"
+						<input placeholder="<?php esc_attr_e( 'Username or email', 'thim-elementor-kit' ); ?>"
+							   type="text" name="user_login"
 							   class="input required"/>
 					</p>
+
 					<p>
-						<input type="hidden" name="redirect_to" value="<?php
-						echo esc_attr( add_query_arg( 'result', 'reset', $this->thim_get_login_page_url() ) ); ?>"/>
+						<input type="hidden" name="redirect_to"
+							   value="<?php echo esc_attr( add_query_arg( 'result', 'reset', $this->thim_get_login_page_url() ) ); ?>"/>
+
 						<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large"
-							   value="<?php
-							   esc_attr_e( 'Reset password', 'thim-elementor-kit' ); ?>"/>
+							   value="<?php esc_attr_e( 'Reset password', 'thim-elementor-kit' ); ?>"/>
+
 						<input type="hidden" name="thim_lostpass"/>
 					</p>
-					<?php
-					do_action( 'lostpassword_form' ); ?>
+					<?php do_action( 'lostpassword_form' ); ?>
 				</form>
 			</div>
 		<?php
-		endif; ?>
-	<?php
+		endif;
 	}
 
 	protected function render_form_resetpass() {
-		?>
-		<?php
+
 		if ( isset( $_GET['action'] ) && $_GET['action'] == 'rp' ) : ?>
-			<?php
-			$thim_resetpass_msg = wp_kses_post( $_GET['thim_resetpass_msg'] ?? '' );
-			if ( ! empty( $thim_resetpass_msg ) ) {
-				echo sprintf( '<p class="message message-error">%s</p>',
-					esc_html( html_entity_decode( wp_unslash( $thim_resetpass_msg ) ) ) );
-			}
-			?>
 			<div class="thim-form-login">
+				<?php
+				$thim_resetpass_msg = wp_kses_post( $_GET['thim_resetpass_msg'] ?? '' );
+				if ( ! empty( $thim_resetpass_msg ) ) {
+					echo sprintf(
+						'<p class="message message-error">%s</p>',
+						wp_kses_post( html_entity_decode( wp_unslash( $thim_resetpass_msg ) ) )
+					);
+				}
+				?>
 				<h2 class="title"><?php
 					esc_html_e( 'Change Password', 'thim-elementor-kit' ); ?></h2>
 
-				<form name="resetpassform" id="resetpassform" action="<?php
-				echo site_url( 'wp-login.php?action=resetpass' ); ?>" method="post" autocomplete="off">
-					<input type="hidden" id="user_login" name="login" value="<?php
-					echo isset( $_GET['login'] ) ? esc_attr( $_GET['login'] ) : ''; ?>" autocomplete="off"/>
-					<input type="hidden" name="key" value="<?php
-					echo isset( $_GET['key'] ) ? esc_attr( $_GET['key'] ) : ''; ?>"/>
+				<form name="resetpassform" id="resetpassform"
+					  action="<?php echo esc_url( add_query_arg( 'action', 'resetpass', wp_login_url() ) ); ?>"
+					  method="post" autocomplete="off">
 
 					<p>
-						<input placeholder="<?php
-						esc_attr_e( 'New password', 'thim-elementor-kit' ); ?>" type="password" name="password"
+						<input placeholder="<?php esc_attr_e( 'New password', 'thim-elementor-kit' ); ?>"
+							   type="password" name="password"
 							   id="password" class="input"/>
 					</p>
 
 					<p class="resetpass-submit">
-						<input type="submit" name="submit" id="resetpass-button" class="button" value="<?php
-						_e( 'Reset Password', 'thim-elementor-kit' ); ?>"/>
+						<input type="submit" name="submit" id="resetpass-button" class="button"
+							   value="<?php esc_attr_e( 'Reset Password', 'thim-elementor-kit' ); ?>"/>
 					</p>
+
+					<input type="hidden" id="user_login" name="login"
+						   value="<?php echo isset( $_GET['login'] ) ? esc_attr( $_GET['login'] ) : ''; ?>"
+						   autocomplete="off"/>
+
+					<input type="hidden" name="key"
+						   value="<?php echo isset( $_GET['key'] ) ? esc_attr( $_GET['key'] ) : ''; ?>"/>
 
 					<p class="message message-success">
 						<?php
-						esc_html_e( 'Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).',
-							'thim-elementor-kit' ); ?>
+						esc_html_e(
+							'Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).',
+							'thim-elementor-kit'
+						); ?>
 					</p>
 
 				</form>
 			</div>
-		<?php
-		endif; ?>
-	<?php
+		<?php endif;
 	}
 }

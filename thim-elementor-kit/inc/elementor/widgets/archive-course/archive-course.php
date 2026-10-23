@@ -735,40 +735,38 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 			}
 			$courses = Courses::get_courses( $filter, $total_rows );
 		}
+
+		$wrapper_classes = array( 'thim-ekits-archive-course', 'thim-ekits-course' );
+        if ( $this->is_skeleton ) {
+            $wrapper_classes[] = 'thim-ekits-archive-course__skeleton';
+        }
 		?>
 
-		<div class="thim-ekits-archive-course thim-ekits-course <?php
-		echo esc_attr( $this->is_skeleton ? 'thim-ekits-archive-course__skeleton' : '' ); ?>"<?php
-		echo wp_kses_post( $data_attr ); ?>>
+		<div class="<?php echo esc_attr( implode( ' ', $wrapper_classes ) ); ?>"<?php echo wp_kses_post( $data_attr ); ?>>
 
 			<?php
 			if ( ! empty( $courses ) ) {
-				$this->render_topbar( $filter, $total_rows, $settings );
-			}
-			?>
-
-			<div class="thim-ekits-course__inner">
-				<?php
-				if ( ! $this->is_skeleton ) {
-					if ( $courses ) {
-						foreach ( $courses as $course_id ) {
-							$post = get_post( $course_id );
-							setup_postdata( $post );
-
-							$this->current_permalink = get_permalink();
-							$this->render_course( $settings, 'thim-ekits-course__item' );
-						}
-					} else {
-						echo '<div class="courses-not-found"><span>' . __( 'No courses found',
-								'thim-elementor-kit' ) . '</span></div>';
-					}
+					$this->render_topbar( $filter, $total_rows, $settings );
 				}
 
-				wp_reset_postdata();
-				?>
-			</div>
+			if ( ! $this->is_skeleton ) {
+				if ( $courses ) {
+					echo '<div class="thim-ekits-course__inner">';
+					foreach ( $courses as $course_id ) {
+						$post = get_post( $course_id );
+						setup_postdata( $post );
 
-			<?php
+						$this->current_permalink = get_permalink();
+						$this->render_course( $settings, 'thim-ekits-course__item' );
+					}
+					echo '</div>';
+				} else {
+					echo '<div class="learn-press-message info"><div>' . __( 'No courses found', 'thim-elementor-kit' ) . '</div></div>';
+				}
+			}
+
+			wp_reset_postdata();
+
 			if ( ! $this->is_skeleton ) {
 				$this->render_loop_footer( $filter, $total_rows, $settings );
 			}

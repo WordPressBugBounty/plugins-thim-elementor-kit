@@ -55,7 +55,7 @@ class Init {
 
 		$location = $args['theme_location'] ?? false;
 
-		if ( ! empty( $nav_locations ) && $location ) {
+		if ( ! empty( $nav_locations ) && $location && ! empty( $nav_locations[ $location ] ) ) {
 			$menu_id = $nav_locations[ $location ];
 
 			if ( $menu_id ) {

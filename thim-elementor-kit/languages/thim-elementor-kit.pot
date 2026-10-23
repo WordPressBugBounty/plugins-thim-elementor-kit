@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-23T02:36:27+00:00\n"
+"POT-Creation-Date: 2026-10-06T07:59:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: thim-elementor-kit\n"
@@ -147,7 +147,7 @@ msgstr ""
 #: inc/class-settings.php:49
 #: inc/class-settings.php:50
 #: inc/elementor/widgets/global/list-blog.php:51
-#: inc/elementor/widgets/global/login-form.php:301
+#: inc/elementor/widgets/global/login-form.php:308
 #: inc/elementor/widgets/global/lottie.php:95
 #: inc/elementor/widgets/global/video.php:156
 #: inc/modules/header-footer/class-init.php:186
@@ -791,9 +791,9 @@ msgstr ""
 #: inc/elementor/widgets/global/image-accordion.php:311
 #: inc/elementor/widgets/global/image-accordion.php:576
 #: inc/elementor/widgets/global/list-course.php:404
-#: inc/elementor/widgets/global/login-form.php:368
-#: inc/elementor/widgets/global/login-form.php:553
-#: inc/elementor/widgets/global/login-form.php:746
+#: inc/elementor/widgets/global/login-form.php:375
+#: inc/elementor/widgets/global/login-form.php:560
+#: inc/elementor/widgets/global/login-form.php:753
 #: inc/elementor/widgets/global/login-popup.php:382
 #: inc/elementor/widgets/global/login-popup.php:452
 #: inc/elementor/widgets/global/minicart.php:341
@@ -975,9 +975,9 @@ msgstr ""
 #: inc/elementor/motion-effects/class-init.php:45
 #: inc/elementor/motion-effects/class-init.php:103
 #: inc/elementor/widgets/global/dark-mode.php:338
-#: inc/elementor/widgets/global/login-form.php:78
-#: inc/elementor/widgets/global/login-form.php:108
-#: inc/elementor/widgets/global/login-form.php:232
+#: inc/elementor/widgets/global/login-form.php:79
+#: inc/elementor/widgets/global/login-form.php:111
+#: inc/elementor/widgets/global/login-form.php:237
 #: inc/elementor/widgets/loop-item/loop-product-stock.php:102
 #: inc/elementor/widgets/single-course/course-rating.php:119
 msgid "Off"
@@ -987,9 +987,9 @@ msgstr ""
 #: inc/elementor/motion-effects/class-init.php:46
 #: inc/elementor/motion-effects/class-init.php:104
 #: inc/elementor/widgets/global/dark-mode.php:339
-#: inc/elementor/widgets/global/login-form.php:79
-#: inc/elementor/widgets/global/login-form.php:109
-#: inc/elementor/widgets/global/login-form.php:233
+#: inc/elementor/widgets/global/login-form.php:80
+#: inc/elementor/widgets/global/login-form.php:112
+#: inc/elementor/widgets/global/login-form.php:238
 #: inc/elementor/widgets/loop-item/loop-product-stock.php:101
 #: inc/elementor/widgets/single-course/course-rating.php:118
 msgid "On"
@@ -1271,8 +1271,8 @@ msgstr ""
 #: inc/elementor/widgets/global/heading.php:346
 #: inc/elementor/widgets/global/icon-box.php:118
 #: inc/elementor/widgets/global/list-course.php:229
-#: inc/elementor/widgets/global/login-form.php:397
-#: inc/elementor/widgets/global/login-form.php:655
+#: inc/elementor/widgets/global/login-form.php:404
+#: inc/elementor/widgets/global/login-form.php:662
 #: inc/elementor/widgets/global/lottie.php:66
 #: inc/elementor/widgets/global/minicart.php:122
 #: inc/elementor/widgets/global/minicart.php:1709
@@ -1350,8 +1350,8 @@ msgstr ""
 #: inc/elementor/widgets/global/icon-box.php:240
 #: inc/elementor/widgets/global/image-accordion.php:66
 #: inc/elementor/widgets/global/list-course.php:233
-#: inc/elementor/widgets/global/login-form.php:401
-#: inc/elementor/widgets/global/login-form.php:659
+#: inc/elementor/widgets/global/login-form.php:408
+#: inc/elementor/widgets/global/login-form.php:666
 #: inc/elementor/widgets/global/lottie.php:70
 #: inc/elementor/widgets/global/minicart.php:126
 #: inc/elementor/widgets/global/minicart.php:474
@@ -1445,8 +1445,8 @@ msgstr ""
 #: inc/elementor/widgets/global/icon-box.php:248
 #: inc/elementor/widgets/global/image-accordion.php:74
 #: inc/elementor/widgets/global/list-course.php:241
-#: inc/elementor/widgets/global/login-form.php:409
-#: inc/elementor/widgets/global/login-form.php:667
+#: inc/elementor/widgets/global/login-form.php:416
+#: inc/elementor/widgets/global/login-form.php:674
 #: inc/elementor/widgets/global/lottie.php:78
 #: inc/elementor/widgets/global/minicart.php:134
 #: inc/elementor/widgets/global/minicart.php:474
@@ -1544,12 +1544,12 @@ msgstr ""
 #: inc/elementor/widgets/global/icon-box.php:662
 #: inc/elementor/widgets/global/image-accordion.php:387
 #: inc/elementor/widgets/global/image-accordion.php:431
-#: inc/elementor/widgets/global/login-form.php:423
-#: inc/elementor/widgets/global/login-form.php:471
-#: inc/elementor/widgets/global/login-form.php:571
-#: inc/elementor/widgets/global/login-form.php:611
-#: inc/elementor/widgets/global/login-form.php:764
-#: inc/elementor/widgets/global/login-form.php:803
+#: inc/elementor/widgets/global/login-form.php:430
+#: inc/elementor/widgets/global/login-form.php:478
+#: inc/elementor/widgets/global/login-form.php:578
+#: inc/elementor/widgets/global/login-form.php:618
+#: inc/elementor/widgets/global/login-form.php:771
+#: inc/elementor/widgets/global/login-form.php:810
 #: inc/elementor/widgets/global/minicart.php:819
 #: inc/elementor/widgets/global/minicart.php:840
 #: inc/elementor/widgets/global/minicart.php:871
@@ -1748,8 +1748,8 @@ msgstr ""
 #: inc/elementor/widgets/global/image-accordion.php:534
 #: inc/elementor/widgets/global/instagram.php:439
 #: inc/elementor/widgets/global/list-course.php:319
-#: inc/elementor/widgets/global/login-form.php:565
-#: inc/elementor/widgets/global/login-form.php:758
+#: inc/elementor/widgets/global/login-form.php:572
+#: inc/elementor/widgets/global/login-form.php:765
 #: inc/elementor/widgets/global/login-popup.php:329
 #: inc/elementor/widgets/global/lottie.php:367
 #: inc/elementor/widgets/global/minicart.php:254
@@ -1836,7 +1836,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-course/archive-course-new.php:453
 #: inc/elementor/widgets/archive-course/archive-course.php:405
 #: inc/elementor/widgets/global/contact-form-7.php:255
-#: inc/elementor/widgets/global/login-form.php:605
+#: inc/elementor/widgets/global/login-form.php:612
 #: inc/elementor/widgets/global/search-form.php:387
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:239
 #: inc/elementor/widgets/single-product/product-add-to-cart.php:420
@@ -1903,10 +1903,10 @@ msgstr ""
 #: inc/elementor/widgets/global/icon-box.php:672
 #: inc/elementor/widgets/global/image-accordion.php:551
 #: inc/elementor/widgets/global/image-accordion.php:611
-#: inc/elementor/widgets/global/login-form.php:591
-#: inc/elementor/widgets/global/login-form.php:633
-#: inc/elementor/widgets/global/login-form.php:784
-#: inc/elementor/widgets/global/login-form.php:823
+#: inc/elementor/widgets/global/login-form.php:598
+#: inc/elementor/widgets/global/login-form.php:640
+#: inc/elementor/widgets/global/login-form.php:791
+#: inc/elementor/widgets/global/login-form.php:830
 #: inc/elementor/widgets/global/login-popup.php:357
 #: inc/elementor/widgets/global/login-popup.php:429
 #: inc/elementor/widgets/global/minicart.php:282
@@ -1970,7 +1970,7 @@ msgstr ""
 #: inc/elementor/widgets/global/icon-box.php:450
 #: inc/elementor/widgets/global/icon-box.php:656
 #: inc/elementor/widgets/global/image-accordion.php:595
-#: inc/elementor/widgets/global/login-form.php:797
+#: inc/elementor/widgets/global/login-form.php:804
 #: inc/elementor/widgets/global/login-popup.php:401
 #: inc/elementor/widgets/global/lottie.php:398
 #: inc/elementor/widgets/global/minicart.php:295
@@ -2051,10 +2051,10 @@ msgstr ""
 #: inc/elementor/widgets/global/heading.php:614
 #: inc/elementor/widgets/global/image-accordion.php:491
 #: inc/elementor/widgets/global/list-course.php:417
-#: inc/elementor/widgets/global/login-form.php:434
-#: inc/elementor/widgets/global/login-form.php:482
-#: inc/elementor/widgets/global/login-form.php:499
-#: inc/elementor/widgets/global/login-form.php:682
+#: inc/elementor/widgets/global/login-form.php:441
+#: inc/elementor/widgets/global/login-form.php:489
+#: inc/elementor/widgets/global/login-form.php:506
+#: inc/elementor/widgets/global/login-form.php:689
 #: inc/elementor/widgets/global/login-popup.php:274
 #: inc/elementor/widgets/global/nav-menu.php:164
 #: inc/elementor/widgets/global/nav-menu.php:306
@@ -2117,11 +2117,11 @@ msgstr ""
 #: inc/elementor/widgets/global/image-accordion.php:624
 #: inc/elementor/widgets/global/list-course.php:337
 #: inc/elementor/widgets/global/list-course.php:379
-#: inc/elementor/widgets/global/login-form.php:317
-#: inc/elementor/widgets/global/login-form.php:581
-#: inc/elementor/widgets/global/login-form.php:623
-#: inc/elementor/widgets/global/login-form.php:774
-#: inc/elementor/widgets/global/login-form.php:813
+#: inc/elementor/widgets/global/login-form.php:324
+#: inc/elementor/widgets/global/login-form.php:588
+#: inc/elementor/widgets/global/login-form.php:630
+#: inc/elementor/widgets/global/login-form.php:781
+#: inc/elementor/widgets/global/login-form.php:820
 #: inc/elementor/widgets/global/login-popup.php:371
 #: inc/elementor/widgets/global/login-popup.php:442
 #: inc/elementor/widgets/global/minicart.php:271
@@ -2244,9 +2244,9 @@ msgstr ""
 #: inc/elementor/widgets/global/image-accordion.php:367
 #: inc/elementor/widgets/global/image-accordion.php:478
 #: inc/elementor/widgets/global/list-course.php:294
-#: inc/elementor/widgets/global/login-form.php:349
-#: inc/elementor/widgets/global/login-form.php:533
-#: inc/elementor/widgets/global/login-form.php:715
+#: inc/elementor/widgets/global/login-form.php:356
+#: inc/elementor/widgets/global/login-form.php:540
+#: inc/elementor/widgets/global/login-form.php:722
 #: inc/elementor/widgets/global/login-popup.php:207
 #: inc/elementor/widgets/global/minicart.php:210
 #: inc/elementor/widgets/global/minicart.php:734
@@ -2318,12 +2318,12 @@ msgid "Padding"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course-new.php:852
-#: inc/elementor/widgets/archive-course/archive-course.php:762
+#: inc/elementor/widgets/archive-course/archive-course.php:764
 msgid "No courses found"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course-new.php:1107
-#: inc/elementor/widgets/archive-course/archive-course.php:949
+#: inc/elementor/widgets/archive-course/archive-course-new.php:1104
+#: inc/elementor/widgets/archive-course/archive-course.php:947
 #: inc/elementor/widgets/archive-post/archive-post.php:421
 #: inc/elementor/widgets/global/product-base.php:941
 #: inc/utilities/group-control-trait.php:441
@@ -2334,36 +2334,36 @@ msgstr ""
 msgid "Pagination"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:817
+#: inc/elementor/widgets/archive-course/archive-course.php:815
 #: inc/elementor/widgets/archive-post/archive-post.php:311
 msgid "Showing only one result"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:820
+#: inc/elementor/widgets/archive-course/archive-course.php:818
 msgid "Showing last course of %s results"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:824
+#: inc/elementor/widgets/archive-course/archive-course.php:822
 msgid "Showing %1$s of %2$s results"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:838
+#: inc/elementor/widgets/archive-course/archive-course.php:836
 msgid "Default sorting"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:839
+#: inc/elementor/widgets/archive-course/archive-course.php:837
 msgid "Sort by latest"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:840
+#: inc/elementor/widgets/archive-course/archive-course.php:838
 msgid "Sort by title"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:852
+#: inc/elementor/widgets/archive-course/archive-course.php:850
 msgid "Course order"
 msgstr ""
 
-#: inc/elementor/widgets/archive-course/archive-course.php:924
+#: inc/elementor/widgets/archive-course/archive-course.php:922
 #: inc/elementor/widgets/archive-post/archive-post.php:396
 msgid "Page"
 msgstr ""
@@ -2374,7 +2374,7 @@ msgstr ""
 #: inc/elementor/widgets/global/instagram.php:410
 #: inc/elementor/widgets/global/list-blog.php:229
 #: inc/elementor/widgets/global/list-product.php:185
-#: inc/elementor/widgets/global/login-form.php:309
+#: inc/elementor/widgets/global/login-form.php:316
 #: inc/elementor/widgets/global/login-popup.php:51
 #: inc/elementor/widgets/global/minicart.php:1319
 #: inc/elementor/widgets/global/search-form.php:52
@@ -2581,7 +2581,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-product/archive-product-category.php:156
 #: inc/elementor/widgets/archive-product/archive-product-category.php:168
 #: inc/elementor/widgets/global/categories.php:69
-#: inc/elementor/widgets/global/login-form.php:180
+#: inc/elementor/widgets/global/login-form.php:185
 #: inc/elementor/widgets/global/product-base.php:159
 #: inc/elementor/widgets/global/progress-tracker.php:73
 #: inc/elementor/widgets/global/social-share.php:189
@@ -2613,7 +2613,7 @@ msgstr ""
 #: inc/elementor/widgets/archive-product/archive-product-category.php:374
 #: inc/elementor/widgets/global/categories.php:70
 #: inc/elementor/widgets/global/instagram.php:389
-#: inc/elementor/widgets/global/login-form.php:179
+#: inc/elementor/widgets/global/login-form.php:184
 #: inc/elementor/widgets/global/product-base.php:158
 #: inc/elementor/widgets/global/progress-tracker.php:74
 #: inc/elementor/widgets/global/social-share.php:190
@@ -2794,8 +2794,8 @@ msgstr ""
 #: inc/elementor/widgets/global/image-accordion.php:70
 #: inc/elementor/widgets/global/image-accordion.php:97
 #: inc/elementor/widgets/global/list-course.php:237
-#: inc/elementor/widgets/global/login-form.php:405
-#: inc/elementor/widgets/global/login-form.php:663
+#: inc/elementor/widgets/global/login-form.php:412
+#: inc/elementor/widgets/global/login-form.php:670
 #: inc/elementor/widgets/global/lottie.php:74
 #: inc/elementor/widgets/global/minicart.php:130
 #: inc/elementor/widgets/global/minicart.php:1717
@@ -3104,7 +3104,7 @@ msgstr ""
 #: inc/elementor/widgets/global/list-blog.php:144
 #: inc/elementor/widgets/global/list-course.php:125
 #: inc/elementor/widgets/global/list-product.php:148
-#: inc/elementor/widgets/global/login-form.php:389
+#: inc/elementor/widgets/global/login-form.php:396
 #: inc/elementor/widgets/global/minicart.php:45
 #: inc/elementor/widgets/global/minicart.php:52
 #: inc/elementor/widgets/global/product-base.php:35
@@ -3263,8 +3263,8 @@ msgstr ""
 #: inc/elementor/widgets/global/icon-box.php:601
 #: inc/elementor/widgets/global/image-accordion.php:299
 #: inc/elementor/widgets/global/list-course.php:275
-#: inc/elementor/widgets/global/login-form.php:441
-#: inc/elementor/widgets/global/login-form.php:726
+#: inc/elementor/widgets/global/login-form.php:448
+#: inc/elementor/widgets/global/login-form.php:733
 #: inc/elementor/widgets/global/login-popup.php:219
 #: inc/elementor/widgets/global/nav-menu.php:314
 #: inc/elementor/widgets/global/nav-menu.php:469
@@ -4137,9 +4137,9 @@ msgstr ""
 
 #: inc/elementor/widgets/global/button.php:59
 #: inc/elementor/widgets/global/icon-box.php:525
-#: inc/elementor/widgets/global/login-form.php:90
-#: inc/elementor/widgets/global/login-form.php:119
-#: inc/elementor/widgets/global/login-form.php:241
+#: inc/elementor/widgets/global/login-form.php:91
+#: inc/elementor/widgets/global/login-form.php:122
+#: inc/elementor/widgets/global/login-form.php:246
 #: inc/elementor/widgets/global/site-logo.php:130
 #: inc/elementor/widgets/global/team.php:150
 #: inc/elementor/widgets/global/team.php:185
@@ -4575,8 +4575,8 @@ msgstr ""
 
 #: inc/elementor/widgets/global/heading.php:55
 #: inc/elementor/widgets/global/heading.php:119
-#: inc/elementor/widgets/global/login-form.php:56
-#: inc/elementor/widgets/global/login-form.php:210
+#: inc/elementor/widgets/global/login-form.php:57
+#: inc/elementor/widgets/global/login-form.php:215
 #: inc/elementor/widgets/global/minicart.php:60
 #: inc/elementor/widgets/global/page-title.php:52
 #: inc/elementor/widgets/single-course-item/back-to-course.php:60
@@ -5188,100 +5188,100 @@ msgstr ""
 msgid "No data were found matching your selection, you need to create Product or select Category of Widget."
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:24
+#: inc/elementor/widgets/global/login-form.php:25
 msgid "Login | Register Form"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:43
-#: inc/elementor/widgets/global/login-form.php:167
-#: inc/elementor/widgets/global/login-form.php:896
+#: inc/elementor/widgets/global/login-form.php:44
+#: inc/elementor/widgets/global/login-form.php:172
+#: inc/elementor/widgets/global/login-form.php:921
 #: inc/elementor/widgets/global/login-popup.php:105
 #: inc/elementor/widgets/global/login-popup.php:106
 msgid "Login"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:49
+#: inc/elementor/widgets/global/login-form.php:50
 msgid "Login Form Title"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:75
+#: inc/elementor/widgets/global/login-form.php:76
 msgid "Redirect After Login"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:91
-#: inc/elementor/widgets/global/login-form.php:120
-#: inc/elementor/widgets/global/login-form.php:242
+#: inc/elementor/widgets/global/login-form.php:92
+#: inc/elementor/widgets/global/login-form.php:123
+#: inc/elementor/widgets/global/login-form.php:247
 msgid "Note: Because of security reasons, you can ONLY use your current domain here."
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:105
+#: inc/elementor/widgets/global/login-form.php:108
 msgid "Redirect After Logout"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:134
-#: inc/elementor/widgets/global/login-form.php:253
+#: inc/elementor/widgets/global/login-form.php:139
+#: inc/elementor/widgets/global/login-form.php:260
 msgid "Custom Label"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:142
-#: inc/elementor/widgets/global/login-form.php:261
+#: inc/elementor/widgets/global/login-form.php:147
+#: inc/elementor/widgets/global/login-form.php:268
 msgid "Username Placeholder"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:144
+#: inc/elementor/widgets/global/login-form.php:149
 msgid "Username or Email Address"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:154
-#: inc/elementor/widgets/global/login-form.php:273
+#: inc/elementor/widgets/global/login-form.php:159
+#: inc/elementor/widgets/global/login-form.php:280
 msgid "Password Placeholder"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:156
-#: inc/elementor/widgets/global/login-form.php:894
-#: inc/elementor/widgets/global/login-form.php:1017
+#: inc/elementor/widgets/global/login-form.php:161
+#: inc/elementor/widgets/global/login-form.php:917
+#: inc/elementor/widgets/global/login-form.php:1054
 msgid "Password"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:165
-#: inc/elementor/widgets/global/login-form.php:284
+#: inc/elementor/widgets/global/login-form.php:170
+#: inc/elementor/widgets/global/login-form.php:291
 msgid "Text Button"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:176
-#: inc/elementor/widgets/global/login-form.php:194
-#: inc/elementor/widgets/global/login-form.php:286
+#: inc/elementor/widgets/global/login-form.php:181
+#: inc/elementor/widgets/global/login-form.php:199
+#: inc/elementor/widgets/global/login-form.php:293
 #: inc/elementor/widgets/global/login-popup.php:75
 #: inc/elementor/widgets/global/login-popup.php:76
 msgid "Register"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:203
+#: inc/elementor/widgets/global/login-form.php:208
 msgid "Register Form Title"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:229
+#: inc/elementor/widgets/global/login-form.php:234
 msgid "Auto Login After Register"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:240
+#: inc/elementor/widgets/global/login-form.php:245
 msgid "Redirect After Register"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:263
-#: inc/elementor/widgets/global/login-form.php:986
+#: inc/elementor/widgets/global/login-form.php:270
+#: inc/elementor/widgets/global/login-form.php:1019
 msgid "Username"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:275
-#: inc/elementor/widgets/global/login-form.php:988
+#: inc/elementor/widgets/global/login-form.php:282
+#: inc/elementor/widgets/global/login-form.php:1023
 #: inc/elementor/widgets/global/social-share.php:855
 msgid "Email"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:327
-#: inc/elementor/widgets/global/login-form.php:506
-#: inc/elementor/widgets/global/login-form.php:689
+#: inc/elementor/widgets/global/login-form.php:334
+#: inc/elementor/widgets/global/login-form.php:513
+#: inc/elementor/widgets/global/login-form.php:696
 #: inc/elementor/widgets/global/lottie.php:324
 #: inc/elementor/widgets/global/site-logo.php:190
 #: inc/elementor/widgets/single-course/course-image.php:113
@@ -5291,108 +5291,108 @@ msgstr ""
 msgid "Max Width"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:456
+#: inc/elementor/widgets/global/login-form.php:463
 #: inc/elementor/widgets/global/search-form.php:193
 msgid "Form"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:463
+#: inc/elementor/widgets/global/login-form.php:470
 msgid "Lable"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:490
+#: inc/elementor/widgets/global/login-form.php:497
 #: inc/elementor/widgets/global/search-form.php:317
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:173
 msgid "Input"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:647
+#: inc/elementor/widgets/global/login-form.php:654
 msgid "Button Submit"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:847
+#: inc/elementor/widgets/global/login-form.php:855
 msgid "You are Logged in as %1$s (<a href=\"%2$s\">Logout</a>)"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:860
+#: inc/elementor/widgets/global/login-form.php:871
 msgid "Registration is successful. Confirmation will be e-mailed to you."
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:865
+#: inc/elementor/widgets/global/login-form.php:878
 msgid "Check your email to get a link to create a new password."
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:870
+#: inc/elementor/widgets/global/login-form.php:887
 msgid "Password changed. You can <a href=\"%s\">login</a> now."
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:892
-#: inc/elementor/widgets/global/login-form.php:1091
+#: inc/elementor/widgets/global/login-form.php:913
+#: inc/elementor/widgets/global/login-form.php:1139
 msgid "Username or email"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:933
+#: inc/elementor/widgets/global/login-form.php:956
 msgid "Remember Me"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:936
-#: inc/elementor/widgets/global/login-form.php:937
+#: inc/elementor/widgets/global/login-form.php:959
+#: inc/elementor/widgets/global/login-form.php:962
 msgid "Forgot Password?"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:954
+#: inc/elementor/widgets/global/login-form.php:980
 msgid "Not a member yet? "
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:955
+#: inc/elementor/widgets/global/login-form.php:983
 msgid "Register now"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:990
+#: inc/elementor/widgets/global/login-form.php:1027
 msgid "Sign up"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1022
+#: inc/elementor/widgets/global/login-form.php:1059
 msgid "Repeat Password"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1053
+#: inc/elementor/widgets/global/login-form.php:1089
 msgid "Are you a member? "
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1054
+#: inc/elementor/widgets/global/login-form.php:1092
 msgid "Login now"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1061
+#: inc/elementor/widgets/global/login-form.php:1101
 msgid "Your site does not allow users registration."
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1082
+#: inc/elementor/widgets/global/login-form.php:1128
 msgid "Get Your Password"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1086
+#: inc/elementor/widgets/global/login-form.php:1135
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1099
+#: inc/elementor/widgets/global/login-form.php:1149
 msgid "Reset password"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1124
+#: inc/elementor/widgets/global/login-form.php:1174
 msgid "Change Password"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1135
+#: inc/elementor/widgets/global/login-form.php:1181
 msgid "New password"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1141
+#: inc/elementor/widgets/global/login-form.php:1188
 msgid "Reset Password"
 msgstr ""
 
-#: inc/elementor/widgets/global/login-form.php:1146
+#: inc/elementor/widgets/global/login-form.php:1200
 msgid "Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ &amp; )."
 msgstr ""
 

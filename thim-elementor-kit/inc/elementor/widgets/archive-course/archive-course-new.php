@@ -819,7 +819,7 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 		} else {
 			$header_repeat = $settings['thim_header_repeater'] ?? [];
 
-			if ( ! empty( $header_repeat ) ) {
+			if ( ! empty( $header_repeat ) && ! empty( $courses ) ) {
 				?>
 				<div class="thim-ekits-archive-course__topbar">
 					<?php
@@ -836,10 +836,9 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 			}
 		}
 
-		echo '<div class="thim-ekits-course__inner lp-list-courses-no-css">';
-
 		if ( ! empty( $courses ) ) {
 			// Loop courses
+			echo '<div class="thim-ekits-course__inner lp-list-courses-no-css">';
 			foreach ( $courses as $courseObj ) {
 				$course = learn_press_get_course( $courseObj->ID );
 				if ( $build_loop_item === 'yes' ) {
@@ -848,12 +847,10 @@ class Thim_Ekit_Widget_Archive_Course extends Thim_Ekits_Course_Base {
 				}
 				self::render_item_course( $course, $settings, 'thim-ekits-course__item' );
 			}
+			echo '</div>';
 		} else {
-			echo '<div class="courses-not-found"><span>' . __( 'No courses found',
-					'thim-elementor-kit' ) . '</span></div>';
+			echo '<div class="learn-press-message info"><div>' . __( 'No courses found', 'thim-elementor-kit' ) . '</div></div>';
 		}
-
-		echo '</div>';
 
 		if ( ! empty( $courses ) ) {
 			self::render_loop_footer( $filter, $total_rows, $settings );
