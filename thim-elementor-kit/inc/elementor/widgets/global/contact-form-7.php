@@ -70,15 +70,65 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 		);
 
 		$this->end_controls_section();
+		$this->_register_setting_label_style();
 		$this->_register_setting_input_style();
+		$this->_register_setting_textarea_style();
 		$this->_register_setting_button_style();
+	}
+
+	protected function _register_setting_label_style() {
+		$this->start_controls_section(
+			'cf7_style_label_section',
+			array(
+				'label' => esc_html__( 'Label', 'thim-elementor-kit' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'label_typography',
+				'label'    => esc_html__( 'Typography', 'thim-elementor-kit' ),
+				'selector' => '{{WRAPPER}} .thim-ekit-wpcf7 label',
+			)
+		);
+
+		$this->add_control(
+			'label_color',
+			array(
+				'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 label' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'label_spacing',
+			array(
+				'label'     => esc_html__( 'Spacing', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'max' => 60,
+					),
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 label' => 'margin-bottom: {{SIZE}}{{UNIT}}; display: inline-block;',
+				),
+			)
+		);
+
+		$this->end_controls_section();
 	}
 
 	protected function _register_setting_input_style() {
 		$this->start_controls_section(
 			'cf7_style_input_section',
 			array(
-				'label' => esc_html__( 'Input Style', 'thim-elementor-kit' ),
+				'label' => esc_html__( 'Form Input', 'thim-elementor-kit' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -89,7 +139,7 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input, {{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea, {{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 
 			)
@@ -180,7 +230,7 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 					'isLinked' => true,
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input, {{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea, {{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -221,7 +271,7 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 				'label'     => esc_html__( 'Background', 'thim-elementor-kit' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
-					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input,{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap input, {{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea, {{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap select' => 'background: {{VALUE}};',
 				),
 			)
 		);
@@ -284,11 +334,98 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 		$this->end_controls_section();
 	}
 
+	protected function _register_setting_textarea_style() {
+		$this->start_controls_section(
+			'cf7_style_textarea_section',
+			array(
+				'label' => esc_html__( 'Textarea', 'thim-elementor-kit' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
+		);
+
+		$this->add_responsive_control(
+			'textarea_padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea, {{WRAPPER}} .thim-ekit-wpcf7 textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'textarea_border_radius',
+			array(
+				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', 'em', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'textarea_height',
+			array(
+				'label'      => esc_html__( 'Height', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em', 'vh' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 50,
+						'max' => 500,
+					),
+				),
+				'selectors'  => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea, {{WRAPPER}} .thim-ekit-wpcf7 textarea' => 'height: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'textarea_color',
+			array(
+				'label'     => esc_html__( 'Text Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea, {{WRAPPER}} .thim-ekit-wpcf7 textarea' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'textarea_placeholder_color',
+			array(
+				'label'     => esc_html__( 'Placeholder Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea::placeholder, {{WRAPPER}} .thim-ekit-wpcf7 textarea::placeholder' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'textarea_bg_color',
+			array(
+				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .thim-ekit-wpcf7 .wpcf7-form-control-wrap textarea, {{WRAPPER}} .thim-ekit-wpcf7 textarea' => 'background-color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+	}
+
 	protected function _register_setting_button_style() {
 		$this->start_controls_section(
 			'cf7_style_button_section',
 			array(
-				'label' => esc_html__( 'Button Style', 'thim-elementor-kit' ),
+				'label' => esc_html__( 'Submit Button', 'thim-elementor-kit' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -333,7 +470,7 @@ class Thim_Ekit_Widget_Contact_Form_7 extends Widget_Base {
 			array(
 				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
 				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', '%' ),
+				'size_units' => array( 'px', '%', 'custom' ),
 				'range'      => array(
 					'px' => array(
 						'max' => 500,

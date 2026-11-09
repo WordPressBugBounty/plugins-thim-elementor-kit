@@ -3,7 +3,7 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 7.0.2
-Stable tag: 1.4.8
+Stable tag: 1.4.9
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,12 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.4.9 (2026-11-04) =
+~ Tweak: Improved style controls for Contact Form 7, Icon Box, and Heading widgets.
+~ Tweak: Improved accessibility attributes (`aria-label`, iframe `title`).
+~ Fixed: Custom post types overwritten in Add New Loop Item modal (RealPress plugin compatibility).
+~ Fixed: Message display in Archive Course, List Course, and Login Form widgets.
+
 = 1.4.8 (2026-09-23) =
 ~ Fixed: some minor bugs.
 

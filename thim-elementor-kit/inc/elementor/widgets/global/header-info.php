@@ -172,7 +172,7 @@ class Thim_Ekit_Widget_Header_Info extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .thim-header-info > li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .thim-header-info > li, .thim-ekits-menu__nav .thim-ekits-menu__content {{WRAPPER}} .thim-header-info > li' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -184,7 +184,7 @@ class Thim_Ekit_Widget_Header_Info extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .thim-header-info > li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .thim-header-info > li, .thim-ekits-menu__nav .thim-ekits-menu__content {{WRAPPER}} .thim-header-info > li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -228,7 +228,7 @@ class Thim_Ekit_Widget_Header_Info extends Widget_Base {
 			array(
 				'name'     => 'content_typography',
 				'label'    => esc_html__( 'Typography', 'thim-elementor-kit' ),
-				'selector' => '{{WRAPPER}} .thim-header-info > li > a,{{WRAPPER}} .thim-header-info > li',
+				'selector' => '{{WRAPPER}} .thim-header-info > li > a,{{WRAPPER}} .thim-header-info > li, .thim-ekits-menu__nav .thim-ekits-menu__content {{WRAPPER}} .thim-header-info > li a',
 			)
 		);
 

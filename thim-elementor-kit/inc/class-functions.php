@@ -60,9 +60,16 @@ class Functions {
 
 	public function get_pages_loop_item( $post_type = '' ) {
 		// Check not call on REST API
-		$request_uri = $_SERVER['REQUEST_URI'];
-		if ( false !== strpos( $request_uri, '/wp-json/' ) ) {
+		if ( isset( $_SERVER['REQUEST_URI'] ) && false !== strpos( $_SERVER['REQUEST_URI'], '/wp-json/' ) ) {
 			return [];
+		}
+
+		// Runtime in-memory cache partitioned strictly by post_type
+		static $cache = array();
+		$cache_key    = ! empty( $post_type ) ? (string) $post_type : '__all__';
+
+		if ( isset( $cache[ $cache_key ] ) ) {
+			return $cache[ $cache_key ];
 		}
 
 		// Get all page with post type thim_elementor_kit and type loop_item and post type is $post_type
@@ -96,6 +103,8 @@ class Functions {
 				$output[ $loop_item->ID ] = $loop_item->post_title;
 			}
 		}
+
+		$cache[ $cache_key ] = $output;
 
 		return $output;
 	}

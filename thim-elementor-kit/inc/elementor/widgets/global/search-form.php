@@ -805,9 +805,9 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 			$class_layout = $settings['skin'] == 'popup' ? 'ekits-modal' : 'skin-toggle';
 			echo '<div class="thim-ekits-search-form__' . esc_attr( $settings['skin'] ) . '">';
 			if ( $settings['skin'] == 'toggle' ) {
-				echo '<a class="search-form-hoverbutton" href="javascript:;">';
+				echo '<a class="search-form-hoverbutton" href="javascript:;" aria-label="' . esc_attr__( 'Open search form', 'thim-elementor-kit' ) . '">';
 			} else {
-				echo '<a class="modalbutton" href="#ekits-search-' . esc_attr( $this->get_id() ) . '">';
+				echo '<a class="modalbutton" href="#ekits-search-' . esc_attr( $this->get_id() ) . '" aria-label="' . esc_attr__( 'Open search form', 'thim-elementor-kit' ) . '">';
 			}
 			Icons_Manager::render_icon( $settings['modal_icon'], array( 'aria-hidden' => 'true' ) );
 			echo '</a>';
@@ -818,7 +818,7 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 		<?php if ( $settings['layout'] == 'modal' ){ ?>
 		<div class="ekits-modal__overlay ModalOverlay"></div>
 		<div class="ekits-modal__container">
-		<button class="ekits-modal__close ModalClose">&#10005;</button>
+		<button type="button" class="ekits-modal__close ModalClose" aria-label="<?php esc_attr_e( 'Close search form', 'thim-elementor-kit' ); ?>">&#10005;</button>
 	<?php } ?>
 
 		<form action="<?php
@@ -827,18 +827,20 @@ class Thim_Ekit_Widget_Search_Form extends Widget_Base {
 			<div class="input-group">
 			<?php if ( $settings['search_type'] == 'lp_course' ) : ?>
 					<input type="text" name="c_search" placeholder="<?php echo esc_attr( $settings['placeholder_text'] ); ?>"
+							aria-label="<?php echo esc_attr( ! empty( $settings['placeholder_text'] ) ? $settings['placeholder_text'] : esc_html__( 'Search courses', 'thim-elementor-kit' ) ); ?>"
 							class="thim-ekits-search" autocomplete="off"/>
 					<input type="hidden" value="course" name="ref"/>
 					<input type="hidden" name="post_type" value="lp_course">
 				<?php else : ?>
 					<input type="text" placeholder="<?php echo esc_attr( $settings['placeholder_text'] ); ?>" name="s"
+						aria-label="<?php echo esc_attr( ! empty( $settings['placeholder_text'] ) ? $settings['placeholder_text'] : esc_html__( 'Search', 'thim-elementor-kit' ) ); ?>"
 						class="thim-ekits-search"/>
 					<?php if ( $settings['search_type'] != 'all' ) : ?>
 						<input type="hidden" name="post_type" value="<?php echo esc_attr( $settings['search_type'] ); ?>"/>
 					<?php endif; ?>
 				<?php endif; ?>
 
-				<button type="submit" class="button-search">
+				<button type="submit" class="button-search" aria-label="<?php echo esc_attr( ! empty( $settings['text_button_search'] ) ? $settings['text_button_search'] : esc_html__( 'Search', 'thim-elementor-kit' ) ); ?>">
 					<?php Icons_Manager::render_icon( $settings['icon_button_search'], array( 'aria-hidden' => 'true' ) ); ?>
 
 					<?php

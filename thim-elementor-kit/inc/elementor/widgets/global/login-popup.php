@@ -474,13 +474,15 @@ class Thim_Ekit_Widget_Login_Popup extends Widget_Base {
 			// Login popup link output
 			if ( is_user_logged_in() ) {
 				if ( ( isset( $settings['text_profile'] ) && $settings['text_profile'] ) || ( ! empty( $settings['profile_icons']['library'] ) ) ) {
-					echo '<a class="profile" href="' . esc_url( $settings['profile_url'] ) . '">';
+					$profile_label = ! empty( $settings['text_profile'] ) ? $settings['text_profile'] : esc_html__( 'Profile', 'thim-elementor-kit' );
+					echo '<a class="profile" href="' . esc_url( $settings['profile_url'] ) . '" aria-label="' . esc_attr( $profile_label ) . '">';
 					Icons_Manager::render_icon( $settings['profile_icons'], [ 'aria-hidden' => 'true' ] );
 					echo esc_html( $settings['text_profile'] );
 					echo '</a>';
 				}
 				if ( ( isset( $settings['text_logout'] ) && $settings['text_logout'] ) || ( ! empty( $settings['logout_icons']['library'] ) ) ) {
-					echo '<a class="logout" href="' . esc_url( wp_logout_url( home_url() ) ) . '">';
+					$logout_label = ! empty( $settings['text_logout'] ) ? $settings['text_logout'] : esc_html__( 'Logout', 'thim-elementor-kit' );
+					echo '<a class="logout" href="' . esc_url( wp_logout_url( home_url() ) ) . '" aria-label="' . esc_attr( $logout_label ) . '">';
 					Icons_Manager::render_icon( $settings['logout_icons'], [ 'aria-hidden' => 'true' ] );
 					echo esc_html( $settings['text_logout'] );
 					echo '</a>';
@@ -488,13 +490,15 @@ class Thim_Ekit_Widget_Login_Popup extends Widget_Base {
 			} else {
 				if ( $registration_enabled && ( isset( $settings['text_register'] ) && $settings['text_register'] )
 					 || ( ! empty( $settings['register_icons']['library'] ) ) ) {
-					echo '<a class="register" href="' . esc_url( $settings['url_register'] ) . '">';
+					$register_label = ! empty( $settings['text_register'] ) ? $settings['text_register'] : esc_html__( 'Register', 'thim-elementor-kit' );
+					echo '<a class="register" href="' . esc_url( $settings['url_register'] ) . '" aria-label="' . esc_attr( $register_label ) . '">';
 					Icons_Manager::render_icon( $settings['register_icons'], [ 'aria-hidden' => 'true' ] );
 					echo esc_html( $settings['text_register'] );
 					echo '</a>';
 				}
 				if ( ( isset( $settings['text_login'] ) && $settings['text_login'] ) || ( ! empty( $settings['login_icons']['library'] ) ) ) {
-					echo '<a class="login" href="' . esc_url( $settings['login_url'] ) . '">';
+					$login_label = ! empty( $settings['text_login'] ) ? $settings['text_login'] : esc_html__( 'Login', 'thim-elementor-kit' );
+					echo '<a class="login" href="' . esc_url( $settings['login_url'] ) . '" aria-label="' . esc_attr( $login_label ) . '">';
 					Icons_Manager::render_icon( $settings['login_icons'], [ 'aria-hidden' => 'true' ] );
 					echo esc_html( $settings['text_login'] );
 					echo '</a>';

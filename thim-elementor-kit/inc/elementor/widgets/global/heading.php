@@ -408,6 +408,17 @@ class Thim_Ekit_Widget_Heading extends Widget_Base {
 				],
 			]
 		);
+		$this->add_control(
+			'textcolor_hover',
+			[
+				'label'     => esc_html__( 'Text Color Hover', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => [
+					'{{WRAPPER}} .thim-ekits-heading .title:hover, {{WRAPPER}} .thim-ekits-heading .title:hover a' => 'color: {{VALUE}};'
+				],
+			]
+		);
 
 		$this->add_control(
 			'title_border_heading', [

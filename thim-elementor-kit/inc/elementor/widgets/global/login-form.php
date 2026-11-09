@@ -936,10 +936,12 @@ class Thim_Ekit_Widget_Login_Form extends Widget_Base {
 				  method="post" novalidate>
 				<p class="login-username">
 					<input type="text" name="log" placeholder="<?php echo esc_attr( $user_label ); ?>"
+						   aria-label="<?php echo esc_attr( $user_label ); ?>"
 						   class="input required" size="20"/>
 				</p>
 				<p class="login-password">
 					<input type="password" name="pwd" placeholder="<?php echo esc_attr( $pass_label ); ?>"
+						   aria-label="<?php echo esc_attr( $pass_label ); ?>"
 						   class="input required" value="" size="20"/>
 				</p>
 				<?php

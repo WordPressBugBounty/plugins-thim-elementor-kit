@@ -359,7 +359,8 @@ class Thim_Ekit_Widget_Video extends Widget_Base {
 			<div class="video-info">
 				<?php
 				if ( ( isset( $settings['text_video'] ) && $settings['text_video'] ) || ( ! empty( $settings['video_icons']['library'] ) ) ) {
-					echo '<a class="modalbutton" href="#' . esc_attr( $popup_id ) . '">';
+					$video_aria_label = ! empty( $settings['text_video'] ) ? $settings['text_video'] : esc_html__( 'Play video', 'thim-elementor-kit' );
+					echo '<a class="modalbutton" href="#' . esc_attr( $popup_id ) . '" aria-label="' . esc_attr( $video_aria_label ) . '">';
 					echo esc_html( $settings['text_video'] );
 					Icons_Manager::render_icon( $settings['video_icons'], [ 'aria-hidden' => 'true' ] );
 					echo '</a>';
@@ -370,17 +371,18 @@ class Thim_Ekit_Widget_Video extends Widget_Base {
 			echo esc_attr( $popup_id ); ?>">
 				<div class="ekits-modal__overlay ModalOverlay"></div>
 				<div class="ekits-modal__container">
-					<button class="ekits-modal__close ModalClose">&#10005;</button>
+					<button type="button" class="ekits-modal__close ModalClose" aria-label="<?php esc_attr_e( 'Close video modal', 'thim-elementor-kit' ); ?>">&#10005;</button>
 					<?php
+					$iframe_title = ! empty( $settings['text_video'] ) ? $settings['text_video'] : esc_html__( 'Video player', 'thim-elementor-kit' );
 					if ( isset( $settings['video_type'] ) && $settings['video_type'] == 'youtube' ) {
 						$youtube_id = isset( $settings['youtube_id'] ) ? esc_attr( $settings['youtube_id'] ) : '';
 						if ( ! empty( $youtube_id ) ) {
-							echo '<div class="video"><iframe id="thim-video" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="https://www.youtube.com/embed/' . $youtube_id . '" allowfullscreen style="border: 0;"></iframe></div>';
+							echo '<div class="video"><iframe id="thim-video" title="' . esc_attr( $iframe_title ) . '" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="https://www.youtube.com/embed/' . $youtube_id . '" allowfullscreen style="border: 0;"></iframe></div>';
 						}
 					} else {
 						$external_video = isset( $settings['external_video'] ) ? esc_attr( $settings['external_video'] ) : '';
 						if ( ! empty( $external_video ) ) {
-							echo '<div class="video"><iframe id="thim-video" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="https://player.vimeo.com/video/' . $external_video . '?portrait=0&title=0&byline=0&badge=0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="border: 0px;"></iframe></div>';
+							echo '<div class="video"><iframe id="thim-video" title="' . esc_attr( $iframe_title ) . '" width="' . esc_attr( $width ) . '" height="' . esc_attr( $height ) . '" src="https://player.vimeo.com/video/' . $external_video . '?portrait=0&title=0&byline=0&badge=0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="border: 0px;"></iframe></div>';
 						}
 					}
 

@@ -617,18 +617,25 @@ class Thim_Ekit_Widget_Instagram extends Widget_Base {
 		
 		if ( $cached_data === false ) {
 			$request_args   = array(
-				'timeout' => 60,
+				'timeout' => 10,
 			);
-			$instagram_data = wp_remote_retrieve_body(
-				wp_remote_get(
-					'https://graph.instagram.com/me/media/?fields=username,id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,like_count,comments_count&limit=' . $settings['show_number_item'] . '&access_token=' . $settings['accesstoken'],
-					$request_args
-				)
+			$response = wp_remote_get(
+				'https://graph.instagram.com/me/media/?fields=username,id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,like_count,comments_count&limit=' . $settings['show_number_item'] . '&access_token=' . $settings['accesstoken'],
+				$request_args
 			);
-			$data_check = json_decode( $instagram_data, true );
-			
-			if ( ! empty( $data_check['data'] ) ) {
-				set_transient( $key, $instagram_data, ( $cache_time * MINUTE_IN_SECONDS ) );
+
+			if ( ! is_wp_error( $response ) ) {
+				$instagram_data = wp_remote_retrieve_body( $response );
+				$data_check     = json_decode( $instagram_data, true );
+
+				if ( ! empty( $data_check['data'] ) ) {
+					set_transient( $key, $instagram_data, ( $cache_time * MINUTE_IN_SECONDS ) );
+				} else {
+					set_transient( $key, wp_json_encode( array( 'data' => array() ) ), 5 * MINUTE_IN_SECONDS );
+				}
+			} else {
+				$instagram_data = '';
+				set_transient( $key, wp_json_encode( array( 'data' => array() ) ), 5 * MINUTE_IN_SECONDS );
 			}
 		} else {
 			$instagram_data = $cached_data;

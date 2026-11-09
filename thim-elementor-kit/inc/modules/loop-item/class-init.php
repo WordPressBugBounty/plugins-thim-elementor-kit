@@ -96,7 +96,11 @@ class Init extends Modules {
 			);
 		}
 
-		$localize['loop_item']['post_type'] = $post_type;
+		if ( ! empty( $localize['loop_item']['post_type'] ) && is_array( $localize['loop_item']['post_type'] ) ) {
+			$localize['loop_item']['post_type'] = array_merge( $post_type, $localize['loop_item']['post_type'] );
+		} else {
+			$localize['loop_item']['post_type'] = $post_type;
+		}
 
 		return $localize;
 	}

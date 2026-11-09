@@ -51,8 +51,8 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 		$this->start_controls_section(
 			'ekit_heading_section_general',
 			array(
-				'label' => esc_html__( 'Content Alignment', 'thim-elementor-kit' ),
-				//				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
+				'label' => esc_html__( 'General', 'thim-elementor-kit' ),
+				'tab'   => \Elementor\Controls_Manager::TAB_STYLE,
 			)
 		);
 
@@ -134,6 +134,51 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 				'toggle'    => true,
 				'selectors' => array(
 					'{{WRAPPER}} .content-inner' => 'text-align: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_responsive_control(
+			'width_content_inner',
+			[
+				'label'      => esc_html__( 'Width', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%' ],
+				'range'      => [
+					'px' => [
+						'min'  => 0,
+						'max'  => 1000,
+						'step' => 1,
+					]
+				],
+				'default'    => [
+					'unit' => '%',
+				],
+				'selectors'  => [
+					'{{WRAPPER}} .content-inner' => 'width: {{SIZE}}{{UNIT}};'
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			'content_inner_padding',
+			array(
+				'label'      => esc_html__( 'Padding', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .content-inner' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'content_inner_bgcolor',
+			array(
+				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .content-inner' => 'background-color: {{VALUE}};',
 				),
 			)
 		);
@@ -584,6 +629,18 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 				'selector' => '{{WRAPPER}} .iconbox-read a',
 			)
 		);
+
+		$this->add_responsive_control(
+			'read_more_margin',
+			array(
+				'label'      => esc_html__( 'Margin', 'thim-elementor-kit' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em', 'rem', 'vw', 'custom' ),
+				'selectors'  => array(
+					'{{WRAPPER}} .iconbox-read' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
 		$this->add_responsive_control(
 			'read_more_padding',
 			array(
@@ -596,16 +653,17 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 			)
 		);
 		$this->add_responsive_control(
-			'read_more_margin',
+			'read_more_border_radius',
 			array(
-				'label'      => esc_html__( 'Margin', 'thim-elementor-kit' ),
+				'label'      => esc_html__( 'Border Radius', 'thim-elementor-kit' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .iconbox-read' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .iconbox-read a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
+
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
 			array(
@@ -631,6 +689,16 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .iconbox-read a' => 'color: {{VALUE}};',
+				),
+			)
+		);
+		$this->add_control(
+			'read_more_bgcolor',
+			array(
+				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .iconbox-read a' => 'background-color: {{VALUE}};',
 				),
 			)
 		);
@@ -663,6 +731,16 @@ class Thim_Ekit_Widget_Icon_Box extends Thim_Ekit_Widget_Heading {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .iconbox-read a:hover' => 'color: {{VALUE}};',
+				),
+			)
+		);
+		$this->add_control(
+			'read_more_bgcolor_hover',
+			array(
+				'label'     => esc_html__( 'Background Color', 'thim-elementor-kit' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .iconbox-read a:hover' => 'background-color: {{VALUE}};',
 				),
 			)
 		);
