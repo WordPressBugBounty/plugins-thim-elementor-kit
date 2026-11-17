@@ -26,16 +26,17 @@ class Shortcode {
 		}
 
 		$post = get_post( $id );
-		if ( empty( $post ) ) {
+		if ( empty( $post ) || 'trash' === $post->post_status ) {
+			return '';
+		}
+
+		if ( 'publish' !== $post->post_status && ! current_user_can( 'read_post', $id ) ) {
 			return '';
 		}
 
 		$user_id = get_current_user_id();
-		if ( $post->post_status == 'private'
-			&& $user_id != $post->post_author ) {
-			return '';
-		} elseif ( post_password_required( $post )
-			&& $user_id != $post->post_author ) {
+		if ( post_password_required( $post )
+			&& ( ! $user_id || (int) $user_id !== (int) $post->post_author ) ) {
 			return get_the_password_form();
 		}
 

@@ -123,9 +123,11 @@ abstract class Modules {
 
 		if ( ! empty( $this->template_include ) && $this->template_include ) {
 			$post_id = $this->get_layout_id( $this->tab );
-
 			if ( ! empty( $post_id ) ) {
-				$elementor_modules = \Elementor\Plugin::$instance->modules_manager->get_modules( 'page-templates' );
+				// for WPML
+				$post_id = apply_filters( 'wpml_object_id', $post_id, get_post_type( $post_id ), true );
+
+ 				$elementor_modules = \Elementor\Plugin::$instance->modules_manager->get_modules( 'page-templates' );
 
 				$template = $this->elementor_template( $template, $post_id );
 
@@ -139,7 +141,6 @@ abstract class Modules {
 				$elementor_modules->set_print_callback(
 					function () use ( $post_id ) {
 						echo \Elementor\Plugin::instance()->frontend->get_builder_content( absint( $post_id ), false );
-
 						return true;
 					}
 				);

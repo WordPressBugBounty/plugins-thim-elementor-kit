@@ -66,10 +66,10 @@ class Thim_Ekit_Widget_Loop_Item_Title extends Widget_Heading {
 				'label'       => esc_html__( 'Max Line', 'thim-elementor-kit' ),
 				'type'        => Controls_Manager::NUMBER,
 				'label_block' => false,
-				'min'         => 0,
+				'min'         => 1,
 				'step'        => 1,
 				'selectors'   => array(
-					'{{WRAPPER}} .elementor-heading-title' => 'display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: {{VALUE}};-webkit-box-orient:vertical; overflow: hidden;',
+					'{{WRAPPER}} .elementor-heading-title, {{WRAPPER}} .elementor-heading-title a' => 'display: -webkit-box; text-overflow: ellipsis; -webkit-line-clamp: {{VALUE}}; -webkit-box-orient: vertical; overflow: hidden;',
 				),
 			)
 		);

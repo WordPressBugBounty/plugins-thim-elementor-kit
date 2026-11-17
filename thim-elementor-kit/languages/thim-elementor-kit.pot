@@ -2,42 +2,37 @@
 # This file is distributed under the same license as the Thim Elementor Kit plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Thim Elementor Kit 1.4.9\n"
+"Project-Id-Version: Thim Elementor Kit 1.5.0\n"
 "Report-Msgid-Bugs-To: dev@thimpress.com\n"
 "Last-Translator: dev@thimpress.com\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-04T02:59:26+00:00\n"
+"POT-Creation-Date: 2026-11-17T07:10:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.12.0\n"
+"X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: thim-elementor-kit\n"
 
 #. Plugin Name of the plugin
-#: thim-elementor-kit.php
 #: inc/class-enqueue-scripts.php:139
 #: inc/elementor/dynamic-tags/class-init.php:53
 msgid "Thim Elementor Kit"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: thim-elementor-kit.php
 msgid "https://thimpress.com/"
 msgstr ""
 
 #. Description of the plugin
-#: thim-elementor-kit.php
 msgid "It is page builder for the Elementor page builder."
 msgstr ""
 
 #. Author of the plugin
-#: thim-elementor-kit.php
 msgid "ThimPress"
 msgstr ""
 
 #. Author URI of the plugin
-#: thim-elementor-kit.php
 msgid "https://thimpress.com"
 msgstr ""
 
@@ -75,7 +70,7 @@ msgstr ""
 #: inc/elementor/widgets/global/team.php:387
 #: inc/elementor/widgets/loop-item/loop-item-info.php:47
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:70
-#: inc/elementor/widgets/single-course-item/course-item-section.php:98
+#: inc/elementor/widgets/single-course-item/course-item-section.php:102
 #: inc/elementor/widgets/single-course/course-extra.php:61
 #: inc/elementor/widgets/single-course/course-instructor.php:179
 #: inc/elementor/widgets/single-course/course-meta.php:74
@@ -924,7 +919,6 @@ msgstr ""
 
 #: inc/elementor/dynamic-tags/tags/item-date.php:37
 #: inc/elementor/widgets/loop-item/loop-item-info.php:70
-#, php-format
 msgid "<a href=\"%s\">Documentation on date and time formatting.</a>"
 msgstr ""
 
@@ -1043,7 +1037,7 @@ msgstr ""
 #: inc/elementor/widgets/global/instagram.php:403
 #: inc/elementor/widgets/global/list-course.php:56
 #: inc/elementor/widgets/global/list-product.php:89
-#: inc/elementor/widgets/single-course-item/course-item-section.php:89
+#: inc/elementor/widgets/single-course-item/course-item-section.php:93
 #: inc/elementor/widgets/single-course/course-related.php:48
 msgid "Options"
 msgstr ""
@@ -2360,12 +2354,10 @@ msgid "Showing only one result"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course.php:818
-#, php-format
 msgid "Showing last course of %s results"
 msgstr ""
 
 #: inc/elementor/widgets/archive-course/archive-course.php:822
-#, php-format
 msgid "Showing %1$s of %2$s results"
 msgstr ""
 
@@ -2448,12 +2440,10 @@ msgid "There are no available post!"
 msgstr ""
 
 #: inc/elementor/widgets/archive-post/archive-post.php:322
-#, php-format
 msgid "Showing last post of %s results"
 msgstr ""
 
 #: inc/elementor/widgets/archive-post/archive-post.php:327
-#, php-format
 msgid "Showing %s - %s of %s results"
 msgstr ""
 
@@ -3078,7 +3068,7 @@ msgstr ""
 #: inc/elementor/widgets/single-course-item/course-item-data.php:110
 #: inc/elementor/widgets/single-course-item/course-item-nav.php:39
 #: inc/elementor/widgets/single-course-item/course-item-search-form.php:41
-#: inc/elementor/widgets/single-course-item/course-item-section.php:61
+#: inc/elementor/widgets/single-course-item/course-item-section.php:65
 #: inc/elementor/widgets/single-course/course-category.php:39
 #: inc/elementor/widgets/single-course/course-category.php:138
 #: inc/elementor/widgets/single-course/course-extra.php:39
@@ -4076,33 +4066,27 @@ msgid "Error 404"
 msgstr ""
 
 #: inc/elementor/widgets/global/breadcrumb.php:446
-#, php-format
 msgid "Course tagged &ldquo;%s&rdquo;"
 msgstr ""
 
 #. translators: %s: product tag
 #: inc/elementor/widgets/global/breadcrumb.php:485
-#, php-format
 msgid "Products tagged &ldquo;%s&rdquo;"
 msgstr ""
 
 #: inc/elementor/widgets/global/breadcrumb.php:528
-#, php-format
 msgid "Posts tagged &ldquo;%s&rdquo;"
 msgstr ""
 
 #: inc/elementor/widgets/global/breadcrumb.php:562
-#, php-format
 msgid "Author: %s"
 msgstr ""
 
 #: inc/elementor/widgets/global/breadcrumb.php:580
-#, php-format
 msgid "Search results for &ldquo;%s&rdquo;"
 msgstr ""
 
 #: inc/elementor/widgets/global/breadcrumb.php:587
-#, php-format
 msgid "Page %d"
 msgstr ""
 
@@ -4418,21 +4402,18 @@ msgid "Sale"
 msgstr ""
 
 #: inc/elementor/widgets/global/course-base.php:2177
-#, php-format
 msgid "%d lesson"
 msgid_plural "%d lessons"
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/elementor/widgets/global/course-base.php:2202
-#, php-format
 msgid "%d quiz"
 msgid_plural "%d quizzes"
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/elementor/widgets/global/course-base.php:2227
-#, php-format
 msgid "%d student"
 msgid_plural "%d students"
 msgstr[0] ""
@@ -5098,7 +5079,6 @@ msgid "Photo by "
 msgstr ""
 
 #: inc/elementor/widgets/global/instagram.php:903
-#, php-format
 msgid "%s ago"
 msgstr ""
 
@@ -5362,7 +5342,6 @@ msgid "Button Submit"
 msgstr ""
 
 #: inc/elementor/widgets/global/login-form.php:855
-#, php-format
 msgid "You are Logged in as %1$s (<a href=\"%2$s\">Logout</a>)"
 msgstr ""
 
@@ -5375,7 +5354,6 @@ msgid "Check your email to get a link to create a new password."
 msgstr ""
 
 #: inc/elementor/widgets/global/login-form.php:887
-#, php-format
 msgid "Password changed. You can <a href=\"%s\">login</a> now."
 msgstr ""
 
@@ -5939,7 +5917,6 @@ msgid "Popular courses"
 msgstr ""
 
 #: inc/elementor/widgets/global/page-title.php:179
-#, php-format
 msgid "Search results for: %s"
 msgstr ""
 
@@ -6046,7 +6023,7 @@ msgid "Modal"
 msgstr ""
 
 #: inc/elementor/widgets/global/search-form.php:71
-#: inc/elementor/widgets/single-course-item/course-item-section.php:127
+#: inc/elementor/widgets/single-course-item/course-item-section.php:131
 msgid "Popup"
 msgstr ""
 
@@ -6180,7 +6157,6 @@ msgstr ""
 
 #. translators: %d: Slide index.
 #: inc/elementor/widgets/global/slider.php:23
-#, php-format
 msgid "Slide #%d"
 msgstr ""
 
@@ -6325,7 +6301,7 @@ msgid "Toggle Form"
 msgstr ""
 
 #: inc/elementor/widgets/global/social-share.php:493
-#: inc/elementor/widgets/single-course-item/course-item-section.php:47
+#: inc/elementor/widgets/single-course-item/course-item-section.php:51
 #: inc/modules/header-footer/class-init.php:29
 #: inc/modules/single-course-item/class-init.php:234
 msgid "Header"
@@ -7065,7 +7041,6 @@ msgid "Number Color"
 msgstr ""
 
 #: inc/elementor/widgets/loop-item/loop-product-ratting.php:184
-#, php-format
 msgid "%s review"
 msgid_plural "%s reviews"
 msgstr[0] ""
@@ -7076,7 +7051,6 @@ msgid "Product Sale Flash"
 msgstr ""
 
 #: inc/elementor/widgets/loop-item/loop-product-sale.php:122
-#, php-format
 msgctxt "sale percentage"
 msgid "-%d%%"
 msgstr ""
@@ -7357,18 +7331,18 @@ msgstr ""
 msgid "Course Section"
 msgstr ""
 
-#: inc/elementor/widgets/single-course-item/course-item-section.php:54
+#: inc/elementor/widgets/single-course-item/course-item-section.php:58
 #: inc/modules/single-course-item/class-init.php:242
 msgid "Sidebar"
 msgstr ""
 
-#: inc/elementor/widgets/single-course-item/course-item-section.php:69
+#: inc/elementor/widgets/single-course-item/course-item-section.php:73
 #: inc/modules/header-footer/class-init.php:30
 #: inc/modules/single-course-item/class-init.php:259
 msgid "Footer"
 msgstr ""
 
-#: inc/elementor/widgets/single-course-item/course-item-section.php:106
+#: inc/elementor/widgets/single-course-item/course-item-section.php:110
 msgid "Width Sidebar"
 msgstr ""
 
@@ -7692,14 +7666,12 @@ msgid "One Star"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-rating.php:331
-#, php-format
 msgid "/%d rating"
 msgid_plural "/%d ratings"
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/elementor/widgets/single-course/course-rating.php:350
-#, php-format
 msgid "(<span>%d</span> rating)"
 msgid_plural "(<span>%d</span> ratings)"
 msgstr[0] ""
@@ -7841,7 +7813,6 @@ msgid "Progress:"
 msgstr ""
 
 #: inc/elementor/widgets/single-course/course-user-progress.php:282
-#, php-format
 msgid "Failed %1$d, Passed %2$d"
 msgstr ""
 
@@ -7898,7 +7869,6 @@ msgstr ""
 #: inc/elementor/widgets/single-course/course-user-time.php:116
 #: inc/elementor/widgets/single-post/post-info.php:93
 #: inc/elementor/widgets/single-post/post-info.php:176
-#, php-format
 msgid "Use the letters: %s"
 msgstr ""
 
@@ -8339,7 +8309,6 @@ msgid "Loop Item"
 msgstr ""
 
 #: inc/modules/loop-item/class-init.php:304
-#, php-format
 msgid "Please enable <b>Flexbox Container</b> in Elementor > Settings > Features: %s"
 msgstr ""
 
@@ -8420,7 +8389,6 @@ msgid "All H5P"
 msgstr ""
 
 #: inc/modules/single-course-item/class-init.php:200
-#, php-format
 msgid "Please enable <b>Nested Elements</b> in Elementor > Settings > Features: %s"
 msgstr ""
 
@@ -8563,7 +8531,6 @@ msgid "No Sliders found"
 msgstr ""
 
 #: inc/modules/slider/class-post-type.php:101
-#, php-format
 msgid "All %s"
 msgstr ""
 

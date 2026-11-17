@@ -269,7 +269,9 @@ class Main_Walker extends \Walker_Nav_Menu {
 			if ( $this->thim_is_mega_menu_item( absint( $menu_id ), $item->ID ) && class_exists( 'Elementor\Plugin' ) ) {
 				$options      = $this->thim_get_options( $item->ID );
 				$mega_menu_id = get_post_meta( $item->ID, Rest_API::META_KEY, true );
-
+				// For wpml translate
+				$mega_menu_id = apply_filters( 'wpml_object_id', $mega_menu_id, 'thim_ekits_menu', true );
+				
 				$style          = '';
 				$classes        = '';
 				$data_container = '';

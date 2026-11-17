@@ -4,7 +4,7 @@
  * Plugin URI: https://thimpress.com/
  * Description: It is page builder for the Elementor page builder.
  * Author: ThimPress
- * Version: 1.4.9
+ * Version: 1.5.0
  * Author URI: https://thimpress.com
  * Requires at least: 6.x
  * Requires PHP: 7.4

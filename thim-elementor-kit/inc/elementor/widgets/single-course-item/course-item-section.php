@@ -21,6 +21,10 @@ class Thim_Ekit_Widget_Course_Item_Section extends Widget_Nested_Base {
 		return esc_html__( 'Course Section', 'thim-elementor-kit' );
 	}
 
+	protected function is_dynamic_content(): bool {
+		return true; // Change to true or false based on your requirement
+	}
+
 	public function get_icon() {
 		return 'thim-eicon eicon-tabs';
 	}
@@ -45,14 +49,14 @@ class Thim_Ekit_Widget_Course_Item_Section extends Widget_Nested_Base {
 				'elType'   => 'container',
 				'settings' => [
 					'_title'      => __( 'Header', 'thim-elementor-kit' ),
-					'css_classes' => 'ekit-popup-header'
+					'css_classes' => 'ekit-popup-header',
 				],
 			],
 			[
 				'elType'   => 'container',
 				'settings' => [
 					'_title'      => __( 'Sidebar', 'thim-elementor-kit' ),
-					'css_classes' => 'ekit-popup-sidebar'
+					'css_classes' => 'ekit-popup-sidebar',
 				],
 			],
 			[
@@ -60,14 +64,14 @@ class Thim_Ekit_Widget_Course_Item_Section extends Widget_Nested_Base {
 				'settings' => [
 					'_title'      => __( 'Content', 'thim-elementor-kit' ),
 					'_element_id' => 'popup-content',
-					'css_classes' => 'ekit-popup-content'
+					'css_classes' => 'ekit-popup-content',
 				],
 			],
 			[
 				'elType'   => 'container',
 				'settings' => [
 					'_title'      => __( 'Footer', 'thim-elementor-kit' ),
-					'css_classes' => 'ekit-popup-footer'
+					'css_classes' => 'ekit-popup-footer',
 				],
 			],
 		];
@@ -124,16 +128,16 @@ class Thim_Ekit_Widget_Course_Item_Section extends Widget_Nested_Base {
 		$this->add_control(
 			'popup_items',
 			[
-				'label'        => esc_html__( 'Popup', 'thim-elementor-kit' ),
-				'type'         => Control_Nested_Repeater::CONTROL_TYPE,
-				'fields'       => $repeater->get_controls(),
-				'item_actions' => [
+				'label'                       => esc_html__( 'Popup', 'thim-elementor-kit' ),
+				'type'                        => Control_Nested_Repeater::CONTROL_TYPE,
+				'fields'                      => $repeater->get_controls(),
+				'item_actions'                => [
 					'add'       => false,
 					'duplicate' => false,
 					'remove'    => false,
 					'sort'      => false,
 				],
-				'default'      => [
+				'default'                     => [
 					[
 						'popup_type' => 'header',
 					],
@@ -147,11 +151,10 @@ class Thim_Ekit_Widget_Course_Item_Section extends Widget_Nested_Base {
 						'popup_type' => 'footer',
 					],
 				],
-//				'frontend_available' => true,
-				'title_field'  => '<span style="text-transform: capitalize;">{{{ popup_type.replace("_", " ") }}}</span>',
+				//              'frontend_available' => true,
+								'title_field' => '<span style="text-transform: capitalize;">{{{ popup_type.replace("_", " ") }}}</span>',
 			]
 		);
-
 		$this->end_controls_section();
 	}
 
@@ -171,6 +174,10 @@ class Thim_Ekit_Widget_Course_Item_Section extends Widget_Nested_Base {
 				$this->print_child( $index );
 			}
 			echo '</div>';
+
+			if ( version_compare( LEARNPRESS_VERSION, '4.4.11', '>=' ) ) {
+				learn_press_get_template( 'single-course/content-item/popup-right-sidebar.php' );
+			}
 			?>
 		</div>
 		<?php
@@ -183,5 +190,4 @@ class Thim_Ekit_Widget_Course_Item_Section extends Widget_Nested_Base {
 		<# } #>
 		<?php
 	}
-
 }

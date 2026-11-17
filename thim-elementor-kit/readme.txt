@@ -3,7 +3,7 @@ Author URI: https://thimpress.com
 Contributors: thimpress
 Tags: elementor, elementor widgets, elementor addons, template kit, learnpress
 Tested up to: 7.0.2
-Stable tag: 1.4.9
+Stable tag: 1.5.0
 License: GPL-2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,6 +189,12 @@ In case you need any assistance, you can find further help here:
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.5.0 (2026-11-17) =
+~ Fixed: some text that is not translated with WPML.
+~ Fixed: security (Props @Respect)
+~ Fixed: student notes for lessons not show
+~ Fixed: some minor bugs.
+
 = 1.4.9 (2026-11-04) =
 ~ Tweak: Improved style controls for Contact Form 7, Icon Box, and Heading widgets.
 ~ Tweak: Improved accessibility attributes (`aria-label`, iframe `title`).

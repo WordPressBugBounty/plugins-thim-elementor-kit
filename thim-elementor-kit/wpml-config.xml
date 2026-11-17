@@ -206,7 +206,7 @@
 				<field type="Login Form: Redirect After Logout" editor_type="LINK" key_of="link">redirect_logout_url</field>
 				<field type="Login Form: Username Placeholder" editor_type="LINE">user_placeholder</field>
 				<field type="Login Form: Password Placeholder" editor_type="LINE">password_placeholder</field>
-				<field type="Login Form: Text Button" editor_type="LINE">text_login</field>
+				<field type="Login Form: Text Button" editor_type="LINE">text_register</field>
 				<field type="Register Form Title" editor_type="LINE">title_from_rg</field>
 				<field type="Login Form: Redirect After Register" editor_type="LINE">redirect_register_url</field>
 				<field type="Login Form: Register Username Placeholder" editor_type="LINE">rg_user_placeholder</field>
@@ -429,4 +429,8 @@
 		</widget>
 
 	</elementor-widgets>
+	<custom-fields>
+		<custom-field action="copy">thim_ekits_conditions</custom-field>
+		<custom-field action="copy">thim_elementor_type</custom-field>
+	</custom-fields>
 </wpml-config>
